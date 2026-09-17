@@ -1,0 +1,12 @@
+{
+  "provider": "local",                    // Optionen: openrouter | openai | local
+  "model": "qwen3-coder:7b",             // Empfohlene Standardwahl für 32 GB RAM / CPU-Setup
+  "apiKeyEnvVar": "",                    // leer für lokale Modelle
+  "localEndpoint": "http://localhost:11434", // Ollama Standardendpoint
+  "timeoutSeconds": 120,
+  "maxContextTokens": 4000,
+  "safety": {
+    "max_calls_per_session": 10,
+    "prompt_length_limit": 2000
+  }
+}

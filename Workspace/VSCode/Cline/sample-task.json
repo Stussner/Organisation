@@ -1,0 +1,8 @@
+{
+  "name": "Validate build script path handling",
+  "file": "BUILD\\Build.ps1",
+  "lines": "120-210",
+  "change": "Adjust validatePath to accept relative paths using Resolve-Path -Relative fallback",
+  "testCommand": "powershell -File BUILD\\Build.ps1 --dryrun",
+  "stopOnSuccess": true
+}

@@ -1,0 +1,8 @@
+{
+  "search.exclude": {
+    "**/.vs": true,
+    "**/.Intermediate": true,
+    "**/node_modules": true,
+    "**/dist": true
+  }
+}

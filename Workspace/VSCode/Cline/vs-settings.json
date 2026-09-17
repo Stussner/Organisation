@@ -1,0 +1,15 @@
+{
+  // Hinweise: Dies ist ein VS Code Settings‑Snippet. Kopiere die Objekte unter "settings" in deine .code-workspace oder .vscode/settings.json
+  "editor.formatOnSave": false,
+  "files.exclude": {
+    "**/.vs": true,
+    "**/.Intermediate": true,
+    "**/node_modules": true
+  },
+  "search.exclude": {
+    "**/node_modules": true
+  },
+  "cline.defaultProvider": "openrouter",
+  "cline.defaultModel": "gpt-4o-mini",
+  "cline.maxCallsPerSession": 10
+}

@@ -1,0 +1,32 @@
+{
+	"folders": [
+		{
+			"path": "../../Tool/Backup/Build"
+		},
+		{
+			"path": "../.."
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/.vs": true,
+			"**/.Intermediate": true,
+			"**/bin": true,
+			"**/obj": true,
+			"**/node_modules": true,
+			"**/dist": true
+		},
+		"search.exclude": {
+			"**/.vs": true,
+			"**/.Intermediate": true,
+			"**/node_modules": true,
+			"**/dist": true
+		},
+		"files.watcherExclude": {
+			"**/.vs/**": true,
+			"**/.Intermediate/**": true,
+			"**/node_modules/**": true,
+			"**/dist/**": true
+		}
+	}
+}

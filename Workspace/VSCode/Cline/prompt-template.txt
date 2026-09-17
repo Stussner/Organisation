@@ -1,0 +1,31 @@
+Striktes Prompt‑Template (kopieren, ausfüllen, abschicken)
+
+AUFGABE (ein Satz, präzise):
+- Z. B.: "Korrigiere die Validierung in src/Backup/Build/Build.ps1: Funktion validatePath() so, dass relative Pfade erlaubt sind." 
+
+KONTEXT (gezielt, nur betroffene Dateien / relevante Zeilen):
+- Liste der Dateien mit Pfad, evtl. Zeilenbereich. Keine großen Chatverläufe.
+- Z. B.: "Datei: BUILD\Build.ps1, Zeilen: 120-210"
+
+KLARE ÄNDERUNG (konkrete Diff/Code‑Schnipsel, wenn möglich):
+- Beschreibe genau, was verändert werden soll oder liefere Patch.
+
+TEST / VERIFIKATION (konkreter Befehl oder Erwartungswert):
+- Z. B.: "Führe Build.ps1 --dryrun und bestätige, dass validatePath('..\\data') kein Fehler wirft." 
+- Oder: "Gebe 3 Assertions zurück: 1) relative Pfad wird akzeptiert, 2) absolute Pfad bleibt gültig, 3) keine Regression in existierenden Tests."
+
+STOP‑KRITERIEN (wann ist die Aufgabe beendet):
+- Sobald die Verifikation erfolgreich ist und die 3 Tests (oben) grün sind.
+- Bei Fehlschlag: Rückmeldung mit Fehlerbeschreibung, kein weiteres automatisches Probieren.
+
+KONSTRUKTIONSREGELN (zusätzliche Vorgaben):
+- Keine Änderungen außerhalb der genannten Dateien.
+- Keine Refactorings; nur minimal notwendige Fixes.
+- Ausgabe: nur der minimale Patch (unveränderte Dateien nicht senden).
+
+Beispiel (kompakt):
+AUFGABE: Korrigiere validatePath in BUILD\Build.ps1
+KONTEXT: BUILD\Build.ps1 Zeilen 120-210
+ÄNDERUNG: Ersetze regex-Check durch TryResolve-Relative
+TEST: powershell -File BUILD\Build.ps1 --dryrun => kein Fehler
+STOP: Test erfolgreich => Ende
