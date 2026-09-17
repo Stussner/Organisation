@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sicherung der Organization Base</title>
+  <style>
+    :root { font-family: "Segoe UI", Arial, sans-serif; color: #17232b; background: #f3f7f8; }
+    body { margin: 0; padding: 2rem; }
+    main { max-width: 56rem; margin: 0 auto; background: #fff; border: 1px solid #9fb5c7; border-top: .45rem solid #4f9a90; box-shadow: 0 .3rem 1rem rgb(0 0 0 / 12%); }
+    header, article { padding: 1.35rem; }
+    header { border-bottom: 1px solid #c8d8e6; }
+    h1 { margin: 0; font-size: 1.5rem; }
+    header p { margin: .4rem 0 0; color: #4c6170; }
+    h2 { margin-top: 1.8rem; padding-bottom: .25rem; border-bottom: 1px solid #c8d8e6; color: #173d5a; }
+    h3 { margin-top: 1.3rem; color: #173d5a; }
+    p, li { line-height: 1.55; }
+    code { padding: .08rem .28rem; border-radius: .2rem; background: #edf3f7; }
+    pre { overflow-x: auto; padding: .85rem; border: 1px solid #c8d8e6; background: #f5f8fa; }
+    .rule { padding: .8rem 1rem; border-left: .3rem solid #4f9a90; background: #f2f8f7; }
+    @media (max-width: 38rem) { body { padding: .75rem; } }
+    @media print { body { padding: 0; background: #fff; } main { border: 0; border-top: .25rem solid #4f9a90; box-shadow: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Sicherung der Organization Base</h1>
+      <p>Verbindliche Arbeitsdefinition für vollständige und gezielte Projektsicherungen.</p>
+    </header>
+    <article>
+      <h2>Zweck</h2>
+      <p>Die Sicherung bewahrt einen wiederherstellbaren Stand der Organization Base vor Löschen, Fehländerungen, Beschädigung oder Ausfall eines Speichermediums.</p>
+
+      <h2>Quelle und Ziel</h2>
+      <ul>
+        <li>Quelle: <code>E:\Programmierung\Organisation</code></li>
+        <li>Zielordner: <code>E:\Programmierung\Sicherung\Organisation</code></li>
+        <li>Format: ZIP-Archiv mit SHA-256-Prüfsumme.</li>
+      </ul>
+      <p class="rule">Eine Sicherung ist eine getrennte Kopie. Der Quellordner wird beim Sicherungslauf weder geändert, verschoben noch bereinigt.</p>
+
+      <h2>Aufruf und Umfang</h2>
+      <p>Der Process kennt drei Formen:</p>
+      <pre><code>Backup()
+Backup(&lt;Erweiterung&gt;)
+Backup(&lt;Erweiterung&gt;, &lt;Pfad1&gt;, &lt;Pfad2&gt;, ...)</code></pre>
+      <ul>
+        <li><code>Backup()</code> sichert den vollständigen Inhalt von <code>E:\Programmierung\Organisation</code>, einschließlich aller Unterordner und Dateien.</li>
+        <li><code>Backup(&lt;Erweiterung&gt;)</code> hat denselben Umfang; die Erweiterung wird nur an den Archivnamen angehängt.</li>
+        <li><code>Backup(&lt;Erweiterung&gt;, &lt;Pfad1&gt;, ...)</code> sichert ausschließlich die angegebenen Dateien und Ordner. Für Ordner werden alle enthaltenen Dateien rekursiv aufgenommen.</li>
+      </ul>
+      <p>Ein angegebener Pfad muss innerhalb der Projektwurzel liegen und vorhanden sein. Die Pfadstruktur bleibt relativ zu <code>E:\Programmierung\Organisation</code> im Archiv erhalten. Doppelt erreichte Dateien werden nur einmal gesichert.</p>
+      <p>Bei allen Formen gelten die fixierten Exklusionen. Sie sind zentral im Sicherungsskript festgelegt und können nicht durch eine Pfadangabe umgangen werden. Derzeit ist die Exklusionsliste leer.</p>
+
+      <h2>Benennung und laufender Index</h2>
+      <p>Ein Archiv trägt den Namen:</p>
+      <pre><code>Organisation_YYYYMMDDII[_Erweiterung].zip</code></pre>
+      <p><code>YYYYMMDD</code> ist das Datum des Sicherungstags. <code>II</code> ist ein zweistelliger, pro Kalendertag fortlaufender Index. Er beginnt täglich bei <code>00</code>. Eine optionale <code>Erweiterung</code> beschreibt den konkreten Sicherungsstand und wird durch Unterstrich getrennt angehängt.</p>
+      <pre><code>Organisation_2026081200.zip
+Organisation_2026081201.zip
+Organisation_2026081300.zip</code></pre>
+      <p>Vor der Vergabe wird der Zielordner geprüft. Ein bereits vorhandener Archivname darf nie überschrieben werden; stattdessen ist der nächste freie Index zu verwenden.</p>
+      <p>Die technische Kommandoform lautet <code>Backup.ps1 -Erweiterung &lt;Erweiterung&gt; -Pfad &lt;Pfad1&gt;,&lt;Pfad2&gt;</code>. Ohne <code>-Pfad</code> wird die Vollsicherung ausgeführt.</p>
+
+      <h2>Ausführung</h2>
+      <ol>
+        <li>Quellordner, Zielordner und vollständigen Umfang prüfen.</li>
+        <li>Den nächsten freien Tagesindex bestimmen.</li>
+        <li>Das ZIP-Archiv erstellen.</li>
+        <li>Die SHA-256-Prüfsumme des fertigen Archivs erzeugen und neben dem Archiv ablegen.</li>
+        <li>Archivinhalt und Prüfsumme verifizieren.</li>
+      </ol>
+      <p>Vor Löschungen, Umstrukturierungen oder größeren automatisierten Änderungen ist eine Sicherung auszuführen. Weitere Sicherungen erfolgen nach wichtigen funktionsfähigen Ständen und regelmäßig während aktiver Arbeit.</p>
+
+      <h2>Prüfung nach der Sicherung</h2>
+      <ul>
+        <li>Das Archiv lässt sich fehlerfrei lesen.</li>
+        <li>Die erwartete Anzahl von Dateien ist enthalten.</li>
+        <li>Die Archivstruktur enthält den vollständigen gesicherten Projektbestand.</li>
+        <li>Die gespeicherte SHA-256-Prüfsumme stimmt mit dem Archiv überein.</li>
+        <li>Archivgröße und Inhalt sind plausibel.</li>
+      </ul>
+      <p>Bei einer wichtigen Bereinigung oder vor einem grundlegenden Umbau wird zusätzlich eine Wiederherstellung in einen getrennten Testordner geprüft.</p>
+
+      <h2>Fehlerfall</h2>
+      <p>Kann die Sicherung nicht vollständig erstellt oder geprüft werden, gilt sie als fehlgeschlagen. Ein unvollständiges Archiv ersetzt keine bestehende Sicherung und darf nicht als erfolgreicher Sicherungsstand bezeichnet werden.</p>
+    </article>
+  </main>
+</body>
+</html>

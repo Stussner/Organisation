@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat ExcerptClipboard</title>
+  <link rel="stylesheet" href="../../Documentation/Design/Style/Active.css">
+</head>
+<body>
+  <main>
+    <h1>Chat ExcerptClipboard</h1>
+    <p>Dieser Process übernimmt einen vom Nutzer in die Zwischenablage kopierten sichtbaren Text als exakten Auszug.</p>
+
+    <h2>Verbindliche Reihenfolge</h2>
+    <ol>
+      <li>Der Process ruft <code>Export(this)</code> auf.</li>
+      <li>Nur wenn <code>Export(this)</code> erfolgreich abgeschlossen ist, fährt der Process fort.</li>
+      <li>Er bestimmt den Titel und liest anschließend die Zwischenablage.</li>
+      <li>Er sucht, legt an und prüft den Auszug nach den folgenden Regeln.</li>
+    </ol>
+    <p>Schlägt <code>Export(this)</code> fehl oder bleibt sein Ergebnis unklar, endet <code>ExcerptClipboard</code> ohne Änderung an <code>Excerpt.html</code>.</p>
+
+    <h2>Aufruf und Quelle</h2>
+    <p><code>ExcerptClipboard()</code> fragt nach dem erfolgreichen Export: <q>Titel des Auszugs?</q> Erst nach einer nicht leeren Antwort des Nutzers liest der Process den Text aus der aktuellen Zwischenablage. <code>ExcerptClipboard(&lt;Titel&gt;)</code> ist ein direkter Aufruf: Der übergebene Titel wird ohne Rückfrage verwendet. Der Nutzer bestimmt die Quelle durch Auswahl und Kopieren; sie darf aus einem Nutzer- oder Assistentenbeitrag stammen. Ist die Zwischenablage leer oder enthält keinen lesbaren Text, endet der Process ohne Änderung.</p>
+
+    <h2>Titel</h2>
+    <p>Der Titel ist ausschließlich ein vom Nutzer bereitgestelltes Metadatum. Fehlt er oder ist die Antwort auf die Titelfrage leer, endet der Process ohne Änderung. Der Titel wird nicht Teil des kopierten Textes und verändert ihn nicht.</p>
+
+    <h2>Exakte Übernahme</h2>
+    <p>Der Zwischenablagetext wird wort-, zeichen-, zeilen- und reihenfolgegetreu übernommen. Schreibweise, Satzzeichen, Leerzeilen und erkennbare Textstruktur bleiben erhalten. Es sind keine eigenen Formulierungen erlaubt. Der Process erzeugt weder Zusammenfassung noch Kurzbeschreibung, Begründung, Interpretation, Korrektur oder sonstige eigene Formulierung. Der Auszug enthält ausschließlich den kopierten Text und die technisch erforderliche Quellenangabe.</p>
+
+    <h2>Quellensuche</h2>
+    <ol>
+      <li>Er sucht den unveränderten Zwischenablagetext innerhalb der sichtbaren Beiträge des durch <code>Export(this)</code> aktualisierten <code>Original.html</code>.</li>
+      <li>Bei genau einem Treffer verlinkt die Quellenangabe auf diesen Beitrag.</li>
+      <li>Bei mehreren Treffern oder Treffern in mehreren Beiträgen verlinkt die Quellenangabe auf den letzten Treffer im Chatverlauf und enthält zusätzlich genau den Text <code>(MEHRDEUTIGE SUCHTREFFER, VERWEIS AUF DEN LETZTEN)</code>.</li>
+      <li>Bei keinem Treffer lautet die Quellenangabe <code>Zwischenablage, vom Nutzer kopiert</code>; ein Link wird nicht erfunden.</li>
+    </ol>
+
+    <h2>Anlage und Prüfung</h2>
+    <p>Der Process ergänzt <code>Documentation/Chat/&lt;aktueller Chat&gt;/Excerpt.html</code> um genau eine neue Auszugssektion und einen passenden Inhaltsverzeichniseintrag. Überschrift und Inhaltsverzeichniseintrag verwenden genau den vom Nutzer bereitgestellten Titel, niemals einen Textanfang der Zwischenablage. Vor dem Abschluss wird der gespeicherte Auszug mit dem Zwischenablagetext verglichen. Bei jeder Abweichung wird der neue Auszug nicht angelegt oder vollständig zurückgenommen.</p>
+
+    <h2>Grenzen</h2>
+    <p>Die Zwischenablage belegt nicht selbst ihre ursprüngliche Codex-Nachricht. Die Quellensuche ergänzt einen Link nur nach den hier festgelegten Regeln. Der Process verändert weder den kopierten Zwischenablagetext noch vorhandene Auszüge, außer der einen neu angelegten Sektion.</p>
+  </main>
+</body>
+</html>

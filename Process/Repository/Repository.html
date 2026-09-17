@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="short-description" content="Scope: development project · Intended system: Git · Purpose: traceable changes, verifiable project states, and reproducible releases">
+  <title>OAHSI Project Repository</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #101820;
+      background: #f3f7f8;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+    }
+
+    main {
+      width: min(100%, 58rem);
+      margin: 0 auto;
+      border: 1px solid #9fb5c7;
+      border-top: 0.45rem solid #4f9a90;
+      background: #ffffff;
+      box-shadow: 0 0.3rem 1rem rgb(0 0 0 / 12%);
+    }
+
+    header {
+      padding: 1.1rem 1.35rem 0.85rem;
+      border-bottom: 1px solid #c8d8e6;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+
+    header p {
+      margin: 0.35rem 0 0;
+      color: #4c6170;
+      font-size: 0.92rem;
+    }
+
+    .print-button {
+      margin-top: 0.9rem;
+      border: 1px solid #176b63;
+      border-radius: 0.25rem;
+      padding: 0.45rem 0.7rem;
+      color: #ffffff;
+      background: #287f76;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .print-button:hover {
+      background: #176b63;
+    }
+
+    .header-grid {
+      display: grid;
+      grid-template-columns: minmax(12rem, 31%) 1fr;
+    }
+
+    .header-grid label,
+    .header-grid .label,
+    .header-grid .value {
+      min-height: 2.5rem;
+      box-sizing: border-box;
+      padding: 0.45rem 0.65rem;
+      border-bottom: 1px solid #b9cde0;
+    }
+
+    .header-grid label,
+    .header-grid .label {
+      display: flex;
+      align-items: center;
+      background: #dceaf6;
+      border-right: 1px solid #b9cde0;
+      font-weight: 700;
+    }
+
+    .header-grid .value {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-grid label:nth-last-of-type(1),
+    .header-grid .value:last-child {
+      border-bottom: 0;
+    }
+
+    input,
+    select {
+      width: 100%;
+      min-height: 2rem;
+      box-sizing: border-box;
+      border: 1px solid #7e99b0;
+      border-radius: 0.2rem;
+      padding: 0.25rem 0.45rem;
+      color: inherit;
+      background: #ffffff;
+      font: inherit;
+    }
+
+    input:focus,
+    select:focus,
+    a:focus {
+      outline: 0.2rem solid #2673ba;
+      outline-offset: 0.1rem;
+    }
+
+    a {
+      color: #075bc5;
+      text-underline-offset: 0.12em;
+    }
+
+    @media (max-width: 38rem) {
+      body {
+        padding: 0.75rem;
+      }
+
+      .header-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-grid label {
+        min-height: auto;
+        border-right: 0;
+        border-bottom: 0;
+      }
+    }
+
+    @page {
+      size: A4;
+      margin: 12mm;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: #ffffff;
+      }
+
+      main {
+        width: 100%;
+        border: 0;
+        border-top: 0.25rem solid #4f9a90;
+        box-shadow: none;
+      }
+
+      .print-button {
+        display: none;
+      }
+
+      input,
+      select {
+        appearance: none;
+        border: 0;
+        padding: 0;
+        background: transparent;
+      }
+    }
+  
+
+    .document-content {
+      padding: 1.35rem;
+      line-height: 1.55;
+    }
+
+    .document-content > :first-child { margin-top: 0; }
+    .document-content h2, .document-content h3, .document-content h4 {
+      margin: 1.6rem 0 0.65rem;
+      color: #173d5a;
+    }
+
+    .document-content h2 { border-bottom: 1px solid #c8d8e6; padding-bottom: 0.25rem; }
+    .document-content p { margin: 0.75rem 0; }
+    .document-content ul, .document-content ol { padding-left: 1.5rem; }
+    .document-content li + li { margin-top: 0.25rem; }
+    .document-content code { padding: 0.08rem 0.28rem; border-radius: 0.2rem; background: #edf3f7; }
+    .document-content pre { overflow-x: auto; padding: 0.85rem; border: 1px solid #c8d8e6; background: #f5f8fa; }
+    .document-content pre code { padding: 0; background: transparent; }
+    .document-content blockquote { margin: 1rem 0; padding: 0.2rem 1rem; border-left: 0.3rem solid #4f9a90; color: #40525f; background: #f2f8f7; }
+    .document-content table { width: 100%; margin: 1rem 0; border-collapse: collapse; }
+    .document-content th, .document-content td { padding: 0.5rem 0.65rem; border: 1px solid #b9cde0; vertical-align: top; text-align: left; }
+    .document-content th { background: #dceaf6; }
+    .document-content hr { border: 0; border-top: 1px solid #c8d8e6; margin: 1.5rem 0; }
+
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>OAHSI Project Repository</h1>
+      <p>Scope: development project · Intended system: Git · Purpose: traceable changes, verifiable project states, and reproducible releases</p>
+      <button class="print-button" type="button" onclick="window.print()">Drucken</button>
+    </header>
+
+    <form class="header-grid" aria-label="Dokumentationskopf">
+      <label for="project">Project</label>
+      <div class="value"><input id="project" name="project" value="Oahsi"></div>
+
+      <label for="title">Title</label>
+      <div class="value"><input id="title" name="title" value="OAHSI Project Repository"></div>
+
+      <label for="short-description">Kurzbeschreibung</label>
+      <div class="value"><input id="short-description" name="short-description" value="Scope: development project · Intended system: Git · Purpose: traceable changes, verifiable project states, and reproducible releases"></div>
+
+      <label for="owner">Owner</label>
+      <div class="value"><input id="owner" name="owner" value="Stussner"></div>
+
+      <label for="date-created">Date of Creation</label>
+      <div class="value"><input id="date-created" name="date-created" value="20260808" inputmode="numeric"></div>
+
+      <label for="date-changed">Date of Change</label>
+      <div class="value"><input id="date-changed" name="date-changed" value="20260808" inputmode="numeric"></div>
+
+      <label for="type">Type</label>
+      <div class="value">
+        <select id="type" name="type">
+          <option>Definition</option>
+          <option selected>Description</option>
+        </select>
+      </div>
+
+      <div class="label">Location</div>
+      <div class="value"><a href="Repository.html" title="Diese HTML-Datei öffnen">Organization/Repository.html</a></div>
+
+      <label for="backup">Backup</label>
+      <div class="value">
+        <select id="backup" name="backup">
+          <option selected>Minimum (Essentials)</option>
+          <option>Standard</option>
+          <option>Maximum (Projekt, Program, Users)</option>
+          <option>Exclusion (never)</option>
+        </select>
+      </div>
+
+      <label for="repository">Repository</label>
+      <div class="value">
+        <select id="repository" name="repository">
+          <option selected>Public</option>
+          <option>Private</option>
+          <option>Exclusion</option>
+        </select>
+      </div>
+
+      <label for="documentation">Dokumentation</label>
+      <div class="value">
+        <select id="documentation" name="documentation">
+          <option selected>Release</option>
+          <option>None</option>
+        </select>
+      </div>
+    </form>
+
+    <article class="document-content">
+<p>This file is the sole authoritative definition of repository management. A repository is set up only through a separate request.</p>
+<h2 id="content-to-version">Content to Version</h2>
+<p>The following is generally versioned:</p>
+<ul>
+<li>prerequisite files and permitted bundled definitions under <code>Dependency/</code>, excluding external libraries, DLLs, models, and extensions,</li>
+<li>Visual Studio project definitions under <code>Environment/VisualStudio/</code>,</li>
+<li>persistent, non-excluded content under <code>Source/</code>,</li>
+<li><code>Documentation/</code>, and</li>
+<li>binding files under <code>Organization/</code>.</li>
+</ul>
+<p><code>Organization/Agent/Agent.md</code> and associated operating modes are versioned, but remain read-only and may be changed only with the user's explicit consent.</p>
+<h2 id="controlled-data">Controlled Data</h2>
+<p>Small, persistently required data under <code>Source/Data/Reference/</code>, <code>Source/Data/Calibration/</code>, or <code>Source/Data/Validation/</code> may be versioned depending on usage rights and size.</p>
+<p>Large audio, video, model, and comparable binary data is managed outside Git and GitHub. Git may contain directory structure, descriptions, metadata, checksums, and unique dataset identifiers.</p>
+<h2 id="external-library-and-binary-file">External Library and Binary File</h2>
+<p>External headers, static libraries, import libraries, DLLs, models, and extensions under <code>Dependency/</code> are not versioned.</p>
+<p>Their prerequisite, source, version, checksum, license, and installation procedure are documented instead.</p>
+<h2 id="content-not-to-version">Content Not to Version</h2>
+<p>Exclude at least:</p>
+<ul>
+<li><code>Environment/Python/</code>,</li>
+<li><code>Environment/Definition.md</code>, because the file contains local absolute paths,</li>
+<li><code>Environment/VisualStudio/Temporary/</code>,</li>
+<li><code>Source/Data/Development/</code>,</li>
+<li><code>.codex_tmp/</code>,</li>
+<li><code>Dependency/Library/</code>,</li>
+<li><code>Dependency/Model/</code>,</li>
+<li><code>Dependency/Extension/</code>,</li>
+<li>user-specific Visual Studio files,</li>
+<li>credentials, API keys, passwords, and other secrets,</li>
+<li><code>Program/</code> and <code>Data/</code> areas of active ManagementEnvironments, and</li>
+<li>local backup archives.</li>
+</ul>
+<p>Released binary states may be archived separately as release artifacts. Excluding <code>Source/Data/Development/</code> means Git does not protect this data; the separate data backup under <a href="./Backup.html">Backup.md</a> applies instead.</p>
+<h2 id="repository-setup">Repository Setup</h2>
+<p>Before initial setup, a backup of the initial state verified according to <a href="./Backup.html">Backup.md</a> must be available.</p>
+<p>Before regular use, create and verify at least:</p>
+<ul>
+<li><code>.gitignore</code> for local and generated files, and</li>
+<li><code>.gitattributes</code> for consistent text files and, where applicable, Git LFS assignments.</li>
+</ul>
+<p>Check exclusion rules before initially adding large files, binary files, or local environments.</p>
+<h2 id="change-and-commit">Change and Commit</h2>
+<ul>
+<li>A commit contains one coherent, traceable change.</li>
+<li>The commit message briefly describes purpose and effect.</li>
+<li>Run affected builds or tests before an important commit.</li>
+<li>Do not overwrite external or existing changes without verification.</li>
+<li>Do not add secret or clearly temporary files.</li>
+</ul>
+<p>Use separate working branches for larger work. The main branch contains only traceable and fundamentally runnable states.</p>
+<h2 id="release">Release</h2>
+<p>A release receives a unique version number and Git tag. It refers at minimum to source state, build configuration, target platform, prerequisite and dependency state, authoritative test results, and, where applicable, related release artifacts.</p>
+<h2 id="verification">Verification</h2>
+<p>Before push, merge, or release, verify:</p>
+<ul>
+<li>no credentials are included,</li>
+<li>no local Python environment or local environment definition is included,</li>
+<li>no temporary Visual Studio files are included,</li>
+<li>no content from <code>Source/Data/Development/</code> is included,</li>
+<li>external binary files are permitted by license,</li>
+<li>large files are handled deliberately, and</li>
+<li>protected Agent files have not been changed unintentionally.</li>
+</ul>
+<h2 id="scope-boundary">Scope Boundary</h2>
+<p>Repository management replaces neither a local backup nor backup of production or excluded data. <a href="./Backup.html">Backup.md</a> applies exclusively for that purpose.</p>
+    </article>
+  </main>
+</body>
+</html>

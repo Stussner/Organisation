@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat Export</title>
+  <link rel="stylesheet" href="../../Documentation/Design/Style/Active.css">
+</head>
+<body>
+  <main>
+    <h1>Chat Export</h1>
+    <p>Dieser Process exportiert die sichtbaren Inhalte eines Codex-Chats aus einem Codex-Projekt in den Workspace.</p>
+
+    <h2>Ziel</h2>
+    <p>Für jeden Chat wird <code>Documentation/Chat/&lt;Chat-Titel&gt;/Original.html</code> erstellt oder aktualisiert. Die Datei bewahrt den sichtbaren Nachrichtenverlauf in seiner ursprünglichen Reihenfolge und wird nach dem Export schreibgeschützt behandelt. Jede Originaldatei bindet <code>Documentation/Design/Style/Active.css</code> über ihren relativen Pfad ein.</p>
+
+    <h2>Auswahl der Chats</h2>
+    <p><code>Export</code> ohne Parameter verarbeitet alle Chats, die der Funktion unterliegen. <code>Export(this)</code> verarbeitet ausschließlich den aktuellen Chat. <code>Export(&lt;Chatname&gt;, &lt;Chatname&gt;, …)</code> verarbeitet ausschließlich die durch Komma getrennt angegebenen Chats. <code>this</code> ist ein reservierter Parameter und kein Chatname. Jeder angegebene Chatname muss eindeutig zu einem Chat der Verarbeitungsmenge passen; bei fehlender oder mehrdeutiger Zuordnung wird der betreffende Eintrag nicht verarbeitet und die Zuordnung wird berichtet.</p>
+
+    <h2>Inhalt von Original.html</h2>
+    <ul>
+      <li>Codex-Projekt-ID, Codex-Projektname und Projekt-Arbeitsverzeichnis, soweit verfügbar,</li>
+      <li>Chat-ID, Chat-Titel und Exportzeitpunkt,</li>
+      <li>unterscheidbare Nutzer- und Assistentenbeiträge in sichtbarer Reihenfolge: Assistentenbeiträge linksbündig, Nutzerbeiträge rechtsbündig und ohne sichtbare Rollenüberschriften, sowie</li>
+      <li>ein automatisch erzeugtes Verlaufsinhaltsverzeichnis mit stabilen Verweisen auf die einzelnen Beiträge.</li>
+    </ul>
+
+    <h2>Markdown-Darstellung</h2>
+    <p>Sichtbarer Markdown-Text wird für <code>Original.html</code> semantisch als HTML dargestellt. Überschriften, Absätze, Listen, Zitate, Links, Hervorhebungen und Codeblöcke werden als entsprechende HTML-Elemente ausgegeben. Der Wortlaut und die Reihenfolge der sichtbaren Beiträge bleiben erhalten; Codeblöcke werden unverändert als Code dargestellt.</p>
+
+    <h2>Grenzen</h2>
+    <p>Nicht Bestandteil des Exports sind versteckte Anweisungen, verborgenes Reasoning und nicht sichtbare interne Sitzungsdaten. Der Export verändert keinen Chat in Codex und keine bereits gespeicherte Extraktion oder Auszugssammlung.</p>
+  </main>
+</body>
+</html>

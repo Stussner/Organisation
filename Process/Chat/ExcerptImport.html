@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat ExcerptImport</title>
+  <link rel="stylesheet" href="../../Documentation/Design/Style/Active.css">
+</head>
+<body>
+  <main>
+    <h1>Chat ExcerptImport</h1>
+    <p>Dieser Process übernimmt ausgewählte Auszugssektionen aus <code>Excerpt.html</code> in den aktuellen Codex-Chat.</p>
+
+    <h2>Quelle und Ziel</h2>
+    <p>Die Quelle ist <code>Documentation/Chat/&lt;aktueller Chat&gt;/Excerpt.html</code>. Das Ziel ist der aktuelle Codex-Chat. Jeder importierte Auszug bewahrt seine Überschrift, seinen Inhalt, seinen Titel, seine Kurzbeschreibung und sämtliche Quellenlinks auf die zugehörigen Originaldateien.</p>
+
+    <h2>Auswahl der Auszüge</h2>
+    <p><code>ExcerptImport()</code> importiert alle Auszugssektionen aus der Auszugsliste des aktuellen Chats. <code>ExcerptImport(&lt;uint&gt;, …)</code> importiert nur die durch positive ganze Zahlen angegebenen Auszugssektionen. Jede Zahl bezeichnet die einsbasierte Position eines Eintrags im Auszugsinhaltsverzeichnis; mehrfach angegebene Nummern werden nur einmal importiert. Fehlende, ungültige oder nicht eindeutige Nummern werden nicht importiert und berichtet.</p>
+
+    <h2>Übernahme</h2>
+    <p>Die ausgewählten Auszüge werden in ihrer Reihenfolge als vollständiger, sichtbarer Nachrichtentext des Assistenten in den aktuellen Codex-Chat übernommen. Die Nachricht enthält den gesamten Inhalt jeder ausgewählten Auszugssektion in derselben Reihenfolge und Struktur: Überschrift, Titel, Kurzbeschreibung, Quellenlinks und den vollständigen fachlichen Inhalt.</p>
+    <p>Die Übernahme kennzeichnet Quelle und Auszugsnummer. Ein Quellenlink darf zusätzlich erscheinen, ersetzt jedoch niemals den Auszugsinhalt. Eine bloße Bestätigung, Zusammenfassung, verkürzte Wiedergabe oder ein alleiniger Verweis auf <code>Excerpt.html</code> ist kein erfolgreicher Import.</p>
+    <p>Vor dem Abschluss wird geprüft, dass der vollständige Inhalt jeder ausgewählten Sektion als sichtbarer Nachrichtentext im aktuellen Chat vorhanden ist. Fehlt ein Bestandteil oder wurde nur verwiesen, gilt die betreffende Nummer als nicht importiert und wird als Fehler berichtet. Die Übernahme verändert weder <code>Excerpt.html</code> noch die verlinkten Originaldateien.</p>
+
+    <h2>Abschluss</h2>
+    <p>Nach einem vollständig erfolgreichen und geprüften Import ruft der Process verpflichtend <code>Export(this)</code> auf. Dadurch wird der aktualisierte aktuelle Chat in dessen <code>Original.html</code> exportiert; auch dort muss der vollständige importierte Nachrichtentext erhalten bleiben. Ist der Import nur teilweise erfolgreich oder fehlgeschlagen, wird <code>Export(this)</code> nicht automatisch ausgeführt; das Ergebnis und die nicht importierten Nummern werden berichtet.</p>
+
+    <h2>Grenzen</h2>
+    <p>ExcerptImport erstellt keine neue Auszugssektion und ersetzt keine Extraktion. Er fügt nur sichtbaren Arbeitskontext in den aktuellen Chat ein; die Auszugsdatei bleibt die nachvollziehbare Originalquelle der übernommenen Inhalte.</p>
+  </main>
+</body>
+</html>

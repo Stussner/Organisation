@@ -1,0 +1,31 @@
+
+
+Auftrag:
+
+---------------------------------------------
+
+
+* Erstelle eine html anhand der Anhänge ein  html-dokument, das eine Tabellarische Übersicht der Begriffe zur Graphentheorie darstellt.  Alles sollte innerhalb von Tabellen angezeigt werden. Zur Gliederung können auch mehrere Tabellen gleichen Typs angelegt werden, in jeweils einer Text-Sektion nd Headline. Aber die Anzahl der Tabellen angemesssen gering halten.
+
+* Header Datgen  anpassen
+  * Projekt : "Grundplatte"
+  * Besitzer : "Stussner"
+  * Localisiation  :  "E:\programmierung\grundplatte\Dokumentation\Graphentheorie\Overview.html"
+
+
+*  pfade von resourcen - Referenz (als anhang) innerhalb der Html ausgabe sind anzupassen und als relativer Pfad zu Header Lokalisation anzugeben  :
+   * E:\Programmierung\Organisation\Documentation\Design\Graphics\*.SVG
+   * E:\Programmierung\Organisation\Documentation\Design\Class\*.js
+   * E:\Programmierung\Organisation\Documentation\Design\Style\*.cs
+
+
+
+
+
+
+* Gestalte die Tabellen angemessen und selbstständig. Anzahl der Spalten und Kopfzeilen - Texte seien frei wählbar. Layout insgesamt soll professionell und elegant sein, auf akademischen Niveau. , nicht bunt, nicht kitschig .  Redefinitionen und Erweiterungen von Referenzen der Anhänge sind einzubetten .
+
+* Erstelle SVG Datein, um die Beschreibungen in der Tabelle mit Graph - Visualisierung zu ergänzen . 
+(z.b. Mit Hilfe von Vektoren , auch mit freier Richtung , oder polynominal usw... alles wasnötig ist)
+
+

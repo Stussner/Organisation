@@ -1,0 +1,67 @@
+
+(Prozess / Worklfow)
+Auftrag bitte ausführen:
+*  Ignoiere deinen bisherigen Kontext
+
+------------------------------------------------
+* Thema und Inhalte : 
+------------------------------------------------
+	* Ggraphentheorie
+	* Relatioale Strkturen 
+	    * alle relevanten Begriffe Modelle, Konzepte, Typen: 
+		* deren eigenschaft mit beschreibungen.
+		
+		* ich brauche die konkreten und übergreifenden und verallgeeinernden fachausdrücke , am besten als 
+			* substantiv, 
+			* adjektiv, 
+			* verb 
+
+		* ich möchte alle mathematisch - sprachlichen Begriffe , die mit dem Thema zu tun haben:
+			* "unär, binaer ..." , 
+			* "injektiv, bijektiv etc..."
+			* Dimension des Raumes des raumes, der anzahl, der Grade 
+		* auch die begriffe von gängigen objekt-strukturen der theoretischen Informatik,  die mit dem Thema zu tun haben:
+			* ketten, 
+			* listen, 
+			* felder, 
+			* netze, 
+			* Bäumen etc..." .
+			* alle arten von gängen Graphen und beschreibung .
+
+------------------------------------------------
+* Erstelle dazu eine Ausgabe-html: 
+------------------------------------------------
+
+	* eine umfassende , tabellarisch angelegte Dokumentation . 
+	* falls im anhang angegeben, benutze diesen anhang als layout-vorlage:
+	* behalte den header Vorlage
+	* Zur Gliederung sollten mehrere Tabellen gleichen layouts angelegt werden
+	
+	* Alles sollte innerhalb von Tabellen angezeigt werden. 
+	* Aber die Anzahl der Tabellen angemesssen gering halten.
+	* jede Tabelle sollte in einer Sektion mit Kurzer Überschrift (etwa wie "Tabellenname, bach Gliederungsmethode") , wie in der Vorlage eingebaut sein
+
+    * Gestalte die Tabellen angemessen und selbstständig. 
+	* Anzahl der Spalten und Kopfzeilen - Texte seien frei wählbar, 
+	* mit ausnahme der 1. Spalte : ggf. Inntegration eines Graphen zur Visualisierung in den INhalt (siehe oben "Erstelle SVG...") 
+	* Layout insgesamt soll professionell und elegant sein, auf akademischen Niveau. , nicht bunt, nicht kitschig . 
+	* Redefinitionen und Erweiterungen von Referenzen der Anhänge sind einzubetten, auch SVG , wenn diese zur speziell sind um als allg. Design Vorlage verwendet zu werden
+
+* Header Einträge erhalten, aber deren Daten anpassen
+	* Projekt : "Grundplatte"
+	* Besitzer :"Stussner"
+	* Lokation (der ausgabe-html) : "E:\programmierung\grundplatte\Dokumentation\Graphentheorie\Overview.html"
+
+* Pfade von Rresourcen- Referenzen innerhalb der ausgabe-Html sind anzupassen und als relativer Pfad zur Header-Lokation anzugeben  :
+	* alle svg , die im html anhang refernziert werden sind E:\Programmierung\Organisation\Documentation\Design\Graphics\**\*.SVG
+	* E:\Programmierung\Organisation\Documentation\Design\Class\**\*.js
+	* E:\Programmierung\Organisation\Documentation\Design\Style\**\*.cs
+
+
+------------------------------------------------
+* Alle Ausgabe Dateien :  
+------------------------------------------------
+	* sollen zum Download in ein Archiv gepackt werden.
+	* Mit einer absoluten ziel-Pfad-struktur , 
+	* die möglichst bequem in die in die Struktur von "E:\programmierung\" entpackt werden kann.
+

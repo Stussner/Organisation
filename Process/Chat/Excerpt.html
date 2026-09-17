@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat Excerpt</title>
+  <link rel="stylesheet" href="../../Documentation/Design/Style/Active.css">
+</head>
+<body>
+  <main>
+    <h1>Chat Excerpt</h1>
+    <p>Dieser Process übernimmt manuell ausgewählte, besonders wichtige Stellen aus <code>Original.html</code> als Auszüge.</p>
+
+    <h2>Anmerkung und Titel</h2>
+    <p>Der Process darf nur ausgeführt werden, wenn der Nutzer den Quellbereich mit der Anmerkungsfunktion markiert hat. Die Anmerkung bestimmt den zu übernehmenden Bereich. Der Process löst diesen Bereich zuerst im aktuellen Codex-Chatverlauf auf und übernimmt dessen ursprüngliche Markdown-Struktur. Eine flüchtige Auswahl im sichtbaren Chatverlauf ist keine Processquelle. Bei <code>Excerpt</code> ohne Parameter fragt der Process nach dem Titel der Auswahl. Bei <code>Excerpt(Titel; Anmerkung 1, Anmerkung 2, …)</code> übernimmt er den angegebenen Titel ohne zusätzliche Nachfrage.</p>
+
+    <h2>Chat-Ziel</h2>
+    <p><code>Excerpt(Titel, ChatnameZiel; Anmerkung 1, Anmerkung 2, …)</code> verwendet <code>ChatnameZiel</code> als optionalen zweiten Parameter. Ohne diesen Parameter lautet die Form <code>Excerpt(Titel; Anmerkung 1, Anmerkung 2, …)</code>; der aktuelle Chat ist dann zugleich das Ziel. Der Zielname muss eindeutig zu einem Chat-Ordner unter <code>Documentation/Chat</code> passen; bei fehlender oder mehrdeutiger Zuordnung wird kein Auszug erstellt und die Zuordnung wird berichtet. Das Ziel bestimmt, in welchem Chat-Ordner <code>Excerpt.html</code> angelegt oder ergänzt wird. Die Quellen bleiben die Anmerkungen aus dem aktuellen Chatverlauf.</p>
+
+    <h2>Mehrere Anmerkungen</h2>
+    <p><code>Excerpt(Titel; Anmerkung 1, Anmerkung 2, …)</code> erlaubt mehrere Anmerkungen als Parameter. Mit abweichendem Ziel lautet die Form <code>Excerpt(Titel, ChatnameZiel; Anmerkung 1, Anmerkung 2, …)</code>. Der Titel gilt für die gesamte Gruppe. Alle angegebenen Anmerkungen werden im aktuellen Chatverlauf aufgelöst; ihre Reihenfolge im Auszug entspricht ihrer Reihenfolge im Chatverlauf. Ist eine Anmerkung nicht eindeutig einem zusammenhängenden Bereich zuzuordnen, wird keine gemeinsame Auszugssektion erstellt oder ergänzt; der Process fragt nach einer eindeutigen Auswahl.</p>
+
+    <h2>Aktueller Abgleich</h2>
+    <p>Vor der Anlage oder Ergänzung von <code>Excerpt.html</code> aktualisiert der Process <code>Original.html</code> des aktuellen Quellchats aus dem aktuellen Codex-Chatverlauf. Der Auszug verweist anschließend auf die dadurch bestätigten Quellenanker in dieser Quelldatei. Bei abweichendem Chat-Ziel werden die Quellenlinks relativ von dessen <code>Excerpt.html</code> auf die <code>Original.html</code> des Quellchats gesetzt. Ist eine Anmerkung im aktuellen Verlauf nicht eindeutig einem zusammenhängenden Bereich zuzuordnen, wird kein Auszug erstellt oder ergänzt; der Process fragt nach einer eindeutigen Auswahl.</p>
+
+    <h2>Ziel und Anlage</h2>
+    <p>Die Auszüge werden im Ziel-Chat-Ordner als <code>Excerpt.html</code> gesammelt. Existiert die Datei noch nicht, wird sie mit dem aktiven Design aus <code>Documentation/Design/Style/Active.css</code> angelegt. Eine einzelne Anmerkung erzeugt eine Auszugssektion. Mehrere Anmerkungen eines Aufrufs erzeugen gemeinsam genau eine Auszugssektion; sie enthält die unveränderten Teilbereiche in ihrer ursprünglichen Reihenfolge, den gemeinsamen Titel, eine inhaltliche Kurzbeschreibung und eine Quellenliste mit einem stabilen Link auf jeden zugehörigen Quellenanker.</p>
+
+    <h2>Inhaltsverzeichnis</h2>
+    <p><code>Excerpt.html</code> enthält ein automatisch aktualisiertes Auszugsinhaltsverzeichnis. Es verlinkt auf jeden Auszug und stellt ihn als <code>Titel + inhaltliche Kurzbeschreibung</code> dar.</p>
+
+    <h2>Grenzen</h2>
+    <p>Die Auswahl ist manuell. Der Process verändert <code>Original.html</code> nicht redaktionell; die erforderliche Aktualisierung dient ausschließlich dem Abgleich mit dem aktuellen Chatverlauf. Er ersetzt weder die automatische <code>Extraction.html</code> noch bindende Projektdokumentation.</p>
+  </main>
+</body>
+</html>

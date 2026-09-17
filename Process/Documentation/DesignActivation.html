@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="short-description" content="Parametrisierter Process zur Aktivierung von Style- und Struktur-Presets.">
+  <title>Design Activation</title>
+  <style>body{margin:2rem;font-family:"Segoe UI",Arial,sans-serif;background:#f2f6fa;color:#102a43}main{max-width:68rem;margin:auto;background:#fff;border:1px solid #b9cde0;border-top:.45rem solid #287f76;box-shadow:0 .3rem 1rem rgb(0 0 0 / 12%)}header,section{padding:1.25rem 1.5rem}section{border-top:1px solid #d9e2ec}h1,h2{margin:0}header p{color:#486581}table{width:100%;border-collapse:collapse;margin-top:.8rem}th,td{padding:.7rem;border:1px solid #b9cde0;text-align:left}th{background:#eaf3fa}code{font-family:Consolas,"Courier New",monospace}.note{padding:.8rem 1rem;border-left:.3rem solid #9a6b24;background:#fff8e8}</style>
+</head>
+<body>
+  <main>
+    <header><h1>DesignActivation</h1><p>Parametrisierter Process zur Übernahme ausgewählter Style- und Struktur-Presets in aktive Dateien.</p></header>
+    <section>
+      <h2>Parameter</h2>
+      <p>Eine oder beide Auswahlzeilen sind zulässig. Mindestens eine Auswahl ist erforderlich.</p>
+      <table><thead><tr><th>Typ</th><th>Quelle</th><th>Ziel</th></tr></thead><tbody>
+        <tr><td>Style</td><td><code>Style/Preset/&lt;Preset&gt;.css</code></td><td><code>Style/Active.css</code></td></tr>
+        <tr><td>Structure</td><td><code>Structure/Preset/&lt;Preset&gt;.html</code></td><td><code>Structure/Active.html</code></td></tr>
+      </tbody></table>
+    </section>
+    <section>
+      <h2>Ablauf</h2>
+      <ol>
+        <li>Jede angegebene Auswahl wird auf bekannten Typ, vorhandenes Preset und passende Erweiterung geprüft.</li>
+        <li>Gültige Presets werden in die jeweiligen <code>Active.*</code>-Dateien übernommen. Bei Structure werden die Verweise auf die aktiven Style- und Class-Dateien angepasst.</li>
+        <li>Das Ergebnis wird in <code>Preview/DesignActivation.html</code> dokumentiert.</li>
+        <li>Anschließend wird der Process <code>DesignPreview.html</code> aufgerufen.</li>
+      </ol>
+      <p class="note"><strong>Ausführung:</strong> Der Ablauf wird derzeit textlich beauftragt. Das Skript <code>DesignActivation.ps1</code> unterstützt die gleiche Preset-Übernahme, erzeugt aber noch keine Vorschau.</p>
+    </section>
+  </main>
+</body>
+</html>

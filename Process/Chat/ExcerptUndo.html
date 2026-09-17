@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat ExcerptUndo</title>
+  <link rel="stylesheet" href="../../Documentation/Design/Style/Active.css">
+</head>
+<body>
+  <main>
+    <h1>Chat ExcerptUndo</h1>
+    <p>Dieser Process ruft <code>ExcerptDeleteLast()</code> für den aktuellen Chat auf.</p>
+
+    <h2>Aufruf</h2>
+    <p><code>ExcerptUndo()</code> delegiert die Handlung vollständig an <code>ExcerptDeleteLast()</code>. Die dort vorgeschriebene Ja/Nein-Rückfrage mit dem Titel des letzten Excerpts ist verpflichtend und wird nicht übersprungen.</p>
+
+    <h2>Ergebnis</h2>
+    <p>Bei der Antwort <code>ja</code> wird der letzte Auszug gelöscht. Bei <code>nein</code>, einer anderen oder keiner Antwort sowie bei fehlendem Auszug beendet sich der Process ohne Änderung und berichtet das Ergebnis.</p>
+
+    <h2>Begriffsgrenze</h2>
+    <p><code>ExcerptUndo()</code> stellt keinen zuvor gelöschten Auszug wieder her. Trotz seines Namens führt er die Löschung des letzten Auszugs über <code>ExcerptDeleteLast()</code> aus.</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat Import</title>
+</head>
+<body>
+  <main>
+    <h1>Chat Import</h1>
+    <p>Dieser Process verwendet einen gespeicherten Chat aus dem Workspace als nachvollziehbare Kontextquelle in einem Codex-Projekt.</p>
+
+    <h2>Quelle und Ergebnis</h2>
+    <p>Die Quelle ist <code>Original.html</code> im zugehörigen Chat-Ordner. Der Import schafft einen neuen Chat oder ergänzt einen ausdrücklich bestimmten Chat um diese Quelle. Der neue Arbeitskontext benennt die Quelldatei und die ursprüngliche Chat-ID.</p>
+
+    <h2>Auswahl der Chats</h2>
+    <p><code>Import</code> ohne Parameter verarbeitet alle verfügbaren Chatquellen. <code>Import(this)</code> verarbeitet ausschließlich die Quelle des aktuellen Chats. <code>Import(&lt;Chatname&gt;, &lt;Chatname&gt;, …)</code> verarbeitet ausschließlich die durch Komma getrennt angegebenen Chatquellen. <code>this</code> ist ein reservierter Parameter und kein Chatname. Jeder angegebene Chatname muss eindeutig zu einem Chat-Ordner mit <code>Original.html</code> passen; bei fehlender oder mehrdeutiger Zuordnung wird der betreffende Eintrag nicht verarbeitet und die Zuordnung wird berichtet.</p>
+
+    <h2>Mehrfachimport</h2>
+    <p>Bei mehreren Quellen wird für jede Quelle ein eigener neuer Chat angelegt, sofern nicht für diese Quelle ausdrücklich ein bestehender Zielchat bestimmt wurde. Quellen werden nicht zu einem gemeinsamen Chatverlauf vermischt.</p>
+
+    <h2>Grenzen</h2>
+    <p>Der Import stellt keine native Chat-Instanz wieder her. Chat-ID, Branches, Modellzustand, versteckte Inhalte und interne Sitzungsdaten werden nicht wiederhergestellt. <code>Original.html</code>, <code>Extraction.html</code> und <code>Excerpt.html</code> bleiben unverändert.</p>
+  </main>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat Extraction</title>
+  <link rel="stylesheet" href="../../Documentation/Design/Style/Active.css">
+</head>
+<body>
+  <main>
+    <h1>Chat Extraction</h1>
+    <p>Dieser Process erzeugt automatisch eine strukturierte Auswertung des Inhalts von <code>Original.html</code>. <code>Original.html</code> bleibt die einzige verbindliche Quelle.</p>
+
+    <h2>Ziel</h2>
+    <p>Das Ergebnis wird als <code>Extraction.html</code> im selben Chat-Ordner gespeichert. Es verwendet das aktive Design aus <code>Documentation/Design/Style/Active.css</code> und enthält ein fachliches Inhaltsverzeichnis, eine kompakte Zusammenfassung, den Erstellungszeitpunkt und Quellenverweise auf <code>Original.html</code>.</p>
+
+    <h2>Auswahl der Chats</h2>
+    <p><code>Extraction</code> ohne Parameter verarbeitet alle Chats, die der Funktion unterliegen. <code>Extraction(this)</code> verarbeitet ausschließlich den aktuellen Chat. <code>Extraction(&lt;Chatname&gt;, &lt;Chatname&gt;, …)</code> verarbeitet ausschließlich die durch Komma getrennt angegebenen Chats. <code>this</code> ist ein reservierter Parameter und kein Chatname. Jeder angegebene Chatname muss eindeutig zu einem Chat der Verarbeitungsmenge passen; bei fehlender oder mehrdeutiger Zuordnung wird der betreffende Eintrag nicht verarbeitet und die Zuordnung wird berichtet.</p>
+
+    <h2>Inhaltsverzeichnis und Zusammenfassung</h2>
+    <p>Das Inhaltsverzeichnis gliedert die erkannten Themen. Jeder Eintrag enthält nach Möglichkeit zwei getrennte Verlinkungen: einen internen Link auf den zugehörigen Abschnitt in <code>Extraction.html</code>, dessen Beschriftung direkt den jeweiligen Abschnittstitel nennt, und einen externen Quellenlink auf den zugehörigen Anker in <code>Original.html</code>. Fehlt für eine Aussage ein eindeutiger Quellenanker, bleibt der externe Link aus und die Unsicherheit wird kenntlich gemacht. Die Zusammenfassung benennt Ausgangslage, Ziel, bestätigte Entscheidungen, wesentliche Begründungen, offene Punkte, verworfene Vorschläge und betroffene Projektbereiche. Nicht bestätigte Aussagen und Vorschläge sind als solche zu kennzeichnen.</p>
+
+    <h2>Priorisierung</h2>
+    <p>Bestätigte Entscheidungen haben Vorrang: Sie werden im Inhaltsverzeichnis und in der Zusammenfassung zuerst und eindeutig dargestellt. Die Extraktion bleibt dennoch eine kompakte Darstellung des gesamten Verlaufs. Sie übernimmt deshalb auch wichtige Teile der Diskussion, soweit sie eine Entscheidung erklären, bedeutsame Alternativen oder Risiken sichtbar machen oder für offene Punkte erforderlich sind. Jeder solche Abschnitt verweist auf seine Quelle in <code>Original.html</code>.</p>
+
+    <h2>Quellgrenze</h2>
+    <p>Die Extraktion fasst ausschließlich Aussagen, Entscheidungen und Diskussionen aus <code>Original.html</code> zusammen. Dateien unter <code>Process/Chat</code> dienen nur als Ausführungsregeln für diesen Ablauf; ihr Inhalt ist keine Extraktionsquelle und wird nicht als eigenständiger Gegenstand zusammengefasst. Eine Processregel darf nur dann in der Extraktion erscheinen, wenn dieselbe Regel als Teil des Chatverlaufs in <code>Original.html</code> behandelt wurde und für dessen Verständnis wesentlich ist.</p>
+
+    <h2>Wiederholte Ausführung</h2>
+    <p>Eine erneute Ausführung ersetzt eine bestehende Extraktion nicht blind. Sie gleicht den bisherigen Inhalt mit dem aktuellen <code>Original.html</code> ab, erstellt eine klar als aktualisiert gekennzeichnete Fassung in <code>Extraction.html</code> und dokumentiert Zeitpunkt sowie die gegenüber der vorherigen Fassung hinzugekommenen, geänderten oder entfallenen Aussagen. Unveränderte Aussagen bleiben nur erhalten, wenn ihre Quellenanker weiterhin passen.</p>
+
+    <h2>Grenzen</h2>
+    <p>Die Extraktion ersetzt oder verändert <code>Original.html</code> nicht und begründet keine Entscheidung, die nicht im Originalverlauf bestätigt ist. Sie ist eine Orientierung und keine eigene Entscheidungsquelle.</p>
+  </main>
+</body>
+</html>

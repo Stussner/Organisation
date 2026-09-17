@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="short-description" content="Process zur Übernahme bestätigter Terminologie in die Lokalisation.">
+  <title>Localization Process</title>
+  <style>
+    :root { color-scheme: light; font-family: "Segoe UI", Arial, sans-serif; color: #101820; background: #f3f7f8; }
+    body { margin: 0; padding: 2rem; }
+    main { width: min(100%, 58rem); margin: 0 auto; border: 1px solid #9fb5c7; border-top: .45rem solid #4f9a90; background: #fff; box-shadow: 0 .3rem 1rem rgb(0 0 0 / 12%); }
+    header { padding: 1.1rem 1.35rem .85rem; border-bottom: 1px solid #c8d8e6; }
+    h1 { margin: 0; font-size: 1.3rem; }
+    header p { margin: .35rem 0 0; color: #4c6170; font-size: .92rem; }
+    .print-button { margin-top: .9rem; border: 1px solid #176b63; border-radius: .25rem; padding: .45rem .7rem; color: #fff; background: #287f76; font: inherit; font-weight: 700; cursor: pointer; }
+    .print-button:hover { background: #176b63; }
+    article { padding: 1.35rem; line-height: 1.55; }
+    article > :first-child { margin-top: 0; }
+    h2 { margin: 1.6rem 0 .65rem; padding-bottom: .25rem; border-bottom: 1px solid #c8d8e6; color: #173d5a; }
+    p { margin: .75rem 0; }
+    code { padding: .08rem .28rem; border-radius: .2rem; background: #edf3f7; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; min-width: 42rem; margin: 1rem 0; border-collapse: collapse; }
+    th, td { padding: .5rem .65rem; border: 1px solid #b9cde0; vertical-align: top; text-align: left; }
+    th { background: #dceaf6; }
+    .flow { margin: 1rem 0; padding: 1rem; border-left: .3rem solid #4f9a90; background: #f2f8f7; font-weight: 700; }
+    @page { size: A4; margin: 12mm; }
+    @media (max-width: 38rem) { body { padding: .75rem; } }
+    @media print { body { padding: 0; background: #fff; } main { width: 100%; border: 0; border-top: .25rem solid #4f9a90; box-shadow: none; } .print-button { display: none; } }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Localization Process</h1>
+      <p>Process zur Übernahme bestätigter Terminologie in die Lokalisation.</p>
+      <button class="print-button" type="button" onclick="window.print()">Drucken</button>
+    </header>
+    <article>
+      <h2 id="ziel">Ziel</h2>
+      <p>Der Process stellt sicher, dass fachlich bestätigte Begriffe konsistent in die Lokalisation übernommen werden. Die Lokalisation ist keine zweite fachliche Quelle.</p>
+      <div class="flow">Naming-Convention → Terminologie → Überarbeitung → Lokalisation</div>
+      <h2 id="ablauf">Ablauf</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Schritt</th><th>Quelle oder Ergebnis</th><th>Prüfung</th></tr></thead>
+          <tbody>
+            <tr><td>1. Naming-Convention anwenden</td><td>Für den neuen Begriff ist eine angemessene technische oder fachliche Namensform festgelegt.</td><td>Schreibweise, Trennung und Zeichen entsprechen der Naming-Convention.</td></tr>
+            <tr><td>2. Terminologie bestätigen</td><td>Begriff, Bedeutung und Abgrenzung zu ähnlichen Begriffen sind festgelegt.</td><td>Die Bedeutung ist eindeutig und nicht mit einem bestehenden Begriff widersprüchlich.</td></tr>
+            <tr><td>3. Lokalisation aktualisieren</td><td>Stabile Kennung und sprachliche Darstellungen werden ergänzt oder überarbeitet.</td><td>Neue Schlüssel und Übersetzungen sind vorhanden; geänderte Benennungen sind nachvollzogen.</td></tr>
+            <tr><td>4. Verwendung prüfen</td><td>Sichtbare Texte verwenden die festgelegten Sprachwerte.</td><td>Technische Kennungen bleiben stabil; nicht mehr verwendete Einträge werden geprüft, markiert oder entfernt.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h2 id="ausloeser">Auslöser</h2>
+      <p>Die Aktualisierung erfolgt nach einer gebündelten, bestätigten Überarbeitung der Terminologie – vor der nächsten Veröffentlichung. Unfertige oder nur vorläufige Begriffe werden nicht vorschnell als feste Benutzeroberflächentexte übernommen.</p>
+      <h2 id="grenze">Abgrenzung</h2>
+      <p>Die Naming-Convention bestimmt die Form eines Namens. Die Terminologie bestimmt seine Bedeutung. Die Lokalisation bestimmt ausschließlich die sprachliche Darstellung; eine technische Kennung wird nicht übersetzt und bei stilistischen Textänderungen nicht umbenannt.</p>
+    </article>
+  </main>
+</body>
+</html>

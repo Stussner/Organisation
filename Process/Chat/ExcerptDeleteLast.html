@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chat ExcerptDeleteLast</title>
+  <link rel="stylesheet" href="../../Documentation/Design/Style/Active.css">
+</head>
+<body>
+  <main>
+    <h1>Chat ExcerptDeleteLast</h1>
+    <p>Dieser Process löscht den letzten Auszug aus <code>Documentation/Chat/&lt;aktueller Chat&gt;/Excerpt.html</code>.</p>
+
+    <h2>Aufruf und Rückfrage</h2>
+    <p><code>ExcerptDeleteLast()</code> ermittelt zuerst den Titel des letzten Auszugs. Danach stellt er ausschließlich diese Rückfrage: <q>Soll der Auszug mit dem &lt;Titel&gt; gelöscht werden? (ja/nein)</q></p>
+    <p>Nur <code>ja</code> bestätigt die Löschung. Bei <code>nein</code>, einer anderen oder keiner Antwort wird nichts gelöscht.</p>
+
+    <h2>Löschung</h2>
+    <ol>
+      <li>Die Ziel-Datei <code>Excerpt.html</code> des aktuellen Chats wird gelesen.</li>
+      <li>Der letzte Eintrag im Auszugsinhaltsverzeichnis und die dazugehörige letzte Auszugssektion werden ermittelt.</li>
+      <li>Die Ja/Nein-Rückfrage nennt den ermittelten Titel des letzten Eintrags.</li>
+      <li>Bei <code>ja</code> werden genau dieser Inhaltsverzeichniseintrag und diese Auszugssektion entfernt.</li>
+      <li>Das Inhaltsverzeichnis wird geprüft; es darf keinen Verweis auf die gelöschte Sektion enthalten.</li>
+    </ol>
+
+    <h2>Grenzen</h2>
+    <p>Der Process löscht keine andere Auszugssektion, verändert weder <code>Original.html</code> noch andere Chat-Dateien und erzeugt keinen neuen Auszug. Existiert keine Auszugssektion, wird nichts gelöscht und dies wird berichtet.</p>
+  </main>
+</body>
+</html>
