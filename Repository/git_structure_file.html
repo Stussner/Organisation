@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Git-Struktur: Arbeitsraum, .git und .gitignore</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+    body { max-width: 72rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.55; }
+    h1, h2 { line-height: 1.2; }
+    pre { overflow: auto; padding: 1rem; border: 1px solid #7776; border-radius: .4rem; background: #7772; }
+    code { font-family: ui-monospace, Consolas, monospace; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+    th, td { text-align: left; vertical-align: top; border: 1px solid #7776; padding: .55rem; }
+    th { background: #7772; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Git-Struktur: Arbeitsraum, <code>.git</code> und <code>.gitignore</code></h1>
+    <p>Ein Struktur-Descriptor für die Unterscheidung von Dateisystem-Besitz und Git-Verwaltung.</p>
+  </header>
+
+  <section>
+    <h2>Grundmodell</h2>
+    <p>Das Windows-Dateisystem besitzt die realen Dateien und Ordner. Git besitzt sie nicht; Git verwaltet Informationen darüber, welche Pfade und Inhalte in bestimmten Projektständen enthalten sind.</p>
+    <pre><code>FileSystemDirectory „Organisation"
+│
+├── besitzt physisch: .git, .gitignore, README.md, src, bin, Notizen.txt …
+│
+└── enthält logisch ein GitRepository
+    ├── workTree = „Organisation"
+    ├── gitDir   = „Organisation\.git"
+    ├── index    = Auswahl für den nächsten Commit
+    └── Historie = gespeicherte frühere Projektzustände</code></pre>
+  </section>
+
+  <section>
+    <h2>Schematische Verzeichnisstruktur</h2>
+    <p><code>.gitignore</code> ist gewöhnlich eine Datei, kein Ordner. Sie ist optional und kann auch in Unterordnern vorkommen.</p>
+    <pre><code>E:\Programmierung\Organisation\                         [Arbeitsraum / Directory]
+├── .git\                                               [Git-Datenbank / Directory]
+│   ├── HEAD                                             [aktueller Branch-Verweis]
+│   ├── config                                           [lokale Git-Konfiguration]
+│   ├── index                                            [Staging Area]
+│   ├── objects\                                         [Objektdatenbank]
+│   │   ├── blob                                         [gespeicherter Dateiinhalt]
+│   │   ├── tree                                         [gespeicherte Verzeichnisstruktur]
+│   │   └── commit                                       [gespeicherter Projektzustand]
+│   ├── refs\                                            [benannte Commit-Zeiger]
+│   │   ├── heads\main                                  [lokaler Branch]
+│   │   ├── remotes\origin\                             [bekannte Remote-Branches]
+│   │   └── tags\                                        [optionale Tags]
+│   ├── logs\                                            [Reflog]
+│   ├── hooks\                                           [optionale Git-Skripte]
+│   └── info\                                            [lokale Zusatzinformationen]
+├── .gitignore                                           [optionale Musterregeln]
+├── README.md                                            [normale Datei]
+├── src\                                                 [normaler Ordner]
+│   ├── Programm.cs                                      [normale Datei]
+│   └── .gitignore                                       [optionale, lokal geltende Musterregeln]
+├── bin\                                                 [normaler Ordner]
+│   └── Programm.exe                                     [normale Datei]
+└── Notizen.txt                                          [normale Datei]</code></pre>
+    <p>Die Aufzählung von <code>.git</code> ist ein Descriptor, keine vollständige Liste jeder technischen Datei. Je nach Git-Aktion können weitere interne Dateien und Ordner auftreten.</p>
+  </section>
+
+  <section>
+    <h2>Verwaltungszustände einer Datei</h2>
+    <table>
+      <thead><tr><th>Datei im Arbeitsordner</th><th>Git-Index</th><th><code>.gitignore</code> passt?</th><th>Bedeutung</th></tr></thead>
+      <tbody>
+        <tr><td>vorhanden</td><td>nein</td><td>nein</td><td>Unversioniert: Git meldet sie als neue Datei.</td></tr>
+        <tr><td>vorhanden</td><td>nein</td><td>ja</td><td>Ignoriert: Git blendet sie als neue Datei aus.</td></tr>
+        <tr><td>vorhanden</td><td>ja</td><td>nein</td><td>Versioniert: Änderungen können für einen Commit vorgemerkt werden.</td></tr>
+        <tr><td>vorhanden</td><td>ja</td><td>ja</td><td>Weiterhin versioniert: Die Ignore-Regel hebt die bestehende Verfolgung nicht auf.</td></tr>
+      </tbody>
+    </table>
+    <p>Eine <code>.gitignore</code>-Regel bedeutet: Eine bisher unversionierte passende Datei soll nicht als Kandidatin für die Aufnahme behandelt werden. Sie entfernt keine Datei rückwirkend aus Index oder Historie.</p>
+  </section>
+
+  <section>
+    <h2>Entfernen aus Git und aus dem Arbeitsordner</h2>
+    <pre><code>git rm DateiA
+→ entfernt DateiA aus dem Index und aus dem sichtbaren Arbeitsordner
+
+git rm --cached -- DateiA
+→ entfernt DateiA nur aus dem Index; die sichtbare Arbeitsdatei bleibt bestehen</code></pre>
+    <p>Ein anschließender Commit erzeugt einen neuen Projektstand. Bereits vorhandene frühere Commits und ihre Inhalte in <code>.git\objects</code> bleiben davon unverändert.</p>
+  </section>
+</body>
+</html>

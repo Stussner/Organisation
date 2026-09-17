@@ -1,0 +1,648 @@
+<!doctype html><html lang="de"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Organization · Entwurfsatlas</title><link rel="stylesheet" href="../Design/Style/Active.css"><style>*{box-sizing:border-box}html{scroll-behavior:smooth}nav{position:fixed;inset:0 auto 0 0;width:330px;background:#081c15f5;border-right:1px solid #276c52;overflow:auto;padding:22px;z-index:2}nav ul{list-style:none;padding-left:15px;margin:5px 0}nav>ul{padding:0}nav li{margin:5px 0}nav a{font-size:13px;text-decoration:none;display:inline-block;padding:3px}summary{cursor:pointer}nav input{width:100%;background:#123629;color:#edf9f1;border:1px solid #276c52;padding:10px;border-radius:7px}button{background:#123629;color:#edf9f1;border:1px solid #276c52;padding:8px;border-radius:6px;cursor:pointer;margin:8px 4px 8px 0}main{margin-left:330px;padding:38px clamp(20px,5vw,75px);max-width:1600px}.hero{padding:35px;background:linear-gradient(135deg,#123629,#071511);border:1px solid #70f0ad;border-radius:18px;margin-bottom:35px}.eyebrow{letter-spacing:.15em;color:#70f0ad;font-size:12px}h1{font-size:clamp(32px,4vw,58px);margin:12px 0}.hero p{color:#b1d8c2}.badges{display:flex;gap:12px;flex-wrap:wrap}.badges span{border:1px solid #276c52;padding:5px 12px;border-radius:30px}section{scroll-margin-top:20px;padding:22px 0;border-bottom:1px solid #276c5255}section h2{font-size:30px}section h3,section h4,section h5,section h6{font-size:21px}section h2 span,section h3 span,section h4 span,section h5 span,section h6 span{color:#70f0ad;margin-right:10px}.source{white-space:pre-wrap;overflow-wrap:anywhere;font:15px/1.75 'Segoe UI',Arial,sans-serif;border:0;background:transparent;padding:0;margin:18px 0}.pending,aside h3{color:#ff9696!important;text-shadow:none}figure{margin:25px 0}figure img{display:block;width:100%;height:auto;border:1px solid #276c52;border-radius:16px}figcaption{font-size:12px;color:#b1d8c2;margin-top:7px}aside{border-left:3px solid #ed8181;background:#351b1c;padding:14px 20px;border-radius:0 10px 10px 0;scroll-margin-top:20px}aside h3{font-size:17px;margin:0}aside li{font-size:14px;margin:8px 0}.tasks a{color:#ffabab}footer{padding:35px 0;color:#b1d8c2}@media(max-width:850px){nav{position:relative;width:100%;max-height:45vh}main{margin:0;padding:20px}.hero{padding:22px}}@media print{nav{display:none}main{margin:0;padding:0}body{background:white;color:black}.source{color:black}}</style></head><body><nav aria-label="Inhaltsverzeichnis"><p class="eyebrow">ORGANIZATION / ENTWURF</p><h2>Inhaltsverzeichnis</h2><input id="search" type="search" aria-label="Kapitel suchen" placeholder="Kapitel suchen …"><button id="expand">Alles öffnen</button><button id="collapse">Alles schließen</button><ul><li><details><summary><a href="#s1">1 Wesen und Geltungsbereich von Organization</a></summary><ul><li><details><summary><a href="#s1-1">1.1 Benutzen der Organization</a></summary><ul><li><details><summary><a href="#s1-1-1">1.1.1 Prim&#228;re Datenquellen und Referenzbeziehungen</a></summary><ul><li><a href="#s1-1-1-1">1.1.1.1 Prim&#228;rquellen nach Inhaltsbereich</a></li><li><a href="#s1-1-1-2">1.1.1.2 Organization_Reference.json</a></li><li><a href="#s1-1-1-3">1.1.1.3 Beziehungsarten</a></li><li><a href="#s1-1-1-4">1.1.1.4 Beispiel eines Abh&#228;ngigkeitsdiagramms</a></li><li><a href="#s1-1-1-5">1.1.1.5 Konsistenz und Aktualisierung</a></li></ul></details></li><li><details><summary><a href="#s1-1-2">1.1.2 Installation einer projektkonkreten Organisationsbasis</a></summary><ul><li><a href="#s1-1-2-1">1.1.2.1 Erforderliche Angaben</a></li><li><a href="#s1-1-2-2">1.1.2.2 Zu erstellende Umgebungsdefinitionen</a></li><li><a href="#s1-1-2-3">1.1.2.3 Standardvordefinitionen</a></li><li><a href="#s1-1-2-4">1.1.2.4 Referenzieren, Ableiten und Generieren</a></li><li><a href="#s1-1-2-5">1.1.2.5 Pr&#252;fung und Abschluss</a></li></ul></details></li></ul></details></li></ul></details></li><li><a href="#s2">2 Zentraler Einstieg und Instruktionsbasis</a></li><li><details><summary><a href="#s3">3 Ableitungsregeln der Organisation</a></summary><ul><li><a href="#s3-1">3.1 Projektspezifische Konkretisierung</a></li><li><a href="#s3-2">3.2 Definition der Ableitungsregeln</a></li><li><a href="#s3-3">3.3 Hauptschalter und Komponentenaktivierung</a></li><li><a href="#s3-4">3.4 Redefinition semantischer Inhalte</a></li><li><a href="#s3-5">3.5 Redefinition strukturierter und bin&#228;rer Dateien [Pr&#228;zisierungsvorschlag]</a></li><li><details><summary><a href="#s3-6">3.6 Komponentenverzeichnis und Aktualisierung der Ableitung</a></summary><ul><li><a href="#s3-6-1">3.6.1 Anl&#228;sse f&#252;r eine Aktualisierung</a></li><li><a href="#s3-6-2">3.6.2 Abgleich mit bestehenden Einstellungen</a></li><li><a href="#s3-6-3">3.6.3 Noch festzulegende Details</a></li></ul></details></li></ul></details></li><li><details><summary><a href="#s4">4 Konventionen</a></summary><ul><li><details><summary><a href="#s4-1">4.1 Convention/Appearance</a></summary><ul><li><a href="#s4-1-1">4.1.1 Geltungsbereich und Spezialisierung</a></li><li><a href="#s4-1-2">4.1.2 Verh&#228;ltnis zu CSS und darstellenden Anwendungen</a></li><li><a href="#s4-1-3">4.1.3 Ablage und Quellen</a></li><li><a href="#s4-1-4">4.1.4 Aufbau der JSON-Definitionen</a></li><li><a href="#s4-1-5">4.1.5 Schrittweise Einf&#252;hrung</a></li></ul></details></li><li><a href="#s4-2">4.2 Convention/Code</a></li><li><a href="#s4-3">4.3 Convention/Documentation</a></li><li><details><summary><a href="#s4-4">4.4 Convention/Environment</a></summary><ul><li><details><summary><a href="#s4-4-1">4.4.1 Inhalt von Environment/Definition</a></summary><ul><li><a href="#s4-4-1-0">4.4.1.0 &#220;berblick: Liste der Inhalte</a></li><li><details><summary><a href="#s4-4-1-1">4.4.1.1 Organization.json</a></summary><ul><li><a href="#s4-4-1-1-1">4.4.1.1.1 Optionale Aktivierung einzelner Funktionsbereiche [Vorschlag]</a></li></ul></details></li><li><a href="#s4-4-1-2">4.4.1.2 Organization_Inheritance.json</a></li><li><a href="#s4-4-1-3">4.4.1.3 User.json</a></li><li><details><summary><a href="#s4-4-1-4">4.4.1.4 Project_Forest.json</a></summary><ul><li><a href="#s4-4-1-4-1">4.4.1.4.1 Eindeutige Projektnamen und Waldstruktur</a></li></ul></details></li><li><details><summary><a href="#s4-4-1-5">4.4.1.5 Globale und zus&#228;tzliche Arbeitsr&#228;ume</a></summary><ul><li><a href="#s4-4-1-5-1">4.4.1.5.1 Benutzung der Organization durch sich selbst</a></li></ul></details></li><li><a href="#s4-4-1-6">4.4.1.6 Access.json</a></li><li><details><summary><a href="#s4-4-1-7">4.4.1.7 Documentation.json</a></summary><ul><li><a href="#s4-4-1-7-1">4.4.1.7.1 Dokumentationstypen</a></li><li><details><summary><a href="#s4-4-1-7-2">4.4.1.7.2 HeaderTemplate</a></summary><ul><li><a href="#s4-4-1-7-2-1">4.4.1.7.2.1 HeaderTemplateComponent</a></li><li><a href="#s4-4-1-7-2-2">4.4.1.7.2.2 HeaderTemplateType</a></li><li><a href="#s4-4-1-7-2-3">4.4.1.7.2.3 HeaderTemplateComponentProperty</a></li></ul></details></li><li><a href="#s4-4-1-7-3">4.4.1.7.3 Zuordnung von Dokumentationsvorlagen</a></li><li><a href="#s4-4-1-7-4">4.4.1.7.4 Dokumente mit mehreren Dokumentationstypen</a></li></ul></details></li><li><a href="#s4-4-1-8">4.4.1.8 Organization_Reference.json</a></li><li><a href="#s4-4-1-9">4.4.1.9 Organization_BackupTarget.json</a></li><li><a href="#s4-4-1-10">4.4.1.10 Project_Structure_Folder_Default.json</a></li></ul></details></li><li><details><summary><a href="#s4-4-2">4.4.2 Inhalt von Environment/Content</a></summary><ul><li><a href="#s4-4-2-1">4.4.2.1 &#220;bersicht der Inhalte</a></li><li><a href="#s4-4-2-2">4.4.2.2 Lokalisierungsinhalte</a></li><li><a href="#s4-4-2-3">4.4.2.3 Dokumentationsvorlagen und Appearance</a></li><li><a href="#s4-4-2-4">4.4.2.4 Process-Definitionen als Verkn&#252;pfung</a></li><li><a href="#s4-4-2-5">4.4.2.5 Tools als Verkn&#252;pfung</a></li><li><a href="#s4-4-2-6">4.4.2.6 Verwaltung der Verkn&#252;pfungen</a></li></ul></details></li></ul></details></li><li><details><summary><a href="#s4-5">4.5 Convention/Localization</a></summary><ul><li><a href="#s4-5-1">4.5.1 Content-Definition</a></li><li><a href="#s4-5-2">4.5.2 Allgemeine Inheritance</a></li><li><a href="#s4-5-3">4.5.3 Semantische Beschreibung des Resolvers</a></li><li><a href="#s4-5-4">4.5.4 R&#252;ckgabetyp und Diagnosen</a></li><li><a href="#s4-5-5">4.5.5 Performance und &#196;nderungen</a></li><li><a href="#s4-5-6">4.5.6 Resolver-Prototyp als C++-Core und Build-Target</a></li><li><a href="#s4-5-7">4.5.7 Verwaltungs- und Konversions-Tool</a></li><li><a href="#s4-5-8">4.5.8 Migration und offene Punkte</a></li></ul></details></li><li><a href="#s4-6">4.6 Convention/Naming</a></li><li><a href="#s4-7">4.7 Convention/Organization</a></li><li><a href="#s4-8">4.8 Convention/Process</a></li><li><details><summary><a href="#s4-9">4.9 Convention/Project</a></summary><ul><li><a href="#s4-9-1">4.9.1 Projektwald, Projektmappe und Build-Targets</a></li><li><a href="#s4-9-2">4.9.2 Prim&#228;rquellen der Projektdefinition</a></li><li><a href="#s4-9-3">4.9.3 Standardverzeichnisstruktur</a></li></ul></details></li><li><a href="#s4-10">4.10 Convention/Terminology</a></li><li><a href="#s4-11">4.11 Convention/Test</a></li><li><a href="#s4-12">4.12 Convention/Tool</a></li></ul></details></li><li><details><summary><a href="#s5">5 Inhalt des Ordners Process</a></summary><ul><li><a href="#s5-1">5.1 Start eines Process</a></li><li><a href="#s5-2">5.2 Voraussetzungen und Auswahl</a></li><li><a href="#s5-3">5.3 Ausf&#252;hrungsort und Umgebungsdaten</a></li></ul></details></li><li><details><summary><a href="#s6">6 Inhalt des Ordners Tool</a></summary><ul><li><a href="#s6-1">6.1 Inhalt des Ordners Test</a></li></ul></details></li><li><details><summary><a href="#s7">7 Noch auszuarbeitende Bereiche</a></summary><ul><li><a href="#s7-1">7.1 Lokalisation</a></li><li><a href="#s7-2">7.2 Backup-Konfiguration</a></li></ul></details></li><li class="tasks"><details><summary><a href="#open-work">Noch zu erledigen</a></summary><ul><li><a href="#todo-s1-1-1-2">1.1.1.2 Organization_Reference.json</a></li><li><a href="#todo-s1-1-1-5">1.1.1.5 Konsistenz und Aktualisierung</a></li><li><a href="#todo-s1-1-2">1.1.2 Installation einer projektkonkreten Organisationsbasis</a></li><li><a href="#todo-s2">2 Zentraler Einstieg und Instruktionsbasis</a></li><li><a href="#todo-s3-1">3.1 Projektspezifische Konkretisierung</a></li><li><a href="#todo-s3-2">3.2 Definition der Ableitungsregeln</a></li><li><a href="#todo-s3-6">3.6 Komponentenverzeichnis und Aktualisierung der Ableitung</a></li><li><a href="#todo-s3-6-1">3.6.1 Anl&#228;sse f&#252;r eine Aktualisierung</a></li><li><a href="#todo-s4-1-3">4.1.3 Ablage und Quellen</a></li><li><a href="#todo-s4-1-4">4.1.4 Aufbau der JSON-Definitionen</a></li><li><a href="#todo-s4-1-5">4.1.5 Schrittweise Einf&#252;hrung</a></li><li><a href="#todo-s4-2">4.2 Convention/Code</a></li><li><a href="#todo-s4-4-1-4">4.4.1.4 Project_Forest.json</a></li><li><a href="#todo-s4-4-1-4-1">4.4.1.4.1 Eindeutige Projektnamen und Waldstruktur</a></li><li><a href="#todo-s4-4-1-5">4.4.1.5 Globale und zus&#228;tzliche Arbeitsr&#228;ume</a></li><li><a href="#todo-s4-4-1-5-1">4.4.1.5.1 Benutzung der Organization durch sich selbst</a></li><li><a href="#todo-s4-4-1-6">4.4.1.6 Access.json</a></li><li><a href="#todo-s4-4-1-7-1">4.4.1.7.1 Dokumentationstypen</a></li><li><a href="#todo-s4-4-1-7-2">4.4.1.7.2 HeaderTemplate</a></li><li><a href="#todo-s4-4-1-7-2-1">4.4.1.7.2.1 HeaderTemplateComponent</a></li><li><a href="#todo-s4-4-1-7-2-2">4.4.1.7.2.2 HeaderTemplateType</a></li><li><a href="#todo-s4-4-1-7-2-3">4.4.1.7.2.3 HeaderTemplateComponentProperty</a></li><li><a href="#todo-s4-4-1-7-4">4.4.1.7.4 Dokumente mit mehreren Dokumentationstypen</a></li><li><a href="#todo-s4-4-1-9">4.4.1.9 Organization_BackupTarget.json</a></li><li><a href="#todo-s4-4-1-10">4.4.1.10 Project_Structure_Folder_Default.json</a></li><li><a href="#todo-s4-4-2-2">4.4.2.2 Lokalisierungsinhalte</a></li><li><a href="#todo-s4-4-2-6">4.4.2.6 Verwaltung der Verkn&#252;pfungen</a></li><li><a href="#todo-s4-5-3">4.5.3 Semantische Beschreibung des Resolvers</a></li><li><a href="#todo-s4-5-4">4.5.4 R&#252;ckgabetyp und Diagnosen</a></li><li><a href="#todo-s4-5-5">4.5.5 Performance und &#196;nderungen</a></li><li><a href="#todo-s4-5-6">4.5.6 Resolver-Prototyp als C++-Core und Build-Target</a></li><li><a href="#todo-s4-5-7">4.5.7 Verwaltungs- und Konversions-Tool</a></li><li><a href="#todo-s4-6">4.6 Convention/Naming</a></li><li><a href="#todo-s4-7">4.7 Convention/Organization</a></li><li><a href="#todo-s4-9-1">4.9.1 Projektwald, Projektmappe und Build-Targets</a></li><li><a href="#todo-s4-9-3">4.9.3 Standardverzeichnisstruktur</a></li><li><a href="#todo-s4-11">4.11 Convention/Test</a></li><li><a href="#todo-s6">6 Inhalt des Ordners Tool</a></li><li><a href="#todo-s6-1">6.1 Inhalt des Ordners Test</a></li><li><a href="#todo-s7-2">7.2 Backup-Konfiguration</a></li></ul></details></li></ul></nav><main><header class="hero"><p class="eyebrow">VORABANSICHT · GREEN DARK ILLUMINATION</p><h1>Organization</h1><p>Ein gemeinsamer Rahmen für Projekte, Inhalte und Werkzeuge.</p><div class="badges"><span>92 Abschnitte</span><span>12 Illustrationen</span><span>40 Bereiche mit offenen Punkten</span></div><p>Statische Ansicht der aktuellen <a href="Organization.txt">Organization.txt</a>. Historische Anhänge sind ausgeblendet. Keine Aktivierung oder Umsetzung des Entwurfs.</p></header><section id="s1"><h2><span>1</span> Wesen und Geltungsbereich von Organization</h2><figure><img src="Organization.Preview.assets/1.svg" alt="Projektwald"><figcaption>Projektwald</figcaption></figure><pre class="source">Organization ist die gemeinsame organisatorische Grundlage f&#252;r Projekte. Es definiert &#252;bergreifende Begriffe, Konventionen und Regeln sowie die Art, wie Projekte diese &#252;bernehmen und erg&#228;nzen.
+Das Verh&#228;ltnis entspricht sinngem&#228;&#223; einer Basisklasse in C++: Ein Projekt &#252;bernimmt ausdr&#252;cklich festgelegte Grundlagen und konkretisiert sie f&#252;r seinen Anwendungsbereich. Es kann vorgesehene Erweiterungen und Abweichungen definieren. Dabei muss erkennbar bleiben, welche Regeln verbindlich, welche Standardvorgaben und welche projektspezifisch &#252;berschreibbar sind.
+&quot;Ableiten von Organization&quot; und &quot;Benutzen der Organization&quot; sind gleichbedeutend.
+Die Benutzung erfolgt ausdr&#252;cklich. Allein die Existenz oder Erreichbarkeit von Organization macht dessen Inhalte f&#252;r andere Projekte nicht verbindlich.
+Eine Benutzungsinstanz kann einen Projektwald mit mehreren Projektb&#228;umen enthalten. Die globalen Organisations- und Arbeitsraumdefinitionen dieser Instanz gelten f&#252;r jeden Projektknoten.
+Der Name der konkreten Organization ist zugleich der Name ihres Projektwaldes. Seine ma&#223;gebliche Definition erfolgt in Organization.json.
+&quot;Global&quot; bezeichnet den gemeinsamen Geltungsbereich innerhalb dieser Benutzungsinstanz.</pre></section><section id="s1-1"><h3><span>1.1</span> Benutzen der Organization</h3><pre class="source">Die Benutzung wird durch Environment/Definition/Organization.json unterhalb des prim&#228;ren Workspace Root des Projektwaldes definiert.
+Organization.json enth&#228;lt den Namen der Benutzungsinstanz, den Hauptschalter sowie die globalen Arbeitsraumdefinitionen. Eine separate Workspace.json ist nicht erforderlich.
+Minimaldefinition von Organization.json:
+{
+  &quot;Organization&quot;: {
+    &quot;Name&quot;: &quot;&lt;OrganizationName&gt;&quot;,
+    &quot;Aktivation&quot;: true,
+    &quot;Workspace&quot;: {
+      &quot;ProjectForest&quot;: &quot;.&quot;,
+      &quot;OrganizationBase&quot;: &quot;\\\\acer\\e\\Programmierung\\Organisation&quot;
+    }
+  }
+}
+Organization.Name bezeichnet zugleich den Projektwaldnamen. Der Platzhalter ist durch den tats&#228;chlichen Namen zu ersetzen.
+Aktivation ist der boolesche Hauptschalter f&#252;r die Benutzung der Organization.
+- true: Die Benutzung der Organization ist aktiviert.
+- false: Die Benutzung der Organization ist deaktiviert.
+Bei true gelten die Grundlagen der Organization entsprechend den Ableitungsregeln.
+Bei false sind s&#228;mtliche durch diese Organisationsdefinition verwalteten Komponenten deaktiviert. Dies gilt auch f&#252;r rein lokale Komponenten.
+Workspace.ProjectForest bezeichnet den prim&#228;ren Workspace Root des Projektwaldes beziehungsweise der globalen Projektkonkretisierung. Der Wert &quot;.&quot; bezeichnet diese Wurzel, nicht den Ablageort der JSON-Datei.
+Workspace.OrganizationBase bezeichnet den Workspace Root der zugrunde liegenden Organization durch einen absoluten Pfad. Dieser Arbeitsraum &#252;bernimmt die sekund&#228;re Rolle.
+Beide Arbeitsraumdefinitionen gelten f&#252;r jeden Projektknoten des Projektwaldes.
+Die Definition des Arbeitsraums der Organization-Basis allein aktiviert die Benutzung der Organization nicht.
+Der zentrale Einstieg Convention/Organization/Organization.html wird relativ zu Workspace.OrganizationBase aufgel&#246;st.
+Zus&#228;tzliche Arbeitsr&#228;ume einzelner Projektknoten werden in Project_Forest.json definiert.</pre></section><section id="s1-1-1"><h4><span>1.1.1</span> Prim&#228;re Datenquellen und Referenzbeziehungen</h4><figure><img src="Organization.Preview.assets/1.1.1.svg" alt="Prim&#228;rquellen und Referenzen"><figcaption>Prim&#228;rquellen und Referenzen</figcaption></figure><pre class="source">F&#252;r jede Komponente einer Organisation muss eindeutig bestimmt sein, welche Datei ihre ma&#223;gebliche Prim&#228;rquelle ist und welche weiteren Dateien diese Quelle referenzieren oder aus ihr erzeugt werden.
+Prim&#228;rquelle bezeichnet die ma&#223;gebliche Quelle eines Inhalts. Diese Bedeutung ist von der Unterscheidung zwischen prim&#228;rem und sekund&#228;rem Arbeitsraum unabh&#228;ngig.
+Eine Prim&#228;rquelle kann selbst andere Prim&#228;rquellen referenzieren. Ihre Ma&#223;geblichkeit bezieht sich auf den Inhalt, den sie eigenst&#228;ndig definiert.
+Grunds&#228;tzlich werden bestehende Inhalte referenziert, statt sie in weiteren Dateien erneut zu definieren. Redundante Datenhaltung ist auf das notwendige Minimum zu beschr&#228;nken.
+Referenzierung, Generierung und organisatorische Vererbung sind unterschiedliche Beziehungen und m&#252;ssen getrennt beschrieben werden.
+Eine Referenz erzeugt keine Kopie, aktiviert keine Arbeitsanweisung und startet keinen Process.
+Eine generierte Darstellung wird nicht zur ma&#223;geblichen Quelle ihrer zugrunde liegenden Daten.
+Die ausdr&#252;cklich vorgesehene Instanziierung einer Dokumentationsvorlage bleibt m&#246;glich. Gemeinsam genutzte Definitionen sollen dabei weiterhin referenziert werden, soweit kein eigenst&#228;ndiger Dokumentinhalt oder ausdr&#252;cklich festgelegter Stand ben&#246;tigt wird.</pre></section><section id="s1-1-1-1"><h5><span>1.1.1.1</span> Prim&#228;rquellen nach Inhaltsbereich</h5><pre class="source">Convention:
+Die jeweils geltende HTML-Datei ist die Prim&#228;rquelle der darin eigenst&#228;ndig formulierten Konvention.
+Referenzierte Umgebungswerte bleiben in den zugeh&#246;rigen JSON-Dateien ma&#223;geblich. Ihre Darstellung innerhalb einer Konvention macht sie nicht zu einer zweiten Definition.
+Welche Fassung einer Konvention gilt, ergibt sich aus Organization_Inheritance.json.
+Process:
+Die jeweils geltende Arbeitsanweisung ist die Prim&#228;rquelle des beschriebenen Ablaufs und seiner zul&#228;ssigen Aufrufe.
+Umgebungswerte und konkrete Parametergrundlagen werden aus den daf&#252;r ma&#223;geblichen Umgebungsdefinitionen referenziert.
+Welche Fassung eines Process gilt, ergibt sich aus Organization_Inheritance.json.
+Environment/Definition:
+Die JSON-Dateien unter Environment/Definition des prim&#228;ren Arbeitsraums sind die Prim&#228;rquellen der von ihnen definierten Umgebungsdaten.
+HTML-Dateien, die diese Daten darstellen, referenzieren die JSON-Dateien. Sie f&#252;hren keine unabh&#228;ngig gepflegte Kopie derselben Definitionen.
+Eine HTML-Datei kann sowohl eigenst&#228;ndige Erl&#228;uterungen enthalten als auch JSON-Daten darstellen. Die Herkunft und Ma&#223;geblichkeit dieser Inhalte m&#252;ssen unterscheidbar bleiben.</pre></section><section id="s1-1-1-2"><h5><span>1.1.1.2</span> Organization_Reference.json</h5><pre class="source">Die Referenz- und Abh&#228;ngigkeitsstruktur wird in Environment/Definition/Organization_Reference.json des prim&#228;ren Arbeitsraums gespeichert.
+Die Datei beschreibt:
+- welche Prim&#228;rquellen existieren;
+- welche Dateien diese Quellen referenzieren;
+- welche Dateien aus diesen Quellen generiert werden;
+- welche Beziehungen nur bestimmte Inhalte einer Datei betreffen.
+Die Struktur bildet einen gerichteten Abh&#228;ngigkeitsgraphen. Eine Datei kann mehrere Quellen verwenden, und eine Quelle kann mehrere abh&#228;ngige Dateien besitzen.
+Die Beziehungen werden nur einmal ma&#223;geblich gespeichert. Die &#220;bersicht aller von einer Prim&#228;rquelle abh&#228;ngigen Dateien wird daraus ermittelt.
+Vorgeschlagene Hauptstrukturen:
+- &quot;Source&quot;: Verzeichnis der Quellen und abh&#228;ngigen Dateien.
+- &quot;Relation&quot;: Verzeichnis ihrer gerichteten Beziehungen.
+Vorgeschlagene Angaben je Source:
+- Eindeutiger Dateiverweis.
+- Zuordnung zum Arbeitsraum beziehungsweise Verweis auf die Komponente in Organization_Inheritance.json.
+- Inhaltlicher Zust&#228;ndigkeitsbereich, soweit eine Datei unterschiedliche Arten von Inhalten enth&#228;lt.
+Vorgeschlagene Angaben je Relation:
+- Quellverweis.
+- Verweis auf die abh&#228;ngige Datei.
+- Beziehungsart.
+- Optionaler Bezug auf einen bestimmten Teilinhalt.
+- Bei Generierung: Verweis auf den zust&#228;ndigen Process oder das zust&#228;ndige Tool.
+- Bei Generierung: Festlegung, wann eine erneute Generierung erforderlich ist.
+Die konkrete JSON-Struktur wird noch festgelegt.
+Dateilokationen und Ableitungseinstellungen aus Organization_Inheritance.json werden referenziert und nicht erneut unabh&#228;ngig definiert.
+Umgebungsdateien k&#246;nnen unmittelbar als Quellen verzeichnet werden, obwohl sie keine vererbbaren Komponenten sind.</pre><aside id="todo-s1-1-1-2"><h3>OFFEN · Organization_Reference.json</h3><ul><li>Die konkrete JSON-Struktur wird noch festgelegt.</li></ul></aside></section><section id="s1-1-1-3"><h5><span>1.1.1.3</span> Beziehungsarten</h5><pre class="source">Reference:
+Die abh&#228;ngige Datei verwendet Inhalte der Quelle durch Referenzierung. &#196;nderungen werden beim erneuten Aufl&#246;sen beziehungsweise Anzeigen der Referenz ber&#252;cksichtigt.
+Generation:
+Die abh&#228;ngige Datei oder ein festgelegter Teil davon wird aus der Quelle erzeugt. Eine &#196;nderung der Quelle kann eine erneute Generierung erforderlich machen.
+Bei mehreren Eingabequellen werden s&#228;mtliche f&#252;r die Generierung erforderlichen Quellen angegeben.
+F&#252;r generierte Inhalte wird festgelegt, ob die gesamte Zieldatei oder nur bestimmte Bereiche erzeugt werden.
+Generierte Bereiche werden nicht unabh&#228;ngig von ihren Prim&#228;rquellen gepflegt.
+Ein Verweis allein begr&#252;ndet keine automatische Generierung. Ausl&#246;ser und ausf&#252;hrender Process beziehungsweise ausf&#252;hrendes Tool m&#252;ssen ausdr&#252;cklich definiert sein.</pre></section><section id="s1-1-1-4"><h5><span>1.1.1.4</span> Beispiel eines Abh&#228;ngigkeitsdiagramms</h5><pre class="source">Die Pfeile verlaufen von der Prim&#228;rquelle zur abh&#228;ngigen Darstellung.
+Environment/Definition/Organization.json ------------+
+Environment/Definition/Organization_Inheritance.json +--&gt; Convention/Organization/Organization.html
+Environment/Definition/Organization_Reference.json --+
+Die Beziehungen dieses Beispiels sind Reference-Beziehungen.
+Organization.html stellt die referenzierten Daten dar und kann zus&#228;tzlich eigenst&#228;ndige Konventionstexte enthalten.
+Das Beispiel legt keine Generierung der gesamten Organization.html fest.
+HTML-Darstellungen werden bevorzugt unmittelbar aus ihren referenzierten JSON-Daten aufgebaut. Eine zus&#228;tzlich gespeicherte Darstellung wird nur vorgesehen, wenn daf&#252;r ein konkreter Bedarf besteht.</pre></section><section id="s1-1-1-5"><h5><span>1.1.1.5</span> Konsistenz und Aktualisierung</h5><pre class="source">Alle Dateiverweise m&#252;ssen eindeutig aufl&#246;sbar sein.
+Umbenennungen, Verschiebungen und entfernte Quellen m&#252;ssen beim Aktualisieren der Referenzstruktur ber&#252;cksichtigt werden.
+Widerspr&#252;chliche Zust&#228;ndigkeiten f&#252;r denselben Inhalt m&#252;ssen gekl&#228;rt werden.
+Zyklische Referenzen d&#252;rfen keine unendliche Aufl&#246;sung verursachen. Generierungsabh&#228;ngigkeiten m&#252;ssen eine eindeutige Ausf&#252;hrungsreihenfolge erlauben.
+Ein Abh&#228;ngigkeitsdiagramm wird aus Organization_Reference.json abgeleitet und nicht als zweite, unabh&#228;ngig gepflegte Beziehungsdefinition gef&#252;hrt.
+Die Behandlung veralteter generierter Inhalte und der Umfang automatischer Pr&#252;fungen werden noch festgelegt.</pre><aside id="todo-s1-1-1-5"><h3>OFFEN · Konsistenz und Aktualisierung</h3><ul><li>Die Behandlung veralteter generierter Inhalte und der Umfang automatischer Pr&#252;fungen werden noch festgelegt.</li></ul></aside></section><section id="s1-1-2"><h4><span>1.1.2</span> Installation einer projektkonkreten Organisationsbasis</h4><figure><img src="Organization.Preview.assets/1.1.2.svg" alt="Installation"><figcaption>Installation</figcaption></figure><pre class="source">Die Installation richtet eine Benutzungsinstanz der Organization f&#252;r einen konkreten Projektwald ein.
+Sie stellt die lokalen Umgebungsdefinitionen, die Zuordnung zur Organization-Basis sowie die Komponenten- und Referenzverzeichnisse bereit.
+Die Installation wird durch einen noch zu definierenden Process oder ein Tool ausgef&#252;hrt. Dieser Abschnitt allein startet keine Installation.</pre><aside id="todo-s1-1-2"><h3>OFFEN · Installation einer projektkonkreten Organisationsbasis</h3><ul><li>Die Installation wird durch einen noch zu definierenden Process oder ein Tool ausgef&#252;hrt. Dieser Abschnitt allein startet keine Installation.</li></ul></aside></section><section id="s1-1-2-1"><h5><span>1.1.2.1</span> Erforderliche Angaben</h5><pre class="source">F&#252;r die Installation m&#252;ssen mindestens bestimmt sein:
+- Organization.Name als Name der globalen Projektkonkretisierung und zugleich als Projektwaldname.
+- Prim&#228;rer Workspace Root des Projektwaldes.
+- Workspace Root der zu benutzenden Organization-Basis als absoluter Pfad.
+- Initiale Projektb&#228;ume und Projektknoten mit ihren Namen und parentalen Beziehungen.
+- Projektverantwortliche Benutzer und deren Usernamen.
+- Gew&#252;nschter Zustand des Hauptschalters Aktivation.
+- Zwei bis beliebig viele absolute Zielpfade f&#252;r externe Sicherungen.
+Zus&#228;tzlich sind nach Bedarf anzugeben:
+- Weitere Benutzer und Projektrollen.
+- Zus&#228;tzliche Workspaces einzelner Projektknoten.
+- Zugriffsgew&#228;hrungen.
+- Abweichungen von der standardm&#228;&#223;igen Komponentenvererbung.
+- Dokumentationsvorgaben und Vorlagenzuordnungen.
+- Weitere f&#252;r die vorgesehenen Aktivit&#228;ten erforderliche Umgebungswerte.
+Fehlende, f&#252;r die konkrete Installation notwendige Angaben m&#252;ssen ermittelt werden. Sie d&#252;rfen nicht durch erfundene Projekt-, Benutzer- oder Sicherungsdaten ersetzt werden.</pre></section><section id="s1-1-2-2"><h5><span>1.1.2.2</span> Zu erstellende Umgebungsdefinitionen</h5><pre class="source">Unter Environment/Definition des prim&#228;ren Arbeitsraums werden folgende Dateien eingerichtet:
+- Organization.json
+- Organization_Inheritance.json
+- Organization_Reference.json
+- Organization_BackupTarget.json
+- User.json
+- Project_Forest.json
+- Project_Structure_Folder_Default.json
+- Access.json
+- Documentation.json
+Organization.json enth&#228;lt den Namen, den Hauptschalter, die globalen Workspace-Definitionen und die statische &#220;bersicht der Definitionsdateien.
+Organization_Inheritance.json enth&#228;lt die verf&#252;gbaren Ableitungsregeln, den ermittelten Komponentenbestand und dessen Einstellungen.
+Organization_Reference.json enth&#228;lt die Quellen und ihre Referenz- beziehungsweise Generierungsbeziehungen.
+Organization_BackupTarget.json enth&#228;lt die globalen absoluten Zielpfade f&#252;r externe Sicherungen.
+User.json enth&#228;lt die f&#252;r die Benutzungsinstanz festgelegten Benutzer.
+Project_Forest.json enth&#228;lt die Projektb&#228;ume und Projektknoten, Verantwortlichkeiten und gegebenenfalls zus&#228;tzliche Workspaces. Der Waldname wird aus Organization.Name referenziert.
+Access.json enth&#228;lt die ausdr&#252;cklich festgelegten Zugriffsgew&#228;hrungen.
+Documentation.json enth&#228;lt die festgelegten Dokumentationstypen, HeaderTemplate-Strukturen und Vorlagenzuordnungen.
+Umgebungsdefinitionen der Organization-Basis werden nicht als lokale Umgebungswerte &#252;bernommen.
+Die noch auszuarbeitenden Lokalisierungsdateien werden nach Festlegung ihrer Struktur und Ablage in die Installation aufgenommen.</pre></section><section id="s1-1-2-3"><h5><span>1.1.2.3</span> Standardvordefinitionen</h5><pre class="source">Vorgeschlagene Installationsvorgaben:
+- Komponenten der nach Abschnitt 3 vererbbaren Verzeichnisse werden standardm&#228;&#223;ig mit Aktivation: true und Inheritance: true gef&#252;hrt.
+- Replacement und Redefinition werden nur bei ausdr&#252;cklich festgelegten Konkretisierungen zugewiesen.
+- Environment/Definition bleibt von der Vererbung ausgeschlossen.
+- Zus&#228;tzliche Projekt-Workspaces und zus&#228;tzliche Zugriffsgew&#228;hrungen werden nur aus tats&#228;chlichen Angaben eingerichtet.
+- F&#252;r Documentation.json werden die vorgesehenen Dokumentationstypen angelegt.
+- Noch nicht festgelegte HeaderTemplates, Referenzen und Vorlagenzuordnungen werden nicht erfunden.
+- Sicherungsziele werden aus den angegebenen absoluten Pfaden eingerichtet; es werden keine Zielpfade geraten.
+- Funktionsbereiche mit unvollst&#228;ndigen Voraussetzungen werden vor ihrer Benutzung vervollst&#228;ndigt.
+Wiederverwendbare Installationsvorlagen k&#246;nnen als ausdr&#252;cklich daf&#252;r bestimmte Komponenten bereitgestellt werden. Sie enthalten Strukturen und vereinbarte Vorgaben, keine ungepr&#252;ft zu &#252;bernehmenden Umgebungswerte einer anderen Benutzungsinstanz.
+Welche weiteren Angaben zwingend f&#252;r den Abschluss der Installation erforderlich sind, wird mit den jeweiligen Dateistrukturen festgelegt.</pre></section><section id="s1-1-2-4"><h5><span>1.1.2.4</span> Referenzieren, Ableiten und Generieren</h5><pre class="source">Die Komponenten der Organization-Basis werden grunds&#228;tzlich &#252;ber ihre Lokationen und Ableitungsregeln benutzt. Eine vollst&#228;ndige lokale Kopie der Basis ist nicht erforderlich.
+Lokale Dateien werden f&#252;r ausdr&#252;cklich gew&#252;nschte Konkretisierungen und eigenst&#228;ndige lokale Inhalte angelegt.
+HTML-Darstellungen der Umgebungsdefinitionen referenzieren die lokalen JSON-Prim&#228;rquellen.
+Zus&#228;tzliche Dateien werden nur generiert, wenn ihre Generierung und ihre Eingabequellen ausdr&#252;cklich festgelegt sind.
+Eine erforderliche technische Ladebr&#252;cke wird eingerichtet und verweist auf den vorgesehenen zentralen Einstieg.
+Der Komponentenbestand wird nach Abschnitt 3.6 ermittelt. Anschlie&#223;end werden die bekannten Referenz- und Generierungsbeziehungen in Organization_Reference.json erfasst.
+Eine bestehende Benutzungsinstanz darf bei erneuter Installation nicht durch Standardwerte zur&#252;ckgesetzt werden. Vorhandene Einstellungen werden abgeglichen und erhalten, soweit keine &#196;nderung ausdr&#252;cklich vorgesehen ist.
+F&#252;r die Aktualisierung einer vorhandenen Organization_Inheritance.json gilt insbesondere die vorgeschriebene lokale, tempor&#228;re Kopie.</pre></section><section id="s1-1-2-5"><h5><span>1.1.2.5</span> Pr&#252;fung und Abschluss</h5><pre class="source">Vor Abschluss der Installation wird gepr&#252;ft:
+- Sind der Name der Organization und damit der Projektwaldname festgelegt?
+- Sind die globalen Arbeitsr&#228;ume eindeutig bestimmt und erreichbar?
+- Sind Projektb&#228;ume und vollst&#228;ndige Projektnamen konsistent?
+- Sind Benutzerverweise eindeutig aufl&#246;sbar?
+- Sind die erforderlichen Umgebungsdefinitionen vorhanden und konsistent?
+- Enth&#228;lt Organization_BackupTarget.json mindestens zwei unterschiedliche absolute externe Zielpfade?
+- Sind Komponentenlokationen und Ableitungsregeln eindeutig?
+- Sind die erfassten Quellen und Referenzen aufl&#246;sbar?
+- Sind vorgesehene Generierungen eindeutig definiert?
+- Sind verbleibende offene Angaben ausgewiesen?
+Die Aktivierung der fertigen Benutzungsinstanz erfolgt entsprechend dem festgelegten Hauptschalterzustand.
+Die Installation startet nicht automatisch die anschlie&#223;end verf&#252;gbaren Processes oder Tools.
+Wenn ProjectForest und OrganizationBase dieselbe Wurzel bezeichnen, gelten dieselben Installations- und Pr&#252;fregeln. Identische Dateien werden nicht doppelt angelegt oder als Konkretisierung ihrer selbst behandelt.</pre></section><section id="s2"><h2><span>2</span> Zentraler Einstieg und Instruktionsbasis</h2><pre class="source">Convention/Organization/Organization.html bildet den einzigen fachlichen Einstiegspunkt in die Instruktionsbasis, gemeinsam f&#252;r Menschen und KI-Agenten.
+Die Datei erl&#228;utert Organization, seinen Aufbau, die Benutzung durch Projekte sowie die Regeln zur Auswahl und Anwendung weiterer Quellen.
+Die &#252;brigen Dateien enthalten die jeweils ma&#223;geblichen Detailregelungen. Der zentrale Einstieg beschreibt, wie deren Geltung und Aktivierung durch die Organisationsdefinition und die Ableitungsregeln gesteuert werden.
+Ein Verweis allein aktiviert eine Quelle nicht. Die standardm&#228;&#223;ige Vererbung nach Abschnitt 3 bleibt davon unber&#252;hrt. Die Vererbung einer Arbeitsanweisung oder eines Tools bedeutet nicht dessen Ausf&#252;hrung.
+Eine technisch erforderliche Ladebr&#252;cke wie AGENTS.md verweist lediglich auf diesen Einstiegspunkt. Sie enth&#228;lt keine eigenst&#228;ndige, parallel gepflegte organisatorische Regelbasis.
+Eine gesonderte Kurzfassung f&#252;r KI-Agenten ist zun&#228;chst nicht vorgesehen. Entscheidend f&#252;r den Verarbeitungsaufwand sind Umfang, Klarheit und die Zahl zus&#228;tzlich erforderlicher Lesevorg&#228;nge.
+Deshalb bleibt der Einstieg &#252;berschaubar und eindeutig; Detailquellen werden bedarfsgerecht gelesen. Ob sp&#228;ter eine technische Optimierung erforderlich ist, wird anhand der tats&#228;chlichen Nutzung beurteilt.
+Beschreibungen aller Art innerhalb der gesamten Organization sollen sp&#228;ter &#252;ber Lokalisierungsreferenzen bereitgestellt werden. Dies ist bei der Gestaltung der Definitionsstrukturen bereits einzuplanen. Die konkrete Definition und Einf&#252;hrung dieser Referenzen erfolgt sp&#228;ter.</pre><aside id="todo-s2"><h3>OFFEN · Zentraler Einstieg und Instruktionsbasis</h3><ul><li>Eine gesonderte Kurzfassung f&#252;r KI-Agenten ist zun&#228;chst nicht vorgesehen. Entscheidend f&#252;r den Verarbeitungsaufwand sind Umfang, Klarheit und die Zahl zus&#228;tzlich erforderlicher Lesevorg&#228;nge.</li><li>Deshalb bleibt der Einstieg &#252;berschaubar und eindeutig; Detailquellen werden bedarfsgerecht gelesen. Ob sp&#228;ter eine technische Optimierung erforderlich ist, wird anhand der tats&#228;chlichen Nutzung beurteilt.</li><li>Beschreibungen aller Art innerhalb der gesamten Organization sollen sp&#228;ter &#252;ber Lokalisierungsreferenzen bereitgestellt werden. Dies ist bei der Gestaltung der Definitionsstrukturen bereits einzuplanen. Die konkrete Definition und Einf&#252;hrung dieser Referenzen erfolgt sp&#228;ter.</li></ul></aside></section><section id="s3"><h2><span>3</span> Ableitungsregeln der Organisation</h2><figure><img src="Organization.Preview.assets/3.svg" alt="Vererbung"><figcaption>Vererbung</figcaption></figure><pre class="source">Bei aktivierter Benutzung der Organization werden standardm&#228;&#223;ig s&#228;mtliche Dateien aus folgenden Verzeichnissen der Organisationsbasis einschlie&#223;lich ihrer Unterverzeichnisse vererbt:
+- Convention
+- Process
+- Tool
+- Environment/Content: Alle Inhaltskomponenten einschlie&#223;lich Localization.json, Dokumentationsvorlagen und Appearance-Dateien.
+F&#252;r diese standardm&#228;&#223;ige Vererbung ist keine zus&#228;tzliche Aktivierung jeder einzelnen Datei erforderlich.
+Environment/Definition wird ausdr&#252;cklich nicht vererbt. Ma&#223;geblich sind ausschlie&#223;lich die Umgebungsdefinitionen unterhalb des prim&#228;ren Workspace Root des Projektwaldes.</pre></section><section id="s3-1"><h3><span>3.1</span> Projektspezifische Konkretisierung</h3><pre class="source">Soll eine geerbte Komponente konkretisiert werden, wird die entsprechende Datei im prim&#228;ren Arbeitsraum unter demselben relativen Verzeichnispfad und Dateinamen wie in der Organisationsbasis angelegt.
+F&#252;r jede Konkretisierung muss eine Ableitungsregel in Environment/Definition/Organization_Inheritance.json definiert werden.
+Das blo&#223;e Vorhandensein einer lokalen Datei legt noch nicht fest, wie sie mit der Basis zusammenwirkt.
+Zus&#228;tzliche Arbeitsr&#228;ume von Projektknoten werden durch ihre Definition allein nicht zu weiteren Quellen f&#252;r Organisationskomponenten.
+Wie eine Konkretisierung auf einzelne Projektknoten begrenzt werden kann, ist bei der Zuordnung der Ableitungsregeln noch festzulegen.</pre><aside id="todo-s3-1"><h3>OFFEN · Projektspezifische Konkretisierung</h3><ul><li>Wie eine Konkretisierung auf einzelne Projektknoten begrenzt werden kann, ist bei der Zuordnung der Ableitungsregeln noch festzulegen.</li></ul></aside></section><section id="s3-2"><h3><span>3.2</span> Definition der Ableitungsregeln</h3><pre class="source">Organization_Inheritance.json enth&#228;lt die Hauptstruktur &quot;Inheritance Rule&quot;.
+Jede Regel enth&#228;lt:
+- &quot;Ruletype&quot;: Art der Ableitungsregel.
+- &quot;Description&quot;: Beschreibung ihrer Bedeutung.
+Die Zuordnung einer Regel zu einer konkreten Datei oder einer Gruppe von Dateien ist noch festzulegen.
+F&#252;r Aktivation und Inheritance werden boolesche Zust&#228;nde ben&#246;tigt. Ihre konkrete Speicherung innerhalb der Regelstruktur ist noch festzulegen.
+Folgende Regeln sind vorgesehen:
+Aktivation
+Steuert die Aktivierung der Komponente.
+- true: Die Komponente ist aktiviert, sofern auch der Hauptschalter Organization.Aktivation aktiviert ist.
+- false: Die Komponente ist deaktiviert. Dateien der Basis und des prim&#228;ren Arbeitsraums werden f&#252;r diese Komponente ignoriert.
+Ohne abweichende Regel ist die Komponente standardm&#228;&#223;ig aktiviert.
+Inheritance
+Steuert die Vererbung der Komponente aus der Organisationsbasis.
+- true: Die Komponente aus der Organisationsbasis im sekund&#228;ren Arbeitsraum wird vererbt. Lokale Konkretisierungen werden nach den hierf&#252;r definierten Regeln ber&#252;cksichtigt.
+- false: Die Organisationsbasis im sekund&#228;ren Arbeitsraum wird f&#252;r diese Komponente nicht herangezogen. Ausschlie&#223;lich lokale Dateien im prim&#228;ren Arbeitsraum sind g&#252;ltig, sofern sie existieren.
+Ohne abweichende Regel ist die Vererbung f&#252;r die in Abschnitt 3 genannten Verzeichnisse standardm&#228;&#223;ig aktiviert.
+Inheritance aktiviert keine durch Aktivation deaktivierte Komponente.
+Replacement [Vorschlag; Abgrenzung noch festzulegen]
+Eine lokale Datei ersetzt ihr Gegenst&#252;ck aus der Organisationsbasis vollst&#228;ndig. Inhalte der Basisdatei werden nicht &#252;bernommen.
+Replacement und Inheritance: false k&#246;nnen bei einer einzelnen vorhandenen lokalen Datei zum gleichen Ergebnis f&#252;hren.
+Die vorgeschlagene Unterscheidung lautet:
+Replacement setzt ein zu ersetzendes Gegenst&#252;ck und dessen lokalen Ersatz voraus. Inheritance: false schlie&#223;t die Basis auch dann aus, wenn keine lokale Datei existiert.
+Redefinition
+Die lokale Datei &#252;berschreibt bestimmte Inhalte der Basisdatei und/oder erweitert diese.
+Nicht betroffene Inhalte der Basis bleiben erhalten.
+Redefinition setzt voraus, dass die Vererbung f&#252;r die betreffende Komponente aktiviert ist.</pre><aside id="todo-s3-2"><h3>OFFEN · Definition der Ableitungsregeln</h3><ul><li>Die Zuordnung einer Regel zu einer konkreten Datei oder einer Gruppe von Dateien ist noch festzulegen.</li><li>F&#252;r Aktivation und Inheritance werden boolesche Zust&#228;nde ben&#246;tigt. Ihre konkrete Speicherung innerhalb der Regelstruktur ist noch festzulegen.</li><li>Replacement [Vorschlag; Abgrenzung noch festzulegen]</li></ul></aside></section><section id="s3-3"><h3><span>3.3</span> Hauptschalter und Komponentenaktivierung</h3><pre class="source">Eine Komponentenregel kann den Hauptschalter Organization.Aktivation nicht au&#223;er Kraft setzen.
+F&#252;r die tats&#228;chliche Aktivit&#228;t einer Komponente gilt:
+Komponentenaktivit&#228;t = Organization.Aktivation &amp;&amp; Komponentenregel.Aktivation
+Komponentenregel.Aktivation bezeichnet hier den Aktivierungszustand der Komponente. Diese Schreibweise legt noch keine JSON-Struktur fest.
+Aktivation: true auf Komponentenebene bedeutet lediglich, dass die Komponente nicht zus&#228;tzlich deaktiviert ist. Es aktiviert weder den Hauptschalter noch eine durch ihn deaktivierte Komponente.
+Aktivation: false auf Komponentenebene deaktiviert ausschlie&#223;lich die betreffende Komponente.
+Organization.Aktivation: false deaktiviert s&#228;mtliche durch diese Organisationsdefinition verwalteten Komponenten, einschlie&#223;lich rein lokaler Komponenten mit Inheritance: false.</pre></section><section id="s3-4"><h3><span>3.4</span> Redefinition semantischer Inhalte</h3><pre class="source">F&#252;r Process und Convention erfolgt eine &#220;berschreibung nur bei semantisch einander entsprechenden Inhalten.
+Die Zuordnung und Zusammenf&#252;hrung erfolgen in der Regel durch einen KI-Agenten.
+Semantisch entsprechende Inhalte werden durch die lokale Konkretisierung &#252;berschrieben. Erg&#228;nzende Inhalte erweitern die Basis. Nicht betroffene Inhalte bleiben erhalten.
+Ist die Zuordnung mehrdeutig oder widerspr&#252;chlich, darf keine stillschweigende &#220;berschreibung erfolgen. Die Konkretisierung muss zun&#228;chst eindeutig bestimmt werden.</pre></section><section id="s3-5"><h3 class="pending"><span>3.5</span> Redefinition strukturierter und bin&#228;rer Dateien [Pr&#228;zisierungsvorschlag]</h3><pre class="source">Bei anderen Dateitypen setzt eine partielle Redefinition eindeutig zuordenbare Bestandteile und dateiformatspezifische Regeln f&#252;r deren Zusammenf&#252;hrung voraus.
+Eine CSS-Datei kann beispielsweise durch lokale Deklarationen teilweise &#252;berschrieben oder erweitert werden. Welche Deklaration wirksam wird, richtet sich dabei nach den CSS-Regeln, einschlie&#223;lich Reihenfolge, Spezifit&#228;t und Kaskade.
+Bin&#228;re &#220;bereinstimmung weist identische Inhalte nach, definiert aber keine Zusammenf&#252;hrung unterschiedlicher Inhalte.
+F&#252;r Bin&#228;rdateien oder Dateiformate ohne festgelegte Zusammenf&#252;hrungsregeln ist deshalb eine vollst&#228;ndige Ersetzung durch Replacement vorzusehen.</pre></section><section id="s3-6"><h3><span>3.6</span> Komponentenverzeichnis und Aktualisierung der Ableitung</h3><pre class="source">Die Komponenten einer Organisation m&#252;ssen beim Neuerstellen einer Ableitung sowie bei relevanten &#196;nderungen erneut ermittelt werden.
+Das Ergebnis wird im prim&#228;ren Arbeitsraum in Environment/Definition/Organization_Inheritance.json gespeichert.
+Die Datei enth&#228;lt in dieser Reihenfolge:
+- &quot;Inheritance Rule&quot;: Definition der verf&#252;gbaren Ableitungsregeln.
+- &quot;Component&quot;: Verzeichnis der ermittelten Komponenten und ihrer zugewiesenen Ableitungsregeln.
+Die Struktur &quot;Inheritance Rule&quot; wird ausschlie&#223;lich in dieser Datei gef&#252;hrt.
+F&#252;r jede Komponente werden mindestens folgende Angaben gef&#252;hrt:
+- Dateiname ohne Pfad.
+- Liste aller Lokationen, jeweils als Verzeichnispfad ohne Dateiname.
+- Ausgew&#228;hlte Ableitungsregel beziehungsweise Regelkonfiguration.
+Die Ermittlung ber&#252;cksichtigt die nach Abschnitt 3 vererbbaren Verzeichnisse der Organisationsbasis und ihre lokalen Gegenst&#252;cke im prim&#228;ren Arbeitsraum.
+Environment/Definition wird nicht als vererbbare Komponente aufgenommen.
+Gegenst&#252;cke werden anhand ihres identischen relativen Verzeichnispfads und Dateinamens zugeordnet. Der Dateiname allein reicht zur Identifikation einer Komponente nicht aus.
+Die Lokationen m&#252;ssen eindeutig dem prim&#228;ren beziehungsweise sekund&#228;ren Arbeitsraum zugeordnet werden k&#246;nnen. Eine Lokation kann beide Rollen erf&#252;llen.
+Die konkrete JSON-Darstellung dieser Zuordnung ist noch festzulegen.</pre><aside id="todo-s3-6"><h3>OFFEN · Komponentenverzeichnis und Aktualisierung der Ableitung</h3><ul><li>Die konkrete JSON-Darstellung dieser Zuordnung ist noch festzulegen.</li></ul></aside></section><section id="s3-6-1"><h4><span>3.6.1</span> Anl&#228;sse f&#252;r eine Aktualisierung</h4><pre class="source">Eine Ermittlung beziehungsweise Aktualisierung ist erforderlich:
+- beim Neuerstellen einer Ableitung;
+- beim Wechsel der Organisationsbasis;
+- beim Hinzuf&#252;gen, Entfernen, Umbenennen oder Verschieben relevanter Dateien;
+- bei &#196;nderungen der Ableitungsregeln;
+- auf ausdr&#252;cklichen Auftrag.
+Inhaltliche &#196;nderungen bestehender Dateien erfordern eine erneute Pr&#252;fung, soweit sie die Anwendbarkeit oder Eindeutigkeit einer Redefinition beeinflussen.
+Ob &#196;nderungen automatisch erkannt werden und ob daraus automatisch eine Aktualisierung folgt, ist noch festzulegen.</pre><aside id="todo-s3-6-1"><h3>OFFEN · Anl&#228;sse f&#252;r eine Aktualisierung</h3><ul><li>Ob &#196;nderungen automatisch erkannt werden und ob daraus automatisch eine Aktualisierung folgt, ist noch festzulegen.</li></ul></aside></section><section id="s3-6-2"><h4><span>3.6.2</span> Abgleich mit bestehenden Einstellungen</h4><pre class="source">Vor jeder Aktualisierung einer vorhandenen Organization_Inheritance.json muss eine lokale, tempor&#228;re Kopie dieser Datei angelegt werden.
+Anschlie&#223;end wird der aktuelle Komponentenbestand neu ermittelt und mit der tempor&#228;ren Kopie abgeglichen.
+Dabei gelten folgende Regeln:
+- Bestehende Ableitungseinstellungen eindeutig wiedererkannter Komponenten bleiben erhalten.
+- Neue Komponenten erhalten die geltenden Standardeinstellungen, soweit keine ausdr&#252;ckliche Konkretisierung vorliegt.
+- F&#252;r neue lokale Konkretisierungen muss die erforderliche Ableitungsregel festgelegt werden; sie darf nicht stillschweigend geraten werden.
+- Entfernte Komponenten und ihre bisherigen Einstellungen werden beim Abgleich ausdr&#252;cklich ausgewiesen.
+- Umbenannte oder verschobene Komponenten d&#252;rfen nur bei eindeutiger Zuordnung automatisch ihre bisherigen Einstellungen &#252;bernehmen.
+- Mehrdeutige Zuordnungen und nicht mehr g&#252;ltige Regelzuweisungen m&#252;ssen gekl&#228;rt werden.
+Die aktualisierte Datei darf die bisherige Datei erst ersetzen, wenn der Abgleich abgeschlossen und die neue Definition auf Konsistenz gepr&#252;ft ist.
+Bei einem Fehler bleibt die bisherige Datei erhalten. Die tempor&#228;re Kopie bleibt bis zum erfolgreichen Abschluss der Aktualisierung verf&#252;gbar.</pre></section><section id="s3-6-3"><h4 class="pending"><span>3.6.3</span> Noch festzulegende Details</h4><pre class="source">- JSON-Struktur und eindeutige Identifikation der Komponenten.
+- Darstellung und Zuordnung der Lokationen.
+- Darstellung kombinierter Einstellungen f&#252;r Aktivation, Inheritance und Replacement beziehungsweise Redefinition.
+- Geltungsbereich komponentenspezifischer Regeln innerhalb des Projektwaldes.
+- Verfahren zur &#196;nderungserkennung und Umfang einer m&#246;glichen Automatik.
+- Umgang mit entfernten Komponenten und Aufbewahrung ihrer bisherigen Einstellungen.
+- Ablageort und Bereinigung der tempor&#228;ren Kopie.</pre></section><section id="s4"><h2><span>4</span> Konventionen</h2><pre class="source">Die Konventionen bilden das Regelwerk einer Organisation.
+Konventionen sind semantisch formulierte Regeln, welche die Organisation selbst deklarieren und definieren. Sie enthalten im Wesentlichen Regeln und keine konkreten Umgebungsdefinitionen einer Benutzungsinstanz.
+Alle HTML-Dateien unterhalb von Convention sind g&#252;ltige Beschreibungen von Konventionen.
+Ihre Aktivierung wird durch Organization.json und die komponentenspezifischen Einstellungen in Organization_Inheritance.json verwaltet.
+Ohne abweichende Regel gilt die standardm&#228;&#223;ige Vererbung nach Abschnitt 3.
+
+Die folgenden Unterpunkte sind alphabetisch nach ihrem Convention-Bereich geordnet. Sie enthalten die bisher festgelegten Regeln und ausdr&#252;cklich offenen Detailfragen.</pre></section><section id="s4-1"><h3><span>4.1</span> Convention/Appearance</h3><figure><img src="Organization.Preview.assets/4.1.svg" alt="Appearance"><figcaption>Appearance</figcaption></figure><pre class="source">Appearance bezeichnet das &#252;bergreifende, erweiterte und verallgemeinerte Darstellungskonzept der Organization. Es beschreibt das Erscheinungsbild von Dokumenten, Benutzeroberfl&#228;chen, Anwendungen und Projekt-Targets sowie 3D-Szenen und weiteren darstellenden Systemen.
+Appearance-Definitionen werden im JSON-Format gespeichert. Die Konvention beschreibt deren Bedeutung und Anwendung; die JSON-Dateien enthalten die konkreten Darstellungsdaten.
+Diese Festlegung ist Bestandteil des Entwurfs. Sie f&#252;hrt noch keine Implementierung oder automatische Aktivierung ein.</pre></section><section id="s4-1-1"><h4><span>4.1.1</span> Geltungsbereich und Spezialisierung</h4><pre class="source">Appearance bietet einen gemeinsamen begrifflichen Rahmen mit fachlich abgegrenzten Spezialisierungen. Nicht jede Eigenschaft muss f&#252;r jedes darstellende System gelten.
+M&#246;gliche Bereiche sind Farben, Typografie, Abst&#228;nde, Rahmen, Hintergr&#252;nde, Darstellungszust&#228;nde und Animationen sowie szenenspezifische Angaben zu Beleuchtung, Materialien und Geflechtdarstellung.
+Anwendungen und Projekt-Targets d&#252;rfen spezifische Darstellungseigenschaften erg&#228;nzen. Deren Bedeutung, zul&#228;ssige Werte und unterst&#252;tzte Anwendung m&#252;ssen ausdr&#252;cklich definiert sein.
+Appearance beschreibt die Darstellung. Fachliche Modelldaten, Geometrieerzeugung, Programmlogik und Exportabl&#228;ufe werden nicht allein durch ihre Verwendung in einer Darstellung zu Appearance-Eigenschaften.</pre></section><section id="s4-1-2"><h4><span>4.1.2</span> Verh&#228;ltnis zu CSS und darstellenden Anwendungen</h4><pre class="source">Appearance verallgemeinert das Darstellungskonzept &#252;ber CSS hinaus, ersetzt jedoch nicht die darstellenden Technologien.
+Eine Anwendung setzt die von ihr unterst&#252;tzten JSON-Eigenschaften in konkrete Darstellung um. F&#252;r HTML-Oberfl&#228;chen kann dies durch CSS geschehen; f&#252;r Szenen durch die jeweilige Zeichen- oder Renderinglogik.
+Ein JSON-Eintrag allein implementiert keine Darstellungsfunktion. Unterst&#252;tzte Eigenschaften und das Verhalten bei nicht unterst&#252;tzten Eigenschaften m&#252;ssen f&#252;r die jeweilige Anwendung festgelegt werden.
+Eine eigene CSS-Selektorsprache oder die &#220;bernahme der CSS-Kaskade wird durch diese Konvention nicht vorausgesetzt.</pre></section><section id="s4-1-3"><h4><span>4.1.3</span> Ablage und Quellen</h4><pre class="source">Appearance-Definitionen sind gemeinsam nutzbare Inhalte und geh&#246;ren fachlich zu Environment/Content. Der genaue Unterpfad und die Dateibenennung werden noch festgelegt.
+Globale Vorgaben und projektspezifische Spezialisierungen k&#246;nnen getrennte JSON-Quellen besitzen. Ihre Auswahl und ihr Zusammenwirken m&#252;ssen ausdr&#252;cklich beschrieben werden.
+Die jeweiligen JSON-Dateien sind die Prim&#228;rquellen ihrer Appearance-Daten. Daraus erzeugte CSS-Dateien oder andere Darstellungen sind abgeleitete Ergebnisse und keine unabh&#228;ngig zu pflegenden Definitionen derselben Werte.
+Referenzen und Generierungsabh&#228;ngigkeiten werden in Organization_Reference.json erfasst. Komponentenbezogene Ableitungen werden, soweit vorgesehen, durch Organization_Inheritance.json beschrieben.
+Environment/Content unterliegt der allgemeinen Komponentenvererbung nach Abschnitt 3.
+Medien, Vorlagen und andere verwendete Ressourcen werden nach M&#246;glichkeit referenziert statt redundant eingebettet.</pre><aside id="todo-s4-1-3"><h3>OFFEN · Ablage und Quellen</h3><ul><li>Appearance-Definitionen sind gemeinsam nutzbare Inhalte und geh&#246;ren fachlich zu Environment/Content. Der genaue Unterpfad und die Dateibenennung werden noch festgelegt.</li></ul></aside></section><section id="s4-1-4"><h4><span>4.1.4</span> Aufbau der JSON-Definitionen</h4><pre class="source">Die JSON-Struktur muss gemeinsame Darstellungseigenschaften und fachliche beziehungsweise anwendungsspezifische Erg&#228;nzungen unterscheidbar ausdr&#252;cken k&#246;nnen.
+F&#252;r Eigenschaften sind Bedeutung, Datentyp, zul&#228;ssige Werte und gegebenenfalls Einheiten festzulegen. Vorgabewerte und Referenzen auf andere Quellen m&#252;ssen eindeutig erkennbar sein.
+Die konkrete Struktur, Eigenschaftsnamen und Regeln zur Kombination mehrerer Appearance-Definitionen werden anschlie&#223;end festgelegt.
+Ohne solche Regeln wird weder eine automatische Zusammenf&#252;hrung noch ein stillschweigender Vorrang einer Quelle angenommen.
+Beschreibungen und sichtbare Bezeichnungen werden f&#252;r die sp&#228;tere Einbindung der Lokalisation vorgesehen.</pre><aside id="todo-s4-1-4"><h3>OFFEN · Aufbau der JSON-Definitionen</h3><ul><li>Beschreibungen und sichtbare Bezeichnungen werden f&#252;r die sp&#228;tere Einbindung der Lokalisation vorgesehen.</li></ul></aside></section><section id="s4-1-5"><h4><span>4.1.5</span> Schrittweise Einf&#252;hrung</h4><pre class="source">Die erste Spezialisierung soll anhand eines konkreten Darstellungsfalls ausgearbeitet werden, beispielsweise des Geometriebetrachters von Grundplatte.
+Gemeinsame Eigenschaften werden nur insoweit verallgemeinert, wie ihre Bedeutung &#252;ber die beteiligten Anwendungen hinweg eindeutig ist.
+Die Einf&#252;hrung erfolgt zun&#228;chst als Definition des Datenformats und seiner Anwendung. Anpassungen an Programmen, Projekt-Targets, Vorlagen oder bestehenden CSS-Dateien werden gesondert umgesetzt.
+Noch festzulegen sind insbesondere die JSON-Struktur, Ablagepfade, Eigenschaftskataloge, Ressourcenreferenzen, Kombinationsregeln und die Umsetzung durch die jeweiligen Anwendungen.
+Die sp&#228;tere physische Dateiaufteilung der Appearance-Konvention ist noch offen.</pre><aside id="todo-s4-1-5"><h3>OFFEN · Schrittweise Einf&#252;hrung</h3><ul><li>Die Einf&#252;hrung erfolgt zun&#228;chst als Definition des Datenformats und seiner Anwendung. Anpassungen an Programmen, Projekt-Targets, Vorlagen oder bestehenden CSS-Dateien werden gesondert umgesetzt.</li><li>Noch festzulegen sind insbesondere die JSON-Struktur, Ablagepfade, Eigenschaftskataloge, Ressourcenreferenzen, Kombinationsregeln und die Umsetzung durch die jeweiligen Anwendungen.</li><li>Die sp&#228;tere physische Dateiaufteilung der Appearance-Konvention ist noch offen.</li></ul></aside></section><section id="s4-2"><h3><span>4.2</span> Convention/Code</h3><pre class="source">Convention/Code/Code.html bleibt als fachlicher Bereich f&#252;r Quellcodedarstellung und Implementierungskonventionen vorgesehen. Konkrete Regeln und die Abgrenzung zu Naming werden noch festgelegt.</pre><aside id="todo-s4-2"><h3>OFFEN · Convention/Code</h3><ul><li>Convention/Code/Code.html bleibt als fachlicher Bereich f&#252;r Quellcodedarstellung und Implementierungskonventionen vorgesehen. Konkrete Regeln und die Abgrenzung zu Naming werden noch festgelegt.</li></ul></aside></section><section id="s4-3"><h3><span>4.3</span> Convention/Documentation</h3><pre class="source">Genau eine Datei Convention/Documentation/Documentation.html repr&#228;sentiert die vollst&#228;ndige Dokumentationskonvention. Sie referenziert Documentation.json und die erforderlichen Komponenten- und Referenzdefinitionen.
+Bisherige separate Dokumentationskonventionen wie Design.html oder Status.html sind f&#252;r diesen Entwurf ung&#252;ltig und werden nicht als Regelquellen &#252;bernommen. Ihre tats&#228;chliche Abl&#246;sung erfolgt bei Umsetzung; Dateien werden jetzt nicht gel&#246;scht oder bearbeitet.
+Dokumentationstypen, HeaderTemplates, Name, Reference, Edition, Bildmarken, Vorlagenzuordnung und Mehrfachtypen werden entsprechend Abschnitt 4.4.1.7 gemeinsam beschrieben. Gestaltung verweist auf Appearance und Ressourcen unter Environment/Content.</pre></section><section id="s4-4"><h3><span>4.4</span> Convention/Environment</h3><figure><img src="Organization.Preview.assets/4.4.svg" alt="Environment"><figcaption>Environment</figcaption></figure><pre class="source">Convention/Environment/Environment.html beschreibt die Umgebung einer Benutzungsinstanz zusammenh&#228;ngend: ihre lokalen Definitionen, verwendbaren Inhalte, Quellen und Bereitstellungswege. Die nachfolgenden Unterpunkte bilden den vollst&#228;ndigen Environment-Teil dieses Entwurfs.
+Die Konvention referenziert die ma&#223;geblichen JSON-Dateien unter Environment/Definition. Allgemeine Ableitungsregeln bleiben in Abschnitt 3 definiert; fachliche Spezialisierungen verweisen auf ihre jeweiligen Konventionen.
+Environment umfasst die Konfiguration der Benutzungsinstanz und die f&#252;r ihre Benutzung bereitgestellten Inhalte.
+Environment/Definition enth&#228;lt die ma&#223;geblichen lokalen Umgebungsdefinitionen im JSON-Format.
+Environment/Content enth&#228;lt verwendbare Inhalte sowie Verkn&#252;pfungen zu Process-Definitionen und Tools. Eine Bereitstellung unter Content &#228;ndert weder die fachliche Rolle noch die ma&#223;gebliche Originalquelle einer Komponente.</pre></section><section id="s4-4-1"><h4><span>4.4.1</span> Inhalt von Environment/Definition</h4><pre class="source">Erst durch die konkreten Definitionen der Umgebung wird die Organisation als Benutzungsinstanz bestimmt.
+Alle Umgebungsdefinitionen liegen als JSON-Dateien im Verzeichnis Environment/Definition unterhalb des prim&#228;ren Workspace Root des Projektwaldes.
+Die Gesamtheit dieser JSON-Dateien bildet die vollst&#228;ndige Definition der Umgebungsvariablen der Benutzungsinstanz, einschlie&#223;lich ihrer Projektknoten.
+Ein KI-Agent sowie ein menschlicher Organisationsanwender muss stets s&#228;mtliche dieser Umgebungsdefinitionen als zentrale, g&#252;ltige und ma&#223;gebliche Datenquelle zugrunde legen.
+Dies gilt f&#252;r Parameter von Processes, Parameter von Tools und alle weiteren Aktivit&#228;ten innerhalb der Projektorganisation.
+Umgebungsdefinitionen aus anderen Arbeitsr&#228;umen sind f&#252;r diese Benutzungsinstanz ung&#252;ltig. Sie werden nicht als Umgebungswerte &#252;bernommen.
+Zus&#228;tzliche Projekt-Workspaces begr&#252;nden keine zus&#228;tzlichen Quellen f&#252;r Umgebungsdefinitionen.
+Die konkreten JSON-Strukturen werden entsprechend den nachfolgenden Festlegungen und noch offenen Definitionsvorschl&#228;gen ausgearbeitet.</pre></section><section id="s4-4-1-0"><h5><span>4.4.1.0</span> &#220;berblick: Liste der Inhalte</h5><pre class="source">- Organization.json: Name, Hauptschalter, globale Arbeitsraumdefinitionen und statische &#220;bersicht der zugeh&#246;rigen Definitionsdateien.
+- Organization_Inheritance.json: Ableitungsregeln, Komponentenverzeichnis, Lokationen und komponentenspezifische Einstellungen.
+- Organization_Reference.json: Prim&#228;rquellen, Referenzbeziehungen und Generierungsabh&#228;ngigkeiten.
+- Organization_BackupTarget.json: Globale absolute Zielpfade f&#252;r externe Sicherungen.
+- User.json: Flache Liste der innerhalb der Projektorganisation bekannten Benutzer.
+- Project_Forest.json: Benutzerdefinierter Projektwald mit Projektmappen, Build-Targets, Beziehungen, Verantwortlichkeiten und zus&#228;tzlichen Projekt-Workspaces.
+- Project_Structure_Folder_Default.json: Standardverzeichnisstruktur f&#252;r Projekte und Testprojekte.
+- Access.json: Zugriffsgew&#228;hrung f&#252;r weitere Benutzer.
+- Documentation.json: Dokumentationstypen, HeaderTemplates und Zuordnung von Dokumentationsvorlagen.
+Workspace.json und Base.json entfallen als separate Definitionsdateien. Die globalen Arbeitsraumdefinitionen geh&#246;ren in Organization.json. Projektbezogene Basisangaben und zus&#228;tzliche Projekt-Workspaces geh&#246;ren in Project_Forest.json.
+Die vorgesehenen Lokalisierungsdateien werden nach Kl&#228;rung ihrer Ablage und Struktur erg&#228;nzt.</pre></section><section id="s4-4-1-1"><h5><span>4.4.1.1</span> Organization.json</h5><pre class="source">Organization.json definiert den Namen und die Aktivierung der konkreten Organization und enth&#228;lt die globalen Arbeitsraumdefinitionen f&#252;r jeden Projektknoten des Projektwaldes.
+Zus&#228;tzlich enth&#228;lt sie eine statische, rein informative &#220;bersicht der zugeh&#246;rigen Definitionsdateien.
+Inhalt:
+- Organization.Name: Name der Organization und zugleich Name des Projektwaldes.
+- Organization.Aktivation: Boolescher Hauptschalter.
+- Organization.Workspace.ProjectForest: Prim&#228;rer Workspace Root des Projektwaldes.
+- Organization.Workspace.OrganizationBase: Workspace Root der zugrunde liegenden Organization.
+- Organization.DefinitionFiles: Statische Liste der zugeh&#246;rigen Definitionsdateien.
+Organization.Name ist die Prim&#228;rquelle des Projektwaldnamens. Project_Forest.json und andere Quellen referenzieren diesen Wert, statt ihn unabh&#228;ngig erneut zu definieren.
+Bei Aktivation: true ist die Benutzung aktiviert. Bei false sind s&#228;mtliche durch diese Organisationsdefinition verwalteten Komponenten deaktiviert.
+Die statische &#220;bersicht enth&#228;lt folgende Dateinamen:
+- Organization.json
+- Organization_Inheritance.json
+- Organization_Reference.json
+- Organization_BackupTarget.json
+- User.json
+- Project_Forest.json
+- Project_Structure_Folder_Default.json
+- Access.json
+- Documentation.json
+Diese Namen dienen ausschlie&#223;lich der Information. Die Liste steuert weder die Dateisuche noch die Aktivierung oder Vererbung. Sie definiert keine alternativen Dateinamen und ersetzt nicht die jeweiligen Dateien.
+Komponentenbezogene Ableitungsregeln und Einstellungen werden ausschlie&#223;lich in Organization_Inheritance.json gef&#252;hrt.
+Vorgeschlagene JSON-Struktur:
+{
+  &quot;Organization&quot;: {
+    &quot;Name&quot;: &quot;&lt;OrganizationName&gt;&quot;,
+    &quot;Aktivation&quot;: true,
+    &quot;Workspace&quot;: {
+      &quot;ProjectForest&quot;: &quot;.&quot;,
+      &quot;OrganizationBase&quot;: &quot;\\\\acer\\e\\Programmierung\\Organisation&quot;
+    },
+    &quot;DefinitionFiles&quot;: [
+      &quot;Organization.json&quot;,
+      &quot;Organization_Inheritance.json&quot;,
+      &quot;Organization_Reference.json&quot;,
+      &quot;Organization_BackupTarget.json&quot;,
+      &quot;User.json&quot;,
+      &quot;Project_Forest.json&quot;,
+      &quot;Project_Structure_Folder_Default.json&quot;,
+      &quot;Access.json&quot;,
+      &quot;Documentation.json&quot;
+    ]
+  }
+}</pre></section><section id="s4-4-1-1-1"><h6 class="pending"><span>4.4.1.1.1</span> Optionale Aktivierung einzelner Funktionsbereiche [Vorschlag]</h6><pre class="source">Zus&#228;tzliche Aktivierungsschalter k&#246;nnen sinnvoll sein, wenn ein Funktionsbereich ausdr&#252;cklich optional ist. Sie werden getrennt von der statischen Dateiliste gef&#252;hrt.
+Ein untergeordneter Schalter kann einen Funktionsbereich nur aktivieren, wenn auch Organization.Aktivation aktiviert ist.
+Es gilt:
+Funktionsbereichsaktivit&#228;t = Organization.Aktivation &amp;&amp; Funktionsbereich.Aktivation
+Die grundlegenden Definitionen der Organisationsverwaltung erhalten keinen unabh&#228;ngigen Abschaltschalter.
+F&#252;r User.json und Project_Forest.json werden zun&#228;chst keine eigenen Schalter vorgesehen, da andere Definitionsdateien auf ihre Angaben verweisen.
+F&#252;r Documentation kann ein eigener Aktivierungsschalter sinnvoll sein, wenn die dokumentationsbezogenen Funktionen optional benutzt werden sollen.
+F&#252;r Access wird zun&#228;chst kein Abschaltschalter vorgesehen. Eine Deaktivierung darf keinesfalls als uneingeschr&#228;nkte Zugriffsgew&#228;hrung verstanden werden.
+Die Aktivierung eines Funktionsbereichs ist von der G&#252;ltigkeit seiner Umgebungsdefinitionen zu unterscheiden. Auch bei deaktiviertem Funktionsbereich bleiben die Definitionen des prim&#228;ren Arbeitsraums die ma&#223;gebliche Datenquelle; fremde Umgebungsdefinitionen treten nicht an ihre Stelle.
+Welche Funktionsbereiche eigene Schalter erhalten und welche Wirkung deren Deaktivierung hat, wird vor Einf&#252;hrung dieser Schalter festgelegt.</pre></section><section id="s4-4-1-2"><h5><span>4.4.1.2</span> Organization_Inheritance.json</h5><pre class="source">Organization_Inheritance.json beschreibt die verf&#252;gbaren Ableitungsregeln sowie den ermittelten Bestand der globalen und lokalen Komponenten.
+Inhalt, in dieser Reihenfolge:
+- &quot;Inheritance Rule&quot;: Definition der Ableitungsregeln mit Ruletype und Description.
+- &quot;Component&quot;: Liste der Komponenten.
+F&#252;r jede Komponente werden mindestens gef&#252;hrt:
+- Dateiname ohne Pfad.
+- Liste aller Lokationen als Verzeichnispfade ohne Dateiname.
+- Ausgew&#228;hlte Ableitungsregel beziehungsweise Regelkonfiguration.
+Zus&#228;tzlich wird eine eindeutige Komponentenkennung vorgeschlagen. Sie erm&#246;glicht stabile Verweise aus anderen Definitionsdateien. Der Dateiname allein ist daf&#252;r nicht ausreichend.
+Die Lokationen m&#252;ssen eindeutig dem prim&#228;ren beziehungsweise sekund&#228;ren Arbeitsraum zugeordnet werden k&#246;nnen. Eine Lokation kann beide Rollen erf&#252;llen.
+Die Regelkonfiguration muss Aktivation, Inheritance und gegebenenfalls Replacement oder Redefinition eindeutig ausdr&#252;cken k&#246;nnen.
+Ermittlung, Aktualisierung und Abgleich mit bisherigen Einstellungen richten sich nach Abschnitt 3.6. Vor der Aktualisierung einer vorhandenen Datei ist deren lokale, tempor&#228;re Kopie anzulegen.</pre></section><section id="s4-4-1-3"><h5><span>4.4.1.3</span> User.json</h5><pre class="source">User.json enth&#228;lt eine flache Liste der innerhalb der Projektorganisation bekannten Benutzer. Die Liste bildet keine Benutzerhierarchie ab.
+Vorgeschlagener Inhalt je Benutzer:
+- Username: Eindeutige Benutzerkennung.
+- Name: Optionaler Anzeigename.
+- Description: Optionale Beschreibung.
+Username dient als Referenz f&#252;r die anderen Definitionsdateien.
+Projektbezogene Rollen wie Entwickler oder Tester werden in Project_Forest.json zugewiesen. Zugriffsgew&#228;hrungen werden in Access.json gef&#252;hrt.
+Die Aufnahme eines Benutzers in User.json gew&#228;hrt allein keinen Zugriff.</pre></section><section id="s4-4-1-4"><h5><span>4.4.1.4</span> Project_Forest.json</h5><pre class="source">Project_Forest.json beschreibt s&#228;mtliche Projektb&#228;ume und die darin erfassten Projekte als Knoten dieser B&#228;ume.
+Der zugeh&#246;rige Waldname wird aus Organization.Name in Organization.json referenziert. Er wird nicht unabh&#228;ngig in Project_Forest.json erneut definiert.
+Vorgeschlagener Inhalt:
+- Liste der benannten Projektb&#228;ume.
+- Hierarchische Projektknoten innerhalb jedes Baums.
+Vorgeschlagener Inhalt je Projektknoten:
+- Knotenlokaler Projektname.
+- Untergeordnete Projektknoten, sofern vorhanden.
+- Username des projektverantwortlichen Benutzers.
+- Optionale Zuordnung weiterer Benutzer zu Projektrollen, beispielsweise Entwickler, Tester und Lokalisierungsverantwortlicher.
+- Optionale Lokalisierungsangaben, beispielsweise Ausgangssprache und Zielsprachen.
+- Optionale technische Projektverweise, beispielsweise auf sln- und vcxproj-Dateien.
+- Zus&#228;tzliche Projekt-Workspaces.
+- Weitere projektbezogene Basisangaben, deren Einzelheiten noch festzulegen sind.
+Benutzerzuordnungen verweisen auf Username aus User.json.
+Eine Eltern-Kind-Beziehung im Projektwald definiert f&#252;r sich allein weder die Vererbung einer Organization noch Zugriffsrechte.
+Base.json entf&#228;llt. Projektbezogene Basisangaben werden in Project_Forest.json gef&#252;hrt.</pre><aside id="todo-s4-4-1-4"><h3>OFFEN · Project_Forest.json</h3><ul><li>- Weitere projektbezogene Basisangaben, deren Einzelheiten noch festzulegen sind.</li></ul></aside></section><section id="s4-4-1-4-1"><h6><span>4.4.1.4.1</span> Eindeutige Projektnamen und Waldstruktur</h6><pre class="source">Ein Projekt wird durch seinen vollst&#228;ndigen Namen innerhalb des Projektwaldes eindeutig bezeichnet.
+Die Namensform lautet:
+Waldname::Baumname::Namen der parentalen Vorfahren::Projektname
+Waldname entspricht Organization.Name.
+Die Namen der parentalen Vorfahren werden in ihrer hierarchischen Reihenfolge jeweils durch &quot;::&quot; getrennt aufgef&#252;hrt.
+Wenn keine parentalen Vorfahren vorhanden sind, lautet die Namensform:
+Waldname::Baumname::Projektname
+Eine zus&#228;tzliche, unabh&#228;ngig vergebene Projektkennung ist nicht vorgesehen.
+Baumnamen m&#252;ssen innerhalb ihres Waldes eindeutig sein. Knotenlokale Projektnamen m&#252;ssen unter demselben Parentalknoten eindeutig sein.
+Ein Parentalknoten ist ein Projektknoten mit mindestens einem untergeordneten Projektknoten.
+Jeder Projektknoten hat h&#246;chstens einen unmittelbaren Parentalknoten. Der Wurzelknoten eines Baums hat keinen Parentalknoten.
+Ein Projektwald kann mehrere B&#228;ume als Projektmappen enthalten. Innerhalb einer Projektmappe k&#246;nnen mehrere parentallose Targetknoten stehen. Jeder Targetknoten hat h&#246;chstens einen unmittelbaren Parentalknoten; zyklische Beziehungen sind ausgeschlossen.
+Der Baum repr&#228;sentiert eine Projektmappe; die darin enthaltenen Projektknoten repr&#228;sentieren Build-Targets nach Abschnitt 4.9. Die genaue JSON-Darstellung bleibt festzulegen.
+Ebenso sind die zul&#228;ssigen Namenszeichen und die Behandlung des Trennzeichens &quot;::&quot; innerhalb von Namen noch festzulegen.
+Eine Umbenennung oder Verschiebung eines Projektknotens ver&#228;ndert seinen vollst&#228;ndigen Namen und die vollst&#228;ndigen Namen seiner Nachfahren. Eine &#196;nderung von Organization.Name ver&#228;ndert den Waldnamen in s&#228;mtlichen vollst&#228;ndigen Projektnamen. Betroffene Referenzen m&#252;ssen jeweils abgeglichen werden.</pre><aside id="todo-s4-4-1-4-1"><h3>OFFEN · Eindeutige Projektnamen und Waldstruktur</h3><ul><li>Ebenso sind die zul&#228;ssigen Namenszeichen und die Behandlung des Trennzeichens &quot;::&quot; innerhalb von Namen noch festzulegen.</li></ul></aside></section><section id="s4-4-1-5"><h5><span>4.4.1.5</span> Globale und zus&#228;tzliche Arbeitsr&#228;ume</h5><pre class="source">Die globalen Arbeitsr&#228;ume werden ausschlie&#223;lich in Organization.json definiert:
+- Organization.Workspace.ProjectForest: Prim&#228;rer Workspace Root des Projektwaldes.
+- Organization.Workspace.OrganizationBase: Workspace Root der zugrunde liegenden Organization.
+Diese Definitionen gelten f&#252;r jeden Projektknoten.
+ProjectForest mit dem Wert &quot;.&quot; bezeichnet den prim&#228;ren Workspace Root des Projektwaldes, nicht den Ablageort der JSON-Datei.
+OrganizationBase wird als absoluter Pfad angegeben.
+Die Umgebungsdefinitionen des prim&#228;ren Arbeitsraums sind ma&#223;geblich. Umgebungsdefinitionen aus einem davon verschiedenen Arbeitsraum der Organization-Basis werden nicht &#252;bernommen.
+Jeder Projektknoten darf in Project_Forest.json zus&#228;tzliche Workspaces definieren.
+Zus&#228;tzliche Projekt-Workspaces erg&#228;nzen die globalen Arbeitsr&#228;ume. Sie ersetzen weder den Workspace Root des Projektwaldes noch den Workspace Root der Organization-Basis.
+Vorgeschlagener Inhalt je zus&#228;tzlichem Workspace:
+- Knotenlokaler Workspace-Name.
+- Pfad.
+- Optionale Beschreibung seines Zwecks.
+Noch festzulegen sind die Zul&#228;ssigkeit relativer Pfade, deren Bezugspunkt sowie die Weitergabe zus&#228;tzlicher Workspaces an untergeordnete Projektknoten.
+Die Definition eines zus&#228;tzlichen Workspace allein &#228;ndert weder den Ausf&#252;hrungsort eines Process noch die ma&#223;gebliche Quelle der Umgebungsdefinitionen.
+Eine separate Workspace.json entf&#228;llt.</pre><aside id="todo-s4-4-1-5"><h3>OFFEN · Globale und zus&#228;tzliche Arbeitsr&#228;ume</h3><ul><li>Noch festzulegen sind die Zul&#228;ssigkeit relativer Pfade, deren Bezugspunkt sowie die Weitergabe zus&#228;tzlicher Workspaces an untergeordnete Projektknoten.</li></ul></aside></section><section id="s4-4-1-5-1"><h6><span>4.4.1.5.1</span> Benutzung der Organization durch sich selbst</h6><pre class="source">Die Organization kann innerhalb ihres eigenen Arbeitsraums eine Umgebungsdefinition f&#252;hren und sich damit selbst als benutzbare Organisationsbasis instanziieren.
+In diesem Fall bezeichnen ProjectForest und OrganizationBase dieselbe Wurzel des Arbeitsraums der Organization-Basis.
+Die Rollen bleiben bestehen, auch wenn ihre aufgel&#246;sten Pfade identisch sind.
+Die dort vorhandenen Umgebungsdefinitionen gelten aufgrund ihrer Zugeh&#246;rigkeit zum prim&#228;ren Arbeitsraum. Sie werden nicht aus dem sekund&#228;ren Arbeitsraum vererbt.
+F&#252;r diese Benutzungsinstanz gelten dieselben Aktivierungs-, Ableitungs-, Komponenten- und Ausf&#252;hrungsregeln wie f&#252;r jede andere Benutzungsinstanz. Gesonderte Sonderfallregelungen sind nicht vorgesehen.
+Die allgemeinen Regeln m&#252;ssen deshalb identische Arbeitsr&#228;ume und identische Dateilokationen eindeutig behandeln k&#246;nnen. Dieselbe Datei wird durch ihre Zuordnung zu beiden Arbeitsraumrollen weder zu einer zweiten Datei noch zu einer zus&#228;tzlichen Konkretisierung ihrer selbst.</pre><aside id="todo-s4-4-1-5-1"><h3>OFFEN · Benutzung der Organization durch sich selbst</h3><ul><li>F&#252;r diese Benutzungsinstanz gelten dieselben Aktivierungs-, Ableitungs-, Komponenten- und Ausf&#252;hrungsregeln wie f&#252;r jede andere Benutzungsinstanz. Gesonderte Sonderfallregelungen sind nicht vorgesehen.</li><li>Die allgemeinen Regeln m&#252;ssen deshalb identische Arbeitsr&#228;ume und identische Dateilokationen eindeutig behandeln k&#246;nnen. Dieselbe Datei wird durch ihre Zuordnung zu beiden Arbeitsraumrollen weder zu einer zweiten Datei noch zu einer zus&#228;tzlichen Konkretisierung ihrer selbst.</li></ul></aside></section><section id="s4-4-1-6"><h5><span>4.4.1.6</span> Access.json</h5><pre class="source">Access.json definiert, welchen weiteren Benutzern innerhalb der Projektorganisation Zugriff gew&#228;hrt wird.
+Vorgeschlagener Inhalt je Zugriffsgew&#228;hrung:
+- Username als Referenz auf User.json.
+- Geltungsbereich der Gew&#228;hrung, beispielsweise der Projektwald, ein durch seinen vollst&#228;ndigen Namen bezeichnetes Projekt oder eine bestimmte Ressource.
+- Zul&#228;ssige Zugriffsarten, beispielsweise Lesen, Schreiben oder Ausf&#252;hren.
+Die Bekanntheit eines Benutzers in User.json und seine Rolle in Project_Forest.json ersetzen keine Zugriffsgew&#228;hrung.
+Noch festzulegen sind die zul&#228;ssigen Zugriffsarten, Standardrechte, die Behandlung &#252;berlappender Gew&#228;hrungen und eine m&#246;gliche Geltung f&#252;r untergeordnete Projekte.
+Access.json beschreibt die organisatorische Zugriffsregelung. Eine technische Umsetzung in Dateisystem- oder Programmrechten muss gesondert festgelegt werden; sie entsteht nicht allein durch den JSON-Eintrag.</pre><aside id="todo-s4-4-1-6"><h3>OFFEN · Access.json</h3><ul><li>Noch festzulegen sind die zul&#228;ssigen Zugriffsarten, Standardrechte, die Behandlung &#252;berlappender Gew&#228;hrungen und eine m&#246;gliche Geltung f&#252;r untergeordnete Projekte.</li><li>Access.json beschreibt die organisatorische Zugriffsregelung. Eine technische Umsetzung in Dateisystem- oder Programmrechten muss gesondert festgelegt werden; sie entsteht nicht allein durch den JSON-Eintrag.</li></ul></aside></section><section id="s4-4-1-7"><h5><span>4.4.1.7</span> Documentation.json</h5><figure><img src="Organization.Preview.assets/4.4.1.7.svg" alt="Dokumentation"><figcaption>Dokumentation</figcaption></figure><pre class="source">Documentation.json definiert die Dokumentationstypen, die HeaderTemplates sowie die Zuordnung bestimmter Dokumentationsvorlagen-Komponenten zu Dokumentationstypen.
+Vorgesehene Dokumentationstypen:
+- General
+- Release
+- Development
+- Draft
+- Analysis
+- Test
+- Diskussion
+Ein Dokument kann einem oder mehreren Dokumentationstypen zugeordnet sein.</pre></section><section id="s4-4-1-7-1"><h6><span>4.4.1.7.1</span> Dokumentationstypen</h6><pre class="source">Der Katalog der Dokumentationstypen enth&#228;lt:
+- Typname.
+- Optionale Bildmarke als Komponente unter einem noch festzulegenden Ressourcenpfad unter Environment/Content f&#252;r $Typname$.SVG.
+Die Bildmarke wird unabh&#228;ngig von der Zuordnung der Dokumentationsvorlagen gef&#252;hrt.
+Beschreibende Angaben werden f&#252;r die sp&#228;tere Bereitstellung &#252;ber Lokalisierungsreferenzen vorgesehen. Die konkrete Definition und Einf&#252;hrung dieser Referenzen erfolgt sp&#228;ter.</pre><aside id="todo-s4-4-1-7-1"><h3>OFFEN · Dokumentationstypen</h3><ul><li>- Optionale Bildmarke als Komponente unter einem noch festzulegenden Ressourcenpfad unter Environment/Content f&#252;r $Typname$.SVG.</li><li>Beschreibende Angaben werden f&#252;r die sp&#228;tere Bereitstellung &#252;ber Lokalisierungsreferenzen vorgesehen. Die konkrete Definition und Einf&#252;hrung dieser Referenzen erfolgt sp&#228;ter.</li></ul></aside></section><section id="s4-4-1-7-2"><h6><span>4.4.1.7.2</span> HeaderTemplate</h6><pre class="source">Die Struktur &quot;HeaderTemplate&quot; beschreibt die Vorlagen f&#252;r Dokumentationsheader.
+Sie enth&#228;lt:
+- &quot;HeaderTemplateTypeName&quot;: Verweis auf einen Typ aus der parallelen Struktur &quot;HeaderTemplateType&quot;.
+- &quot;HeaderTemplateTypeOptics&quot;: Liste von Gestaltungskomponenten unter Environment/Content an einem noch festzulegenden Ressourcenpfad.
+- &quot;HeaderTemplateComponent&quot;: Inhaltliche Komponenten des Headers einschlie&#223;lich ihrer Eigenschaften.
+HeaderTemplateTypeOptics ist von der optionalen Bildmarke eines Dokumentationstyps getrennt.
+Gemeinsame HeaderTemplates werden vorgesehen. Optional k&#246;nnen zus&#228;tzliche oder abweichende Festlegungen je Dokumentationstyp getroffen werden.
+Die endg&#252;ltige Verzeichnisbenennung f&#252;r HeaderTemplateTypeOptics ist noch festzulegen.</pre><aside id="todo-s4-4-1-7-2"><h3>OFFEN · HeaderTemplate</h3><ul><li>- &quot;HeaderTemplateTypeOptics&quot;: Liste von Gestaltungskomponenten unter Environment/Content an einem noch festzulegenden Ressourcenpfad.</li><li>Die endg&#252;ltige Verzeichnisbenennung f&#252;r HeaderTemplateTypeOptics ist noch festzulegen.</li></ul></aside></section><section id="s4-4-1-7-2-1"><h6><span>4.4.1.7.2.1</span> HeaderTemplateComponent</h6><pre class="source">&quot;HeaderTemplateComponent&quot; enth&#228;lt alle weiteren Angaben zum jeweiligen Headerinhalt.
+Dazu geh&#246;ren:
+- &quot;Name&quot;: Sichtbare Bezeichnung der Komponente, beispielsweise &quot;Datum der Erstellung&quot;.
+- Inhalt beziehungsweise Wert.
+- Datentyp beziehungsweise zul&#228;ssige Werte.
+- &quot;Reference&quot;: Gegebenenfalls Verweis auf die ma&#223;gebliche Datenquelle.
+- &quot;Edition&quot;: Boolesche Angabe zur Bearbeitbarkeit des Inhalts im konkreten Dokument.
+Name wird im Dokument als Bezeichnung des zugeh&#246;rigen Inhalts angezeigt. Die sp&#228;tere Bereitstellung dieser Bezeichnung &#252;ber Lokalisierungsreferenzen ist vorzusehen.
+F&#252;r Edition gilt:
+- true: Der Inhalt darf bearbeitet werden.
+- false: Der Inhalt darf nicht bearbeitet werden.
+Eine Eigenschaft &quot;Extensible&quot; wird nicht vorgesehen.
+Eine Kennzeichnung als verpflichtend oder optional wird nicht vorgesehen.
+Die konkrete Darstellung statischer Werte und dynamisch ermittelter Inhalte sowie das Verhalten bei Aktualisierungen werden noch festgelegt.
+Insbesondere ist zu bestimmen, wie ein bearbeiteter, urspr&#252;nglich aus einer Reference ermittelter Inhalt bei einer erneuten Aktualisierung behandelt wird.
+Projektverweise verwenden den vollst&#228;ndigen Projektnamen aus Project_Forest.json.</pre><aside id="todo-s4-4-1-7-2-1"><h3>OFFEN · HeaderTemplateComponent</h3><ul><li>Name wird im Dokument als Bezeichnung des zugeh&#246;rigen Inhalts angezeigt. Die sp&#228;tere Bereitstellung dieser Bezeichnung &#252;ber Lokalisierungsreferenzen ist vorzusehen.</li><li>Die konkrete Darstellung statischer Werte und dynamisch ermittelter Inhalte sowie das Verhalten bei Aktualisierungen werden noch festgelegt.</li></ul></aside></section><section id="s4-4-1-7-2-2"><h6><span>4.4.1.7.2.2</span> HeaderTemplateType</h6><pre class="source">Parallel zu &quot;HeaderTemplate&quot; wird die Struktur &quot;HeaderTemplateType&quot; gef&#252;hrt.
+Sie definiert die verf&#252;gbaren HeaderTemplate-Typen.
+Der HeaderTemplateTypeName bezeichnet den jeweiligen Typ eindeutig. Eine zus&#228;tzliche unabh&#228;ngige Typkennung wird nicht eingef&#252;hrt.
+Weitere Angaben der Typstruktur werden noch festgelegt.</pre><aside id="todo-s4-4-1-7-2-2"><h3>OFFEN · HeaderTemplateType</h3><ul><li>Weitere Angaben der Typstruktur werden noch festgelegt.</li></ul></aside></section><section id="s4-4-1-7-2-3"><h6><span>4.4.1.7.2.3</span> HeaderTemplateComponentProperty</h6><pre class="source">Parallel zu &quot;HeaderTemplate&quot; und &quot;HeaderTemplateType&quot; wird die Struktur &quot;HeaderTemplateComponentProperty&quot; gef&#252;hrt.
+Sie definiert die verf&#252;gbaren Eigenschaften der HeaderTemplate-Komponenten, darunter Name, Reference und Edition.
+Die genaue Struktur der Eigenschaftsdefinitionen und ihre Verwendung innerhalb von HeaderTemplateComponent werden noch festgelegt.
+Beschreibende Angaben werden f&#252;r die sp&#228;tere Bereitstellung &#252;ber Lokalisierungsreferenzen vorgesehen.</pre><aside id="todo-s4-4-1-7-2-3"><h3>OFFEN · HeaderTemplateComponentProperty</h3><ul><li>Die genaue Struktur der Eigenschaftsdefinitionen und ihre Verwendung innerhalb von HeaderTemplateComponent werden noch festgelegt.</li><li>Beschreibende Angaben werden f&#252;r die sp&#228;tere Bereitstellung &#252;ber Lokalisierungsreferenzen vorgesehen.</li></ul></aside></section><section id="s4-4-1-7-3"><h6><span>4.4.1.7.3</span> Zuordnung von Dokumentationsvorlagen</h6><pre class="source">Bestimmten Dokumentationsvorlagen-Komponenten aus Organization_Inheritance.json kann ein Dokumentationstyp zugeordnet werden.
+Die Zuordnung geht von der jeweiligen Vorlagen-Komponente aus.
+Die in Organization_Inheritance.json geltenden Aktivierungs- und Ableitungsregeln bleiben ma&#223;geblich.
+Die optionale Bildmarke eines Dokumentationstyps wird separat nach Abschnitt 4.4.1.7.1 gef&#252;hrt.</pre></section><section id="s4-4-1-7-4"><h6><span>4.4.1.7.4</span> Dokumente mit mehreren Dokumentationstypen</h6><pre class="source">Ein Dokument kann mehrere Dokumentationstypen besitzen.
+Die Regeln f&#252;r das Zusammenwirken dieser Typen werden noch festgelegt. Eine automatische Vermischung von Vorlagen oder widerspr&#252;chlichen HeaderTemplate-Festlegungen ist damit noch nicht definiert.
+Zu kl&#228;ren sind insbesondere:
+- Darstellung mehrerer Typen und ihrer optionalen Bildmarken.
+- Zusammenwirken gemeinsamer und typspezifischer HeaderTemplates.
+- Behandlung widerspr&#252;chlicher Festlegungen f&#252;r denselben HeaderTemplate-Typ beziehungsweise dessen Komponenten.
+- Auswahl oder ausdr&#252;cklich geregelte Kombination geeigneter Dokumentationsvorlagen.</pre><aside id="todo-s4-4-1-7-4"><h3>OFFEN · Dokumente mit mehreren Dokumentationstypen</h3><ul><li>Die Regeln f&#252;r das Zusammenwirken dieser Typen werden noch festgelegt. Eine automatische Vermischung von Vorlagen oder widerspr&#252;chlichen HeaderTemplate-Festlegungen ist damit noch nicht definiert.</li><li>Zu kl&#228;ren sind insbesondere:</li></ul></aside></section><section id="s4-4-1-8"><h5><span>4.4.1.8</span> Organization_Reference.json</h5><pre class="source">Organization_Reference.json enth&#228;lt die ma&#223;gebliche Referenz- und Abh&#228;ngigkeitsstruktur der Benutzungsinstanz.
+Sie f&#252;hrt Quellen und Beziehungen entsprechend Abschnitt 1.1.1.
+Vorgeschlagene Hauptstrukturen:
+- &quot;Source&quot;: Quellen und abh&#228;ngige Dateien.
+- &quot;Relation&quot;: Reference- und Generation-Beziehungen.
+Die Abh&#228;ngigkeiten einer Prim&#228;rquelle und ihre abh&#228;ngigen Darstellungen werden aus dieser Struktur ermittelt.
+Komponentenlokationen werden aus Organization_Inheritance.json referenziert, soweit dort vorhanden.
+Die Datei beschreibt Abh&#228;ngigkeiten. Sie ersetzt weder die referenzierten Inhalte noch die Ableitungsregeln und startet keine Generierung.</pre></section><section id="s4-4-1-9"><h5><span>4.4.1.9</span> Organization_BackupTarget.json</h5><figure><img src="Organization.Preview.assets/4.4.1.9.svg" alt="Externe Sicherungen"><figcaption>Externe Sicherungen</figcaption></figure><pre class="source">Organization_BackupTarget.json definiert die globalen Zielorte f&#252;r externe Sicherungen der Benutzungsinstanz.
+Sie enth&#228;lt eine Liste mit mindestens zwei und beliebig vielen weiteren absoluten Verzeichnispfaden.
+Die Pfade bezeichnen unterschiedliche externe Sicherungsziele und gelten organisationsweit.
+Relative Pfade sind nicht zul&#228;ssig.
+Die Datei enth&#228;lt ausschlie&#223;lich die Sicherungsziele. Weitere Einstellungen des Backup-Programms werden gesondert festgelegt.
+Der Name BackupTarget.json wird nicht verwendet; die Datei hei&#223;t aufgrund ihres globalen Geltungsbereichs Organization_BackupTarget.json.
+Die genaue JSON-Struktur wird noch festgelegt.
+Die Aufnahme eines Zielpfads f&#252;hrt allein weder zur Erstellung einer Sicherung noch zur Ausf&#252;hrung des Backup-Programms.</pre><aside id="todo-s4-4-1-9"><h3>OFFEN · Organization_BackupTarget.json</h3><ul><li>Die Datei enth&#228;lt ausschlie&#223;lich die Sicherungsziele. Weitere Einstellungen des Backup-Programms werden gesondert festgelegt.</li><li>Die genaue JSON-Struktur wird noch festgelegt.</li></ul></aside></section><section id="s4-4-1-10"><h5><span>4.4.1.10</span> Project_Structure_Folder_Default.json</h5><pre class="source">Die Datei enth&#228;lt die Standardverzeichnisstruktur nach Abschnitt 4.9.3 als JSON. Sie liegt neben der benutzerdefinierten Project_Forest.json unter Environment/Definition und geh&#246;rt vollst&#228;ndig zur lokalen, nicht vererbbaren Umgebungsdefinition.
+Sie beschreibt die relative Ordnerstruktur und ausdr&#252;cklich leere Verzeichnisse Convention und Organization. Die konkrete JSON-Repr&#228;sentation und zul&#228;ssige projektbezogene Erg&#228;nzungen werden noch festgelegt.</pre><aside id="todo-s4-4-1-10"><h3>OFFEN · Project_Structure_Folder_Default.json</h3><ul><li>Sie beschreibt die relative Ordnerstruktur und ausdr&#252;cklich leere Verzeichnisse Convention und Organization. Die konkrete JSON-Repr&#228;sentation und zul&#228;ssige projektbezogene Erg&#228;nzungen werden noch festgelegt.</li></ul></aside></section><section id="s4-4-2"><h4><span>4.4.2</span> Inhalt von Environment/Content</h4><figure><img src="Organization.Preview.assets/4.4.2.svg" alt="Content-Verkn&#252;pfungen"><figcaption>Content-Verkn&#252;pfungen</figcaption></figure><pre class="source">Environment/Content stellt die von der Benutzungsinstanz verwendeten Inhalte bereit. Dazu geh&#246;ren Lokalisierungsdaten, Dokumentationsvorlagen, Appearance-Definitionen sowie Verkn&#252;pfungen zu Process-Definitionen und Tools.
+Die lokale Umgebungsdefinition bestimmt, welche Quellen benutzt werden. Die Bereitstellung eines Inhalts allein aktiviert ihn nicht und f&#252;hrt ihn nicht aus.
+Inhaltsdaten k&#246;nnen aus ausdr&#252;cklich bestimmten Quellen verschiedener Arbeitsr&#228;ume stammen. Die ausschlie&#223;liche lokale Ma&#223;geblichkeit der Konfiguration unter Environment/Definition bleibt davon unber&#252;hrt.</pre></section><section id="s4-4-2-1"><h5><span>4.4.2.1</span> &#220;bersicht der Inhalte</h5><pre class="source">- Localization.json: Datenbank der Lokalisierungsinhalte.
+- Documentation/Template/Fragment/: Vorlagen f&#252;r Teile von Dokumenten.
+- Documentation/Template/Document/: Vollst&#228;ndige Dokumentvorlagen.
+- Appearance-Definitionen im JSON-Format: &#220;bergreifende und spezialisierte Darstellungsdaten nach Abschnitt 4.1; der genaue Unterpfad bleibt festzulegen.
+- Process/: Verkn&#252;pfungen zu den bereitgestellten Process-Definitionen.
+- Tool/: Verkn&#252;pfungen zu den bereitgestellten Tools.
+Die Pfade dieser &#220;bersicht sind relativ zu Environment/Content.
+Die festgelegten Vorlagenbereiche ersetzen fachlich die bisherigen Ablagebezeichnungen Documentation/Design und Documentation/Template. Noch bestehende Detailangaben zu Bildmarken, CSS und anderen Gestaltungsressourcen m&#252;ssen bei ihrer konkreten Zuordnung angepasst werden; nicht jede Gestaltungsressource ist ein Dokumentfragment.</pre></section><section id="s4-4-2-2"><h5><span>4.4.2.2</span> Lokalisierungsinhalte</h5><pre class="source">Die Inhaltsdatenbank hei&#223;t Localization.json; ihre Rolle als Content ergibt sich aus dem Ablageort Environment/Content/Localization.json.
+Die Organization-Basis und der lokale Projektwald k&#246;nnen getrennte, addierend verwendete Datenbanken besitzen. Die urspr&#252;nglichen Datenbanken bleiben getrennt und werden referenziert; eine dauerhaft zusammengef&#252;hrte Kopie ist nicht vorgesehen.
+Quellenauswahl und Kombination richten sich nach Organization_Inheritance.json. Fachliche Zuordnungsregeln f&#252;r Localization.json konkretisieren die allgemeine Redefinition; es wird kein gesonderter Vererbungsmechanismus eingef&#252;hrt.
+Die bestehende Lokalisierungstabelle muss bei der sp&#228;teren Umstellung vollst&#228;ndig &#252;bertragen und abgeglichen werden. Die bisherige Entwurfsbezeichnung Localization_Content.json wird durch Environment/Content/Localization.json ersetzt.</pre><aside id="todo-s4-4-2-2"><h3>OFFEN · Lokalisierungsinhalte</h3><ul><li>Quellenauswahl und Kombination richten sich nach Organization_Inheritance.json. Fachliche Zuordnungsregeln f&#252;r Localization.json konkretisieren die allgemeine Redefinition; es wird kein gesonderter Vererbungsmechanismus eingef&#252;hrt.</li><li>Die bestehende Lokalisierungstabelle muss bei der sp&#228;teren Umstellung vollst&#228;ndig &#252;bertragen und abgeglichen werden. Die bisherige Entwurfsbezeichnung Localization_Content.json wird durch Environment/Content/Localization.json ersetzt.</li></ul></aside></section><section id="s4-4-2-3"><h5><span>4.4.2.3</span> Dokumentationsvorlagen und Appearance</h5><pre class="source">Dokumentationsvorlagen liegen unter Environment/Content/Documentation/Template.
+Fragment enth&#228;lt Vorlagen f&#252;r Dokumentteile; Document enth&#228;lt vollst&#228;ndige Dokumentvorlagen.
+Appearance-Dateien definieren Darstellungseigenschaften im JSON-Format. Sie k&#246;nnen von Dokumenten, Anwendungen und Szenendarstellungen referenziert werden.
+Vorlagen, Appearance-Dateien und weitere Ressourcen behalten jeweils ihre eigene Prim&#228;rquelle. Ihre Beziehungen werden nach Abschnitt 1.1.1 beschrieben.
+Die Zuordnung der Vorlagen zu Dokumentationstypen richtet sich nach Abschnitt 4.4.1.7.</pre></section><section id="s4-4-2-4"><h5><span>4.4.2.4</span> Process-Definitionen als Verkn&#252;pfung</h5><pre class="source">Process-Definitionen werden unter Environment/Content/Process durch Verkn&#252;pfungen bereitgestellt.
+Die Originaldateien bleiben in ihrer ma&#223;geblichen Process-Ablage. Die Verkn&#252;pfung erzeugt keine zweite Arbeitsanweisung und keine unabh&#228;ngig gepflegte Kopie.
+Die Auswahl der geltenden Definition richtet sich weiterhin nach Organization_Inheritance.json. Eine Verkn&#252;pfung f&#252;hrt Basisdefinitionen und lokale Konkretisierungen nicht selbst zusammen.
+Aufruf, zul&#228;ssige &#220;berladungen und Ausf&#252;hrungsort richten sich unver&#228;ndert nach Abschnitt 5.</pre></section><section id="s4-4-2-5"><h5><span>4.4.2.5</span> Tools als Verkn&#252;pfung</h5><pre class="source">Tools werden unter Environment/Content/Tool durch Verkn&#252;pfungen bereitgestellt.
+Originalablagen, Projektdateien und Build-Ziele bleiben an ihren vorgesehenen Orten bestehen. Die Bereitstellung unter Content erfordert weder eine Verschiebung noch eine Kopie des Tools.
+Eine Verkn&#252;pfung bestimmt nicht automatisch das Arbeitsverzeichnis des gestarteten Programms. Der Ausf&#252;hrungsort muss weiterhin entsprechend Abschnitt 6 eindeutig festgelegt werden.
+Die technischen Anforderungen eines Tools an seine Originalablage und relative Ressourcenpfade sind bei der Wahl der Verkn&#252;pfungsart zu ber&#252;cksichtigen.</pre></section><section id="s4-4-2-6"><h5><span>4.4.2.6</span> Verwaltung der Verkn&#252;pfungen</h5><pre class="source">Originalquelle und Bereitstellungspfad m&#252;ssen eindeutig zugeordnet werden k&#246;nnen. Identische Ziele werden nicht als zus&#228;tzliche fachliche Komponenten gez&#228;hlt.
+Die Verkn&#252;pfungsbeziehungen werden in Organization_Reference.json beschrieben; Komponenten und Ableitungseinstellungen bleiben in Organization_Inheritance.json ma&#223;geblich.
+Die konkrete technische Verkn&#252;pfungsart, die Zuordnung auf Datei- oder Verzeichnisebene sowie Erstellung, Pr&#252;fung und Aktualisierung der Verkn&#252;pfungen werden noch festgelegt.
+Nicht aufl&#246;sbare oder zyklische Verkn&#252;pfungen d&#252;rfen keine mehrdeutige Quellenauswahl oder endlose Aufl&#246;sung verursachen.
+Die Aufnahme von Process und Tool unter Content erweitert weder ihre Aktivierung noch die Ausf&#252;hrungsbefugnis.
+Dieser Entwurf beschreibt die Bereitstellung. Die tats&#228;chlichen Verkn&#252;pfungen werden erst bei der gesonderten Umsetzung angelegt.</pre><aside id="todo-s4-4-2-6"><h3>OFFEN · Verwaltung der Verkn&#252;pfungen</h3><ul><li>Die konkrete technische Verkn&#252;pfungsart, die Zuordnung auf Datei- oder Verzeichnisebene sowie Erstellung, Pr&#252;fung und Aktualisierung der Verkn&#252;pfungen werden noch festgelegt.</li><li>Dieser Entwurf beschreibt die Bereitstellung. Die tats&#228;chlichen Verkn&#252;pfungen werden erst bei der gesonderten Umsetzung angelegt.</li></ul></aside></section><section id="s4-5"><h3><span>4.5</span> Convention/Localization</h3><figure><img src="Organization.Preview.assets/4.5.svg" alt="Resolver"><figcaption>Resolver</figcaption></figure><pre class="source">Die vollst&#228;ndigen fachlichen Regeln der Lokalisation werden unter Convention/Localization/*.html beschrieben. Die einheitliche Schreibweise ist Localization. Die genaue Aufteilung der HTML-Dateien bleibt festzulegen.
+Die Konvention umfasst Content-Struktur, Referenzierung, allgemeine Inheritance-Anwendung, semantische Resolver-Beschreibung, Resolver-Prototyp, Diagnose, Verwaltung und Migration.</pre></section><section id="s4-5-1"><h4><span>4.5.1</span> Content-Definition</h4><pre class="source">Environment/Content/Localization.json ist die Datenbank einer jeweiligen Quelle. Die Organization-Basis und der lokale Projektwald k&#246;nnen getrennte Datenbanken besitzen.
+Die Datenbank wird als fachlicher Baum beziehungsweise Wald strukturiert. Bereiche, Kategorien, Typen, Parentalknoten, Namen, Eigenschaften und Sprachinhalte m&#252;ssen unterscheidbar repr&#228;sentierbar sein.
+Alle Knoten und ihre Inhalte sind aufl&#246;sbar beziehungsweise suchbar, nicht ausschlie&#223;lich die Werte an Bl&#228;ttern. Der Resolver kann Typen selbst, Kategorien und ParentaleNamen ebenso adressieren wie Eintragsnamen und Inhalte.
+Die genaue JSON-Repr&#228;sentation und die Unterscheidung zwischen Strukturfeldern und fachlichen Daten werden anhand der bestehenden Tabelle festgelegt.
+Ein vollst&#228;ndiger Knotenpfad verwendet :: als Ebenentrenner. Syntax, Maskierung und Gro&#223;-/Kleinschreibung werden ausdr&#252;cklich festgelegt. Die Sprache w&#228;hlt einen Sprachinhalt aus und muss nicht Bestandteil der Identit&#228;t seines &#252;bergeordneten Eintrags sein.</pre></section><section id="s4-5-2"><h4><span>4.5.2</span> Allgemeine Inheritance</h4><pre class="source">Alle vererbbaren Komponenten der Lokalisation unter Convention, Process, Tool und Environment/Content werden durch Organization_Inheritance.json verwaltet. Dazu geh&#246;ren auch die Lokalisierungsdatenbanken und bereitgestellte Resolver-Komponenten an diesen Ablagen.
+Environment/Definition bleibt ausdr&#252;cklich NICHT VERERBBAR. Auch lokalisierungsbezogene lokale Konfiguration wird nicht aus der Basis geerbt.
+Es gibt keine separate Quellenauswahl oder konkurrierende Vererbungslogik f&#252;r die Lokalisation. Aktivation, Inheritance, Replacement und Redefinition werden nach den allgemeinen Regeln angewandt.
+Die Zuordnung fachlich entsprechender Datenbankknoten und die Behandlung gleichnamiger Inhalte werden als formatspezifische Konkretisierung der allgemeinen Redefinition beschrieben.
+Mehrdeutige Definitionen d&#252;rfen erhalten bleiben. Soweit sie erhalten werden, m&#252;ssen ihre Herkunft und ihr Scope unterscheidbar bleiben; es darf keine stille Zusammenfassung oder Auswahl erfolgen.
+Die genaue Scope-Resolution zwischen mehreren Datenbanken bleibt auszuarbeiten. Der erste Resolver-Prototyp arbeitet vereinfachend mit einer einzigen statischen Datenbank.</pre></section><section id="s4-5-3"><h4><span>4.5.3</span> Semantische Beschreibung des Resolvers</h4><pre class="source">Der Resolver ist eine Such- und Aufl&#246;sungsfunktion, kein zwingend erforderlicher Generator zus&#228;tzlicher Identifier. Er ermittelt vorhandene Knoten anhand ausdr&#252;cklicher Suchbedingungen.
+Ein exakter Aufruf kann lauten:
+Resolve(&quot;Documentation::Header::Name&quot;)
+Er adressiert einen konkreten Pfad. F&#252;r diesen Aufruf ist keine allgemeine Mustersuche erforderlich.
+Eine offene Suche kann lauten:
+Resolve(&quot;Documentation::Header::*Name*&quot;)
+Zus&#228;tzlich sind offene Listen von Bereichen, Einschlussmustern und Ausschlussmustern vorgesehen.
+Vorgeschlagene Verkn&#252;pfung: Mindestens ein Bereich passt UND mindestens ein Einschluss passt UND kein Ausschluss passt.
+Suchorientierungen m&#252;ssen ausdr&#252;cklich bestimmen k&#246;nnen, ob Namen, Typen, Kategorien, parentale Namen, Werte oder andere definierte Knoteneigenschaften gepr&#252;ft werden. Qualifizierte Pfade mit :: sind auch bei diesen Orientierungen zu ber&#252;cksichtigen.
+F&#252;r den Anfang sind * f&#252;r beliebig viele Zeichen und ? f&#252;r genau ein Zeichen vorgesehen. Genaue Mustersyntax, leere Listen, Bereichsgrenzen und Kombination mehrerer Orientierungen werden noch pr&#228;zisiert.
+Die Funktion soll eine erwartete Treffermenge unterscheiden k&#246;nnen: One f&#252;r genau einen Treffer und Many f&#252;r eine ausdr&#252;cklich gew&#252;nschte Ergebnismenge. Ob Many auch eine leere Menge akzeptiert, ist noch festzulegen.
+F&#252;r normale Lokalisierungszugriffe ist One als Standard vorgeschlagen.</pre><aside id="todo-s4-5-3"><h3>OFFEN · Semantische Beschreibung des Resolvers</h3><ul><li>Die Funktion soll eine erwartete Treffermenge unterscheiden k&#246;nnen: One f&#252;r genau einen Treffer und Many f&#252;r eine ausdr&#252;cklich gew&#252;nschte Ergebnismenge. Ob Many auch eine leere Menge akzeptiert, ist noch festzulegen.</li></ul></aside></section><section id="s4-5-4"><h4><span>4.5.4</span> R&#252;ckgabetyp und Diagnosen</h4><pre class="source">Ein eigener R&#252;ckgabetyp ResolutionResult wird vorgesehen.
+Er enth&#228;lt mindestens:
+- Status: Unique, NotFound, Ambiguous oder InvalidQuery beziehungsweise eine f&#252;r erlaubte Ergebnismengen erg&#228;nzend festzulegende Statusdarstellung.
+- Matches: Liste der durch die Bedingungen eingegrenzten vorhandenen Knoten.
+- Suggestions: Optionale Liste &#228;hnlicher Knoten bei fehlenden Treffern.
+- Diagnostics: Suchbedingungen, Erl&#228;uterung und gegebenenfalls Verwendungsstelle.
+Bei Erwartung One gilt: null Treffer bedeutet NotFound, ein Treffer Unique und mehrere Treffer Ambiguous.
+Bei Erwartung Many sind mehrere Treffer ein regul&#228;res Ergebnis, kein Aufl&#246;sungsfehler. Trefferzahl und Bewertung der Erwartung m&#252;ssen getrennt erkennbar sein.
+Eine gesonderte Mehrdeutigkeitsliste mit denselben Inhalten wie Matches wird nicht ben&#246;tigt.
+&#196;hnlichkeitsvorschl&#228;ge sind keine Treffer und d&#252;rfen nicht automatisch als Ersatz verwendet werden.
+Wenn ein eindeutiger Zugriff durch neue Daten mehrdeutig wird, soll die Anwendung gezielt melden: Resolver-Parameter konkretisieren. Die Meldung enth&#228;lt Suchbedingungen, vollst&#228;ndige Trefferpfade und soweit verf&#252;gbar die betroffene Verwendungsstelle.
+Die Kritikalit&#228;t h&#228;ngt vom konkreten Vorgang ab. Eine regul&#228;re Ergebnismengensuche wird nicht als kritischer Fehler dargestellt.</pre><aside id="todo-s4-5-4"><h3>OFFEN · R&#252;ckgabetyp und Diagnosen</h3><ul><li>Eine gesonderte Mehrdeutigkeitsliste mit denselben Inhalten wie Matches wird nicht ben&#246;tigt.</li></ul></aside></section><section id="s4-5-5"><h4><span>4.5.5</span> Performance und &#196;nderungen</h4><pre class="source">Exakte Pfade sollen direkt aufl&#246;sbar sein. Allgemeine Suchmuster d&#252;rfen aufwendiger sein und sollen geeignete Bereichs- und Eigenschaftsindizes nutzen k&#246;nnen.
+H&#228;ufige Zugriffe sollen nach einmaliger erfolgreicher Aufl&#246;sung eine g&#252;ltige Eintragsreferenz wiederverwenden k&#246;nnen, statt bei jedem Zugriff dieselbe Suche auszuf&#252;hren.
+F&#252;r den ersten Prototyp gilt eine einzige statische Datenbank. Bei sp&#228;ter unterst&#252;tzten Daten&#228;nderungen m&#252;ssen Referenzg&#252;ltigkeit und Cache-Invalidierung ausdr&#252;cklich geregelt werden.
+Eine wachsende Datenbank kann bestehende Mustersuchen mehrdeutig machen. Dies wird diagnostiziert; Suchbedingungen werden nicht eigenm&#228;chtig ge&#228;ndert.
+Umbenennungen und Verschiebungen &#228;ndern gegebenenfalls vollst&#228;ndige Pfade. Ein Verwaltungs- und Konversionsverfahren muss betroffene Verwendungen in Quellcode, HTML, JSON und anderen unterst&#252;tzten Quellen ber&#252;cksichtigen.</pre><aside id="todo-s4-5-5"><h3>OFFEN · Performance und &#196;nderungen</h3><ul><li>F&#252;r den ersten Prototyp gilt eine einzige statische Datenbank. Bei sp&#228;ter unterst&#252;tzten Daten&#228;nderungen m&#252;ssen Referenzg&#252;ltigkeit und Cache-Invalidierung ausdr&#252;cklich geregelt werden.</li></ul></aside></section><section id="s4-5-6"><h4><span>4.5.6</span> Resolver-Prototyp als C++-Core und Build-Target</h4><pre class="source">Bei der sp&#228;teren Umsetzung wird unter &lt;ProjectForestRoot&gt;/Test/Localization_Resolver/ ein Prototypprojekt nach Project_Structure_Folder_Default.json angelegt.
+Vorgesehene Struktur:
+Test/Localization_Resolver/
+  Build/
+    obj/
+  Convention/                         zun&#228;chst leer
+  Documentation/
+  Environment/
+    Definition/
+    Content/
+  Organization/                       zun&#228;chst leer
+  Program/
+  Source/
+    Localization_Resolver.hpp
+    Localization_Resolver.cpp
+Das hpp/cpp-Core-Modul enth&#228;lt Suchanfrage, Ergebnisstruktur und Aufl&#246;sungslogik. Das konkrete API wird noch entworfen.
+Der Core soll unabh&#228;ngig von einer grafischen Oberfl&#228;che pr&#252;fbar sein. Ein Testtreiber und Testdaten werden f&#252;r seine Verifikation vorgesehen; genaue Dateinamen und Bibliothekswahl bleiben offen.
+Das Projekt wird als Build-Target beziehungsweise mit den erforderlichen Targets in einer Projektmappe des Project_Forest.json erfasst. ProjectForest bezeichnet hierbei den prim&#228;ren Arbeitsraum, keine fest eingetragene Rechneradresse.
+Der Prototyp pr&#252;ft insbesondere exakte Pfade, Bereichslisten, Typ- und Kategoriesuche, Parentalknoten, Ein- und Ausschl&#252;sse, Nulltreffer, Mehrdeutigkeit, regul&#228;re Mehrfachtreffer und ung&#252;ltige Anfragen.
+Auch gr&#246;&#223;ere Datenmengen und wiederholte Zugriffe werden untersucht. Vorschl&#228;ge m&#252;ssen von echten Treffern getrennt bleiben.
+Eine produktive Bibliotheks- oder Toolbereitstellung wird sp&#228;ter als entsprechende Komponente registriert. Der Ordner Test wird nicht allein deshalb pauschal vererbbar.</pre><aside id="todo-s4-5-6"><h3>OFFEN · Resolver-Prototyp als C++-Core und Build-Target</h3><ul><li>Bei der sp&#228;teren Umsetzung wird unter &lt;ProjectForestRoot&gt;/Test/Localization_Resolver/ ein Prototypprojekt nach Project_Structure_Folder_Default.json angelegt.</li><li>Der Core soll unabh&#228;ngig von einer grafischen Oberfl&#228;che pr&#252;fbar sein. Ein Testtreiber und Testdaten werden f&#252;r seine Verifikation vorgesehen; genaue Dateinamen und Bibliothekswahl bleiben offen.</li><li>Eine produktive Bibliotheks- oder Toolbereitstellung wird sp&#228;ter als entsprechende Komponente registriert. Der Ordner Test wird nicht allein deshalb pauschal vererbbar.</li></ul></aside></section><section id="s4-5-7"><h4><span>4.5.7</span> Verwaltungs- und Konversions-Tool</h4><pre class="source">Sp&#228;ter wird ein Resolver-Verwaltungs- und Konversions-Tool vorgesehen. Es nutzt m&#246;glichst denselben gepr&#252;ften Core.
+Geplante Aufgaben sind Datenbankinspektion, interaktive Suchdiagnose, Erkennen von Mehrdeutigkeiten, Vorschau von Umbenennungen und Konversion vorhandener Bezeichner und Referenzen.
+&#196;nderungen m&#252;ssen aufl&#246;sbare Verwendungen, Konflikte und nicht automatisch behandelbare Stellen ausweisen. Reine Textersetzung ist kein allgemeiner Ersatz f&#252;r strukturbezogene Bearbeitung.
+Die konkrete Oberfl&#228;che, Ablage, unterst&#252;tzten Quellsprachen und &#196;nderungsabl&#228;ufe werden gesondert festgelegt.</pre><aside id="todo-s4-5-7"><h3>OFFEN · Verwaltungs- und Konversions-Tool</h3><ul><li>Sp&#228;ter wird ein Resolver-Verwaltungs- und Konversions-Tool vorgesehen. Es nutzt m&#246;glichst denselben gepr&#252;ften Core.</li><li>Die konkrete Oberfl&#228;che, Ablage, unterst&#252;tzten Quellsprachen und &#196;nderungsabl&#228;ufe werden gesondert festgelegt.</li></ul></aside></section><section id="s4-5-8"><h4 class="pending"><span>4.5.8</span> Migration und offene Punkte</h4><pre class="source">Die bestehende Lokalisierungstabelle muss vollst&#228;ndig in die neue Content-Struktur &#252;bertragen und abgeglichen werden. Bestehende Inhalte d&#252;rfen bei der Umstellung nicht verloren gehen.
+Die Migration wird erst nach Festlegung des Datenformats umgesetzt. Die bestehende Quelle bleibt bis zum erfolgreichen Abgleich erhalten.
+Offen bleiben genaue JSON-Struktur, Sprachauswahl und Ersatzsprachen, Datenbank-Scope-Resolution, vollst&#228;ndige Suchsyntax und produktive Zugriffe aus C++, HTML und JSON.
+Die bisher diskutierte Identifier-Generierung wird nicht zus&#228;tzlich als bereits beschlossener Mechanismus eingef&#252;hrt. Die aktuelle Grundlage ist die Pfad- und Suchaufl&#246;sung vorhandener Knoten.</pre></section><section id="s4-6"><h3><span>4.6</span> Convention/Naming</h3><pre class="source">Convention/Naming/Naming.html beschreibt Benennungsregeln f&#252;r Dateien, Verzeichnisse, JSON-Felder, Quellcodebezeichner, Projekt- und Komponentenpfade sowie Resolver-Namen. Zul&#228;ssige Zeichen, Schreibweisen und Trennzeichen sind noch zu konkretisieren.</pre><aside id="todo-s4-6"><h3>OFFEN · Convention/Naming</h3><ul><li>Convention/Naming/Naming.html beschreibt Benennungsregeln f&#252;r Dateien, Verzeichnisse, JSON-Felder, Quellcodebezeichner, Projekt- und Komponentenpfade sowie Resolver-Namen. Zul&#228;ssige Zeichen, Schreibweisen und Trennzeichen sind noch zu konkretisieren.</li></ul></aside></section><section id="s4-7"><h3><span>4.7</span> Convention/Organization</h3><pre class="source">Convention/Organization/Organization.html wird bei Umsetzung als vollst&#228;ndiger zusammenfassender zentraler Einstieg aus diesem Entwurf erstellt. Eine zusammenh&#228;ngende Darstellung mit Inhaltsverzeichnis und internen Verweisen ist ausdr&#252;cklich erw&#252;nscht.
+Die fachlichen Konventionen werden &#252;ber klare Prim&#228;rquellen und Referenzen eingebunden. Eine zusammenh&#228;ngende Ansicht erfordert keine mehrfach unabh&#228;ngig gepflegten Definitionen.
+Eine sp&#228;tere Aufteilung oder generierte Gesamtansicht bleibt m&#246;glich, wird aber jetzt nicht erzwungen.
+Backup-, Installations- und Berechtigungsregeln sind weitere bei Bedarf auszuarbeitende Themen. Ihre Zuordnung zu eigenen Konventionen oder bestehenden Bereichen wird sp&#228;ter entschieden.</pre><aside id="todo-s4-7"><h3>OFFEN · Convention/Organization</h3><ul><li>Eine sp&#228;tere Aufteilung oder generierte Gesamtansicht bleibt m&#246;glich, wird aber jetzt nicht erzwungen.</li><li>Backup-, Installations- und Berechtigungsregeln sind weitere bei Bedarf auszuarbeitende Themen. Ihre Zuordnung zu eigenen Konventionen oder bestehenden Bereichen wird sp&#228;ter entschieden.</li></ul></aside></section><section id="s4-8"><h3><span>4.8</span> Convention/Process</h3><pre class="source">Convention/Process/Process.html beschreibt Aufbau und Anwendung semantischer Arbeitsanweisungen, Aufrufsyntax, &#220;berladungen, Parameterquellen, Ergebnisse und Fehler. Die bereits festgelegten Regeln aus Abschnitt 5 sind darin zusammenzuf&#252;hren, ohne parallele widerspr&#252;chliche Regeln anzulegen.</pre></section><section id="s4-9"><h3><span>4.9</span> Convention/Project</h3><figure><img src="Organization.Preview.assets/4.9.svg" alt="Projektstruktur"><figcaption>Projektstruktur</figcaption></figure><pre class="source">Die Projektkonvention wird k&#252;nftig in Convention/Project/Project.html zusammengef&#252;hrt. Sie referenziert Organization.json, Project_Forest.json und Project_Structure_Folder_Default.json sowie erforderliche Benutzer- und Zugriffsdefinitionen. Die HTML-Konvention erl&#228;utert Regeln; die JSON-Dateien bleiben die Prim&#228;rquellen konkreter Umgebungsdaten.</pre></section><section id="s4-9-1"><h4><span>4.9.1</span> Projektwald, Projektmappe und Build-Targets</h4><pre class="source">Organization.Name bezeichnet den Wald. Ein Wald kann mehrere Projektmappen enthalten; ein Baum repr&#228;sentiert eine Projektmappe, beispielsweise eine Visual-Studio-Solution im sln- oder slnx-Format.
+Die Projektknoten innerhalb eines Baums repr&#228;sentieren Build-Targets beziehungsweise deren Build-Ergebnisse aller Art. Baum und Projektmappe bilden den &#252;bergeordneten Container; dieser muss nicht selbst ein Build-Ergebnis darstellen.
+M&#246;gliche Ergebnisse sind Programme, Bibliotheken, WebAssembly-Module, Testprogramme sowie andere ausdr&#252;cklich definierte Build-Artefakte.
+Die parentale Namensstruktur ist von Build-Abh&#228;ngigkeiten zu unterscheiden. Eine Eltern-Kind-Beziehung legt nicht automatisch fest, in welcher Reihenfolge Targets gebaut werden.
+Der vollst&#228;ndige Projektname bleibt Waldname::Baumname::Namen der parentalen Vorfahren::Projektname. Die bestehenden Regeln zu Eindeutigkeit, Verantwortlichkeiten, Rollen, Lokalisierungsangaben, technischen Projektverweisen, zus&#228;tzlichen Workspaces und Zugriffen bleiben erhalten.
+Die genaue Repr&#228;sentation der Build-Abh&#228;ngigkeiten, Target-Arten und Ergebnisse wird noch festgelegt.</pre><aside id="todo-s4-9-1"><h3>OFFEN · Projektwald, Projektmappe und Build-Targets</h3><ul><li>Die genaue Repr&#228;sentation der Build-Abh&#228;ngigkeiten, Target-Arten und Ergebnisse wird noch festgelegt.</li></ul></aside></section><section id="s4-9-2"><h4><span>4.9.2</span> Prim&#228;rquellen der Projektdefinition</h4><pre class="source">Environment/Definition/Project_Forest.json enth&#228;lt die benutzerdefinierte Wald- und Targetstruktur. Der bisherige Entwurfsname Project.json wird dadurch ersetzt; es wird keine parallele Definition gef&#252;hrt.
+Environment/Definition/Project_Structure_Folder_Default.json definiert die Standardverzeichnisstruktur als lokale Umgebungsdefinition. Sie unterliegt wie alle Dateien in Environment/Definition keiner Vererbung.
+Die Standardstruktur beschreibt anzulegende Verzeichnisse, deren relative Pfade und Zweck. Projektspezifische Konkretisierungen werden ausdr&#252;cklich angegeben.
+Workspace.json und Base.json bleiben entfallen. Globale Arbeitsr&#228;ume und Waldname stammen aus Organization.json; projektbezogene Angaben aus Project_Forest.json.</pre></section><section id="s4-9-3"><h4><span>4.9.3</span> Standardverzeichnisstruktur</h4><pre class="source">Die folgende Struktur orientiert sich am bereitgestellten Grundplatte-Screenshot. Sie ist eine Entwurfsdefinition und wird erst bei der Umsetzung angelegt.
+&lt;ProjectRoot&gt;/
+  Build/
+    obj/
+  Convention/                         zun&#228;chst leer
+  Documentation/
+  Environment/
+    Definition/
+    Content/
+  Organization/                       zun&#228;chst leer
+  Program/
+  Source/
+Build enth&#228;lt Build-Steuerung und Projektmappendateien sowie Zwischenprodukte. Program enth&#228;lt die vorgesehenen ausf&#252;hrbaren beziehungsweise auslieferbaren Build-Ergebnisse. Source enth&#228;lt Quellcode.
+Unterteilungen nach Target, Plattform und Konfiguration werden passend zum Projekt festgelegt; x64 und WebAssembly aus dem Screenshot sind m&#246;gliche Spezialisierungen, keine Pflicht f&#252;r jedes Projekt.
+IDE-Zustandsverzeichnisse wie .vs, Versionsverwaltungsdaten wie .git sowie Archive werden nicht als feste Bestandteile der Standardstruktur vorgeschrieben.
+Convention und Organization werden als leere Verzeichnisse vorgesehen. Ihre Existenz aktiviert keine Regeln und instanziiert keine weitere Organization.
+Die Standardstruktur wird als JSON in Project_Structure_Folder_Default.json repr&#228;sentiert. Konkrete Schl&#252;sselnamen und Regeln zur Instanziierung werden noch festgelegt.
+Die alleinige Anlage von Environment/Definition innerhalb eines Targetprojekts erzeugt keine zus&#228;tzliche ma&#223;gebliche Umgebungsquelle. F&#252;r dieselbe Benutzungsinstanz bleibt die Definition am prim&#228;ren ProjectForest-Root ma&#223;geblich.</pre><aside id="todo-s4-9-3"><h3>OFFEN · Standardverzeichnisstruktur</h3><ul><li>Die folgende Struktur orientiert sich am bereitgestellten Grundplatte-Screenshot. Sie ist eine Entwurfsdefinition und wird erst bei der Umsetzung angelegt.</li><li>Die Standardstruktur wird als JSON in Project_Structure_Folder_Default.json repr&#228;sentiert. Konkrete Schl&#252;sselnamen und Regeln zur Instanziierung werden noch festgelegt.</li></ul></aside></section><section id="s4-10"><h3><span>4.10</span> Convention/Terminology</h3><pre class="source">Convention/Terminology/Terminology.html beschreibt die Bedeutung der fachlichen Begriffe und grenzt sie voneinander ab. Benennungsform und &#220;bersetzung bleiben von der begrifflichen Bedeutung unterscheidbar. Lokalisierbare Beschreibungen werden referenziert.</pre></section><section id="s4-11"><h3><span>4.11</span> Convention/Test</h3><pre class="source">Convention/Test/Test.html beschreibt sp&#228;ter Aufbau, Ausf&#252;hrung und Auswertung von Testprojekten und Prototypen. Es referenziert die Projektstandardstruktur und trennt Testartefakte von produktiv bereitgestellten Tools.</pre><aside id="todo-s4-11"><h3>OFFEN · Convention/Test</h3><ul><li>Convention/Test/Test.html beschreibt sp&#228;ter Aufbau, Ausf&#252;hrung und Auswertung von Testprojekten und Prototypen. Es referenziert die Projektstandardstruktur und trennt Testartefakte von produktiv bereitgestellten Tools.</li></ul></aside></section><section id="s4-12"><h3><span>4.12</span> Convention/Tool</h3><pre class="source">Convention/Tool/Tool.html beschreibt Programme, Bibliotheken, Build-Ziele, Ein- und Ausgaben, Arbeitsverzeichnisse und ihre Bereitstellung als Content-Verkn&#252;pfung. Die Regeln aus Abschnitt 6 werden darin zusammengef&#252;hrt. Eine Verkn&#252;pfung ersetzt weder Programmkonfiguration noch Ausf&#252;hrungsfreigabe.</pre></section><section id="s5"><h2><span>5</span> Inhalt des Ordners Process</h2><pre class="source">Der Ordner Process enth&#228;lt semantisch beschriebene Arbeitsanweisungen, die einem KI-Agenten zur Ausf&#252;hrung &#252;bergeben werden k&#246;nnen.
+Ein Process ist damit eine Form eines KI-Workflows.</pre></section><section id="s5-1"><h3><span>5.1</span> Start eines Process</h3><pre class="source">Ein Process wird durch einen Prompt mit folgender Aufrufform gestartet:
+Process &lt;Processname&gt;()
+Bei einer zul&#228;ssigen &#220;berladung mit Parametern lautet die Aufrufform:
+Process &lt;Processname&gt;(&lt;Parameter&gt;)
+Erst die Kombination aus dem Schl&#252;sselwort Process, dem Processnamen und den Parameterklammern kennzeichnet einen Processstart.
+Eine blo&#223;e Erw&#228;hnung des Namens oder ein Verweis auf die Arbeitsanweisung startet den Process nicht.
+Es d&#252;rfen ausschlie&#223;lich die in der jeweiligen Arbeitsanweisung definierten &#220;berladungen verwendet werden. Dies gilt auch f&#252;r einen argumentlosen Aufruf mit ().
+Beim Erstellen der Arbeitsanweisung ist sicherzustellen, dass die zul&#228;ssigen &#220;berladungen eindeutig voneinander unterscheidbar sind.</pre></section><section id="s5-2"><h3><span>5.2</span> Voraussetzungen und Auswahl</h3><pre class="source">Voraussetzung ist eine f&#252;r die Benutzung verf&#252;gbare und aktivierte Organization, die &#252;ber Environment/Definition/Organization.json im prim&#228;ren Arbeitsraum bestimmt wird.
+Ausgehend von den dort definierten Arbeitsr&#228;umen und Organization_Inheritance.json wird ermittelt:
+- welche Processes global und lokal existieren;
+- welche davon aktiviert sind;
+- welcher Process bei einem konkreten Aufruf ausgef&#252;hrt wird.
+Die Auswahl und Zusammenf&#252;hrung richten sich nach den Ableitungsregeln der Organisation.
+Ben&#246;tigt ein Process einen Projektkontext, muss der betreffende Projektknoten eindeutig bestimmt sein. Projektverweise verwenden den vollst&#228;ndigen Projektnamen aus Project_Forest.json.
+Weitere Einzelheiten zur eindeutigen Aufl&#246;sung von Processnamen und zur Zuordnung der Ableitungsregeln stehen noch aus.</pre></section><section id="s5-3"><h3><span>5.3</span> Ausf&#252;hrungsort und Umgebungsdaten</h3><pre class="source">Der Ausf&#252;hrungsort eines Process ist der in Organization.json unter Organization.Workspace.ProjectForest definierte prim&#228;re Arbeitsraum des Projektwaldes.
+Zus&#228;tzliche Projekt-Workspaces k&#246;nnen als ausdr&#252;cklich bestimmte Arbeitsziele oder Parameter verwendet werden. Ihre Existenz allein &#228;ndert den Ausf&#252;hrungsort nicht.
+Die ma&#223;geblichen Umgebungsdaten stammen ausschlie&#223;lich aus Environment/Definition unterhalb des prim&#228;ren Workspace Root.
+Dies gilt auch dann, wenn die Arbeitsanweisung des Process aus der Organization-Basis im sekund&#228;ren Arbeitsraum stammt.</pre></section><section id="s6"><h2><span>6</span> Inhalt des Ordners Tool</h2><pre class="source">Der Ordner Tool enth&#228;lt eigenst&#228;ndige Programme, die der Installation, Organization und Wartung dienen.
+Vor dem Start eines Tools muss eindeutig feststehen, welcher Ausf&#252;hrungsort sich aus der jeweiligen Projektorganisation ergibt.
+Die globalen Arbeitsr&#228;ume werden aus Organization.json bestimmt. Zus&#228;tzliche projektbezogene Arbeitsr&#228;ume werden aus dem betreffenden Projektknoten in Project_Forest.json bestimmt.
+Die ma&#223;geblichen Umgebungsdaten und Werkzeugparameter stammen aus den Umgebungsdefinitionen des prim&#228;ren Arbeitsraums.
+Die weiteren Regeln zur Auswahl und Ausf&#252;hrung von Tools werden noch festgelegt.</pre><aside id="todo-s6"><h3>OFFEN · Inhalt des Ordners Tool</h3><ul><li>Die weiteren Regeln zur Auswahl und Ausf&#252;hrung von Tools werden noch festgelegt.</li></ul></aside></section><section id="s6-1"><h3><span>6.1</span> Inhalt des Ordners Test</h3><figure><img src="Organization.Preview.assets/6.1.svg" alt="Resolver-Prototyp"><figcaption>Resolver-Prototyp</figcaption></figure><pre class="source">Neben Tool wird der Ordner Test im prim&#228;ren Arbeitsraum vorgesehen. Er enth&#228;lt eigenst&#228;ndige Testprojekte und Prototypen mit klar bestimmten Build-Targets und Ergebnissen.
+Jedes Testprojekt verwendet die Standardstruktur aus Environment/Definition/Project_Structure_Folder_Default.json. Die Anlage erfolgt erst bei Umsetzung des jeweiligen Entwurfs.
+Der erste ausdr&#252;cklich vorgesehene Prototyp ist Test/Localization_Resolver nach Abschnitt 4.5.6.
+Test ist kein automatischer Ausf&#252;hrungsauftrag und keine pauschale Erg&#228;nzung der vererbbaren Verzeichnisse.</pre><aside id="todo-s6-1"><h3>OFFEN · Inhalt des Ordners Test</h3><ul><li>Jedes Testprojekt verwendet die Standardstruktur aus Environment/Definition/Project_Structure_Folder_Default.json. Die Anlage erfolgt erst bei Umsetzung des jeweiligen Entwurfs.</li></ul></aside></section><section id="s7"><h2 class="pending"><span>7</span> Noch auszuarbeitende Bereiche</h2><pre class="source"></pre></section><section id="s7-1"><h3><span>7.1</span> Lokalisation</h3><pre class="source">Die konsolidierten Festlegungen und offenen Punkte sind in Abschnitt 4.5 beschrieben. Dieser Abschnitt f&#252;hrt keine parallele Identifier- oder Vererbungsdefinition.</pre></section><section id="s7-2"><h3><span>7.2</span> Backup-Konfiguration</h3><pre class="source">Organization_BackupTarget.json definiert zun&#228;chst nur die externen Sicherungsziele.
+Welche weiteren Einstellungen das Backup-Programm ben&#246;tigt und wo sie gespeichert werden, ist noch festzulegen.
+Zu pr&#252;fen sind insbesondere:
+- Umfang der Sicherung: Projektwald, zus&#228;tzliche Projekt-Workspaces und gegebenenfalls weitere Quellen.
+- Einzuschlie&#223;ende und auszuschlie&#223;ende Inhalte.
+- Sicherungsart und Umgang mit bestehenden Sicherungen.
+- Benennung und Versionierung der Sicherungsst&#228;nde.
+- Aufbewahrung und Bereinigung.
+- Verhalten bei nicht erreichbaren Zielen und teilweise erfolgreichen Sicherungen.
+- Pr&#252;fung der Sicherung und Wiederherstellbarkeit.
+- Protokollierung.
+- Manuelle Ausl&#246;sung beziehungsweise ausdr&#252;cklich konfigurierte Automatik.
+Diese Punkte sind noch keine festgelegte Konfiguration und kein Auftrag zur Ausf&#252;hrung einer Sicherung.</pre><aside id="todo-s7-2"><h3>OFFEN · Backup-Konfiguration</h3><ul><li>Welche weiteren Einstellungen das Backup-Programm ben&#246;tigt und wo sie gespeichert werden, ist noch festzulegen.</li><li>Zu pr&#252;fen sind insbesondere:</li></ul></aside></section><section id="open-work" class="tasks"><h2 class="pending">Noch zu erledigen · Gesamtübersicht</h2><p>Aus offenen Formulierungen des Entwurfs abgeleitet. Die Aufgabenhinweise ergänzen die Ansicht, nicht den TXT-Inhalt.</p><ul><li><a href="#todo-s1-1-1-2">1.1.1.2 Organization_Reference.json</a></li><li><a href="#todo-s1-1-1-5">1.1.1.5 Konsistenz und Aktualisierung</a></li><li><a href="#todo-s1-1-2">1.1.2 Installation einer projektkonkreten Organisationsbasis</a></li><li><a href="#todo-s2">2 Zentraler Einstieg und Instruktionsbasis</a></li><li><a href="#todo-s3-1">3.1 Projektspezifische Konkretisierung</a></li><li><a href="#todo-s3-2">3.2 Definition der Ableitungsregeln</a></li><li><a href="#todo-s3-6">3.6 Komponentenverzeichnis und Aktualisierung der Ableitung</a></li><li><a href="#todo-s3-6-1">3.6.1 Anl&#228;sse f&#252;r eine Aktualisierung</a></li><li><a href="#todo-s4-1-3">4.1.3 Ablage und Quellen</a></li><li><a href="#todo-s4-1-4">4.1.4 Aufbau der JSON-Definitionen</a></li><li><a href="#todo-s4-1-5">4.1.5 Schrittweise Einf&#252;hrung</a></li><li><a href="#todo-s4-2">4.2 Convention/Code</a></li><li><a href="#todo-s4-4-1-4">4.4.1.4 Project_Forest.json</a></li><li><a href="#todo-s4-4-1-4-1">4.4.1.4.1 Eindeutige Projektnamen und Waldstruktur</a></li><li><a href="#todo-s4-4-1-5">4.4.1.5 Globale und zus&#228;tzliche Arbeitsr&#228;ume</a></li><li><a href="#todo-s4-4-1-5-1">4.4.1.5.1 Benutzung der Organization durch sich selbst</a></li><li><a href="#todo-s4-4-1-6">4.4.1.6 Access.json</a></li><li><a href="#todo-s4-4-1-7-1">4.4.1.7.1 Dokumentationstypen</a></li><li><a href="#todo-s4-4-1-7-2">4.4.1.7.2 HeaderTemplate</a></li><li><a href="#todo-s4-4-1-7-2-1">4.4.1.7.2.1 HeaderTemplateComponent</a></li><li><a href="#todo-s4-4-1-7-2-2">4.4.1.7.2.2 HeaderTemplateType</a></li><li><a href="#todo-s4-4-1-7-2-3">4.4.1.7.2.3 HeaderTemplateComponentProperty</a></li><li><a href="#todo-s4-4-1-7-4">4.4.1.7.4 Dokumente mit mehreren Dokumentationstypen</a></li><li><a href="#todo-s4-4-1-9">4.4.1.9 Organization_BackupTarget.json</a></li><li><a href="#todo-s4-4-1-10">4.4.1.10 Project_Structure_Folder_Default.json</a></li><li><a href="#todo-s4-4-2-2">4.4.2.2 Lokalisierungsinhalte</a></li><li><a href="#todo-s4-4-2-6">4.4.2.6 Verwaltung der Verkn&#252;pfungen</a></li><li><a href="#todo-s4-5-3">4.5.3 Semantische Beschreibung des Resolvers</a></li><li><a href="#todo-s4-5-4">4.5.4 R&#252;ckgabetyp und Diagnosen</a></li><li><a href="#todo-s4-5-5">4.5.5 Performance und &#196;nderungen</a></li><li><a href="#todo-s4-5-6">4.5.6 Resolver-Prototyp als C++-Core und Build-Target</a></li><li><a href="#todo-s4-5-7">4.5.7 Verwaltungs- und Konversions-Tool</a></li><li><a href="#todo-s4-6">4.6 Convention/Naming</a></li><li><a href="#todo-s4-7">4.7 Convention/Organization</a></li><li><a href="#todo-s4-9-1">4.9.1 Projektwald, Projektmappe und Build-Targets</a></li><li><a href="#todo-s4-9-3">4.9.3 Standardverzeichnisstruktur</a></li><li><a href="#todo-s4-11">4.11 Convention/Test</a></li><li><a href="#todo-s6">6 Inhalt des Ordners Tool</a></li><li><a href="#todo-s6-1">6.1 Inhalt des Ordners Test</a></li><li><a href="#todo-s7-2">7.2 Backup-Konfiguration</a></li></ul></section><footer>Quelle: Organization.txt · Lokale SVGs · Aktives Design: GreenDarkIllumination</footer></main><script>document.getElementById('expand').onclick=()=>document.querySelectorAll('nav details').forEach(d=>d.open=true);
+document.getElementById('collapse').onclick=()=>document.querySelectorAll('nav details').forEach(d=>d.open=false);
+document.getElementById('search').oninput=e=>{const q=e.target.value.toLocaleLowerCase();document.querySelectorAll('nav li').forEach(li=>li.hidden=!!q&&!li.textContent.toLocaleLowerCase().includes(q));if(q)document.querySelectorAll('nav details').forEach(d=>d.open=true)};</script></body></html>
