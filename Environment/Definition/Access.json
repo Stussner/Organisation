@@ -1,0 +1,5 @@
+{
+  "title": "Environment – Access",
+  "description": "Maßgebliche Deklaration weiterer berechtigter Besitzer oder Benutzer.",
+  "variables": [{ "name": "OwnerOther", "label": "OwnerOther", "value": "nicht festgelegt" }]
+}

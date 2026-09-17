@@ -1,0 +1,10 @@
+{
+  "title": "Environment – Workspace",
+  "description": "Maßgebliche Deklaration der Arbeitsräume der Organization Base.",
+  "primary": "E:\\Programmierung\\Organisation",
+  "secondary": [],
+  "variables": [
+    { "name": "WorkspacePrimary", "label": "WorkspacePrimary", "value": "E:\\Programmierung\\Organisation" },
+    { "name": "WorkspaceSecondary", "label": "WorkspaceSecondary", "value": [] }
+  ]
+}

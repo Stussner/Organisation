@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dokumentationsstatus</title>
+  <link rel="stylesheet" href="../../Documentation/Design/Style/Active.css">
+  <style>main { width: min(100% - 2rem, 72rem); margin: 0 auto; padding: 1.5rem 0 3rem; }</style>
+</head>
+<body class="convention-documentation-status">
+  <main id="document-status-vocabulary">
+    <section class="card">
+      <h1>Dokumentationsstatus</h1>
+      <p>
+        Diese Datei definiert die zulässigen Werte des HTML-Attributs
+        <code>data-status</code> für Dokumente der Organization Base.
+        Ein Status beschreibt die Verbindlichkeit und den Geltungszustand
+        eines Dokuments oder eines ausdrücklich markierten Abschnitts.
+      </p>
+    </section>
+
+    <section class="card" id="rules">
+      <h2>Verwendungsregel</h2>
+      <p>
+        Ein verwendeter Wert von <code>data-status</code> muss auf einen
+        Eintrag dieser Datei verweisen. Nicht definierte Statuswerte sind
+        innerhalb der Organization Base nicht zulässig.
+      </p>
+    </section>
+
+    <section class="card" id="status-values">
+      <h2>Zulässige Statuswerte</h2>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Kennung</th>
+            <th scope="col">Bezeichnung</th>
+            <th scope="col">Bedeutung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="normative">
+            <td><code>normative</code></td>
+            <td>Verbindlich</td>
+            <td>Eine verbindliche Regel oder Definition, die im angegebenen Geltungsbereich anzuwenden ist.</td>
+          </tr>
+          <tr id="informative">
+            <td><code>informative</code></td>
+            <td>Erläuternd</td>
+            <td>Eine Information zur Erklärung oder Einordnung ohne eigenständige Verbindlichkeit.</td>
+          </tr>
+          <tr id="draft">
+            <td><code>draft</code></td>
+            <td>Entwurf</td>
+            <td>Ein noch nicht verbindlicher Vorschlag, der geändert oder verworfen werden kann.</td>
+          </tr>
+          <tr id="deprecated">
+            <td><code>deprecated</code></td>
+            <td>Auslaufend</td>
+            <td>Ein weiterhin lesbarer, aber für neue Verwendung nicht mehr vorgesehener Inhalt.</td>
+          </tr>
+          <tr id="historical">
+            <td><code>historical</code></td>
+            <td>Historisch</td>
+            <td>Ein dokumentierter früherer Stand ohne aktuelle Verbindlichkeit.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card" id="reference-example">
+      <h2>Referenzform</h2>
+      <p>Ein Dokument mit verbindlichem Status verwendet beispielsweise:</p>
+      <pre><code>&lt;main data-status="normative"&gt;
+  &lt;a href="../../Convention/Documentation/Status.html#normative"&gt;
+    Verbindlich
+  &lt;/a&gt;
+&lt;/main&gt;</code></pre>
+    </section>
+  </main>
+</body>
+</html>

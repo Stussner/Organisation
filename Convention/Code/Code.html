@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code</title>
+  <link rel="stylesheet" href="../../Documentation/Design/Style/Active.css">
+  <style>main { width: min(100% - 2rem, 72rem); margin: 0 auto; padding: 1.5rem 0 3rem; } main > section { margin-bottom: 1.25rem; } .table-wrap { overflow-x: auto; } .table-wrap table { min-width: 48rem; } .table-controls { display: flex; margin: .85rem 0 0; }</style>
+  <script src="../../Documentation/Design/Class/HeaderMinimum.js" defer></script>
+  <script src="../../Documentation/Design/Class/TableEditableOrdered.js" defer></script>
+</head>
+<body class="environment-definition">
+  <main>
+    <section class="card"><table><tbody>
+      <tr><th scope="row">Projekt</th><td>Organization Base</td></tr>
+      <tr><th scope="row">Titel</th><td><input type="text" aria-label="Titel" value="Code" data-header-minimum-title-from-filename></td></tr>
+      <tr><th scope="row">Speicherort</th><td><span data-header-minimum-location-from-url>E:\Programmierung\Organisation\Convention\Code\Code.html</span></td></tr>
+      <tr><th scope="row">Besitzer</th><td>Johannes Scharff</td></tr>
+      <tr><th scope="row">Datum</th><td>2026-08-20</td></tr>
+    </tbody></table></section>
+    <section class="card"><h2>Code</h2><p>Die Regeln dieser Tabelle werden aus <code>Einrueckung.txt</code> abgeleitet. Ein Wert in spitzen Klammern bezeichnet die Anzahl der Leerzeichen der Einrueckung.</p></section>
+    <section class="card"><h2>Einrueckungen und Umbrueche</h2><div class="table-wrap"><table class="table-editable-ordered" data-table-editable-ordered="organization-code-rules-v2" data-table-editable-ordered-pointer="NULL">
+      <thead><tr><th>Nr.</th><th>Regel</th><th>Festlegung</th><th>Beispiel</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">01</th><td>Oeffnende Klammer</td><td>Die oeffnende Klammer steht in derselben Zeile wie der Konstruktkopf. Anschliessend folgt immer ein Umbruch.</td><td><code>Konstruktkopf{</code></td></tr>
+        <tr><th scope="row">02</th><td>Einrueckung : Namespace</td><td>Funktionen und Datenelemente innerhalb eines Namespace beginnen nach 8 Leerzeichen.</td><td><code>namespace x{<br>        Funktion<br>        Datenelement<br>}</code></td></tr>
+        <tr><th scope="row">03</th><td>Einrueckung : Namespacefunktion</td><td>Eine ausserhalb des Namespace definierte Namespacefunktion beginnt nach 0 Leerzeichen. Ihr Inhalt beginnt nach 32 Leerzeichen.</td><td><code>x::funktion{<br>                                Inhalt<br>}</code></td></tr>
+        <tr><th scope="row">04</th><td>Einrueckung : Struct</td><td>Die Zugriffskontrolle innerhalb eines Struct beginnt nach 24 Leerzeichen. Funktionen und Datenelemente beginnen nach 32 Leerzeichen.</td><td><code>struct y{<br>                        Zugriffkontrolle<br>                                Funktion<br>                                Datenelement<br>}</code></td></tr>
+        <tr><th scope="row">05</th><td>Einrueckung : Structfunktion</td><td>Eine ausserhalb des Struct definierte Funktion beginnt nach 0 Leerzeichen. Ihr Inhalt beginnt nach 32 Leerzeichen.</td><td><code>y::funktion{<br>                                Inhalt<br>}</code></td></tr>
+        <tr><th scope="row">06</th><td>Einrueckung : Class</td><td>Die Zugriffskontrolle innerhalb einer Class beginnt nach 24 Leerzeichen. Funktionen und Datenelemente beginnen nach 32 Leerzeichen.</td><td><code>class z{<br>                        Zugriffkontrolle<br>                                Funktion<br>                                Datenelement<br>}</code></td></tr>
+        <tr><th scope="row">07</th><td>Einrueckung : Classfunktion</td><td>Eine ausserhalb der Class definierte Funktion beginnt nach 0 Leerzeichen. Ihr Inhalt beginnt nach 32 Leerzeichen.</td><td><code>z::funktion{<br>                                Inhalt<br>}</code></td></tr>
+        <tr><th scope="row">08</th><td>Einrueckung : Funktion</td><td>Eine Funktion beginnt nach 0 Leerzeichen. Ihr Inhalt beginnt nach 32 Leerzeichen.</td><td><code>funktion{<br>                                Inhalt<br>}</code></td></tr>
+        <tr><th scope="row">09</th><td>Umbruch : Anweisung</td><td>Jede Anweisung steht in einer eigenen Zeile. Mehrere Anweisungen werden nicht in derselben Zeile geschrieben.</td><td><code>Anweisung();<br>Weitere_Anweisung();</code></td></tr>
+        <tr><th scope="row">10</th><td>Einrueckung : Lokale Lambda-Funktion</td><td>Die Deklaration einer lokalen Lambda-Funktion beginnt als Anweisung nach 32 Leerzeichen innerhalb der umgebenden Funktion. Der Inhalt des Lambda-Koerpers beginnt nach einem weiteren Leerzeichen. Die schliessende Klammer des Lambda-Koerpers beginnt in derselben Spalte wie die Lambda-Deklaration; das Semikolon folgt unmittelbar der schliessenden Klammer.</td><td><code>                                const auto Funktion = []{<br>                                 Inhalt<br>                                }; </code></td></tr>
+        <tr><th scope="row">11</th><td>C++-Sprachstandard</td><td>Der verbindliche Mindeststandard fuer C++-Werkzeuge ist C++17. Ein hoeherer Standard wird nur verwendet, wenn ein konkretes Werkzeug ihn fachlich oder technisch erfordert.</td><td><code>&lt;LanguageStandard&gt;stdcpp17&lt;/LanguageStandard&gt;</code></td></tr>
+      </tbody>
+    </table></div><p class="table-controls" data-table-controls="organization-code-rules-v2"><button type="button" class="button--secondary" data-table-save>Lokale Aenderungen speichern</button></p></section>
+  </main>
+</body>
+</html>

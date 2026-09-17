@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "sourceLanguage": "de-DE",
+  "fallbackLanguage": "de-DE",
+  "term": {
+    "project.area.dependency": {
+      "canonical": "Abhaengigkeit",
+      "de-DE": "Abhängigkeit",
+      "en-US": "Dependency"
+    },
+    "project.area.environment": {
+      "canonical": "Umgebung",
+      "de-DE": "Umgebung",
+      "en-US": "Environment"
+    },
+    "project.area.source": {
+      "canonical": "Quelle",
+      "de-DE": "Quelle",
+      "en-US": "Source"
+    },
+    "project.area.documentation": {
+      "canonical": "Dokumentation",
+      "de-DE": "Dokumentation",
+      "en-US": "Documentation"
+    },
+    "project.area.program": {
+      "canonical": "OAHSI-Programm",
+      "de-DE": "OAHSI-Programm",
+      "en-US": "OAHSI program"
+    },
+    "project.area.organization": {
+      "canonical": "Organisation",
+      "de-DE": "Organisation",
+      "en-US": "Organization"
+    },
+    "project.dependency.library": {
+      "canonical": "Bibliothek",
+      "de-DE": "Bibliothek",
+      "en-US": "Library"
+    },
+    "project.dependency.tool": {
+      "canonical": "Werkzeug",
+      "de-DE": "Werkzeug",
+      "en-US": "Tool"
+    },
+    "project.dependency.model": {
+      "canonical": "Modell",
+      "de-DE": "Modell",
+      "en-US": "Model"
+    },
+    "project.dependency.extension": {
+      "canonical": "Erweiterung",
+      "de-DE": "Erweiterung",
+      "en-US": "Extension"
+    },
+    "project.dependency.installation_source": {
+      "canonical": "Installationsquelle",
+      "de-DE": "Installationsquelle",
+      "en-US": "Installation source"
+    },
+    "project.environment.visual_studio": {
+      "canonical": "VisualStudio",
+      "de-DE": "Visual Studio",
+      "en-US": "Visual Studio"
+    },
+    "project.environment.python": {
+      "canonical": "Python",
+      "de-DE": "Python",
+      "en-US": "Python"
+    },
+    "project.environment.definition": {
+      "canonical": "Definition.md",
+      "de-DE": "Definition der Projektumgebung",
+      "en-US": "Project environment definition"
+    },
+    "project.environment.temporary": {
+      "canonical": "Temporaer",
+      "de-DE": "Temporär",
+      "en-US": "Temporary"
+    },
+    "project.source.data": {
+      "canonical": "Daten",
+      "de-DE": "Daten",
+      "en-US": "Data"
+    },
+    "project.data.development": {
+      "canonical": "Entwicklung",
+      "de-DE": "Entwicklung",
+      "en-US": "Development"
+    },
+    "project.data.reference": {
+      "canonical": "Referenz",
+      "de-DE": "Referenz",
+      "en-US": "Reference"
+    },
+    "project.data.calibration": {
+      "canonical": "Kalibrierung",
+      "de-DE": "Kalibrierung",
+      "en-US": "Calibration"
+    },
+    "project.data.validation": {
+      "canonical": "Validierung",
+      "de-DE": "Validierung",
+      "en-US": "Validation"
+    },
+    "project.documentation.dependency": {
+      "canonical": "Abhaengigkeit",
+      "de-DE": "Abhängigkeit",
+      "en-US": "Dependency"
+    },
+    "project.documentation.chat_original": {
+      "canonical": "Chat_Original",
+      "de-DE": "Chat – Original",
+      "en-US": "Chat – Original"
+    },
+    "project.documentation.chat_summary": {
+      "canonical": "Chat_Zusammenfassung",
+      "de-DE": "Chat – Zusammenfassung",
+      "en-US": "Chat – Summary"
+    },
+    "project.documentation.release_draft": {
+      "canonical": "FreigabeEntwurf",
+      "de-DE": "Freigabeentwurf",
+      "en-US": "Release draft"
+    },
+    "project.documentation.miscellaneous": {
+      "canonical": "Sonstiges",
+      "de-DE": "Sonstiges",
+      "en-US": "Miscellaneous"
+    },
+    "project.documentation.method": {
+      "canonical": "Methode",
+      "de-DE": "Methode",
+      "en-US": "Method"
+    },
+    "project.file.organization": {
+      "canonical": "Organization.md",
+      "de-DE": "Organisation",
+      "en-US": "Organization"
+    },
+    "project.file.agent": {
+      "canonical": "Agent.md",
+      "de-DE": "Agent – Basis",
+      "en-US": "Agent – Base"
+    },
+    "project.file.chat": {
+      "canonical": "Chat.md",
+      "de-DE": "Chatablage",
+      "en-US": "Chat storage"
+    },
+    "project.file.chat_conversion": {
+      "canonical": "ChatConversion.md",
+      "de-DE": "Chatkonversion",
+      "en-US": "Chat conversion"
+    },
+    "project.file.environment_definition": {
+      "canonical": "EnvironmentDefinition.md",
+      "de-DE": "Umgebungsdefinition",
+      "en-US": "Environment definition"
+    },
+    "project.file.dependency_prerequisite": {
+      "canonical": "DependencyPrerequisite.md",
+      "de-DE": "Abhängigkeitsvoraussetzung",
+      "en-US": "Dependency prerequisite"
+    },
+    "project.file.naming": {
+      "canonical": "NamingConvention.md",
+      "de-DE": "Nomenklatur",
+      "en-US": "Naming convention"
+    },
+    "project.file.backup": {
+      "canonical": "Backup.md",
+      "de-DE": "Sicherung",
+      "en-US": "Backup"
+    },
+    "project.file.version_control": {
+      "canonical": "Repository.md",
+      "de-DE": "Versionsverwaltung",
+      "en-US": "Version control"
+    },
+    "project.file.application_prerequisite": {
+      "canonical": "ApplicationPrerequisite.md",
+      "de-DE": "Voraussetzung der Anwendung",
+      "en-US": "Application prerequisite"
+    },
+    "project.file.development_prerequisite": {
+      "canonical": "DevelopmentPrerequisite.md",
+      "de-DE": "Voraussetzung der Entwicklung",
+      "en-US": "Development prerequisite"
+    }
+  }
+}

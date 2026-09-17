@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="short-description" content="Verbindliche Begriffe für Chat-, Verwaltungs- und technische Ablagen.">
+  <title>Terminology</title>
+  <link rel="stylesheet" href="../../Documentation/Design/Style/Active.css">
+  <script src="../../Documentation/Design/Interaction/Active.js" defer></script>
+  <style>
+    main { width: min(100% - 2rem, 76rem); margin: 2rem auto; }
+    header, section { margin-bottom: 1.25rem; }
+    .table-wrap { overflow-x: auto; }
+    table { min-width: 54rem; }
+    th:first-child, td:first-child { width: 4rem; }
+    th:nth-child(2), td:nth-child(2) { width: 15rem; }
+    td[contenteditable="true"]:focus { outline: .2rem solid var(--light-navigator-accent); outline-offset: -0.2rem; }
+    table[data-table-editable] .secondary { display: none; }
+    .hint { color: var(--light-navigator-text-muted); }
+    .actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+    @media print { main { width: 100%; margin: 0; } .actions { display: none; } }
+  </style>
+</head>
+<body>
+  <main class="document">
+    <header class="card">
+      <h1>Terminology</h1>
+      <p>Verbindliche Begriffe für die Verwaltung und Auswertung von Chats sowie für technische Ablagen.</p>
+    </header>
+
+    <section class="notice notice--info">
+      <h2>Verwendung</h2>
+      <p>Die Datenzellen sind direkt im Browser editierbar. „Lokale Änderungen speichern“ speichert nur im Browser dieses Geräts; die HTML-Quelldatei wird dadurch nicht geändert. Eine bestätigte Übernahme in die Quelldatei erfolgt getrennt.</p>
+    </section>
+
+    <section class="card">
+      <h2>Begriffe</h2>
+      <p class="hint">Die Tabelle ersetzt die bisherige Definitionsliste. Sie übernimmt alle vorhandenen Begriffe und Definitionen unverändert in eine gemäß Naming strukturierte Darstellung.</p>
+      <div class="table-wrap">
+        <table data-table-editable="organization-terminology-terms">
+          <thead><tr><th>Nr.</th><th>Begriff</th><th>Definition</th><th>Aktion</th></tr></thead>
+          <tbody>
+            <tr><td>01</td><td>Chat</td><td>Interaktion zwischen einem Menschen und einem KI-Agenten.</td><td></td></tr>
+            <tr><td>02</td><td>Chat Management</td><td>Verwaltung von Chats: benennen, Projekten zuordnen, ablegen, exportieren und wiederfinden.</td><td></td></tr>
+            <tr><td>03</td><td>Extraction</td><td>Gezieltes Herausziehen und Verdichten des Wesentlichen aus einem Chat, etwa von Ergebnissen, Entscheidungen, Aufgaben und Erkenntnissen. Präziser auch: Knowledge Extraction.</td><td></td></tr>
+            <tr><td>04</td><td>Datenoperationen</td><td>Allgemeiner Begriff für Tätigkeiten wie Laden, Speichern, Importieren, Exportieren, Erstellen und Löschen von Daten.</td><td></td></tr>
+            <tr><td>05</td><td>Repository</td><td>Eine verwaltete Ablage von Dateien. Bei Git umfasst sie ein Projekt einschließlich seiner gespeicherten Änderungshistorie.</td><td></td></tr>
+            <tr><td>06</td><td>Versionsverwaltung</td><td>Ein Verfahren oder System, das Änderungen an Dateien nachvollziehbar speichert und frühere Stände verfügbar hält.</td><td></td></tr>
+            <tr><td>07</td><td>Git</td><td>Ein System zur Versionsverwaltung von Dateien.</td><td></td></tr>
+            <tr><td>08</td><td>Hub</td><td>Ein zentralisierender Knotenpunkt, an dem Verbindungen, Informationen oder Funktionen zusammenlaufen.</td><td></td></tr>
+            <tr><td>09</td><td>GitHub</td><td>Eine Plattform, die Git-Repositories bereitstellt und Funktionen für Zusammenarbeit und gemeinsame Entwicklung bündelt.</td><td></td></tr>
+            <tr><td>10</td><td>Host</td><td>Ein bereitstellendes System. Es macht einen Dienst oder eine Ressource erreichbar, etwa ein Repository.</td><td></td></tr>
+            <tr><td>11</td><td>Proxy-Server</td><td>Ein Vermittlungsserver zwischen einem Gerät und einem anderen Server. Er leitet Anfragen weiter und gibt Antworten zurück, beispielsweise zur Zugriffskontrolle, Zwischenspeicherung oder Abschirmung interner Systeme.</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="actions" data-table-controls="organization-terminology-terms">
+        <button type="button" data-table-add>Begriff hinzufügen</button>
+        <button class="button--secondary" type="button" data-table-save>Lokale Änderungen speichern</button>
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>Agentenkommunikation</h2>
+      <p class="hint">Vorläufige Begriffsdefinitionen für die Beschreibung der Geltung von Basis, Auftrag, Referenz und Modus im Chat.</p>
+      <div class="table-wrap">
+        <table data-table-editable="organization-terminology-agent-communication">
+          <thead><tr><th>Nr.</th><th>Begriff</th><th>Definition</th><th>Aktion</th></tr></thead>
+          <tbody>
+            <tr><td>01</td><td>Basisaktiv</td><td>Die vollständige Instruktionsbasis gilt für die aktuelle Sitzung. Ihre Bestandteile sind als Einheit zu berücksichtigen.</td><td></td></tr>
+            <tr><td>02</td><td>Auftragsaktiv</td><td>Der aktuelle Auftrag verlangt eine konkrete Handlung oder ein konkretes Ergebnis.</td><td></td></tr>
+            <tr><td>03</td><td>Referenzaktiv</td><td>Eine benannte Originalquelle ist für die konkrete Aufgabe heranzuziehen. Das allein erteilt keinen Änderungsauftrag.</td><td></td></tr>
+            <tr><td>04</td><td>Modusaktiv</td><td>Ein ausdrücklich gewählter Arbeitsmodus ergänzt die Basis für die aktuelle Sitzung. Ohne ausdrückliche Wahl ist kein Modus aktiv.</td><td></td></tr>
+            <tr><td>05</td><td>InstructionScope</td><td>Dokument, das Geltungsbereich, Vollständigkeit, Vorrang und Aktivierungsbedingungen der Instruktionsbasis beschreibt. Es ist kein technischer Lader.</td><td></td></tr>
+            <tr><td>06</td><td>InstructionReference</td><td>Referenzkatalog: Verzeichnis eigenständiger Originalquellen, die bei ausdrücklich benanntem Aufgabenbezug referenzaktiv werden können. Der Katalog kopiert oder aktiviert diese Quellen nicht.</td><td></td></tr>
+            <tr><td>07</td><td>InstructionCommunication</td><td>Dokument oder Abschnitt mit Regeln für Sprache, Ton, Rückfragen und die Darstellung von Beobachtung, Schlussfolgerung, Empfehlung und Unsicherheit in der Agentenkommunikation.</td><td></td></tr>
+            <tr><td>08</td><td>InstructionBackuplocal</td><td>Lokale Sicherungsanweisung für Instruktionsreferenzen. Sie regelt Vergleichskopien und deren Ablage im Unterverzeichnis <code>Backup</code>; sie ist von einer Sicherung außerhalb des primären Workspace getrennt.</td><td></td></tr>
+            <tr><td>09</td><td>Processaktiv</td><td>Ein Process wird für den konkreten Auftrag tatsächlich angewendet. Sein Vorhandensein oder eine bloße Referenz genügt nicht.</td><td></td></tr>
+            <tr><td>10</td><td>Toolaktiv</td><td>Ein Tool wird für den konkreten Auftrag tatsächlich ausgeführt. Installation, Sichtbarkeit oder Dokumentation allein genügen nicht.</td><td></td></tr>
+            <tr><td>11</td><td>Chataktiv</td><td>Ein Chat ist die aktuelle Interaktion, in der ein Auftrag, eine Referenz oder ein Modus ausdrücklich gilt. Andere Chats übernehmen diese Geltung nicht automatisch.</td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="actions" data-table-controls="organization-terminology-agent-communication">
+        <button type="button" data-table-add>Begriff hinzufügen</button>
+        <button class="button--secondary" type="button" data-table-save>Lokale Änderungen speichern</button>
+      </p>
+    </section>
+  </main>
+</body>
+</html>

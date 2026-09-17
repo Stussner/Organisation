@@ -1,0 +1,9 @@
+{
+  "title": "Environment – Base",
+  "description": "Statische Grundangaben der Organization Base.",
+  "variables": [
+    { "name": "Project", "label": "Projekt", "value": "Organization Base" },
+    { "name": "Owner", "label": "Besitzer", "value": "Johannes Scharff" },
+    { "name": "Localization", "label": "Lokalisierung", "value": "de-DE" }
+  ]
+}

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="short-description" content="Editierbare Definitionen sprachlicher Darstellungen.">
+  <title>Definition</title>
+  <link rel="stylesheet" href="../../Documentation/Design/Style/Active.css">
+  <style>
+    main { width: min(100% - 2rem, 76rem); margin: 0 auto; padding: 1.5rem 0 3rem; }
+    .table-wrap { overflow-x: auto; }
+    .table-wrap table { min-width: 66rem; }
+    .table-editable-expansion { min-width: 74rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+    a[href*="#"] { color: inherit; font-weight: 400; text-decoration: none; }
+    a[href*="#"]:focus-visible { outline: 2px solid currentColor; outline-offset: .2rem; }
+    @media print { main { width: 100%; margin: 0; } .actions { display: none; } }
+  </style>
+</head>
+<body class="environment-definition">
+  <main>
+    <section class="card"><table><tbody>
+      <tr><th scope="row"><a href="Definition.html#term-project">Projekt</a></th><td><a href="../../Environment/Definition/Base.html#Project">Organization Base</a></td></tr>
+      <tr><th scope="row">Title</th><td><input type="text" aria-label="Title" value="Definition" data-header-minimum-title-from-filename></td></tr>
+      <tr><th scope="row">Location (File)</th><td><span data-header-minimum-location-from-url>Dokumentpfad</span></td></tr>
+      <tr><th scope="row">Owner</th><td><a href="../../Environment/Definition/Base.html">Johannes Scharff</a></td></tr>
+      <tr><th scope="row">Date</th><td>2026-08-16</td></tr>
+      <tr class="header-minimum__select-row"><th scope="row">Backup</th><td><select aria-label="Backup"><option selected>Always</option><option>Never</option></select><button class="header-minimum__list-button" type="button" data-header-minimum-list-button aria-label="Backup-Auswahl öffnen" title="Backup-Auswahl öffnen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" /></svg></button></td></tr>
+      <tr class="header-minimum__select-row"><th scope="row">Repository</th><td><select aria-label="Repository"><option>Public</option><option selected>Private</option></select><button class="header-minimum__list-button" type="button" data-header-minimum-list-button aria-label="Repository-Auswahl öffnen" title="Repository-Auswahl öffnen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" /></svg></button></td></tr>
+      <tr class="header-minimum__select-row"><th scope="row">Documentation</th><td><select aria-label="Documentation"><option>Release</option><option selected>None</option></select><button class="header-minimum__list-button" type="button" data-header-minimum-list-button aria-label="Documentation-Auswahl öffnen" title="Documentation-Auswahl öffnen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" /></svg></button></td></tr>
+    </tbody></table></section>
+
+    <section class="card">
+      <h2>Definition</h2>
+      <p>Sprachliche Darstellungen der Organization Base. Die Begriffe sind nach <code>en-US</code> alphabetisch geordnet.</p>
+    </section>
+
+    <section class="card">
+      <h2>Begriffe</h2>
+      <div class="table-wrap">
+        <table id="terms" class="table-editable-ordered" data-table-editable-ordered="organization-localization-definition" data-table-editable-ordered-pointer="NULL">
+          <thead><tr><th>Nr.</th><th id="localization-de-DE">de-DE</th><th id="localization-en-US">en-US</th><th id="localization-en-GB">en-GB</th><th id="localization-es-ES">es-ES</th><th id="localization-zh-Hans">zh-Hans</th></tr></thead>
+          <tbody>
+            <tr id="term-access"><th scope="row">01</th><td>Zugriff</td><td>Access</td><td>Access</td><td>Acceso</td><td>访问</td></tr>
+            <tr id="term-agreement"><th scope="row">02</th><td>Vereinbarung</td><td>Agreement</td><td>Agreement</td><td>Acuerdo</td><td>协议</td></tr>
+            <tr id="term-backup"><th scope="row">03</th><td>Sicherung</td><td>Backup</td><td>Backup</td><td>Copia de seguridad</td><td>备份</td></tr>
+            <tr id="term-created"><th scope="row">04</th><td>Erstellt</td><td>Created</td><td>Created</td><td>Creado</td><td>已创建</td></tr>
+            <tr id="term-creator"><th scope="row">05</th><td>Ersteller</td><td>Creator</td><td>Creator</td><td>Creador</td><td>创建者</td></tr>
+            <tr id="term-date"><th scope="row">06</th><td>Datum</td><td>Date</td><td>Date</td><td>Fecha</td><td>日期</td></tr>
+            <tr id="term-description"><th scope="row">07</th><td>Beschreibung</td><td>Description</td><td>Description</td><td>Descripción</td><td>描述</td></tr>
+            <tr id="term-documentation"><th scope="row">08</th><td>Dokumentation</td><td>Documentation</td><td>Documentation</td><td>Documentación</td><td>文档</td></tr>
+            <tr id="term-environment"><th scope="row">09</th><td>Umgebung</td><td>Environment</td><td>Environment</td><td>Entorno</td><td>环境</td></tr>
+            <tr id="term-guide"><th scope="row">10</th><td>Leitfaden</td><td>Guide</td><td>Guide</td><td>Guía</td><td>指南</td></tr>
+            <tr id="term-identifier"><th scope="row">11</th><td>Bezeichner</td><td>Identifier</td><td>Identifier</td><td>Identificador</td><td>标识符</td></tr>
+            <tr id="term-interface"><th scope="row">12</th><td>Schnittstelle</td><td>Interface</td><td>Interface</td><td>Interfaz</td><td>接口</td></tr>
+            <tr id="term-library"><th scope="row">13</th><td>Bibliothek</td><td>Library</td><td>Library</td><td>Biblioteca</td><td>库</td></tr>
+            <tr id="term-link"><th scope="row">14</th><td>Verknüpfung</td><td>Link</td><td>Link</td><td>Enlace</td><td>链接</td></tr>
+            <tr id="term-localization"><th scope="row">15</th><td>Lokalisierung</td><td>Localization</td><td>Localisation</td><td>Localización</td><td>本地化</td></tr>
+            <tr id="term-location"><th scope="row">16</th><td>Speicherort</td><td>Location</td><td>Location</td><td>Ubicación</td><td>位置</td></tr>
+            <tr id="term-modified"><th scope="row">17</th><td>Geändert</td><td>Modified</td><td>Modified</td><td>Modificado</td><td>已修改</td></tr>
+            <tr id="term-number"><th scope="row">18</th><td>Nr.</td><td>No.</td><td>No.</td><td>N.º</td><td>编号</td></tr>
+            <tr id="term-owner"><th scope="row">19</th><td>Besitzer</td><td>Owner</td><td>Owner</td><td>Propietario</td><td>所有者</td></tr>
+            <tr id="term-policy"><th scope="row">20</th><td>Richtlinie</td><td>Policy</td><td>Policy</td><td>Directriz</td><td>政策</td></tr>
+            <tr id="term-project"><th scope="row">21</th><td>Projekt</td><td>Project</td><td>Project</td><td>Proyecto</td><td>项目</td></tr>
+            <tr id="term-repository"><th scope="row">22</th><td>Repository</td><td>Repository</td><td>Repository</td><td>Repositorio</td><td>存储库</td></tr>
+            <tr id="term-rule"><th scope="row">23</th><td>Regel</td><td>Rule</td><td>Rule</td><td>Regla</td><td>规则</td></tr>
+            <tr id="term-short-description"><th scope="row">24</th><td>Kurzbeschreibung</td><td>Short description</td><td>Short description</td><td>Descripción breve</td><td>简介</td></tr>
+            <tr id="term-title"><th scope="row">25</th><td>Titel</td><td>Title</td><td>Title</td><td>Título</td><td>标题</td></tr>
+            <tr id="term-tool"><th scope="row">26</th><td>Werkzeug</td><td>Tool</td><td>Tool</td><td>Herramienta</td><td>工具</td></tr>
+            <tr id="term-topic"><th scope="row">27</th><td>Thema</td><td>Topic</td><td>Topic</td><td>Tema</td><td>主题</td></tr>
+            <tr id="term-type"><th scope="row">28</th><td>Typ</td><td>Type</td><td>Type</td><td>Tipo</td><td>类型</td></tr>
+            <tr id="term-value"><th scope="row">29</th><td>Wert</td><td>Value</td><td>Value</td><td>Valor</td><td>值</td></tr>
+            <tr id="term-visibility"><th scope="row">30</th><td>Sichtbarkeit</td><td>Visibility</td><td>Visibility</td><td>Visibilidad</td><td>可见性</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="actions" data-table-controls="organization-localization-definition"><button class="button--secondary" type="button" data-table-save>Lokale Änderungen speichern</button></p>
+    </section>
+
+    <section class="card">
+      <h2>Texte</h2>
+      <div class="table-wrap">
+        <table id="texts" class="table-editable-expansion" data-table-editable-expansion="organization-localization-text-definition" data-table-editable-expansion-pointer="organization-localization-definition">
+          <thead><tr><th>Nr.</th><th>Key</th><th>de-DE</th><th>en-US</th><th>en-GB</th><th>es-ES</th><th>zh-Hans</th></tr></thead>
+          <tbody>
+            <tr id="text-naming-convention-description"><th scope="row">20</th><td>Naming_Convention_Description</td><td>Die Naming-Convention legt die Form technischer und fachlicher Namen fest. Die Terminologie legt ihre Bedeutung fest; die Lokalisation führt ihre sprachlichen Darstellungen.</td><td>The naming convention defines the form of technical and domain-specific names. Terminology defines their meaning; localization provides their language representations.</td><td>The naming convention defines the form of technical and domain-specific names. Terminology defines their meaning; localisation provides their language representations.</td><td>La convención de nomenclatura define la forma de los nombres técnicos y especializados. La terminología define su significado; la localización proporciona sus representaciones lingüísticas.</td><td>命名约定规定技术名称和专业名称的形式。术语规定其含义；本地化提供其语言表达形式。</td></tr>
+            <tr id="text-naming-rules-description"><th scope="row">21</th><td>Naming_Rules_Description</td><td>Die Regeln für Datei- und Verzeichnisnamen werden durch die Allgemeinen Regeln ergänzt. Allgemeine Regeln gelten auch für Datei- und Verzeichnisnamen.</td><td>The rules for file and directory names are supplemented by the general rules. General rules also apply to file and directory names.</td><td>The rules for file and directory names are supplemented by the general rules. General rules also apply to file and directory names.</td><td>Las reglas para los nombres de archivos y directorios se complementan con las reglas generales. Las reglas generales también se aplican a los nombres de archivos y directorios.</td><td>文件和目录名称的规则由通用规则补充。通用规则同样适用于文件和目录名称。</td></tr>
+            <tr id="text-backup-status-start"><th scope="row">22</th><td>Backup_Status_Start</td><td>Sicherung wird vorbereitet.</td><td></td><td></td><td></td><td></td></tr>
+            <tr id="text-backup-status-source"><th scope="row">23</th><td>Backup_Status_Source</td><td>Quelle: {0}</td><td></td><td></td><td></td><td></td></tr>
+            <tr id="text-backup-status-target"><th scope="row">24</th><td>Backup_Status_Target</td><td>Sicherungsziel: {0}</td><td></td><td></td><td></td><td></td></tr>
+            <tr id="text-backup-status-archive"><th scope="row">25</th><td>Backup_Status_Archive</td><td>Archiv wird erstellt: {0}</td><td></td><td></td><td></td><td></td></tr>
+            <tr id="text-backup-status-completed"><th scope="row">26</th><td>Backup_Status_Completed</td><td>Sicherung wurde erfolgreich erstellt.</td><td></td><td></td><td></td><td></td></tr>
+            <tr id="text-backup-error-root"><th scope="row">27</th><td>Backup_Error_Root</td><td>Die Organization Base konnte nicht bestimmt werden.</td><td></td><td></td><td></td><td></td></tr>
+            <tr id="text-backup-error-reference"><th scope="row">28</th><td>Backup_Error_Reference</td><td>Die Sicherungsziel-Referenz ist nicht lesbar oder enthält kein primäres Sicherungsziel.</td><td></td><td></td><td></td><td></td></tr>
+            <tr id="text-backup-error-target"><th scope="row">29</th><td>Backup_Error_Target</td><td>Das Sicherungsziel ist nicht verfügbar.</td><td></td><td></td><td></td><td></td></tr>
+            <tr id="text-backup-error-archive"><th scope="row">30</th><td>Backup_Error_Archive</td><td>Das ZIP-Archiv konnte nicht erstellt werden.</td><td></td><td></td><td></td><td></td></tr>
+            <tr id="text-backup-error-file"><th scope="row">31</th><td>Backup_Error_File</td><td>Eine Quelldatei konnte nicht in das Archiv geschrieben werden: {0}</td><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="actions" data-table-controls="organization-localization-text-definition"><button class="button--secondary" type="button" data-table-save>Lokale Änderungen speichern</button></p>
+    </section>
+  </main>
+  <script src="../../Documentation/Design/Class/HeaderMinimum.js"></script>
+  <script src="../../Documentation/Design/Class/TableEditableOrdered.js"></script>
+  <script src="../../Documentation/Design/Class/TableEditableExpansion.js"></script>
+</body>
+</html>

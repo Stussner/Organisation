@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="short-description" content="Geltungsbereich: technische Projektsprache, sprachliche Darstellung formaler Begriffe, Verzeichnis- und Dateinamen, Dokumentation sowie Benutzeroberfläche des OAHSI-Projekts · Kanonische technische Sprache: Englisch (`en-US`) · Zeichenkodierung: UTF-8">
+  <title>Lokalisierung des formalen Rahmens</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #101820;
+      background: #f3f7f8;
+    }
+
+    body {
+      margin: 0;
+      padding: 2rem;
+    }
+
+    main {
+      width: min(100%, 58rem);
+      margin: 0 auto;
+      border: 1px solid #9fb5c7;
+      border-top: 0.45rem solid #4f9a90;
+      background: #ffffff;
+      box-shadow: 0 0.3rem 1rem rgb(0 0 0 / 12%);
+    }
+
+    header {
+      padding: 1.1rem 1.35rem 0.85rem;
+      border-bottom: 1px solid #c8d8e6;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+
+    header p {
+      margin: 0.35rem 0 0;
+      color: #4c6170;
+      font-size: 0.92rem;
+    }
+
+    .print-button {
+      margin-top: 0.9rem;
+      border: 1px solid #176b63;
+      border-radius: 0.25rem;
+      padding: 0.45rem 0.7rem;
+      color: #ffffff;
+      background: #287f76;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .print-button:hover {
+      background: #176b63;
+    }
+
+    .header-grid {
+      display: grid;
+      grid-template-columns: minmax(12rem, 31%) 1fr;
+    }
+
+    .header-grid label,
+    .header-grid .label,
+    .header-grid .value {
+      min-height: 2.5rem;
+      box-sizing: border-box;
+      padding: 0.45rem 0.65rem;
+      border-bottom: 1px solid #b9cde0;
+    }
+
+    .header-grid label,
+    .header-grid .label {
+      display: flex;
+      align-items: center;
+      background: #dceaf6;
+      border-right: 1px solid #b9cde0;
+      font-weight: 700;
+    }
+
+    .header-grid .value {
+      display: flex;
+      align-items: center;
+    }
+
+    .header-grid label:nth-last-of-type(1),
+    .header-grid .value:last-child {
+      border-bottom: 0;
+    }
+
+    input,
+    select {
+      width: 100%;
+      min-height: 2rem;
+      box-sizing: border-box;
+      border: 1px solid #7e99b0;
+      border-radius: 0.2rem;
+      padding: 0.25rem 0.45rem;
+      color: inherit;
+      background: #ffffff;
+      font: inherit;
+    }
+
+    input:focus,
+    select:focus,
+    a:focus {
+      outline: 0.2rem solid #2673ba;
+      outline-offset: 0.1rem;
+    }
+
+    a {
+      color: #075bc5;
+      text-underline-offset: 0.12em;
+    }
+
+    @media (max-width: 38rem) {
+      body {
+        padding: 0.75rem;
+      }
+
+      .header-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-grid label {
+        min-height: auto;
+        border-right: 0;
+        border-bottom: 0;
+      }
+    }
+
+    @page {
+      size: A4;
+      margin: 12mm;
+    }
+
+    @media print {
+      body {
+        padding: 0;
+        background: #ffffff;
+      }
+
+      main {
+        width: 100%;
+        border: 0;
+        border-top: 0.25rem solid #4f9a90;
+        box-shadow: none;
+      }
+
+      .print-button {
+        display: none;
+      }
+
+      input,
+      select {
+        appearance: none;
+        border: 0;
+        padding: 0;
+        background: transparent;
+      }
+    }
+  
+
+    .document-content {
+      padding: 1.35rem;
+      line-height: 1.55;
+    }
+
+    .document-content > :first-child { margin-top: 0; }
+    .document-content h2, .document-content h3, .document-content h4 {
+      margin: 1.6rem 0 0.65rem;
+      color: #173d5a;
+    }
+
+    .document-content h2 { border-bottom: 1px solid #c8d8e6; padding-bottom: 0.25rem; }
+    .document-content p { margin: 0.75rem 0; }
+    .document-content ul, .document-content ol { padding-left: 1.5rem; }
+    .document-content li + li { margin-top: 0.25rem; }
+    .document-content code { padding: 0.08rem 0.28rem; border-radius: 0.2rem; background: #edf3f7; }
+    .document-content pre { overflow-x: auto; padding: 0.85rem; border: 1px solid #c8d8e6; background: #f5f8fa; }
+    .document-content pre code { padding: 0; background: transparent; }
+    .document-content blockquote { margin: 1rem 0; padding: 0.2rem 1rem; border-left: 0.3rem solid #4f9a90; color: #40525f; background: #f2f8f7; }
+    .document-content table { width: 100%; margin: 1rem 0; border-collapse: collapse; }
+    .document-content th, .document-content td { padding: 0.5rem 0.65rem; border: 1px solid #b9cde0; vertical-align: top; text-align: left; }
+    .document-content th { background: #dceaf6; }
+    .document-content hr { border: 0; border-top: 1px solid #c8d8e6; margin: 1.5rem 0; }
+
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Lokalisierung des formalen Rahmens</h1>
+      <p>Geltungsbereich: technische Projektsprache, sprachliche Darstellung formaler Begriffe, Verzeichnis- und Dateinamen, Dokumentation sowie Benutzeroberfläche des OAHSI-Projekts · Kanonische technische Sprache: Englisch (<code>en-US</code>) · Zeichenkodierung: UTF-8</p>
+      <button class="print-button" type="button" onclick="window.print()">Drucken</button>
+    </header>
+
+    <form class="header-grid" aria-label="Dokumentationskopf">
+      <label for="project">Project</label>
+      <div class="value"><input id="project" name="project" value="Oahsi"></div>
+
+      <label for="title">Title</label>
+      <div class="value"><input id="title" name="title" value="Lokalisierung des formalen Rahmens"></div>
+
+      <label for="short-description">Kurzbeschreibung</label>
+      <div class="value"><input id="short-description" name="short-description" value="Geltungsbereich: technische Projektsprache, sprachliche Darstellung formaler Begriffe, Verzeichnis- und Dateinamen, Dokumentation sowie Benutzeroberfläche des OAHSI-Projekts · Kanonische technische Sprache: Englisch (`en-US`) · Zeichenkodierung: UTF-8"></div>
+
+      <label for="owner">Owner</label>
+      <div class="value"><input id="owner" name="owner" value="Stussner"></div>
+
+      <label for="date-created">Date of Creation</label>
+      <div class="value"><input id="date-created" name="date-created" value="20260808" inputmode="numeric"></div>
+
+      <label for="date-changed">Date of Change</label>
+      <div class="value"><input id="date-changed" name="date-changed" value="20260808" inputmode="numeric"></div>
+
+      <label for="type">Type</label>
+      <div class="value">
+        <select id="type" name="type">
+          <option>Definition</option>
+          <option selected>Description</option>
+        </select>
+      </div>
+
+      <div class="label">Location</div>
+      <div class="value"><a href="Localization.html" title="Diese HTML-Datei öffnen">Organization/Localization/Localization.html</a></div>
+
+      <label for="backup">Backup</label>
+      <div class="value">
+        <select id="backup" name="backup">
+          <option selected>Minimum (Essentials)</option>
+          <option>Standard</option>
+          <option>Maximum (Projekt, Program, Users)</option>
+          <option>Exclusion (never)</option>
+        </select>
+      </div>
+
+      <label for="repository">Repository</label>
+      <div class="value">
+        <select id="repository" name="repository">
+          <option selected>Public</option>
+          <option>Private</option>
+          <option>Exclusion</option>
+        </select>
+      </div>
+
+      <label for="documentation">Dokumentation</label>
+      <div class="value">
+        <select id="documentation" name="documentation">
+          <option selected>Release</option>
+          <option>None</option>
+        </select>
+      </div>
+    </form>
+
+    <article class="document-content">
+<p>Diese Datei ist die einzige maßgebliche Definition der Lokalisierung des formalen Projektrahmens.</p>
+<p>Allgemeine Benennungsformen sowie Datums- und Standkennungen werden ausschließlich in <a href="../Nomenclature.html">NamingConvention.md</a> geregelt.</p>
+<h2 id="ziel">Ziel</h2>
+<p>OAHSI trennt die technische Projektsprache von der natürlichen Sprache menschlicher Inhalte. Die technische Struktur bleibt dadurch eindeutig und mit Programmiersprachen, Bibliotheken, Werkzeugen und externen Schnittstellen vereinbar. Benutzeroberfläche und offizielle Dokumentation können unabhängig davon lokalisiert werden.</p>
+<p>Das Zielbild lautet:</p>
+<blockquote><p>OAHSI besitzt eine englische technische Nomenklatur und sprachneutrale interne Kennungen. Menschliche Inhalte dürfen ihre natürliche Sprache behalten; Benutzeroberfläche und offizielle Dokumentation sind lokalisierbar.</p></blockquote>
+<h2 id="kanonische-technische-nomenklatur">Kanonische technische Nomenklatur</h2>
+<p>Englisch ist die kanonische Sprache für alles, was zur technischen Identität und Struktur des Projekts gehört. Das umfasst insbesondere:</p>
+<ul>
+<li>physische Verzeichnis- und Dateinamen,</li>
+<li>Namen von Quelltextbestandteilen wie Typen, Funktionen, Variablen und Modulen,</li>
+<li>Build-, Konfigurations- und Schnittstellenbezeichner sowie</li>
+<li>neu festgelegte technische Fachbegriffe.</li>
+</ul>
+<p>Beispiele für kanonische technische Bezeichnungen sind <code>Dependency</code>, <code>Environment</code>, <code>Source</code>, <code>Documentation</code>, <code>Organization</code>, <code>Extension</code>, <code>CalibrationData</code> und <code>ValidationData</code>.</p>
+<p>Kanonische technische Namen sind keine je Sprache austauschbaren Darstellungen. Ein physischer Ordner oder eine Datei wird daher nicht für jede Sprache dupliziert oder zur Laufzeit übersetzt. Sichtbare, lokalisierte Bezeichnungen werden getrennt von diesen Namen geführt.</p>
+<p>Technische Kennungen und kanonische Projektpfade bleiben ASCII-kompatibel. Für sie gelten außerdem:</p>
+<ul>
+<li>Buchstaben <code>A-Z</code> und <code>a-z</code>, Ziffern, Unterstrich, Bindestrich und Punkt,</li>
+<li>keine nachgestellten Leerzeichen oder Punkte,</li>
+<li>keine unter Windows unzulässigen Zeichen,</li>
+<li>keine reservierten Windows-Gerätenamen,</li>
+<li>keine Unterscheidung nur durch Groß- und Kleinschreibung und</li>
+<li>möglichst kurze, eindeutig verständliche Namen.</li>
+</ul>
+<h2 id="bestehende-struktur-und-migration">Bestehende Struktur und Migration</h2>
+<p>Die derzeit vorhandenen deutschen Verzeichnis- und Dateinamen bleiben bis zu einer geplanten Migration unverändert. Sie begründen keine zweite kanonische Nomenklatur.</p>
+<p>Die Umstellung auf englische Namen erfolgt nicht schrittweise neben laufenden Strukturänderungen, sondern als zusammenhängende, systematische Migration:</p>
+<ol>
+<li>verbindliche Zuordnung der bisherigen zu den englischen Namen festlegen,</li>
+<li>betroffene Verzeichnisse und Dateien gemeinsam umbenennen,</li>
+<li>sämtliche aktuellen Querverweise, Buildpfade und Konfigurationen korrigieren und</li>
+<li>die vollständige Struktur auf Konsistenz und tote Verweise prüfen.</li>
+</ol>
+<p>Bis zu dieser Migration werden bestehende Pfade nicht allein aus Lokalisierungsgründen einzeln umbenannt. Dadurch werden konkurrierende Nomenklaturen und vorübergehend ungültige Verweise vermieden.</p>
+<h2 id="historische-inhalte">Historische Inhalte</h2>
+<p>Historische Originalchats und vorhandene Chat-Zusammenfassungen, insbesondere die Inhalte der Bereiche <code>Chat_Original</code> und <code>Chat_Zusammenfassung</code>, werden inhaltlich nicht rückwirkend übersetzt. Ein Originalchat bleibt als Primärquelle in seiner ursprünglichen Sprache erhalten; auch eine Zusammenfassung bleibt in der Sprache ihres Entstehungsstands, sofern kein konkreter Bedarf für eine zusätzliche Übersetzung besteht.</p>
+<p>Die Namen der zugehörigen Verzeichnisse dürfen im Rahmen der gemeinsamen Strukturmigration auf die englische technische Nomenklatur umgestellt werden. Diese Umbenennung verändert nicht den Inhalt der darin abgelegten Dokumente.</p>
+<p>Es gilt:</p>
+<blockquote><p>Struktur wird vereinheitlicht; historische Inhalte bleiben historisch.</p></blockquote>
+<h2 id="offizielle-dokumentation">Offizielle Dokumentation</h2>
+<p>Eigens verfasste Projektdokumentation ist von der technischen Nomenklatur zu unterscheiden. Ihre Pfade und Dateinamen folgen der englischen technischen Standardsprache; ihr Inhalt darf zunächst weiterhin deutsch sein.</p>
+<p>Offizielle Dokumentation kann später in getrennten Sprachfassungen bereitgestellt werden. Jede Übersetzung muss eindeutig auf ihre maßgebliche Ausgangsfassung und deren Stand verweisen. Eine parallele Sprachstruktur wird erst eingeführt, wenn sie tatsächlich benötigt und gemeinsam gepflegt werden kann; sie wird nicht vorsorglich dupliziert.</p>
+<h2 id="sprachneutrale-kennungen-und-benutzeroberfläche">Sprachneutrale Kennungen und Benutzeroberfläche</h2>
+<p>Benutzeroberfläche, Meldungen und andere sichtbare Anwendungstexte verwenden stabile sprachneutrale Schlüssel statt fest eingebauter deutscher oder englischer Texte.</p>
+<p>Beispiel:</p>
+<pre><code class="language-text">Kennung: ui.file.open
+de-DE:   Datei öffnen
+en-US:   Open file</code></pre>
+<p>Eine Kennung wird nicht übersetzt und nicht wegen einer stilistischen Textänderung umbenannt. Die lokalisierten Texte liegen in getrennten Sprachressourcen. Damit bleibt die interne Semantik unabhängig von der gewählten Oberflächensprache; die bevorzugte Oberfläche darf dennoch standardmäßig deutsch sein.</p>
+<h2 id="sprachkennung-und-rückfall">Sprachkennung und Rückfall</h2>
+<p>Sprachen werden mit einer BCP-47-Kennung bezeichnet, beispielsweise:</p>
+<ul>
+<li><code>de-DE</code></li>
+<li><code>en-US</code></li>
+<li><code>en-GB</code></li>
+</ul>
+<p>Fehlt ein lokalisierter Anwendungstext, wird zunächst auf die übergeordnete Sprachkennung und anschließend auf Englisch (<code>en-US</code>) zurückgefallen. Englisch ist die verbindliche Rückfallsprache. Eine fehlende Übersetzung darf weder einen leeren sichtbaren Text noch einen leeren technischen Namen erzeugen.</p>
+<h2 id="terminologisches-wörterbuch">Terminologisches Wörterbuch</h2>
+<p><a href="./Term.json">Term.json</a> ist das terminologische Wörterbuch des Projekts und nicht lediglich eine zweite Datei für Oberflächentexte. Es ordnet einer stabilen sprachneutralen Begriffskennung mindestens Folgendes zu:</p>
+<ul>
+<li>die kanonische Bedeutung des Begriffs,</li>
+<li>seine kanonische technische beziehungsweise im Code verwendete Bezeichnung,</li>
+<li>die deutsche Bezeichnung und</li>
+<li>die englische Bezeichnung.</li>
+</ul>
+<p>Damit grenzt der Katalog fachlich ähnliche Benennungen wie <code>Processor</code>, <code>Analyzer</code>, <code>Transformer</code>, <code>Extension</code>, <code>Module</code> und <code>Plugin</code> gegeneinander ab und verhindert, dass sie unsystematisch gleich- oder verschiedenbedeutend verwendet werden.</p>
+<p>Allgemeine Oberflächentexte werden in eigenen Sprachressourcen geführt. Nur terminologisch relevante Benennungen werden zusätzlich über <code>Term.json</code> vereinheitlicht.</p>
+<p>Die gegenwärtig noch deutsch ausgerichteten Sprach- und Kanonisch-Werte in <code>Term.json</code> gehören zum bestehenden Strukturstand. Sie werden nicht einzeln vorgezogen, sondern zusammen mit der geplanten Nomenklaturmigration auf dieses Zielmodell umgestellt.</p>
+<h2 id="utf-8-und-unicode">UTF-8 und Unicode</h2>
+<ul>
+<li>Text-, Markdown-, JSON- und Quelltextdateien werden in UTF-8 gespeichert.</li>
+<li>Benutzerinhalte dürfen den vollständigen Unicode-Zeichenvorrat verwenden.</li>
+<li>C++-Quellen werden mit einer ausdrücklich aktivierten UTF-8-Quell- und Ausführungszeichencodierung gebaut.</li>
+<li>Sprachressourcen dürfen Umlaute, Akzente und nichtlateinische Schriften direkt enthalten.</li>
+<li>Normalisierung und Vergleich von Unicode-Text werden bewusst behandelt; sichtbare Gleichheit darf nicht ungeprüft mit Bytegleichheit verwechselt werden.</li>
+</ul>
+<h2 id="inhalt-und-platzhalter">Inhalt und Platzhalter</h2>
+<ul>
+<li>Übersetzt wird die Bedeutung, nicht die Wortstellung der Ausgangssprache.</li>
+<li>Fachbegriffe erhalten eine einheitliche Übersetzung im terminologischen Wörterbuch.</li>
+<li>Platzhalter, Kennungen, Pfade, Befehle und Code werden nicht übersetzt.</li>
+<li>Anzahl und Name aller Platzhalter müssen in jeder Sprachfassung übereinstimmen.</li>
+<li>Datums-, Zeit-, Zahlen- und Maßeinheiten der Anwendung werden über die gewählte Sprache formatiert und nicht als fest zusammengesetzter Text gespeichert. Formale Projektdaten folgen unabhängig davon der Nomenklatur.</li>
+<li>Benutzertexte und technische Fehlerdetails werden getrennt, damit beide angemessen dargestellt werden können.</li>
+</ul>
+<h2 id="prüfung">Prüfung</h2>
+<p>Eine neue Sprache gilt erst als verwendbar, wenn mindestens geprüft wurde:</p>
+<ol>
+<li>alle verpflichtenden Texte und Begriffe vorhanden oder über den englischen Rückfall erreichbar,</li>
+<li>Rückfall auf Englisch funktionsfähig,</li>
+<li>Platzhalter vollständig und unverändert,</li>
+<li>UTF-8 ohne Datenverlust lesbar,</li>
+<li>lange Texte in der Benutzeroberfläche darstellbar und</li>
+<li>technische Pfade und Kennungen unabhängig von der Anzeigesprache stabil.</li>
+</ol>
+<h2 id="erweiterung">Erweiterung</h2>
+<p>Neue technische Begriffe erhalten zuerst eine stabile sprachneutrale Kennung, eine klar abgegrenzte Bedeutung und eine kanonische englische Bezeichnung. Deutsche und weitere sprachliche Bezeichnungen ergänzen die Darstellung. Anwendungscode, Dokumentgeneratoren und Benutzeroberfläche verwenden sprachneutrale Kennungen oder die festgelegte englische technische Nomenklatur entsprechend dem jeweiligen Geltungsbereich.</p>
+    </article>
+  </main>
+</body>
+</html>

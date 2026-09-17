@@ -1,0 +1,51 @@
+
+//Umbruch:
+//---------------------------------------------
+//Kein Umbruch vor Öffnender Klammer.
+//Umbruch nach Öffnender Klammer.
+
+Konstruktkopf{
+}; 
+
+
+
+//Einzug:
+//----------------------------------------------
+//Der Wert in <Wert> ist die anzahl der Leerzeichen der Einrueckung.
+
+
+//Standard Einzug: 
+<1>
+
+
+
+//Außerhalb von namespace, struct, class
+<0> funktion{
+<32> Inhalt
+};
+
+
+//Innerhalb von namespace
+<0>namespace x{
+<8> Inhalt
+};
+
+
+//innerhalb von structs
+struct y{
+<24> Zugriffsspezifizierer
+<32> Funktion{
+<32> };
+<32> Datenelement
+};
+
+
+//Innerhalb von class
+class z{
+<24> Zugriffkontrolle
+<32> Funktion(){
+<32> };
+<32> Datenelement
+};
+
+

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="short-description" content="Verbindliche Regeln für fachliche Benennungen sowie Verzeichnis- und Dateinamen.">
+  <title>Naming</title>
+  <link rel="stylesheet" href="../../Documentation/Design/Style/Active.css">
+  <script src="../../Documentation/Design/Interaction/Active.js" defer></script>
+  <style>
+    :root { color-scheme: light; font-family: "Segoe UI", Arial, sans-serif; color: #101820; background: #f3f7f8; }
+    body { margin: 0; padding: 2rem; }
+    main { width: min(100%, 58rem); margin: 0 auto; border: 1px solid #9fb5c7; border-top: .45rem solid #4f9a90; background: #fff; box-shadow: 0 .3rem 1rem rgb(0 0 0 / 12%); }
+    header { padding: 1.1rem 1.35rem .85rem; border-bottom: 1px solid #c8d8e6; }
+    h1 { margin: 0; font-size: 1.3rem; }
+    header p { margin: .35rem 0 0; color: #4c6170; font-size: .92rem; }
+    .print-button { margin-top: .9rem; border: 1px solid #176b63; border-radius: .25rem; padding: .45rem .7rem; color: #fff; background: #287f76; font: inherit; font-weight: 700; cursor: pointer; }
+    .print-button:hover { background: #176b63; }
+    .document-content { padding: 1.35rem; line-height: 1.55; }
+    .document-content > :first-child { margin-top: 0; }
+    h2 { margin: 1.6rem 0 .65rem; padding-bottom: .25rem; border-bottom: 1px solid #c8d8e6; color: #173d5a; }
+    p { margin: .75rem 0; }
+    code { padding: .08rem .28rem; border-radius: .2rem; background: #edf3f7; }
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; min-width: 44rem; margin: 1rem 0; border-collapse: collapse; }
+    th, td { padding: .5rem .65rem; border: 1px solid #b9cde0; vertical-align: top; text-align: left; }
+    th { background: #dceaf6; }
+    th:first-child { width: 3.5rem; }
+    table[data-table-editable] .secondary { display: none; }
+    blockquote { margin: 1rem 0; padding: .2rem 1rem; border-left: .3rem solid #4f9a90; color: #40525f; background: #f2f8f7; }
+    @page { size: A4; margin: 12mm; }
+    @media (max-width: 38rem) { body { padding: .75rem; } }
+    @media print { body { padding: 0; background: #fff; } main { width: 100%; border: 0; border-top: .25rem solid #4f9a90; box-shadow: none; } .print-button { display: none; } }
+  </style>
+  <link rel="stylesheet" href="../../Documentation/Design/Style/Active.css">
+</head>
+<body>
+  <main class="document">
+    <header>
+      <h1>Naming</h1>
+      <p>Verbindliche Regeln für fachliche Benennungen sowie Verzeichnis- und Dateinamen.</p>
+      <button class="print-button" type="button" onclick="window.print()">Drucken</button>
+    </header>
+    <article class="document-content">
+      <h2 id="ziel">Ziel</h2>
+      <p>Diese Datei definiert die verbindliche Benennung. Die Regeln sorgen dafür, dass Namen fachlich verständlich, technisch stabil und in Verzeichnissen einheitlich lesbar bleiben.</p>
+
+      <section class="card" aria-labelledby="pflegefestlegungen">
+        <h3 id="pflegefestlegungen">Agentenanweisung</h3>
+        <ol>
+          <li>Das Regelwerk wird als editierbare Tabelle dargestellt und verwendet die aktiven Bausteine für Struktur, Stil und Interaktion des Dokumentationsdesigns.</li>
+          <li>Neue Regeln werden dort einsortiert, wo ihre Voraussetzungen bereits festgelegt sind. Die Reihenfolge macht die Abhängigkeiten der Regeln nachvollziehbar.</li>
+          <li>Anpassungen erweitern das Regelwerk. Bestehende Einträge werden nicht gelöscht.</li>
+          <li>Erfordert eine Anpassung eine Neuerstellung, wird zuvor eine interne Vergleichskopie angelegt. Erst nach der Prüfung, dass keine Einträge verloren gehen, darf die ursprüngliche Datei überschrieben werden. Die Vergleichskopie wird anschließend im Unterordner <code>Backup</code> mit einem fortlaufenden Tagesindex gesichert.</li>
+          <li>Ist eine explizite Löschung erwünscht, wird zuvor eine Autorisierungsabfrage durchgeführt. Anschließend ist nach dem Vergleichs- und Sicherungsverfahren aus Punkt 4 zu verfahren.</li>
+        </ol>
+      </section>
+
+      <h2 id="regeluebersicht">Regelübersicht</h2>
+      <p>Die Tabelle ist im Browser bearbeitbar. Änderungen können lokal gespeichert werden; sie ändern die Quelldatei nicht automatisch.</p>
+      <h3 id="basis">Basis</h3>
+      <div class="table-wrap">
+        <table data-table-editable="organization-naming-base-rules">
+          <thead><tr><th>Nr.</th><th>Regel</th><th>Festlegung</th><th>Beispiel</th><th>Aktion</th></tr></thead>
+          <tbody>
+            <tr><td>01</td><td>Bedeutung und Verantwortung</td><td>Ein Name beschreibt die Bedeutung eines Elements und die Verantwortung, die es trägt.</td><td><code>Environment</code><br><code>Access_Control</code></td><td></td></tr>
+            <tr><td>02</td><td>Wortart</td><td>Substantive werden bevorzugt. Verben oder Adjektive sind zulässig, wenn sie angemessener sind oder kein gut klingendes Substantiv verfügbar ist.</td><td><code>Active</code><br><code>Validate</code><br><code>Configuration</code></td><td></td></tr>
+            <tr><td>03</td><td>Abstraktionsrichtung</td><td>Jeder folgende Namensbestandteil konkretisiert den vorhergehenden allgemeinen Begriff. Der Pfad verläuft dabei von der Abstraktion zur Konkretisierung.</td><td><code>Convention/Naming/Naming.html</code><br><code>Environment/Workstation/Configuration.html</code></td><td></td></tr>
+            <tr><td>05</td><td>Einheitliche Form</td><td>Gleichartige Elemente verwenden dasselbe Benennungsmuster.</td><td><code>Header_Standard.html</code><br><code>Header_Organization.html</code></td><td></td></tr>
+            <tr><td>06</td><td>Singular</td><td>Verzeichnis- und Dateinamen verwenden die Einzahl.</td><td><code>Environment</code>, nicht <code>Environments</code><br><code>Template</code>, nicht <code>Templates</code></td><td></td></tr>
+            <tr><td>07</td><td>Schreibweise</td><td>Jeder Namensbestandteil beginnt mit einem Großbuchstaben; die übrigen Buchstaben sind klein.</td><td><code>Naming.html</code><br><code>Project_2026080901_Before_Conversion.zip</code></td><td></td></tr>
+            <tr><td>08</td><td>Zulässige Zeichen</td><td>Verzeichnis- und Dateinamen enthalten keine Leerzeichen, Sonderzeichen oder UTF-8-Zeichen. Sie bleiben ASCII-kompatibel; zulässig sind Buchstaben, Ziffern, Unterstrich und – bei Dateien – der Punkt vor der Erweiterung.</td><td><code>Localization.html</code><br>nicht <code>Lokalisierung ü.html</code></td><td></td></tr>
+            <tr><td>09</td><td>Abtrennung</td><td>Unabhängige semantische Namensbestandteile werden ausschließlich mit <code>_</code> getrennt. Nach jeder Abtrennung beginnt der folgende Bestandteil mit einem Großbuchstaben. Der Bindestrich wird nicht als Abtrennung verwendet.</td><td><code>Project_2026080901_Before_Conversion.zip</code><br>nicht <code>Project-2026080901-before-conversion.zip</code></td><td></td></tr>
+            <tr><td>11</td><td>Kalenderdatum</td><td>Ein Kalenderdatum wird als Jahr, Monat und Tag geschrieben.</td><td><code>YYYYMMDD</code> → <code>20260813</code></td><td></td></tr>
+            <tr><td>12</td><td>Versionskennung</td><td>Eine gespeicherte Version besteht aus Datum und zweistelligem Tagesindex. Der Index beginnt bei <code>00</code>; vorhandene Kennungen werden nicht überschrieben.</td><td><code>YYYYMMDDII</code><br><code>2026081300</code></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p data-table-controls="organization-naming-base-rules">
+        <button type="button" data-table-add>Regel hinzufügen</button>
+        <button type="button" class="button--secondary" data-table-save>Lokale Änderungen speichern</button>
+      </p>
+
+      <h3 id="dateiname-und-verzeichnisname">Dateiname und Verzeichnisname</h3>
+      <div class="table-wrap">
+        <table data-table-editable="organization-naming-path-rules">
+          <thead><tr><th>Nr.</th><th>Regel</th><th>Festlegung</th><th>Beispiel</th><th>Aktion</th></tr></thead>
+          <tbody>
+            <tr><td>04</td><td>Kontextvererbung und Redundanz</td><td>Ein übergeordneter Kontext liefert die Bedeutung für seine enthaltenen Elemente. Ein Name wiederholt keinen bereits durch seinen Kontext eindeutig gegebenen Bestandteil, sofern diese Wiederholung keine zusätzliche Unterscheidung schafft.</td><td><code>Convention/Naming/Naming.html</code><br>nicht <code>Convention/Naming/Naming_Convention.html</code></td><td></td></tr>
+            <tr><td>10</td><td>Dateiformat</td><td>Die technische Dateierweiterung bleibt unverändert und steht am Ende des Dateinamens.</td><td><code>Overview.html</code><br><code>Term.json</code></td><td></td></tr>
+            <tr><td>13</td><td>Reihenfolge gespeicherter Dateien</td><td>Stabiler Basisname, Datums- oder Versionskennung, optionale weitere Konkretisierung und zuletzt die Erweiterung.</td><td><code>Project_2026081301_Before_Conversion.zip</code></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p data-table-controls="organization-naming-path-rules">
+        <button type="button" data-table-add>Regel hinzufügen</button>
+        <button type="button" class="button--secondary" data-table-save>Lokale Änderungen speichern</button>
+      </p>
+
+      <h2 id="geltung">Geltung</h2>
+      <p>Die Regeln gelten für neue Namen und für gezielt umbenannte Elemente. Sie erzwingen keine rückwirkende Umbenennung bestehender Strukturen. Sprachliche Darstellung und Übersetzung sichtbarer Texte werden getrennt in der Lokalisierung geregelt.</p>
+      <blockquote><p>Die Naming-Convention legt die Form technischer und fachlicher Namen fest. Die Terminologie legt ihre Bedeutung fest; die Lokalisation führt ihre sprachlichen Darstellungen.</p></blockquote>
+    </article>
+  </main>
+</body>
+</html>

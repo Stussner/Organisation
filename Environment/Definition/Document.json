@@ -1,0 +1,11 @@
+{
+  "title": "Environment – Document",
+  "description": "Designquellen nach Dokumentationskategorie. Alle Design-Quellen sind relativ zum gewählten Workspace gespeichert.",
+  "categories": {
+    "General": [
+      { "workspace": "<primary>", "designSource": "Documentation/Design/Style/Active.css" },
+      { "workspace": "<primary>", "designSource": "Documentation/Design/Class/HeaderMinimum.html" }
+    ],
+    "Development": [], "Draft": [], "Release": [], "Test": []
+  }
+}

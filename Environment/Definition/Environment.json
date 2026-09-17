@@ -1,0 +1,19 @@
+{
+  "$schema": "Environment.schema.json",
+  "project": {
+    "name": "Organization Base",
+    "owner": "Johannes Scharff",
+    "localization": "de-DE"
+  },
+  "workspace": {
+    "primary": "E:\\Programmierung\\Organisation",
+    "secondary": []
+  },
+  "backupTarget": {
+    "primary": "E:\\Programmierung\\Sicherung\\Organisation",
+    "secondary": ["C:\\Sicherung\\Programmierung\\Organisation"]
+  },
+  "access": {
+    "ownerOther": "nicht festgelegt"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "title": "Environment – BackupTarget",
+  "description": "Maßgebliche Deklaration der Sicherungsziele der Organization Base.",
+  "variables": [
+    { "name": "BackupTargetPrimary", "label": "BackupTargetPrimary", "value": "E:\\Programmierung\\Sicherung\\Organisation" },
+    { "name": "BackupTargetSecondary", "label": "BackupTargetSecondary", "value": ["C:\\Sicherung\\Programmierung\\Organisation"] }
+  ]
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Derivation Rules — Draft</title>
+</head>
+<body>
+  <main>
+    <h1>Derivation Rules — Draft</h1>
+    <p><strong>Status:</strong> Working draft; not yet a final convention.</p>
+
+    <h2>Purpose</h2>
+    <p>These rules define how a concrete software project derives its organization from the Organization Base.</p>
+
+    <h2>Organization Base</h2>
+    <ul>
+      <li>Software projects reference the Organization Base as their higher-level organizational foundation.</li>
+      <li>The Organization Base is project-neutral. It does not know, list, or manage individual software projects.</li>
+      <li>The Organization Base is static for a software project. Codex chat and task administration must not alter it.</li>
+    </ul>
+
+    <h2>Derivation in a Software Project</h2>
+    <ul>
+      <li>Each software project contains a short, local reference file that identifies the Organization Base used by that project.</li>
+      <li>A project organization inherits the Organization Base where it has no local definition.</li>
+      <li>Project-specific organization may extend or redefine inherited organization within the project.</li>
+      <li>Local definitions apply only to the respective software project and do not modify the Organization Base.</li>
+    </ul>
+
+    <h2>Codex Workspace</h2>
+    <ul>
+      <li>The concrete software project remains the primary Codex workspace folder.</li>
+      <li>The Organization Base may be attached as a secondary workspace folder when Codex must read its conventions.</li>
+      <li>Any required read-only protection for the Organization Base must be enforced by the applicable access configuration.</li>
+    </ul>
+  </main>
+</body>
+</html>

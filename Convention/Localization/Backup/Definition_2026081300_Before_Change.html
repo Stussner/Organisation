@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="short-description" content="Editierbare Definitionstabelle für sprachneutrale Bezeichner und ihre sprachlichen Darstellungen.">
+  <title>Localization Definition</title>
+  <link rel="stylesheet" href="../../Documentation/Design/Style/Active.css">
+  <style>
+    main { width: min(100% - 2rem, 76rem); margin: 2rem auto; }
+    header, section { margin-bottom: 1.25rem; }
+    .table-wrap { overflow-x: auto; }
+    table { min-width: 66rem; }
+    th:first-child, td:first-child { width: 5rem; }
+    th:nth-child(2), td:nth-child(2) { width: 15rem; }
+    th:nth-child(3), td:nth-child(3) { width: 14rem; }
+    td[contenteditable="true"]:focus { outline: .2rem solid var(--light-navigator-accent); outline-offset: -0.2rem; }
+    .hint { color: var(--light-navigator-text-muted); }
+    .actions { display: flex; flex-wrap: wrap; gap: .5rem; }
+    @media print { main { width: 100%; margin: 0; } .actions { display: none; } }
+  </style>
+  <script src="../../Documentation/Design/Interaction/Active.js" defer></script>
+</head>
+<body>
+  <main class="document">
+    <header class="card">
+      <h1>Localization Definition</h1>
+      <p>Organization-Base-Definition für stabile Bezeichner und ihre sprachlichen Darstellungen.</p>
+    </header>
+
+    <section class="notice notice--info">
+      <h2>Verwendung</h2>
+      <p>Die Datenzellen sind direkt im Browser editierbar. „Lokale Änderungen speichern“ speichert nur im Browser dieses Geräts; die HTML-Quelldatei wird dadurch nicht geändert. Eine bestätigte Übernahme in die Quelldatei erfolgt getrennt.</p>
+    </section>
+
+    <section class="card">
+      <h2>Definitionen</h2>
+      <p class="hint">Für jeden Begriff bleibt der CodeBezeichner stabil. Der Chatbezeichner dient der gemeinsamen, lesbaren Benennung im Chat und darf von den sprachlichen Darstellungen abweichen.</p>
+      <div class="table-wrap">
+        <table data-table-editable="organization-localization-definition">
+          <thead>
+            <tr>
+              <th>Nr.</th>
+              <th>CodeBezeichner</th>
+              <th>Chatbezeichner</th>
+              <th>en-US</th>
+              <th>en-GB</th>
+              <th>de-DE</th>
+              <th>Hinweis</th>
+              <th>Aktion</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>01</td>
+              <td>localization.definition</td>
+              <td>Localization Definition</td>
+              <td>Localization definition</td>
+              <td>Localisation definition</td>
+              <td>Lokalisierungsdefinition</td>
+              <td>Startbegriff; weitere Sprachen werden bei Bedarf als eigene Spalte ergänzt.</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="actions" data-table-controls="organization-localization-definition">
+        <button type="button" data-table-add>Zeile hinzufügen</button>
+        <button class="button--secondary" type="button" data-table-save>Lokale Änderungen speichern</button>
+      </p>
+    </section>
+  </main>
+</body>
+</html>
