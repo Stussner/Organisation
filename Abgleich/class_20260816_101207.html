@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gui Klassen</title>
+  <link rel="stylesheet" href="../Documentation/Design/Style/Active.css">
+  <style>
+    main { width: min(100% - 2rem, 96rem); margin: 0 auto; padding: 1.5rem 0 3rem; }
+    .class-audit-table { table-layout: fixed; }
+    .class-audit-table .col-index, .class-audit-table .col-status { width: 5.5rem; }
+    .class-audit-table .col-class { width: 20%; }
+    .class-audit-table .col-js { width: 16.5rem; }
+    .class-audit-table ul { margin: 0; padding-left: 1.25rem; }
+    .class-audit-table li + li { margin-top: .35rem; }
+    .process-text { white-space: pre-wrap; }
+  </style>
+</head>
+<body class="environment-definition">
+  <main>
+    <!-- Class: HeaderMinimum.html -->
+    <section class="card" id="header"><table><tbody>
+      <tr><th scope="row">Projektname</th><td><a href="../Environment/Definition/Base.html">Organization Base</a></td></tr>
+      <tr><th scope="row">Title</th><td><input type="text" aria-label="Title" value="Gui Klassen"></td></tr>
+      <tr><th scope="row">Location (File)</th><td><span data-header-minimum-location-from-url>E:\Programmierung\Organisation\Abgleich\class_20260816_101207.html</span></td></tr>
+      <tr><th scope="row">Owner</th><td><a href="../Environment/Definition/Base.html">Johannes Scharff</a></td></tr>
+      <tr><th scope="row">Date</th><td>2026-08-16</td></tr>
+      <tr class="header-minimum__select-row"><th scope="row">Backup</th><td><select aria-label="Backup"><option selected>Always</option><option>Never</option></select><button class="header-minimum__list-button" type="button" data-header-minimum-list-button aria-label="Backup-Auswahl öffnen" title="Backup-Auswahl öffnen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" /></svg></button></td></tr>
+      <tr class="header-minimum__select-row"><th scope="row">Repository</th><td><select aria-label="Repository"><option>Public</option><option selected>Private</option></select><button class="header-minimum__list-button" type="button" data-header-minimum-list-button aria-label="Repository-Auswahl öffnen" title="Repository-Auswahl öffnen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" /></svg></button></td></tr>
+      <tr class="header-minimum__select-row"><th scope="row">Documentation</th><td><select aria-label="Documentation"><option selected>Release</option><option>None</option></select><button class="header-minimum__list-button" type="button" data-header-minimum-list-button aria-label="Documentation-Auswahl öffnen" title="Documentation-Auswahl öffnen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" /></svg></button></td></tr>
+    </tbody></table></section>
+
+    <!-- Class: TableOverview.html -->
+    <section class="card" id="inhaltsverzeichnis"><h2>Inhaltsverzeichnis</h2><nav aria-label="Inhaltsverzeichnis der GUI-Klassen"><ol>
+      <li><a href="#beschreibung">Beschreibung</a></li><li><a href="#klassenuebersicht">Übersicht aller Klassen</a></li><li><a href="#prozess">Prozess</a></li><li><a href="#tabelle">Tabelle</a><ol><li><a href="#class-dialogconfirmation">DialogConfirmation</a></li><li><a href="#class-graph">Graph</a></li><li><a href="#class-header">Header</a></li><li><a href="#class-headerminimum">HeaderMinimum</a></li><li><a href="#class-image">Image</a></li><li><a href="#class-list">List</a></li><li><a href="#class-listnumber">ListNumber</a></li><li><a href="#class-listreference">ListReference</a></li><li><a href="#class-table">Table</a></li><li><a href="#class-tableeditable">TableEditable</a></li><li><a href="#class-tableeditableexpansion">TableEditableExpansion</a></li><li><a href="#class-tableeditableordered">TableEditableOrdered</a></li><li><a href="#class-tableenvironment">TableEnvironment</a></li><li><a href="#class-tableenvironmenteditable">TableEnvironmentEditable</a></li><li><a href="#class-tableoverview">TableOverview</a></li><li><a href="#class-text">Text</a></li><li><a href="#class-texteditable">TextEditable</a></li><li><a href="#class-textheadline">TextHeadline</a></li><li><a href="#class-textheadlinemulti">TextHeadlineMulti</a></li><li><a href="#class-tree">Tree</a></li><li><a href="#class-treecollapsible">TreeCollapsible</a></li><li><a href="#class-treenavigation">TreeNavigation</a></li></ol></li>
+    </ol></nav></section>
+
+    <!-- Class: TextHeadline.html -->
+    <section class="card" id="beschreibung"><h2>Gui Klassen</h2><p>Diese Datei dient zum Abgleich mit dem Dokumentationsdesign. Es gilt nur Lesezugriff. Die Datei ist für alle automatischen Prozesse schreibgeschützt.</p></section>
+
+    <!-- Class: TextHeadline.html -->
+    <section class="card" id="prozess"><h2>Prozess</h2><pre class="process-text">Lege eine Kopie von  documentation/template/DefinitionMinimumEditable.html in Abgleich/ an mit dem Namen class_&lt;kalenderdatem&gt;_&lt;Uhrzeit&gt;.html.
+Lies die angehängte Datei class_Readed.odt ein.
+
+Header Titel :&quot;Gui Klassen&quot;
+Header : Lokation: der pfad und Name der Datei class_&lt;kalenderdatem&gt;_&lt;Uhrzeit&gt;.html.
+Header Datum : Datum : von Heute
+Header Backup : Always
+Header Dokumentation:  Release
+Header: Repository : Private
+
+erstelle sektion mit inhaltsverzeichnis zwischen Header und 1. Textheadline einbauen:
+
+- Links auf
+  Beschreibung,  Übersicht aller Klassen. Prozess, Tabelle
+  - die Klassennamen als Link auf de Tabellle einfügen 
+
+Erste  TextHeadline unter inhaltsverzeichnis :
+Überscherift :&quot; Gui Klassen&quot;
+Inhalt : . Diese Datei dient zum Abgleich mit dem Dokumentationsdesign. Es gilt  nur Lesezugriff. Die Datei ist für alle automatischen Prozesse schreibgeschützt.
+
+Erstelle nach 1. TextHeadline eine weitere Sektion mit einer 
+2. TextHeadLine 
+Überschrift : Prozess
+Inhalt : dieser Text
+
+Die enthaltenen Tabelle soll vom Typ TableEditableOrdered sein mit 5 Spalten. 
+Spalten : 1. Spalte Nr: gerade so breit wie die Schrift darin
+Weitere Spalten : Klasse, Eigenschaften ,AB, JS
+- Klasse : 20% der seitenbreite
+- AB  :genauso breit wie 1.spalte
+- JS:: genauso breit wie 1.spalte*3
+  
+Trage die Klassennamen unter Spalte Klasse ein.
+Trage die Beschreibungsliste der Klasse in die Spalte Eigenschaften ein
+Speichere das Html- Dokument.</pre></section>
+
+    <!-- Class: TableEditableOrdered.html -->
+    <section class="card" id="tabelle"><h2 id="klassenuebersicht">Übersicht aller Klassen</h2>
+      <table class="table-editable-ordered class-audit-table" data-table-editable-ordered="class-audit-20260816_101207">
+        <colgroup><col class="col-index"><col class="col-class"><col><col class="col-status"><col class="col-js"></colgroup>
+        <thead><tr><th>Nr.</th><th>Klasse</th><th>Eigenschaften</th><th>AB</th><th>JS</th></tr></thead>
+        <tbody><tr id="class-dialogconfirmation"><th scope="row">01</th><td>DialogConfirmation</td><td><ul><li>Modaler Bestätigungsdialog auf Basis von <code>&lt;dialog&gt;</code>.</li><li>Stellt <code>Cancel</code> und <code>Confirm</code> bereit.</li><li>Ergebnis über <code>dialog.returnValue</code>: <code>cancel</code> oder <code>confirm</code>.</li></ul></td><td>vorhanden</td><td>DialogConfirmation.js</td></tr><tr id="class-graph"><th scope="row">02</th><td>Graph</td><td><ul><li>Netz aus Knoten und gerichteten Verbindungen.</li><li>Verbindungen werden als Pfeile dargestellt.</li><li>Eingebettetes SVG ermöglicht freie Skalierung.</li><li>Geeignet für Abhängigkeits-, Ablauf- und Strukturdiagramme.</li></ul></td><td>vorhanden</td><td>–</td></tr><tr id="class-header"><th scope="row">03</th><td>Header</td><td><ul><li>Nicht bearbeitbarer Dokumentkopf als zweispaltige Eigenschaftstabelle ohne Tabellenkopf.</li><li>Enthält Projekt, Titel, Kurzbeschreibung, Owner, Daten und Location.</li><li>Auswahllisten für Typ, Backup und Repository.</li></ul></td><td>vorhanden</td><td>–</td></tr><tr id="class-headerminimum"><th scope="row">04</th><td>HeaderMinimum</td><td><ul><li>Kompakter zweispaltiger Dokumentkopf ohne Tabellenkopf.</li><li>Enthält Projektname, Titel, Dateiort, Owner, Datum, Backup, Repository und Documentation.</li><li>Title ist bearbeitbar; Auswahlfelder werden als gestaltete Listen umgesetzt.</li></ul></td><td>vorhanden</td><td>HeaderMinimum.js</td></tr><tr id="class-image"><th scope="row">05</th><td>Image</td><td><ul><li>Neutraler Bildplatzhalter als <code>&lt;figure&gt;</code>.</li><li>Skalierbares eingebettetes SVG.</li><li>Titel, Beschreibung, Bildunterschrift und Quellenhinweis.</li></ul></td><td>vorhanden</td><td>–</td></tr><tr id="class-list"><th scope="row">06</th><td>List</td><td><ul><li>Ungeordnete Aufzählung auf Basis von <code>&lt;ul&gt;</code>.</li><li>Für gleichrangige Einträge ohne feste Reihenfolge.</li></ul></td><td>vorhanden</td><td>–</td></tr><tr id="class-listnumber"><th scope="row">07</th><td>ListNumber</td><td><ul><li>Geordnete Aufzählung auf Basis von <code>&lt;ol&gt;</code>.</li><li>Für Schritte, Reihenfolgen und Anweisungen.</li></ul></td><td>vorhanden</td><td>–</td></tr><tr id="class-listreference"><th scope="row">08</th><td>ListReference</td><td><ul><li>Geordnete Quellen- und Referenzliste.</li><li>Eintrag enthält Quelle, Titel, Jahr und Verweis.</li><li>Verwendet <code>&lt;cite&gt;</code> und Hyperlinks.</li></ul></td><td>vorhanden</td><td>–</td></tr><tr id="class-table"><th scope="row">09</th><td>Table</td><td><ul><li>Statische Basistabelle mit Tabellenkopf und Tabellenkörper.</li><li>Grundlage für spezialisierte Tabellenklassen.</li></ul></td><td>vorhanden</td><td>–</td></tr><tr id="class-tableeditable"><th scope="row">10</th><td>TableEditable</td><td><ul><li>Bearbeitbare Ableitung von <code>Table</code>.</li><li>Bearbeitbare Datenzellen und Aktionsspalte.</li><li>Zeilen hinzufügen und lokal speichern.</li></ul></td><td>vorhanden</td><td>TableEditable.js</td></tr><tr id="class-tableeditableexpansion"><th scope="row">11</th><td>TableEditableExpansion</td><td><ul><li>Bearbeitbare nummerierte Tabelle mit Textvorschau.</li><li>Vorschau beim Überfahren; Editor beim Klicken.</li><li>Kombiniert <code>TableEditableOrdered</code>, <code>TextEditable</code> und <code>DialogConfirmation</code>.</li></ul></td><td>vorhanden</td><td>TableEditableExpansion.js</td></tr><tr id="class-tableeditableordered"><th scope="row">12</th><td>TableEditableOrdered</td><td><ul><li>Bearbeitbare Tabelle mit fester, automatisch aktualisierter Indexspalte.</li><li>Unterstützt Einfügen, Verschieben, Löschen und lokales Speichern.</li></ul></td><td>vorhanden</td><td>TableEditableOrdered.js</td></tr><tr id="class-tableenvironment"><th scope="row">13</th><td>TableEnvironment</td><td><ul><li>Statische Tabelle für konstante Eigenschaften einer Umgebung.</li><li>Drei Spalten: Nr., Bezeichner und Wert.</li></ul></td><td>vorhanden</td><td>–</td></tr><tr id="class-tableenvironmenteditable"><th scope="row">14</th><td>TableEnvironmentEditable</td><td><ul><li>Bearbeitbare Ableitung von <code>TableEnvironment</code>.</li><li>Bezeichner und Wert sind direkt bearbeitbar.</li><li>Zeilenaktionen: erstellen, nach oben, nach unten und löschen.</li><li>SVG-Symbole blenden abhängig von der Zeigerposition ein und aus.</li></ul></td><td>vorhanden</td><td>TableEnvironmentEditable.js</td></tr><tr id="class-tableoverview"><th scope="row">15</th><td>TableOverview</td><td><ul><li>Statisches dokumentinternes Inhaltsverzeichnis.</li><li>Verweist per Hyperlink auf festgelegte Abschnitts-IDs.</li></ul></td><td>vorhanden</td><td>–</td></tr><tr id="class-text"><th scope="row">16</th><td>Text</td><td><ul><li>Textabschnitt ohne eigene Überschrift.</li><li>Für freien beschreibenden Fließtext.</li></ul></td><td>vorhanden</td><td>–</td></tr><tr id="class-texteditable"><th scope="row">17</th><td>TextEditable</td><td><ul><li>Direkt bearbeitbarer mehrzeiliger Textabschnitt.</li><li>Verwendet ein <code>textarea</code> ohne automatischen Zeilenumbruch.</li></ul></td><td>vorhanden</td><td>–</td></tr><tr id="class-textheadline"><th scope="row">18</th><td>TextHeadline</td><td><ul><li>Textabschnitt mit genau einer Überschrift und einem Absatz.</li><li>Für klar abgegrenzte Dokumentationsabschnitte.</li></ul></td><td>vorhanden</td><td>–</td></tr><tr id="class-textheadlinemulti"><th scope="row">19</th><td>TextHeadlineMulti</td><td><ul><li>Abschnitt mit Hauptüberschrift, Einleitung und mehreren Unterüberschriften.</li><li>Jeder Teilaspekt besitzt einen eigenen Textabschnitt.</li></ul></td><td>vorhanden</td><td>–</td></tr><tr id="class-tree"><th scope="row">20</th><td>Tree</td><td><ul><li>Statische hierarchische Struktur als verschachtelte Liste.</li><li>Für Verzeichnisse und fachliche Hierarchien.</li></ul></td><td>vorhanden</td><td>–</td></tr><tr id="class-treecollapsible"><th scope="row">21</th><td>TreeCollapsible</td><td><ul><li>Auf- und zuklappbare Hierarchie.</li><li>Verwendet <code>&lt;details&gt;</code> und <code>&lt;summary&gt;</code>.</li><li>Kein JavaScript für das Klappen erforderlich.</li></ul></td><td>vorhanden</td><td>–</td></tr><tr id="class-treenavigation"><th scope="row">22</th><td>TreeNavigation</td><td><ul><li>Navigierbare Hierarchie mit Hyperlinks.</li><li>Verschachtelte Listen innerhalb eines <code>&lt;nav&gt;</code>-Elements.</li></ul></td><td>vorhanden</td><td>–</td></tr></tbody>
+      </table>
+      <p data-table-controls="class-audit-20260816_101207"><button type="button" data-table-save>Änderungen lokal speichern</button></p>
+    </section>
+  </main>
+  <script src="../Documentation/Design/Class/HeaderMinimum.js"></script>
+  <script src="../Documentation/Design/Class/TableEditableOrdered.js"></script>
+</body>
+</html>

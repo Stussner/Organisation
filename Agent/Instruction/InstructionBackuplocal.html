@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8"><title>InstructionBackuplocal – Prüffassung</title><style>body{font:16px/1.55 system-ui,sans-serif;max-width:960px;margin:2rem auto;padding:0 1rem;color:#17212b}header,section{margin:1rem 0;padding:1rem;background:#f3f7fa;border-radius:.4rem}header{border-left:5px solid #397aa3}.draft{color:#8a4b00;font-weight:700}li{margin:.45rem 0}code{background:#e5edf2;padding:.1rem .25rem}</style></head><body>
+<header><h1>InstructionBackuplocal</h1><p class="draft">Prüffassung · nicht basisaktiv · lokale Vergleichssicherung</p></header>
+
+<section><h2>1. Zweck und Sicherungsort</h2><ol>
+    <li>Diese Anweisung schützt eine bestehende Datei vor unbeabsichtigtem Informationsverlust bei einer Änderung.</li>
+    <li>Alle lokalen Vergleichskopien werden ausschließlich im zentralen Hauptverzeichnis <code>Backup/</code> der Organization Base abgelegt.</li>
+    <li>Der Sicherungspfad bildet den relativen Pfad der Quelle innerhalb der Organization Base nach: <code>&lt;relativer Quellpfad&gt;/&lt;Basisname&gt;.&lt;Endung&gt;</code> wird als <code>Backup/&lt;relativer Quellpfad&gt;/&lt;Basisname&gt;_YYYYMMDD_HHMMSS.&lt;Endung&gt;</code> gesichert.</li>
+    <li>Beispiel: <code>Environment/Definition/Workspace.html</code> wird als <code>Backup/Environment/Definition/Workspace_YYYYMMDD_HHMMSS.html</code> gesichert.</li>
+    <li>Das zentrale Verzeichnis <code>Backup/</code> und seine Inhalte sind keine regulären Änderungsquellen. Für sie werden keine weiteren Vergleichskopien angelegt.</li>
+    <li>Diese lokale Vergleichssicherung ist nicht die Sicherung außerhalb des primären Workspace.</li></ol></section>
+
+<section><h2>2. Vollständige Sicherungsregeln</h2><ol>
+    <li>Anpassungen erweitern das Regelwerk. Bestehende Einträge werden nicht gelöscht, außer eine konkrete Löschung ist ausdrücklich autorisiert.</li>
+    <li>Vor jeder Neuerstellung oder jedem Überschreiben einer bestehenden Datei ist eine interne Vergleichskopie anzulegen. „Neuerstellung“ meint hier eine Änderung, bei der die bestehende Datei ersetzt werden soll; reine lesende Prüfungen lösen keine Sicherung aus. Existiert noch keine Ausgangsdatei, kann keine Vergleichskopie erstellt werden; die tatsächliche Neuerstellung wird nach Abschluss ausdrücklich berichtet.</li>
+    <li>Die Vergleichskopie wird vor dem Überschreiben im zentralen Sicherungspfad <code>Backup/&lt;relativer Quellpfad&gt;/</code> dauerhaft gesichert. Fehlen <code>Backup/</code> oder ein erforderlicher Spiegel-Unterordner, werden Quelle, geplanter Zielpfad und Grund vor der Anlage benannt und eine ausdrückliche Freigabe abgewartet.</li>
+    <li>Der Sicherungsname lautet <code>&lt;Basisname&gt;_YYYYMMDD_HHMMSS.&lt;Endung&gt;</code>.</li>
+    <li>Erst wenn die Vergleichskopie lesbar ist und der Abgleich bestätigt, dass keine vorgesehenen Einträge verloren gehen, darf die ursprüngliche Datei überschrieben werden. Bei fehlender Freigabe, fehlendem Sicherungsziel, Fehler oder nicht bestandenem Abgleich bleibt die Originaldatei unverändert.</li>
+    <li>Eine ausdrücklich gewünschte Löschung erfordert unmittelbar vor der Ausführung eine eindeutige Autorisierung. Danach gelten die Schritte 2 bis 5 entsprechend.</li>
+    <li>Nach Abschluss werden Originaldatei, Sicherungspfad, Prüfmethode, Ergebnis und bewusst offene Grenzen kurz berichtet.</li></ol></section>
+<section><h2>3. Eng begrenzte Ausnahme für interaktive Verzeichniswerte</h2><ol>
+    <li>Die Ausnahme gilt ausschließlich für die über die Benutzeroberfläche bearbeiteten Werte <code>WorkspacePrimary</code>, <code>WorkspaceSecondary</code>, <code>BackupTargetPrimary</code> und <code>BackupTargetSecondary</code> in ihren jeweiligen Umgebungsdefinitionsdateien.</li>
+    <li>Ein ausdrücklich durch den Nutzer ausgelöster Direkt-Speichervorgang dieser Werte darf die vom Nutzer ausgewählte Originaldatei ohne vorherige Vergleichssicherung überschreiben.</li>
+    <li>Die Ausnahme umfasst weder andere Inhalte derselben Dateien noch andere Dateien, Prozesse oder Werkzeuge.</li>
+    <li>Ist kein direkter Schreibzugriff verfügbar, darf stattdessen nur eine aktualisierte HTML-Datei zum Speichern erzeugt werden. Das Überschreiben eines Originals erfolgt dann nicht automatisch.</li>
+</ol></section>
+</body></html>

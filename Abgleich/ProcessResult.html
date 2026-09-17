@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abgleich der Prozesse</title>
+<link rel="stylesheet" href="../Documentation/Design/Style/Active.css">
+</head>
+<body>
+<main class="document">
+<header class="card"><p>Organization Base ? Abgleich</p><h1>Abgleich der Prozesse</h1><p>Pr?fquellen: alle HTML-Dateien unter Process/ ? Zieldatei: ProcessResult.html</p></header>
+<section class="card" data-source="Process/Backup/Backup.html">
+<h2>Backup</h2>
+<p class="process-path">Process/Backup/Backup.html</p>
+<h3>Dokumentierte Aufruf?berladungen</h3>
+<table><thead><tr><th>Aufrufsyntax</th><th>Parameter</th><th>Beschreibung und Wirkung jedes Parameters</th></tr></thead><tbody>
+<tr><td><code>Backup()</code></td><td>Keine Parameter</td><td>Backup() sichert den vollst?ndigen Inhalt von E:\Programmierung\Organisation, einschlie?lich aller Unterordner und Dateien.</td></tr>
+<tr><td><code>Backup(&lt;Erweiterung&gt;)</code></td><td>Erweiterung</td><td>Backup(&amp;lt;Erweiterung&amp;gt;) hat denselben Umfang; die Erweiterung wird nur an den Archivnamen angeh?ngt.</td></tr>
+<tr><td><code>Backup(&lt;Erweiterung&gt;, &lt;Pfad1&gt;, &lt;Pfad2&gt;, ...)</code></td><td>Erweiterung; Pfad1, Pfad2, ...</td><td>Sichert ausschlie?lich die angegebenen Dateien und Ordner. F?r Ordner werden alle enthaltenen Dateien rekursiv aufgenommen.</td></tr>
+</tbody></table>
+<h3>Exakter und vollst?ndig dokumentierter Ablauf</h3>
+<ol>
+<li>Verbindliche Arbeitsdefinition für vollständige und gezielte Projektsicherungen.</li>
+<li><strong>Zweck</strong></li>
+<li>Die Sicherung bewahrt einen wiederherstellbaren Stand der Organization Base vor Löschen, Fehländerungen, Beschädigung oder Ausfall eines Speichermediums.</li>
+<li><strong>Quelle und Ziel</strong></li>
+<li>Quelle: E:\Programmierung\Organisation</li>
+<li>Zielordner: E:\Programmierung\Sicherung\Organisation</li>
+<li>Format: ZIP-Archiv mit SHA-256-Prüfsumme.</li>
+<li>Eine Sicherung ist eine getrennte Kopie. Der Quellordner wird beim Sicherungslauf weder geändert, verschoben noch bereinigt.</li>
+<li><strong>Aufruf und Umfang</strong></li>
+<li>Der Process kennt drei Formen:</li>
+<li><code>Backup() Backup(&lt;Erweiterung&gt;) Backup(&lt;Erweiterung&gt;, &lt;Pfad1&gt;, &lt;Pfad2&gt;, ...)</code></li>
+<li>Backup() sichert den vollständigen Inhalt von E:\Programmierung\Organisation, einschließlich aller Unterordner und Dateien.</li>
+<li>Backup(&lt;Erweiterung&gt;) hat denselben Umfang; die Erweiterung wird nur an den Archivnamen angehängt.</li>
+<li>Backup(&lt;Erweiterung&gt;, &lt;Pfad1&gt;, ...) sichert ausschließlich die angegebenen Dateien und Ordner. Für Ordner werden alle enthaltenen Dateien rekursiv aufgenommen.</li>
+<li>Ein angegebener Pfad muss innerhalb der Projektwurzel liegen und vorhanden sein. Die Pfadstruktur bleibt relativ zu E:\Programmierung\Organisation im Archiv erhalten. Doppelt erreichte Dateien werden nur einmal gesichert.</li>
+<li>Bei allen Formen gelten die fixierten Exklusionen. Sie sind zentral im Sicherungsskript festgelegt und können nicht durch eine Pfadangabe umgangen werden. Derzeit ist die Exklusionsliste leer.</li>
+<li><strong>Benennung und laufender Index</strong></li>
+<li>Ein Archiv trägt den Namen:</li>
+<li><code>Organisation_YYYYMMDDII[_Erweiterung].zip</code></li>
+<li>YYYYMMDD ist das Datum des Sicherungstags. II ist ein zweistelliger, pro Kalendertag fortlaufender Index. Er beginnt täglich bei 00. Eine optionale Erweiterung beschreibt den konkreten Sicherungsstand und wird durch Unterstrich getrennt angehängt.</li>
+<li><code>Organisation_2026081200.zip Organisation_2026081201.zip Organisation_2026081300.zip</code></li>
+<li>Vor der Vergabe wird der Zielordner geprüft. Ein bereits vorhandener Archivname darf nie überschrieben werden; stattdessen ist der nächste freie Index zu verwenden.</li>
+<li>Die technische Kommandoform lautet Backup.ps1 -Erweiterung &lt;Erweiterung&gt; -Pfad &lt;Pfad1&gt;,&lt;Pfad2&gt;. Ohne -Pfad wird die Vollsicherung ausgeführt.</li>
+<li><strong>Ausführung</strong></li>
+<li>Quellordner, Zielordner und vollständigen Umfang prüfen.</li>
+<li>Den nächsten freien Tagesindex bestimmen.</li>
+<li>Das ZIP-Archiv erstellen.</li>
+<li>Die SHA-256-Prüfsumme des fertigen Archivs erzeugen und neben dem Archiv ablegen.</li>
+<li>Archivinhalt und Prüfsumme verifizieren.</li>
+<li>Vor Löschungen, Umstrukturierungen oder größeren automatisierten Änderungen ist eine Sicherung auszuführen. Weitere Sicherungen erfolgen nach wichtigen funktionsfähigen Ständen und regelmäßig während aktiver Arbeit.</li>
+<li><strong>Prüfung nach der Sicherung</strong></li>
+<li>Das Archiv lässt sich fehlerfrei lesen.</li>
+<li>Die erwartete Anzahl von Dateien ist enthalten.</li>
+<li>Die Archivstruktur enthält den vollständigen gesicherten Projektbestand.</li>
+<li>Die gespeicherte SHA-256-Prüfsumme stimmt mit dem Archiv überein.</li>
+<li>Archivgröße und Inhalt sind plausibel.</li>
+<li>Bei einer wichtigen Bereinigung oder vor einem grundlegenden Umbau wird zusätzlich eine Wiederherstellung in einen getrennten Testordner geprüft.</li>
+<li><strong>Fehlerfall</strong></li>
+<li>Kann die Sicherung nicht vollständig erstellt oder geprüft werden, gilt sie als fehlgeschlagen. Ein unvollständiges Archiv ersetzt keine bestehende Sicherung und darf nicht als erfolgreicher Sicherungsstand bezeichnet werden.</li>
+</ol>
+<br><br><br>
+</section>
+<section class="card" data-source="Process/Chat/Excerpt.html">
+<h2>Excerpt</h2>
+<p class="process-path">Process/Chat/Excerpt.html</p>
+<h3>Dokumentierte Aufruf?berladungen</h3>
+<table><thead><tr><th>Aufrufsyntax</th><th>Parameter</th><th>Beschreibung und Wirkung jedes Parameters</th></tr></thead><tbody>
+<tr><td><code>Excerpt ohne Parameter</code></td><td>Keine dokumentierten Parameter</td><td>Bei Excerpt ohne Parameter fragt der Process nach dem Grund der Auswahl.</td></tr>
+<tr><td><code>Excerpt(Grund; Anmerkung 1, Anmerkung 2, ?)</code></td><td>Grund; Anmerkung 1, Anmerkung 2, ?</td><td>?bernimmt den angegebenen Grund ohne zus?tzliche Nachfrage. Der Grund gilt f?r die gesamte Gruppe.</td></tr>
+<tr><td><code>Excerpt(Grund, ChatnameZiel; Anmerkung 1, Anmerkung 2, ?)</code></td><td>Grund; ChatnameZiel; Anmerkung 1, Anmerkung 2, ?</td><td>ChatnameZiel ist optional; das Ziel bestimmt, in welchem Chat-Ordner Excerpt.html angelegt oder erg?nzt wird.</td></tr>
+</tbody></table>
+<h3>Exakter und vollst?ndig dokumentierter Ablauf</h3>
+<ol>
+<li>Dieser Process übernimmt manuell ausgewählte, besonders wichtige Stellen aus Original.html als Auszüge.</li>
+<li><strong>Anmerkung und Grund</strong></li>
+<li>Der Process darf nur ausgeführt werden, wenn der Nutzer den Quellbereich mit der Anmerkungsfunktion markiert hat. Die Anmerkung bestimmt den zu übernehmenden Bereich. Der Process löst diesen Bereich zuerst im aktuellen Codex-Chatverlauf auf und übernimmt dessen ursprüngliche Markdown-Struktur. Eine flüchtige Auswahl im sichtbaren Chatverlauf ist keine Processquelle. Bei Excerpt ohne Parameter fragt der Process nach dem Grund der Auswahl. Bei Excerpt(Grund; Anmerkung 1, Anmerkung 2, …) übernimmt er den angegebenen Grund ohne zusätzliche Nachfrage.</li>
+<li><strong>Chat-Ziel</strong></li>
+<li>Excerpt(Grund, ChatnameZiel; Anmerkung 1, Anmerkung 2, …) verwendet ChatnameZiel als optionalen zweiten Parameter. Ohne diesen Parameter lautet die Form Excerpt(Grund; Anmerkung 1, Anmerkung 2, …); der aktuelle Chat ist dann zugleich das Ziel. Der Zielname muss eindeutig zu einem Chat-Ordner unter Documentation/Chat passen; bei fehlender oder mehrdeutiger Zuordnung wird kein Auszug erstellt und die Zuordnung wird berichtet. Das Ziel bestimmt, in welchem Chat-Ordner Excerpt.html angelegt oder ergänzt wird. Die Quellen bleiben die Anmerkungen aus dem aktuellen Chatverlauf.</li>
+<li><strong>Mehrere Anmerkungen</strong></li>
+<li>Excerpt(Grund; Anmerkung 1, Anmerkung 2, …) erlaubt mehrere Anmerkungen als Parameter. Mit abweichendem Ziel lautet die Form Excerpt(Grund, ChatnameZiel; Anmerkung 1, Anmerkung 2, …). Der Grund gilt für die gesamte Gruppe. Alle angegebenen Anmerkungen werden im aktuellen Chatverlauf aufgelöst; ihre Reihenfolge im Auszug entspricht ihrer Reihenfolge im Chatverlauf. Ist eine Anmerkung nicht eindeutig einem zusammenhängenden Bereich zuzuordnen, wird keine gemeinsame Auszugssektion erstellt oder ergänzt; der Process fragt nach einer eindeutigen Auswahl.</li>
+<li><strong>Aktueller Abgleich</strong></li>
+<li>Vor der Anlage oder Ergänzung von Excerpt.html aktualisiert der Process Original.html des aktuellen Quellchats aus dem aktuellen Codex-Chatverlauf. Der Auszug verweist anschließend auf die dadurch bestätigten Quellenanker in dieser Quelldatei. Bei abweichendem Chat-Ziel werden die Quellenlinks relativ von dessen Excerpt.html auf die Original.html des Quellchats gesetzt. Ist eine Anmerkung im aktuellen Verlauf nicht eindeutig einem zusammenhängenden Bereich zuzuordnen, wird kein Auszug erstellt oder ergänzt; der Process fragt nach einer eindeutigen Auswahl.</li>
+<li><strong>Ziel und Anlage</strong></li>
+<li>Die Auszüge werden im Ziel-Chat-Ordner als Excerpt.html gesammelt. Existiert die Datei noch nicht, wird sie mit dem aktiven Design aus Documentation/Design/Style/Active.css angelegt. Eine einzelne Anmerkung erzeugt eine Auszugssektion. Mehrere Anmerkungen eines Aufrufs erzeugen gemeinsam genau eine Auszugssektion; sie enthält die unveränderten Teilbereiche in ihrer ursprünglichen Reihenfolge, den gemeinsamen Grund, eine inhaltliche Kurzbeschreibung und eine Quellenliste mit einem stabilen Link auf jeden zugehörigen Quellenanker.</li>
+<li><strong>Inhaltsverzeichnis</strong></li>
+<li>Excerpt.html enthält ein automatisch aktualisiertes Auszugsinhaltsverzeichnis. Es verlinkt auf jeden Auszug und stellt ihn als Grund + inhaltliche Kurzbeschreibung dar.</li>
+<li><strong>Grenzen</strong></li>
+<li>Die Auswahl ist manuell. Der Process verändert Original.html nicht redaktionell; die erforderliche Aktualisierung dient ausschließlich dem Abgleich mit dem aktuellen Chatverlauf. Er ersetzt weder die automatische Extraction.html noch bindende Projektdokumentation.</li>
+</ol>
+<br><br><br>
+</section>
+<section class="card" data-source="Process/Chat/ExcerptDeleteLast.html">
+<h2>ExcerptDeleteLast</h2>
+<p class="process-path">Process/Chat/ExcerptDeleteLast.html</p>
+<h3>Dokumentierte Aufruf?berladungen</h3>
+<table><thead><tr><th>Aufrufsyntax</th><th>Parameter</th><th>Beschreibung und Wirkung jedes Parameters</th></tr></thead><tbody>
+<tr><td><code>ExcerptDeleteLast()</code></td><td>Keine Parameter</td><td>Ermittelt zuerst den Titel des letzten Auszugs und stellt anschlie?end ausschlie?lich die dokumentierte Ja/Nein-R?ckfrage.</td></tr>
+</tbody></table>
+<h3>Exakter und vollst?ndig dokumentierter Ablauf</h3>
+<ol>
+<li>Dieser Process löscht den letzten Auszug aus Documentation/Chat/&lt;aktueller Chat&gt;/Excerpt.html.</li>
+<li><strong>Aufruf und Rückfrage</strong></li>
+<li>ExcerptDeleteLast() ermittelt zuerst den Titel des letzten Auszugs. Danach stellt er ausschließlich diese Rückfrage: Soll der Auszug mit dem &lt;Titel&gt; gelöscht werden? (ja/nein)</li>
+<li>Nur ja bestätigt die Löschung. Bei nein, einer anderen oder keiner Antwort wird nichts gelöscht.</li>
+<li><strong>Löschung</strong></li>
+<li>Die Ziel-Datei Excerpt.html des aktuellen Chats wird gelesen.</li>
+<li>Der letzte Eintrag im Auszugsinhaltsverzeichnis und die dazugehörige letzte Auszugssektion werden ermittelt.</li>
+<li>Die Ja/Nein-Rückfrage nennt den ermittelten Titel des letzten Eintrags.</li>
+<li>Bei ja werden genau dieser Inhaltsverzeichniseintrag und diese Auszugssektion entfernt.</li>
+<li>Das Inhaltsverzeichnis wird geprüft; es darf keinen Verweis auf die gelöschte Sektion enthalten.</li>
+<li><strong>Grenzen</strong></li>
+<li>Der Process löscht keine andere Auszugssektion, verändert weder Original.html noch andere Chat-Dateien und erzeugt keinen neuen Auszug. Existiert keine Auszugssektion, wird nichts gelöscht und dies wird berichtet.</li>
+</ol>
+<br><br><br>
+</section>
+<section class="card" data-source="Process/Chat/ExcerptImport.html">
+<h2>ExcerptImport</h2>
+<p class="process-path">Process/Chat/ExcerptImport.html</p>
+<h3>Dokumentierte Aufruf?berladungen</h3>
+<table><thead><tr><th>Aufrufsyntax</th><th>Parameter</th><th>Beschreibung und Wirkung jedes Parameters</th></tr></thead><tbody>
+<tr><td><code>ExcerptImport()</code></td><td>Keine Parameter</td><td>Importiert alle Auszugssektionen aus der Auszugsliste des aktuellen Chats.</td></tr>
+<tr><td><code>ExcerptImport(&lt;uint&gt;, ?)</code></td><td>uint: positive ganze, einsbasierte Positionsnummer</td><td>Importiert nur die durch positive ganze Zahlen angegebenen Auszugssektionen.</td></tr>
+</tbody></table>
+<h3>Exakter und vollst?ndig dokumentierter Ablauf</h3>
+<ol>
+<li>Dieser Process übernimmt ausgewählte Auszugssektionen aus Excerpt.html in den aktuellen Codex-Chat.</li>
+<li><strong>Quelle und Ziel</strong></li>
+<li>Die Quelle ist Documentation/Chat/&lt;aktueller Chat&gt;/Excerpt.html. Das Ziel ist der aktuelle Codex-Chat. Jeder importierte Auszug bewahrt seine Überschrift, seinen Inhalt, seinen Grund, seine Kurzbeschreibung und sämtliche Quellenlinks auf die zugehörigen Originaldateien.</li>
+<li><strong>Auswahl der Auszüge</strong></li>
+<li>ExcerptImport() importiert alle Auszugssektionen aus der Auszugsliste des aktuellen Chats. ExcerptImport(&lt;uint&gt;, …) importiert nur die durch positive ganze Zahlen angegebenen Auszugssektionen. Jede Zahl bezeichnet die einsbasierte Position eines Eintrags im Auszugsinhaltsverzeichnis; mehrfach angegebene Nummern werden nur einmal importiert. Fehlende, ungültige oder nicht eindeutige Nummern werden nicht importiert und berichtet.</li>
+<li><strong>Übernahme</strong></li>
+<li>Die ausgewählten Auszüge werden in ihrer Reihenfolge als vollständiger, sichtbarer Nachrichtentext des Assistenten in den aktuellen Codex-Chat übernommen. Die Nachricht enthält den gesamten Inhalt jeder ausgewählten Auszugssektion in derselben Reihenfolge und Struktur: Überschrift, Grund, Kurzbeschreibung, Quellenlinks und den vollständigen fachlichen Inhalt.</li>
+<li>Die Übernahme kennzeichnet Quelle und Auszugsnummer. Ein Quellenlink darf zusätzlich erscheinen, ersetzt jedoch niemals den Auszugsinhalt. Eine bloße Bestätigung, Zusammenfassung, verkürzte Wiedergabe oder ein alleiniger Verweis auf Excerpt.html ist kein erfolgreicher Import.</li>
+<li>Vor dem Abschluss wird geprüft, dass der vollständige Inhalt jeder ausgewählten Sektion als sichtbarer Nachrichtentext im aktuellen Chat vorhanden ist. Fehlt ein Bestandteil oder wurde nur verwiesen, gilt die betreffende Nummer als nicht importiert und wird als Fehler berichtet. Die Übernahme verändert weder Excerpt.html noch die verlinkten Originaldateien.</li>
+<li><strong>Abschluss</strong></li>
+<li>Nach einem vollständig erfolgreichen und geprüften Import ruft der Process verpflichtend Export(this) auf. Dadurch wird der aktualisierte aktuelle Chat in dessen Original.html exportiert; auch dort muss der vollständige importierte Nachrichtentext erhalten bleiben. Ist der Import nur teilweise erfolgreich oder fehlgeschlagen, wird Export(this) nicht automatisch ausgeführt; das Ergebnis und die nicht importierten Nummern werden berichtet.</li>
+<li><strong>Grenzen</strong></li>
+<li>ExcerptImport erstellt keine neue Auszugssektion und ersetzt keine Extraktion. Er fügt nur sichtbaren Arbeitskontext in den aktuellen Chat ein; die Auszugsdatei bleibt die nachvollziehbare Originalquelle der übernommenen Inhalte.</li>
+</ol>
+<br><br><br>
+</section>
+<section class="card" data-source="Process/Chat/ExcerptUndo.html">
+<h2>ExcerptUndo</h2>
+<p class="process-path">Process/Chat/ExcerptUndo.html</p>
+<h3>Dokumentierte Aufruf?berladungen</h3>
+<table><thead><tr><th>Aufrufsyntax</th><th>Parameter</th><th>Beschreibung und Wirkung jedes Parameters</th></tr></thead><tbody>
+<tr><td><code>ExcerptUndo()</code></td><td>Keine Parameter</td><td>Delegiert die Handlung vollst?ndig an ExcerptDeleteLast().</td></tr>
+</tbody></table>
+<h3>Exakter und vollst?ndig dokumentierter Ablauf</h3>
+<ol>
+<li>Dieser Process ruft ExcerptDeleteLast() für den aktuellen Chat auf.</li>
+<li><strong>Aufruf</strong></li>
+<li>ExcerptUndo() delegiert die Handlung vollständig an ExcerptDeleteLast(). Die dort vorgeschriebene Ja/Nein-Rückfrage mit dem Titel des letzten Excerpts ist verpflichtend und wird nicht übersprungen.</li>
+<li><strong>Ergebnis</strong></li>
+<li>Bei der Antwort ja wird der letzte Auszug gelöscht. Bei nein, einer anderen oder keiner Antwort sowie bei fehlendem Auszug beendet sich der Process ohne Änderung und berichtet das Ergebnis.</li>
+<li><strong>Begriffsgrenze</strong></li>
+<li>ExcerptUndo() stellt keinen zuvor gelöschten Auszug wieder her. Trotz seines Namens führt er die Löschung des letzten Auszugs über ExcerptDeleteLast() aus.</li>
+</ol>
+<br><br><br>
+</section>
+<section class="card" data-source="Process/Chat/Export.html">
+<h2>Export</h2>
+<p class="process-path">Process/Chat/Export.html</p>
+<h3>Dokumentierte Aufruf?berladungen</h3>
+<table><thead><tr><th>Aufrufsyntax</th><th>Parameter</th><th>Beschreibung und Wirkung jedes Parameters</th></tr></thead><tbody>
+<tr><td><code>Export</code></td><td>Keine Parameter</td><td>Verarbeitet alle Chats, die der Funktion unterliegen.</td></tr>
+<tr><td><code>Export(this)</code></td><td>this: reservierter Parameter, kein Chatname</td><td>Verarbeitet ausschlie?lich den aktuellen Chat.</td></tr>
+<tr><td><code>Export(&lt;Chatname&gt;, &lt;Chatname&gt;, ?)</code></td><td>Chatname, ...</td><td>Verarbeitet ausschlie?lich die durch Komma getrennt angegebenen Chats.</td></tr>
+</tbody></table>
+<h3>Exakter und vollst?ndig dokumentierter Ablauf</h3>
+<ol>
+<li>Dieser Process exportiert die sichtbaren Inhalte eines Codex-Chats aus einem Codex-Projekt in den Workspace.</li>
+<li><strong>Ziel</strong></li>
+<li>Für jeden Chat wird Documentation/Chat/&lt;Chat-Titel&gt;/Original.html erstellt oder aktualisiert. Die Datei bewahrt den sichtbaren Nachrichtenverlauf in seiner ursprünglichen Reihenfolge und wird nach dem Export schreibgeschützt behandelt. Jede Originaldatei bindet Documentation/Design/Style/Active.css über ihren relativen Pfad ein.</li>
+<li><strong>Auswahl der Chats</strong></li>
+<li>Export ohne Parameter verarbeitet alle Chats, die der Funktion unterliegen. Export(this) verarbeitet ausschließlich den aktuellen Chat. Export(&lt;Chatname&gt;, &lt;Chatname&gt;, …) verarbeitet ausschließlich die durch Komma getrennt angegebenen Chats. this ist ein reservierter Parameter und kein Chatname. Jeder angegebene Chatname muss eindeutig zu einem Chat der Verarbeitungsmenge passen; bei fehlender oder mehrdeutiger Zuordnung wird der betreffende Eintrag nicht verarbeitet und die Zuordnung wird berichtet.</li>
+<li><strong>Inhalt von Original.html</strong></li>
+<li>Codex-Projekt-ID, Codex-Projektname und Projekt-Arbeitsverzeichnis, soweit verfügbar,</li>
+<li>Chat-ID, Chat-Titel und Exportzeitpunkt,</li>
+<li>unterscheidbare Nutzer- und Assistentenbeiträge in sichtbarer Reihenfolge: Assistentenbeiträge linksbündig, Nutzerbeiträge rechtsbündig und ohne sichtbare Rollenüberschriften, sowie</li>
+<li>ein automatisch erzeugtes Verlaufsinhaltsverzeichnis mit stabilen Verweisen auf die einzelnen Beiträge.</li>
+<li><strong>Markdown-Darstellung</strong></li>
+<li>Sichtbarer Markdown-Text wird für Original.html semantisch als HTML dargestellt. Überschriften, Absätze, Listen, Zitate, Links, Hervorhebungen und Codeblöcke werden als entsprechende HTML-Elemente ausgegeben. Der Wortlaut und die Reihenfolge der sichtbaren Beiträge bleiben erhalten; Codeblöcke werden unverändert als Code dargestellt.</li>
+<li><strong>Grenzen</strong></li>
+<li>Nicht Bestandteil des Exports sind versteckte Anweisungen, verborgenes Reasoning und nicht sichtbare interne Sitzungsdaten. Der Export verändert keinen Chat in Codex und keine bereits gespeicherte Extraktion oder Auszugssammlung.</li>
+</ol>
+<br><br><br>
+</section>
+<section class="card" data-source="Process/Chat/Extraction.html">
+<h2>Extraction</h2>
+<p class="process-path">Process/Chat/Extraction.html</p>
+<h3>Dokumentierte Aufruf?berladungen</h3>
+<table><thead><tr><th>Aufrufsyntax</th><th>Parameter</th><th>Beschreibung und Wirkung jedes Parameters</th></tr></thead><tbody>
+<tr><td><code>Extraction</code></td><td>Keine Parameter</td><td>Verarbeitet alle Chats, die der Funktion unterliegen.</td></tr>
+<tr><td><code>Extraction(this)</code></td><td>this: reservierter Parameter, kein Chatname</td><td>Verarbeitet ausschlie?lich den aktuellen Chat.</td></tr>
+<tr><td><code>Extraction(&lt;Chatname&gt;, &lt;Chatname&gt;, ?)</code></td><td>Chatname, ...</td><td>Verarbeitet ausschlie?lich die durch Komma getrennt angegebenen Chats.</td></tr>
+</tbody></table>
+<h3>Exakter und vollst?ndig dokumentierter Ablauf</h3>
+<ol>
+<li>Dieser Process erzeugt automatisch eine strukturierte Auswertung des Inhalts von Original.html. Original.html bleibt die einzige verbindliche Quelle.</li>
+<li><strong>Ziel</strong></li>
+<li>Das Ergebnis wird als Extraction.html im selben Chat-Ordner gespeichert. Es verwendet das aktive Design aus Documentation/Design/Style/Active.css und enthält ein fachliches Inhaltsverzeichnis, eine kompakte Zusammenfassung, den Erstellungszeitpunkt und Quellenverweise auf Original.html.</li>
+<li><strong>Auswahl der Chats</strong></li>
+<li>Extraction ohne Parameter verarbeitet alle Chats, die der Funktion unterliegen. Extraction(this) verarbeitet ausschließlich den aktuellen Chat. Extraction(&lt;Chatname&gt;, &lt;Chatname&gt;, …) verarbeitet ausschließlich die durch Komma getrennt angegebenen Chats. this ist ein reservierter Parameter und kein Chatname. Jeder angegebene Chatname muss eindeutig zu einem Chat der Verarbeitungsmenge passen; bei fehlender oder mehrdeutiger Zuordnung wird der betreffende Eintrag nicht verarbeitet und die Zuordnung wird berichtet.</li>
+<li><strong>Inhaltsverzeichnis und Zusammenfassung</strong></li>
+<li>Das Inhaltsverzeichnis gliedert die erkannten Themen. Jeder Eintrag enthält nach Möglichkeit zwei getrennte Verlinkungen: einen internen Link auf den zugehörigen Abschnitt in Extraction.html, dessen Beschriftung direkt den jeweiligen Abschnittstitel nennt, und einen externen Quellenlink auf den zugehörigen Anker in Original.html. Fehlt für eine Aussage ein eindeutiger Quellenanker, bleibt der externe Link aus und die Unsicherheit wird kenntlich gemacht. Die Zusammenfassung benennt Ausgangslage, Ziel, bestätigte Entscheidungen, wesentliche Begründungen, offene Punkte, verworfene Vorschläge und betroffene Projektbereiche. Nicht bestätigte Aussagen und Vorschläge sind als solche zu kennzeichnen.</li>
+<li><strong>Priorisierung</strong></li>
+<li>Bestätigte Entscheidungen haben Vorrang: Sie werden im Inhaltsverzeichnis und in der Zusammenfassung zuerst und eindeutig dargestellt. Die Extraktion bleibt dennoch eine kompakte Darstellung des gesamten Verlaufs. Sie übernimmt deshalb auch wichtige Teile der Diskussion, soweit sie eine Entscheidung erklären, bedeutsame Alternativen oder Risiken sichtbar machen oder für offene Punkte erforderlich sind. Jeder solche Abschnitt verweist auf seine Quelle in Original.html.</li>
+<li><strong>Quellgrenze</strong></li>
+<li>Die Extraktion fasst ausschließlich Aussagen, Entscheidungen und Diskussionen aus Original.html zusammen. Dateien unter Process/Chat dienen nur als Ausführungsregeln für diesen Ablauf; ihr Inhalt ist keine Extraktionsquelle und wird nicht als eigenständiger Gegenstand zusammengefasst. Eine Processregel darf nur dann in der Extraktion erscheinen, wenn dieselbe Regel als Teil des Chatverlaufs in Original.html behandelt wurde und für dessen Verständnis wesentlich ist.</li>
+<li><strong>Wiederholte Ausführung</strong></li>
+<li>Eine erneute Ausführung ersetzt eine bestehende Extraktion nicht blind. Sie gleicht den bisherigen Inhalt mit dem aktuellen Original.html ab, erstellt eine klar als aktualisiert gekennzeichnete Fassung in Extraction.html und dokumentiert Zeitpunkt sowie die gegenüber der vorherigen Fassung hinzugekommenen, geänderten oder entfallenen Aussagen. Unveränderte Aussagen bleiben nur erhalten, wenn ihre Quellenanker weiterhin passen.</li>
+<li><strong>Grenzen</strong></li>
+<li>Die Extraktion ersetzt oder verändert Original.html nicht und begründet keine Entscheidung, die nicht im Originalverlauf bestätigt ist. Sie ist eine Orientierung und keine eigene Entscheidungsquelle.</li>
+</ol>
+<br><br><br>
+</section>
+<section class="card" data-source="Process/Chat/Import.html">
+<h2>Import</h2>
+<p class="process-path">Process/Chat/Import.html</p>
+<h3>Dokumentierte Aufruf?berladungen</h3>
+<table><thead><tr><th>Aufrufsyntax</th><th>Parameter</th><th>Beschreibung und Wirkung jedes Parameters</th></tr></thead><tbody>
+<tr><td><code>Import</code></td><td>Keine Parameter</td><td>Verarbeitet alle verf?gbaren Chatquellen.</td></tr>
+<tr><td><code>Import(this)</code></td><td>this: reservierter Parameter, kein Chatname</td><td>Verarbeitet ausschlie?lich die Quelle des aktuellen Chats.</td></tr>
+<tr><td><code>Import(&lt;Chatname&gt;, &lt;Chatname&gt;, ?)</code></td><td>Chatname, ...</td><td>Verarbeitet ausschlie?lich die durch Komma getrennt angegebenen Chatquellen.</td></tr>
+</tbody></table>
+<h3>Exakter und vollst?ndig dokumentierter Ablauf</h3>
+<ol>
+<li>Dieser Process verwendet einen gespeicherten Chat aus dem Workspace als nachvollziehbare Kontextquelle in einem Codex-Projekt.</li>
+<li><strong>Quelle und Ergebnis</strong></li>
+<li>Die Quelle ist Original.html im zugehörigen Chat-Ordner. Der Import schafft einen neuen Chat oder ergänzt einen ausdrücklich bestimmten Chat um diese Quelle. Der neue Arbeitskontext benennt die Quelldatei und die ursprüngliche Chat-ID.</li>
+<li><strong>Auswahl der Chats</strong></li>
+<li>Import ohne Parameter verarbeitet alle verfügbaren Chatquellen. Import(this) verarbeitet ausschließlich die Quelle des aktuellen Chats. Import(&lt;Chatname&gt;, &lt;Chatname&gt;, …) verarbeitet ausschließlich die durch Komma getrennt angegebenen Chatquellen. this ist ein reservierter Parameter und kein Chatname. Jeder angegebene Chatname muss eindeutig zu einem Chat-Ordner mit Original.html passen; bei fehlender oder mehrdeutiger Zuordnung wird der betreffende Eintrag nicht verarbeitet und die Zuordnung wird berichtet.</li>
+<li><strong>Mehrfachimport</strong></li>
+<li>Bei mehreren Quellen wird für jede Quelle ein eigener neuer Chat angelegt, sofern nicht für diese Quelle ausdrücklich ein bestehender Zielchat bestimmt wurde. Quellen werden nicht zu einem gemeinsamen Chatverlauf vermischt.</li>
+<li><strong>Grenzen</strong></li>
+<li>Der Import stellt keine native Chat-Instanz wieder her. Chat-ID, Branches, Modellzustand, versteckte Inhalte und interne Sitzungsdaten werden nicht wiederhergestellt. Original.html, Extraction.html und Excerpt.html bleiben unverändert.</li>
+</ol>
+<br><br><br>
+</section>
+<section class="card" data-source="Process/Documentation/DesignActivation.html">
+<h2>DesignActivation</h2>
+<p class="process-path">Process/Documentation/DesignActivation.html</p>
+<h3>Dokumentierte Aufruf?berladungen</h3>
+<table><thead><tr><th>Aufrufsyntax</th><th>Parameter</th><th>Beschreibung und Wirkung jedes Parameters</th></tr></thead><tbody>
+<tr><td colspan="3">Keine dokumentierte Aufrufparametrisierung</td></tr>
+</tbody></table>
+<h3>Exakter und vollst?ndig dokumentierter Ablauf</h3>
+<ol>
+<li>Parametrisierter Process zur Übernahme ausgewählter Style- und Struktur-Presets in aktive Dateien.</li>
+<li><strong>Parameter</strong></li>
+<li>Eine oder beide Auswahlzeilen sind zulässig. Mindestens eine Auswahl ist erforderlich.</li>
+<li><strong>Ablauf</strong></li>
+<li>Jede angegebene Auswahl wird auf bekannten Typ, vorhandenes Preset und passende Erweiterung geprüft.</li>
+<li>Gültige Presets werden in die jeweiligen Active.*-Dateien übernommen. Bei Structure werden die Verweise auf die aktiven Style- und Class-Dateien angepasst.</li>
+<li>Das Ergebnis wird in Preview/DesignActivation.html dokumentiert.</li>
+<li>Anschließend wird der Process DesignPreview.html aufgerufen.</li>
+<li>Ausführung: Der Ablauf wird derzeit textlich beauftragt. Das Skript DesignActivation.ps1 unterstützt die gleiche Preset-Übernahme, erzeugt aber noch keine Vorschau.</li>
+</ol>
+<br><br><br>
+</section>
+<section class="card" data-source="Process/Documentation/DesignPreview.html">
+<h2>DesignPreview</h2>
+<p class="process-path">Process/Documentation/DesignPreview.html</p>
+<h3>Dokumentierte Aufruf?berladungen</h3>
+<table><thead><tr><th>Aufrufsyntax</th><th>Parameter</th><th>Beschreibung und Wirkung jedes Parameters</th></tr></thead><tbody>
+<tr><td colspan="3">Keine dokumentierte Aufrufparametrisierung</td></tr>
+</tbody></table>
+<h3>Exakter und vollst?ndig dokumentierter Ablauf</h3>
+<ol>
+<li>Erzeugt eine vollständige Vorschau aller Dokumentations-Classes in der aktiven Struktur und Gestaltung.</li>
+<li><strong>Eingaben</strong></li>
+<li><strong>Ablauf</strong></li>
+<li>Structure/Active.html liefert den äußeren Dokumentrahmen.</li>
+<li>Alle Classes werden in der festgelegten Reihenfolge eingesetzt.</li>
+<li>Style/Active.css gestaltet die zusammengesetzte Seite; TableEditable.js und TableEnvironmentEditable.js werden für ihre bearbeitbaren Tabellen eingebunden.</li>
+<li>Das Ergebnis wird nach Documentation/Design/Preview/DesignPreview.html geschrieben.</li>
+<li>Preview/Test.html bleibt unverändert.</li>
+</ol>
+<br><br><br>
+</section>
+<section class="card" data-source="Process/Localization/Localization.html">
+<h2>Localization</h2>
+<p class="process-path">Process/Localization/Localization.html</p>
+<h3>Dokumentierte Aufruf?berladungen</h3>
+<table><thead><tr><th>Aufrufsyntax</th><th>Parameter</th><th>Beschreibung und Wirkung jedes Parameters</th></tr></thead><tbody>
+<tr><td colspan="3">Keine dokumentierte Aufrufparametrisierung</td></tr>
+</tbody></table>
+<h3>Exakter und vollst?ndig dokumentierter Ablauf</h3>
+<ol>
+<li>Process zur Übernahme bestätigter Terminologie in die Lokalisation.</li>
+<li><strong>Ziel</strong></li>
+<li>Der Process stellt sicher, dass fachlich bestätigte Begriffe konsistent in die Lokalisation übernommen werden. Die Lokalisation ist keine zweite fachliche Quelle.</li>
+<li><strong>Ablauf</strong></li>
+<li><strong>Auslöser</strong></li>
+<li>Die Aktualisierung erfolgt nach einer gebündelten, bestätigten Überarbeitung der Terminologie – vor der nächsten Veröffentlichung. Unfertige oder nur vorläufige Begriffe werden nicht vorschnell als feste Benutzeroberflächentexte übernommen.</li>
+<li><strong>Abgrenzung</strong></li>
+<li>Die Naming-Convention bestimmt die Form eines Namens. Die Terminologie bestimmt seine Bedeutung. Die Lokalisation bestimmt ausschließlich die sprachliche Darstellung; eine technische Kennung wird nicht übersetzt und bei stilistischen Textänderungen nicht umbenannt.</li>
+</ol>
+<br><br><br>
+</section>
+<section class="card" data-source="Process/Repository/Repository.html">
+<h2>Repository</h2>
+<p class="process-path">Process/Repository/Repository.html</p>
+<h3>Dokumentierte Aufruf?berladungen</h3>
+<table><thead><tr><th>Aufrufsyntax</th><th>Parameter</th><th>Beschreibung und Wirkung jedes Parameters</th></tr></thead><tbody>
+<tr><td colspan="3">Keine dokumentierte Aufrufparametrisierung</td></tr>
+</tbody></table>
+<h3>Exakter und vollst?ndig dokumentierter Ablauf</h3>
+<ol>
+<li>Scope: development project · Intended system: Git · Purpose: traceable changes, verifiable project states, and reproducible releases</li>
+<li>This file is the sole authoritative definition of repository management. A repository is set up only through a separate request.</li>
+<li><strong>Content to Version</strong></li>
+<li>The following is generally versioned:</li>
+<li>prerequisite files and permitted bundled definitions under Dependency/, excluding external libraries, DLLs, models, and extensions,</li>
+<li>Visual Studio project definitions under Environment/VisualStudio/,</li>
+<li>persistent, non-excluded content under Source/,</li>
+<li>Documentation/, and</li>
+<li>binding files under Organization/.</li>
+<li>Organization/Agent/Agent.md and associated operating modes are versioned, but remain read-only and may be changed only with the user&#x27;s explicit consent.</li>
+<li><strong>Controlled Data</strong></li>
+<li>Small, persistently required data under Source/Data/Reference/, Source/Data/Calibration/, or Source/Data/Validation/ may be versioned depending on usage rights and size.</li>
+<li>Large audio, video, model, and comparable binary data is managed outside Git and GitHub. Git may contain directory structure, descriptions, metadata, checksums, and unique dataset identifiers.</li>
+<li><strong>External Library and Binary File</strong></li>
+<li>External headers, static libraries, import libraries, DLLs, models, and extensions under Dependency/ are not versioned.</li>
+<li>Their prerequisite, source, version, checksum, license, and installation procedure are documented instead.</li>
+<li><strong>Content Not to Version</strong></li>
+<li>Exclude at least:</li>
+<li>Environment/Python/,</li>
+<li>Environment/Definition.md, because the file contains local absolute paths,</li>
+<li>Environment/VisualStudio/Temporary/,</li>
+<li>Source/Data/Development/,</li>
+<li>.codex_tmp/,</li>
+<li>Dependency/Library/,</li>
+<li>Dependency/Model/,</li>
+<li>Dependency/Extension/,</li>
+<li>user-specific Visual Studio files,</li>
+<li>credentials, API keys, passwords, and other secrets,</li>
+<li>Program/ and Data/ areas of active ManagementEnvironments, and</li>
+<li>local backup archives.</li>
+<li>Released binary states may be archived separately as release artifacts. Excluding Source/Data/Development/ means Git does not protect this data; the separate data backup under Backup.md applies instead.</li>
+<li><strong>Repository Setup</strong></li>
+<li>Before initial setup, a backup of the initial state verified according to Backup.md must be available.</li>
+<li>Before regular use, create and verify at least:</li>
+<li>.gitignore for local and generated files, and</li>
+<li>.gitattributes for consistent text files and, where applicable, Git LFS assignments.</li>
+<li>Check exclusion rules before initially adding large files, binary files, or local environments.</li>
+<li><strong>Change and Commit</strong></li>
+<li>A commit contains one coherent, traceable change.</li>
+<li>The commit message briefly describes purpose and effect.</li>
+<li>Run affected builds or tests before an important commit.</li>
+<li>Do not overwrite external or existing changes without verification.</li>
+<li>Do not add secret or clearly temporary files.</li>
+<li>Use separate working branches for larger work. The main branch contains only traceable and fundamentally runnable states.</li>
+<li><strong>Release</strong></li>
+<li>A release receives a unique version number and Git tag. It refers at minimum to source state, build configuration, target platform, prerequisite and dependency state, authoritative test results, and, where applicable, related release artifacts.</li>
+<li><strong>Verification</strong></li>
+<li>Before push, merge, or release, verify:</li>
+<li>no credentials are included,</li>
+<li>no local Python environment or local environment definition is included,</li>
+<li>no temporary Visual Studio files are included,</li>
+<li>no content from Source/Data/Development/ is included,</li>
+<li>external binary files are permitted by license,</li>
+<li>large files are handled deliberately, and</li>
+<li>protected Agent files have not been changed unintentionally.</li>
+<li><strong>Scope Boundary</strong></li>
+<li>Repository management replaces neither a local backup nor backup of production or excluded data. Backup.md applies exclusively for that purpose.</li>
+</ol>
+<br><br><br>
+</section>
+<section class="notice notice--info" id="analysebericht">
+<h2>Analysebericht</h2>
+<p><strong>Quellenbestand:</strong> 12 HTML-Dateien. Jede Quelle wurde vollst?ndig gelesen, genau einmal verarbeitet und genau einem Eintrag zugeordnet. Die Zieldatei wurde nicht als inhaltliche Quelle verwendet.</p>
+<table><thead><tr><th>Process</th><th>Quelle</th><th>Abgleichstatus</th><th>Feststellung</th><th>Auswirkung</th></tr></thead><tbody>
+<tr><td>Backup</td><td><code>Process/Backup/Backup.html</code></td><td>vollst?ndig ?bereinstimmend</td><td>Processname, relativer Pfad, Tabelle sowie alle erfassten ?berschriften, Abs?tze, Listen und Vorformatierungen der Quelle sind im Eintrag vorhanden.</td><td>Archivierung einer getrennten Kopie; die Quelle wird beim Sicherungslauf nicht ge?ndert.</td></tr>
+<tr><td>Excerpt</td><td><code>Process/Chat/Excerpt.html</code></td><td>vollst?ndig ?bereinstimmend</td><td>Processname, relativer Pfad, Tabelle sowie alle erfassten ?berschriften, Abs?tze, Listen und Vorformatierungen der Quelle sind im Eintrag vorhanden.</td><td>?bernimmt markierte Teilbereiche unver?ndert in urspr?nglicher Reihenfolge.</td></tr>
+<tr><td>ExcerptDeleteLast</td><td><code>Process/Chat/ExcerptDeleteLast.html</code></td><td>vollst?ndig ?bereinstimmend</td><td>Processname, relativer Pfad, Tabelle sowie alle erfassten ?berschriften, Abs?tze, Listen und Vorformatierungen der Quelle sind im Eintrag vorhanden.</td><td>L?scht nach ausdr?cklicher Best?tigung genau den letzten Auszug.</td></tr>
+<tr><td>ExcerptImport</td><td><code>Process/Chat/ExcerptImport.html</code></td><td>vollst?ndig ?bereinstimmend</td><td>Processname, relativer Pfad, Tabelle sowie alle erfassten ?berschriften, Abs?tze, Listen und Vorformatierungen der Quelle sind im Eintrag vorhanden.</td><td>?bernimmt ausgew?hlte Sektionen vollst?ndig als sichtbaren Nachrichtentext.</td></tr>
+<tr><td>ExcerptUndo</td><td><code>Process/Chat/ExcerptUndo.html</code></td><td>vollst?ndig ?bereinstimmend</td><td>Processname, relativer Pfad, Tabelle sowie alle erfassten ?berschriften, Abs?tze, Listen und Vorformatierungen der Quelle sind im Eintrag vorhanden.</td><td>Delegiert an den l?schenden Process ExcerptDeleteLast; keine Wiederherstellung.</td></tr>
+<tr><td>Export</td><td><code>Process/Chat/Export.html</code></td><td>vollst?ndig ?bereinstimmend</td><td>Processname, relativer Pfad, Tabelle sowie alle erfassten ?berschriften, Abs?tze, Listen und Vorformatierungen der Quelle sind im Eintrag vorhanden.</td><td>Erh?lt Wortlaut und Reihenfolge sichtbarer Beitr?ge, transformiert Markdown jedoch semantisch zu HTML.</td></tr>
+<tr><td>Extraction</td><td><code>Process/Chat/Extraction.html</code></td><td>vollst?ndig ?bereinstimmend</td><td>Processname, relativer Pfad, Tabelle sowie alle erfassten ?berschriften, Abs?tze, Listen und Vorformatierungen der Quelle sind im Eintrag vorhanden.</td><td>Erzeugt ausdr?cklich eine kompakte Zusammenfassung; keine vollst?ndige Originalwiedergabe.</td></tr>
+<tr><td>Import</td><td><code>Process/Chat/Import.html</code></td><td>vollst?ndig ?bereinstimmend</td><td>Processname, relativer Pfad, Tabelle sowie alle erfassten ?berschriften, Abs?tze, Listen und Vorformatierungen der Quelle sind im Eintrag vorhanden.</td><td>Verwendet die Quelle als Kontext, stellt aber keine native Chat-Instanz oder interne Zust?nde wieder her.</td></tr>
+<tr><td>DesignActivation</td><td><code>Process/Documentation/DesignActivation.html</code></td><td>vollst?ndig ?bereinstimmend</td><td>Processname, relativer Pfad, Tabelle sowie alle erfassten ?berschriften, Abs?tze, Listen und Vorformatierungen der Quelle sind im Eintrag vorhanden.</td><td>?bernimmt Presets in aktive Dateien; keine allgemeine Inhaltsidentit?tspr?fung dokumentiert.</td></tr>
+<tr><td>DesignPreview</td><td><code>Process/Documentation/DesignPreview.html</code></td><td>vollst?ndig ?bereinstimmend</td><td>Processname, relativer Pfad, Tabelle sowie alle erfassten ?berschriften, Abs?tze, Listen und Vorformatierungen der Quelle sind im Eintrag vorhanden.</td><td>Erzeugt eine Vorschau; Preview/Test.html bleibt unver?ndert.</td></tr>
+<tr><td>Localization</td><td><code>Process/Localization/Localization.html</code></td><td>vollst?ndig ?bereinstimmend</td><td>Processname, relativer Pfad, Tabelle sowie alle erfassten ?berschriften, Abs?tze, Listen und Vorformatierungen der Quelle sind im Eintrag vorhanden.</td><td>Erg?nzt oder ?berarbeitet Sprachdarstellungen und pr?ft nicht mehr verwendete Eintr?ge.</td></tr>
+<tr><td>Repository</td><td><code>Process/Repository/Repository.html</code></td><td>vollst?ndig ?bereinstimmend</td><td>Processname, relativer Pfad, Tabelle sowie alle erfassten ?berschriften, Abs?tze, Listen und Vorformatierungen der Quelle sind im Eintrag vorhanden.</td><td>Dokumentiert Repositoryverwaltung; keine allgemeine Datenerhaltgarantie definiert.</td></tr>
+</tbody></table>
+<h3>Abweichungen und offene Pr?fungen</h3>
+<p>Keine Abweichung zwischen einer Processquelle und ihrem erzeugten Eintrag festgestellt. Die unterschiedlichen Datenerhaltwirkungen sind fachliche Eigenschaften der dokumentierten Processes, keine Abweichungen der Zieldatei.</p>
+<h3>Strenge Datenerhaltbewertung</h3>
+<p>Eine allgemeine Zusage, dass jeder Process Inhalte unver?ndert erh?lt, ist nicht dokumentiert und w?re widerspr?chlich: Extraction fasst zusammen, Export transformiert die Darstellung, Import stellt keine native Chatinstanz wieder her und ExcerptDeleteLast sowie ExcerptUndo l?schen nach Best?tigung. Diese Eigenschaften sind je Process in der Tabelle ausgewiesen.</p>
+<h3>Abschlusspr?fung</h3>
+<p>Vollst?ndigkeit, Eindeutigkeit, Tabellenstruktur, nummerierte Listen, drei Leerzeilen nach jedem Eintrag und die Einbindung des aktiven Dokumentationsdesigns wurden gepr?ft.</p>
+</section>
+</main>
+</body>
+</html>
