@@ -1,0 +1,17 @@
+<!--
+  Komponente: TableEditableExpansion
+  Basis: TableEditableOrdered.html
+  Zweck: Bearbeitbare Tabelle mit kompakter Textvorschau und einem Editor aus TextEditable und DialogConfirmation.
+  Verhalten: TableEditableExpansion.js
+-->
+<table class="table-editable-expansion" data-table-editable-expansion="example-editable-expansion-table" data-table-editable-expansion-pointer="NULL">
+  <thead>
+    <tr><th>Nr.</th><th>Bezeichnung</th><th>Beschreibung</th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">01</th><td>Beispiel</td><td>Beim Überfahren erscheint eine Vorschau; beim Klicken öffnet sich der Editor.</td></tr>
+  </tbody>
+</table>
+<p data-table-controls="example-editable-expansion-table">
+  <button class="button--secondary" type="button" data-table-save>Änderungen lokal speichern</button>
+</p>

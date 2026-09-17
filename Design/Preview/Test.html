@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aktives Design – Vorschau</title>
+  <link rel="stylesheet" href="../Style/Active.css">
+</head>
+<body>
+  <main class="document">
+    <header>
+      <p>Dokumentationsdesign</p>
+      <h1>Strukturtest: aktives Preset</h1>
+      <p>Diese Vorschau kombiniert die aktive Struktur, den aktiven Stil und die aktive Interaktion.</p>
+    </header>
+
+    <section class="card">
+      <h2>Inhaltskarte</h2>
+      <p>Ein abgegrenzter Abschnitt für eine Festlegung, einen Status oder einen kurzen Zusammenhang.</p>
+    </section>
+
+    <section class="notice notice--info">
+      <h2>Hinweis</h2>
+      <p>Informationen ergänzen den Haupttext, ohne ihn zu unterbrechen.</p>
+    </section>
+
+    <section class="notice notice--warning">
+      <h2>Zu prüfen</h2>
+      <p>Diese Entscheidung benötigt vor einer Umsetzung noch eine Kontrolle.</p>
+    </section>
+
+    <section>
+      <h2>Editierbare Beispieltabelle</h2>
+      <p>Die Kopfzeile bleibt unverändert. Die Datenzellen lassen sich direkt bearbeiten.</p>
+      <table data-table-editable="organization-design-preview-table">
+        <thead><tr><th>Baustein</th><th>Zweck</th><th>Aktion</th></tr></thead>
+        <tbody>
+          <tr><td>Struktur</td><td>Semantischer Aufbau in HTML</td><td></td></tr>
+          <tr><td>Stil</td><td>Darstellung durch Active.css</td><td></td></tr>
+          <tr><td>Interaktion</td><td>Bearbeiten durch Active.js</td><td></td></tr>
+        </tbody>
+      </table>
+      <p data-table-controls="organization-design-preview-table">
+        <button class="button--secondary" type="button" data-table-add>Zeile hinzufügen</button>
+        <button type="button" data-table-save>Änderungen lokal speichern</button>
+      </p>
+    </section>
+
+    <section>
+      <h2>Code und Verweise</h2>
+      <pre><code>&lt;section class="card"&gt;…&lt;/section&gt;</code></pre>
+      <p><a href="../Structure/Active.html">Aktive Struktur öffnen</a></p>
+      <button type="button">Primäre Aktion</button>
+      <a class="button button--secondary" href="#">Sekundäre Aktion</a>
+    </section>
+  </main>
+  <script src="../Interaction/Active.js"></script>
+</body>
+</html>

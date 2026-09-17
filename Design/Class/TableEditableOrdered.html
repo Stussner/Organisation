@@ -1,0 +1,17 @@
+<!--
+  Komponente: TableEditableOrdered
+  Basis: TableEditable.html
+  Zweck: Bearbeitbare Tabelle mit fester, automatisch aktualisierter Indexspalte.
+  Verhalten: TableEditableOrdered.js
+-->
+<table class="table-editable-ordered" data-table-editable-ordered="example-editable-ordered-table" data-table-editable-ordered-pointer="NULL">
+  <thead>
+    <tr><th>Nr.</th><th>Bezeichnung</th><th>Beschreibung</th></tr>
+  </thead>
+  <tbody>
+    <tr><th scope="row">01</th><td>Beispiel</td><td>Diese Datenzellen können bearbeitet werden.</td></tr>
+  </tbody>
+</table>
+<p data-table-controls="example-editable-ordered-table">
+  <button class="button--secondary" type="button" data-table-save>Änderungen lokal speichern</button>
+</p>

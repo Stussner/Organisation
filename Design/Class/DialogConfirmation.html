@@ -1,0 +1,16 @@
+<!--
+  Komponente: DialogConfirmation
+  Zweck: Modale Bestätigung mit eindeutiger Entscheidung.
+  Verhalten: DialogConfirmation.js öffnet das Dialogelement modal.
+  Ergebnis: dialog.returnValue ist "confirm" oder "cancel".
+-->
+<button type="button" data-dialog-confirmation-open="example-dialog-confirmation">Bestätigung öffnen</button>
+<dialog id="example-dialog-confirmation" class="dialog-confirmation card" data-dialog-confirmation>
+  <form method="dialog" class="dialog-confirmation__form">
+    <h2>Überschrift</h2>
+    <p class="dialog-confirmation__actions">
+      <button class="button--secondary" value="cancel">Cancel</button>
+      <button value="confirm">Confirm</button>
+    </p>
+  </form>
+</dialog>

@@ -1,0 +1,18 @@
+<!--
+  Komponente: TableEditable
+  Basis: Table.html
+  Zweck: Bearbeitbare Variante einer Dokumentationstabelle.
+  Verhalten: TableEditable.js
+-->
+<table data-table-editable="example-editable-table">
+  <thead>
+    <tr><th>Bezeichnung</th><th>Beschreibung</th><th>Aktion</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Beispiel</td><td>Diese Datenzellen können bearbeitet werden.</td><td></td></tr>
+  </tbody>
+</table>
+<p data-table-controls="example-editable-table">
+  <button class="button--secondary" type="button" data-table-add>Zeile hinzufügen</button>
+  <button type="button" data-table-save>Änderungen lokal speichern</button>
+</p>

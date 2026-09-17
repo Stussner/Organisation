@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 210" role="img" aria-labelledby="title desc">
+  <title id="title">Eigenschaften eines Knotens</title><desc id="desc">Ein zentraler Knoten mit Ein- und Auskanten, Grad und Attributen.</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#70f0ad"/></marker><style>.e{stroke:#70f0ad;stroke-width:3}.n{fill:#123629;stroke:#9affc5;stroke-width:2}.c{fill:#1d5a42;stroke:#e3c064;stroke-width:3}.t{fill:#edf9f1;font:600 14px 'Segoe UI',sans-serif}.s{fill:#b1d8c2;font:12px 'Segoe UI',sans-serif}</style></defs>
+  <line class="e" marker-end="url(#a)" x1="90" y1="55" x2="215" y2="94"/><line class="e" marker-end="url(#a)" x1="90" y1="155" x2="215" y2="116"/>
+  <line class="e" marker-end="url(#a)" x1="265" y1="96" x2="390" y2="55"/><line class="e" marker-end="url(#a)" x1="265" y1="114" x2="390" y2="155"/>
+  <circle class="n" cx="70" cy="49" r="18"/><circle class="n" cx="70" cy="161" r="18"/><circle class="c" cx="240" cy="105" r="33"/><circle class="n" cx="410" cy="49" r="18"/><circle class="n" cx="410" cy="161" r="18"/>
+  <text class="t" x="229" y="111">v</text><text class="s" x="190" y="28">Grad(v) = 4</text><text class="s" x="113" y="183">Eingrad = 2</text><text class="s" x="287" y="183">Ausgrad = 2</text><text class="s" x="202" y="151">Typ · Zustand</text>
+</svg>

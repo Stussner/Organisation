@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BlueFuture 02</title>
+  <link rel="stylesheet" href="../../Style/Preset/BlueFuture02.css">
+</head>
+<body>
+  <main>
+    <section class="card">
+      <h2 class="section-title">Title</h2>
+      <input type="text" value="ProcessInstruction">
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">Content</h2>
+      <textarea>Diese 4 Dateien definieren die benutzerdefinierten Anweisungen</textarea>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">Process</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Nr.</th>
+            <th>Schritt</th>
+            <th>Inhalt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Löschen</td>
+            <td>Lösche alle individuellen, benutzerdefinierten Anweisungen (Instructions).</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Lesereihenfolge</td>
+            <td><code>Agent/Instruction/InstructionOverview.html</code> → <code>Agent/Instruction/InstructionCommunication.html</code> → <code>Agent/Instruction/InstructionReference.html</code> → <code>Agent/Instruction/InstructionBackuplocal.html</code> → <code>Agent/Instruction/InstructionBackupLocalInstruction.html</code>.</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Basis</td>
+            <td>Die fünf Dateien bilden gemeinsam die Instruktionsbasis und definieren das Standardverhalten.</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Draft</td>
+            <td>Dateien unter <code>Agent/Instruction/Draft/</code> sind nur Entwürfe und nicht basisaktiv.</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Referenz</td>
+            <td>Eine Quelle aus dem Referenzkatalog wird nur referenzaktiv, wenn der konkrete Auftrag sie ausdrücklich benennt oder ihre Anwendung ausdrücklich verlangt.</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Aktivierung</td>
+            <td>Processes und Tools werden nicht stillschweigend aktiviert.</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Priorität</td>
+            <td>Höherrangige Plattform-, Sicherheits- und ausdrückliche Nutzeranweisungen gehen vor. Diese Ladebrücke erzeugt keine zusätzliche Befugnis.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+  <script src="../../Interaction/Preset/BlueFuture02.js"></script>
+</body>
+</html>

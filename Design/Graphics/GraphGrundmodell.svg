@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 210" role="img" aria-labelledby="title desc">
+  <title id="title">Grundmodell eines gerichteten gewichteten Graphen</title>
+  <desc id="desc">Drei Knoten A, B und C, verbunden durch gerichtete und beschriftete Kanten.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#70f0ad"/></marker>
+    <style>.e{fill:none;stroke:#70f0ad;stroke-width:3}.n{fill:#123629;stroke:#9affc5;stroke-width:3}.t{fill:#edf9f1;font:600 18px 'Segoe UI',sans-serif}.s{fill:#b1d8c2;font:14px 'Segoe UI',sans-serif}.w{fill:#e3c064;font:600 14px 'Consolas',monospace}</style>
+  </defs>
+  <path class="e" marker-end="url(#arrow)" d="M112 97C165 42 246 36 300 78"/>
+  <path class="e" marker-end="url(#arrow)" d="M326 106C310 159 229 177 167 139"/>
+  <path class="e" d="M125 125 296 101"/>
+  <circle class="n" cx="90" cy="112" r="34"/><circle class="n" cx="330" cy="92" r="34"/><circle class="n" cx="146" cy="151" r="28"/>
+  <text class="t" x="83" y="119">A</text><text class="t" x="323" y="99">B</text><text class="t" x="139" y="158">C</text>
+  <text class="w" x="204" y="49">w = 7</text><text class="s" x="187" y="131">Relationstyp</text>
+  <text class="s" x="18" y="28">V = {A, B, C}</text><text class="s" x="329" y="184">Knoten + Kanten</text>
+</svg>

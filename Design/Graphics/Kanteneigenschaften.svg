@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 210" role="img" aria-labelledby="title desc">
+  <title id="title">Eigenschaften von Kanten</title><desc id="desc">Beispiele für Richtung, Gewicht, Typ, Schleife und parallele Kanten.</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#70f0ad"/></marker><style>.e{fill:none;stroke:#70f0ad;stroke-width:3}.n{fill:#123629;stroke:#9affc5;stroke-width:2}.t{fill:#edf9f1;font:600 13px 'Segoe UI',sans-serif}.s{fill:#e3c064;font:12px 'Consolas',monospace}</style></defs>
+  <circle class="n" cx="65" cy="105" r="24"/><circle class="n" cx="205" cy="105" r="24"/><circle class="n" cx="365" cy="105" r="24"/>
+  <path class="e" marker-end="url(#a)" d="M90 100C122 60 157 60 181 96"/><path class="e" marker-end="url(#a)" d="M89 112C126 146 157 145 182 115"/>
+  <path class="e" d="M229 105H341"/><path class="e" marker-end="url(#a)" d="M375 82C430 35 443 130 386 126"/>
+  <text class="s" x="119" y="55">w=12</text><text class="s" x="118" y="162">Typ B</text><text class="s" x="267" y="94">ungerichtet</text><text class="s" x="390" y="57">Schleife</text>
+  <text class="t" x="40" y="28">Parallel + Richtung + Gewicht</text>
+</svg>

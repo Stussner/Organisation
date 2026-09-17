@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="design-preset" content="GreenDarkIllumination">
+  <title>DesignPreview – GreenDarkIllumination</title>
+  <link rel="stylesheet" href="../Style/Active.css">
+  <style>.design-preview{width:min(100% - 2rem,72rem);margin:2rem auto}.design-preview section{margin-block:1rem}.design-preview figure{margin:0}.design-preview figure svg{display:block;width:100%;height:auto;border:1px solid currentColor;border-radius:.35rem}.design-preview h3{margin-top:0}</style>
+</head>
+<body>
+  <main class="document design-preview">
+    <header class="card"><p>Dokumentationsdesign · aktive Vorschau</p><h1>GreenDarkIllumination</h1><p>Vollständige Vorschau der dokumentierten Classes mit der aktiven Struktur BlueFuture02 und der aktiven Gestaltung GreenDarkIllumination.</p></header>
+    <!-- Class: Header.html -->
+    <section id="document-header" class="card"><h2>Header</h2><table><tbody><tr><th scope="row">Projekt</th><td>Projektname</td></tr><tr><th scope="row">Titel</th><td>Dokumenttitel</td></tr><tr><th scope="row">Kurzbeschreibung</th><td>Kurzbeschreibung des Dokuments.</td></tr><tr><th scope="row">Owner</th><td>Verantwortliche Person oder Rolle</td></tr><tr><th scope="row">Erstellt</th><td>JJJJ-MM-TT</td></tr><tr><th scope="row">Geändert</th><td>JJJJ-MM-TT</td></tr><tr><th scope="row">Location</th><td><a href="#">Dokumentpfad oder Verweis</a></td></tr><tr><th scope="row">Typ</th><td><select aria-label="Dokumenttyp"><option selected>Beschreibung</option><option>Spezifikation</option><option>Process</option></select></td></tr><tr><th scope="row">Backup</th><td><select aria-label="Backup-Umfang"><option selected>Minimum (Essentials)</option><option>Standard</option><option>Maximum</option></select></td></tr><tr><th scope="row">Repository</th><td><select aria-label="Repository-Sichtbarkeit"><option selected>Public</option><option>Private</option><option>Keines</option></select></td></tr></tbody></table></section>
+
+    <!-- Class: HeaderMinimum.html -->
+    <section id="document-header-minimum" class="card"><h2>HeaderMinimum</h2><table><tbody><tr><th scope="row">Projektname</th><td><a href="../../../Environment/Definition/Base.html">Organization Base</a></td></tr><tr><th scope="row">Title</th><td><input type="text" aria-label="Title" value="Dokumenttitel" data-header-minimum-title-from-filename></td></tr><tr><th scope="row">Location (File)</th><td><span data-header-minimum-location-from-url>Dokumentpfad</span></td></tr><tr><th scope="row">Owner</th><td><a href="../../../Environment/Definition/Base.html">Johannes Scharff</a></td></tr><tr><th scope="row">Date</th><td>JJJJ-MM-TT</td></tr><tr class="header-minimum__select-row"><th scope="row">Backup</th><td><select aria-label="Backup"><option selected>Always</option><option>Never</option></select><button class="header-minimum__list-button" type="button" data-header-minimum-list-button aria-label="Backup-Auswahl öffnen" title="Backup-Auswahl öffnen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" /></svg></button></td></tr><tr class="header-minimum__select-row"><th scope="row">Repository</th><td><select aria-label="Repository"><option>Public</option><option selected>Private</option></select><button class="header-minimum__list-button" type="button" data-header-minimum-list-button aria-label="Repository-Auswahl öffnen" title="Repository-Auswahl öffnen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" /></svg></button></td></tr><tr class="header-minimum__select-row"><th scope="row">Documentation</th><td><select aria-label="Documentation"><option>Release</option><option selected>None</option></select><button class="header-minimum__list-button" type="button" data-header-minimum-list-button aria-label="Documentation-Auswahl öffnen" title="Documentation-Auswahl öffnen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14" /></svg></button></td></tr></tbody></table></section>
+
+    <section id="table-of-contents" class="card"><h2>Inhaltsverzeichnis</h2><nav aria-label="Inhaltsverzeichnis"><ol><li><a href="#text-headline">Text mit Überschrift</a></li><li><a href="#text">Text</a></li><li><a href="#text-headline-multi">Text mit mehreren Überschriften</a></li><li><a href="#lists">Listen</a></li><li><a href="#tables">Tabellen</a></li><li><a href="#trees">Bäume</a></li><li><a href="#image">Bild</a></li><li><a href="#graph">Graph</a></li><li><a href="#references">Referenzen</a></li></ol></nav></section>
+
+    <!-- Class: TextHeadline.html -->
+    <section id="text-headline" class="card"><h2>TextHeadline</h2><p>Beschreibender Text zum Abschnitt.</p></section>
+
+    <!-- Class: Text.html -->
+    <section id="text" class="card"><p>Beschreibender Text ohne eigene Überschrift.</p></section>
+
+    <!-- Class: TextEditable.html -->
+    <section id="text-editable" class="card"><h2>TextEditable</h2><section class="text-editable"><textarea class="text-editable__field" aria-label="Bearbeitbarer Beispieltext" wrap="off" spellcheck="true">Bearbeitbarer, mehrzeiliger Beispieltext ohne automatischen Zeilenumbruch. Lange Zeilen bleiben erhalten und werden bei Bedarf horizontal gescrollt.</textarea></section></section>
+
+    <!-- Class: DialogConfirmation.html -->
+    <section id="dialog-confirmation" class="card"><h2>DialogConfirmation</h2><button type="button" data-dialog-confirmation-open="design-preview-confirmation">Bestätigung öffnen</button><dialog id="design-preview-confirmation" class="dialog-confirmation card" data-dialog-confirmation><form method="dialog" class="dialog-confirmation__form"><h2>Änderung bestätigen</h2><p class="dialog-confirmation__actions"><button class="button--secondary" value="cancel">Cancel</button><button value="confirm">Confirm</button></p></form></dialog></section>
+
+    <!-- Class: TextHeadlineMulti.html -->
+    <section id="text-headline-multi" class="card"><h2>TextHeadlineMulti</h2><p>Einleitender Text zum Abschnitt.</p><h3>Erster Teilaspekt</h3><p>Beschreibender Text zum ersten Teilaspekt.</p><h3>Zweiter Teilaspekt</h3><p>Beschreibender Text zum zweiten Teilaspekt.</p></section>
+
+    <section id="lists" class="card"><h2>Listen</h2><h3>Ungeordnet</h3><ul><li>Erster Eintrag</li><li>Zweiter Eintrag</li></ul><h3>Nummeriert</h3><ol><li>Erster Schritt</li><li>Zweiter Schritt</li></ol></section>
+
+    <section id="tables" class="card"><h2>Tabellen</h2><h3>Table</h3><table><thead><tr><th>Bezeichnung</th><th>Beschreibung</th></tr></thead><tbody><tr><td>Beispiel</td><td>Eine Datenzeile der Basistabelle.</td></tr></tbody></table><h3>TableEditable</h3><table data-table-editable="design-preview-editable-table"><thead><tr><th>Bezeichnung</th><th>Beschreibung</th><th>Aktion</th></tr></thead><tbody><tr><td>Beispiel</td><td>Diese Datenzellen können bearbeitet werden.</td><td></td></tr></tbody></table><p data-table-controls="design-preview-editable-table"><button class="button--secondary" type="button" data-table-add>Zeile hinzufügen</button><button type="button" data-table-save>Änderungen lokal speichern</button></p></section>
+
+    <!-- Class: TableEditableOrdered.html -->
+    <section id="table-editable-ordered" class="card"><h2>TableEditableOrdered</h2><table class="table-editable-ordered" data-table-editable-ordered="design-preview-ordered" data-table-editable-ordered-pointer="NULL"><thead><tr><th>Nr.</th><th>Bezeichnung</th><th>Beschreibung</th></tr></thead><tbody><tr><th scope="row">01</th><td>Erster Eintrag</td><td>Die Indexspalte bleibt beim Verschieben statisch.</td></tr><tr><th scope="row">02</th><td>Zweiter Eintrag</td><td>Zeilen lassen sich lokal speichern.</td></tr></tbody></table><p data-table-controls="design-preview-ordered"><button class="button--secondary" type="button" data-table-save>Änderungen lokal speichern</button></p></section>
+
+    <!-- Class: TableEditableExpansion.html -->
+    <section id="table-editable-expansion" class="card"><h2>TableEditableExpansion</h2><table class="table-editable-expansion" data-table-editable-expansion="design-preview-expansion" data-table-editable-expansion-pointer="design-preview-ordered"><thead><tr><th>Nr.</th><th>Key</th><th>Text</th></tr></thead><tbody><tr><th scope="row">03</th><td>Preview_Description</td><td>Ein längerer Beispieltext bleibt in der Tabelle kompakt. Beim Überfahren wird eine Vorschau gezeigt; ein Klick öffnet den begrenzten Editor mit horizontaler und vertikaler Bildlaufleiste.</td></tr></tbody></table><p data-table-controls="design-preview-expansion"><button class="button--secondary" type="button" data-table-save>Änderungen lokal speichern</button></p></section>
+
+    <!-- Class: TableEnvironment.html -->
+    <section id="table-environment" class="card"><h2>TableEnvironment</h2><table class="table-environment"><thead><tr><th>Nr.</th><th>Bezeichner</th><th>Wert</th></tr></thead><tbody><tr><td>1</td><td>EnvironmentType</td><td>Development</td></tr><tr><td>2</td><td>RepositoryVisibility</td><td>Private</td></tr></tbody></table></section>
+
+    <!-- Class: TableEnvironmentEditable.html -->
+    <section id="table-environment-editable" class="card"><h2>TableEnvironmentEditable</h2><table class="table-environment-editable" data-table-environment-editable><thead><tr><th>Nr.</th><th>Bezeichner</th><th>Wert</th></tr></thead><tbody><tr><td class="table-environment-editable__number"><span class="table-environment-editable__number-label">1</span><span class="table-environment-editable__controls" aria-label="Zeilenaktionen"><button type="button" data-environment-action="add" aria-label="Zeile erstellen" title="Zeile erstellen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg></button><button type="button" data-environment-action="up" aria-label="Zeile nach oben verschieben" title="Zeile nach oben verschieben"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0-5 5m5-5 5 5" /></svg></button><button type="button" data-environment-action="down" aria-label="Zeile nach unten verschieben" title="Zeile nach unten verschieben"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m0 0-5-5m5 5 5-5" /></svg></button><button type="button" data-environment-action="delete" aria-label="Zeile löschen" title="Zeile löschen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M9 7V5m-7 3v8m4-8v8m4-8v8M7 7l1 14h8l1-14" /></svg></button></span></td><td contenteditable="true" spellcheck="true">Development</td><td contenteditable="true" spellcheck="true">Workstation A</td></tr></tbody></table></section>
+
+    <section id="trees" class="card"><h2>Bäume</h2><h3 id="tree-static">Tree</h3><ul><li>Wurzel<ul><li>Unterknoten A</li><li>Unterknoten B</li></ul></li></ul><h3 id="tree-collapsible">TreeCollapsible</h3><details><summary>Wurzel</summary><ul><li>Unterknoten A</li><li>Unterknoten B</li></ul></details><h3>TreeNavigation</h3><nav aria-label="Baumnavigation"><ul><li><a href="#trees">Bäume</a><ul><li><a href="#tree-static">Statischer Baum</a></li><li><a href="#tree-collapsible">Klappbarer Baum</a></li></ul></li></ul></nav></section>
+
+    <section id="image" class="card"><h2>Bild</h2><figure><svg viewBox="0 0 640 260" role="img" aria-labelledby="image-title image-description" xmlns="http://www.w3.org/2000/svg"><title id="image-title">Bildplatzhalter</title><desc id="image-description">Neutraler Platzhalter für ein später einzubindendes Bild.</desc><rect width="640" height="260" fill="#dce5ec" /><path d="M80 210 L235 95 L345 170 L435 110 L570 210 Z" fill="#9bb4c6" /><circle cx="455" cy="75" r="28" fill="#7f9caf" /><text x="320" y="238" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" fill="#29465b">Bildplatzhalter</text></svg><figcaption>Bildunterschrift. Quelle: noch festzulegen.</figcaption></figure></section>
+
+    <section id="graph" class="card"><h2>Graph</h2><svg viewBox="0 0 500 220" role="img" aria-labelledby="graph-title graph-description" xmlns="http://www.w3.org/2000/svg"><title id="graph-title">Beispielgraph</title><desc id="graph-description">Drei Knoten mit gerichteten Verbindungen.</desc><defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="currentColor" /></marker></defs><g fill="none" stroke="currentColor" stroke-width="2" marker-end="url(#arrow)"><path d="M125 105 L235 105" /><path d="M265 105 L375 65" /><path d="M265 120 L375 160" /></g><g fill="currentColor" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif"><circle cx="100" cy="105" r="28" /><circle cx="250" cy="105" r="28" /><circle cx="400" cy="55" r="28" /><circle cx="400" cy="170" r="28" /></g><g fill="white" text-anchor="middle" dominant-baseline="middle" font-family="Segoe UI, Arial, sans-serif"><text x="100" y="105">A</text><text x="250" y="105">B</text><text x="400" y="55">C</text><text x="400" y="170">D</text></g></svg></section>
+
+    <section id="references" class="card"><h2>Referenzen</h2><ol><li><cite>Autor oder Organisation: Titel der Quelle</cite>, Jahr. <a href="#">Verweis</a></li></ol></section>
+  </main>
+  <script src="../Class/TableEditable.js"></script>
+  <script src="../Class/TableEnvironmentEditable.js"></script>
+  <script src="../Class/TableEditableOrdered.js"></script>
+  <script src="../Class/TableEditableExpansion.js"></script>
+  <script src="../Class/DialogConfirmation.js"></script>
+  <script src="../Class/HeaderMinimum.js"></script>
+</body>
+</html>

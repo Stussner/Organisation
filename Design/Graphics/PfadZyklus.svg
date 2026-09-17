@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 210" role="img" aria-labelledby="title desc">
+  <title id="title">Pfad, Kette und Zyklus</title><desc id="desc">Links eine offene lineare Kette, rechts ein geschlossener Zyklus.</desc>
+  <defs><style>.e{fill:none;stroke:#70f0ad;stroke-width:3}.n{fill:#123629;stroke:#9affc5;stroke-width:2}.t{fill:#edf9f1;font:600 14px 'Segoe UI',sans-serif}.s{fill:#b1d8c2;font:12px 'Segoe UI',sans-serif}</style></defs>
+  <text class="t" x="77" y="28">Pfad / Kette P₄</text><path class="e" d="M35 102H205"/><circle class="n" cx="35" cy="102" r="14"/><circle class="n" cx="92" cy="102" r="14"/><circle class="n" cx="149" cy="102" r="14"/><circle class="n" cx="205" cy="102" r="14"/>
+  <text class="t" x="328" y="28">Zyklus C₄</text><path class="e" d="M315 65H405V145H315Z"/><circle class="n" cx="315" cy="65" r="14"/><circle class="n" cx="405" cy="65" r="14"/><circle class="n" cx="405" cy="145" r="14"/><circle class="n" cx="315" cy="145" r="14"/>
+  <text class="s" x="47" y="145">offen · keine Wiederholung</text><text class="s" x="326" y="180">geschlossen</text>
+</svg>

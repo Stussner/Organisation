@@ -1,0 +1,30 @@
+- erstelle im selben verzeichnis VIER json dateien , mit den zu den html - dateien entsprechenden namen (Base.json, Access.json,  Workspace.json , backuptarget.json , neu : Documentation.html ), die die variabelnamen und deren werte aus den html dateien zunächst übernehmen.
+
+- im zweiten schritt sollen die html diese json - daten referenzieren. DIe json daten sollen in zukunft die eigentlich datenquelle für umgebungsdefinitionen sein, nicht die html. richte die html so ein, dass sie nicht manuell aktualisiert werden müssen (wenns geht)  sondern direkt beim aufruf aktualisiert werden. fallls das nicht geht  füge den html dokuementen einen button "Aktualisieren" mit impliziten speichern über browser hinzu
+
+- im dritten schritt füge eine 5. kategorie hinzu: 
+
+* erstelle neue Datei "Document.json" (+ document.html mit gleichen layout wie die anderen).
+
+
+----
+
+* Inhalt der Datei "Document.json" :
+   
+   * es soll in json Repräsentation eine übergeordnete Strukturebene "Category" existieren. Der Wert einer "Category" soll aus ein Wert der Liste "General", "Development" "Draft", "Release", "Test" sein. 
+  
+* Inhalt der Datei "Document.html" :
+    * Grundsätzlich sind ALLE Werte ALLER TABELLEN in "Document.html" ALS REFERENZ DER DATEI "Document.json"zu behandeln. 
+    * Alle "Category" - Werte aus "Document.jsobn" sollen als Überschrift in einer TabellenEditierbar.js repräsentiert werden.
+    * Kopfzeile für jede Tabelle : 
+        * "In" (Index)
+        * "Workspace" (Listboxauswahl der Inhalte der Datei "Workspace.json" , also REFERENZIERT) 
+        * "Design Source" als klickbares Textfeld mit anschl. dateiauswahlbox .In diesem Textfeld soll die Lokation einer Design Quell-Datei stehen, relativ zu dem gewählten workspace. Der Dateityp kann .css, js  oder html datei sein , aber auch ein beliebiger Dateityp ist erlaubt.
+    * Jede der "Category"-Tabellen kann beliebig viele zeilen (0..n) haben.  
+
+-------------------------------------------------------
+
+-
+JETZT beim erstellen vordefinieren:
+- Die zeile 1 von Tabelle "General" : Workspace =<primary>  designsource = aktives css-preset
+- Die zeile 2 von Tabelle "General" : Workspace =<primary>  designsource = js(oder html ?) datei, die den 7 -zeiligen HeaderMinimum respäsentiert 

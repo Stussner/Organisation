@@ -1,0 +1,26 @@
+<!--
+  Komponente: TableEnvironmentEditable
+  Basis: TableEnvironment.html
+  Zweck: Bearbeitbare Tabelle zur Definition einer Umgebung.
+  Verhalten: TableEnvironmentEditable.js
+-->
+<table class="table-environment-editable" data-table-environment-editable>
+  <thead>
+    <tr><th>Nr.</th><th>Bezeichner</th><th>Wert</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="table-environment-editable__number">
+        <span class="table-environment-editable__number-label">1</span>
+        <span class="table-environment-editable__controls" aria-label="Zeilenaktionen">
+          <button type="button" data-environment-action="add" aria-label="Zeile erstellen" title="Zeile erstellen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg></button>
+          <button type="button" data-environment-action="up" aria-label="Zeile nach oben verschieben" title="Zeile nach oben verschieben"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m0 0-5 5m5-5 5 5" /></svg></button>
+          <button type="button" data-environment-action="down" aria-label="Zeile nach unten verschieben" title="Zeile nach unten verschieben"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14m0 0-5-5m5 5 5-5" /></svg></button>
+          <button type="button" data-environment-action="delete" aria-label="Zeile löschen" title="Zeile löschen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 7h14M9 7V5h6v2m-7 3v8m4-8v8m4-8v8M7 7l1 14h8l1-14" /></svg></button>
+        </span>
+      </td>
+      <td contenteditable="true" spellcheck="true">Beispielbezeichner</td>
+      <td contenteditable="true" spellcheck="true">Beispielwert</td>
+    </tr>
+  </tbody>
+</table>
