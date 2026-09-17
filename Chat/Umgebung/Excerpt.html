@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Excerpt – Umgebung</title>
+  <link rel="stylesheet" href="../../Design/Style/Active.css">
+  <style>
+    body{padding:2rem;box-sizing:border-box}.excerpt{width:min(100%,72rem);margin:0 auto}.excerpt-entry{margin:1rem 0;padding:1rem 1.25rem}.excerpt-source{color:var(--green-illumination-text-muted)}.excerpt-content{padding:1rem;border:1px solid var(--green-illumination-border);border-radius:.3rem;background:var(--green-illumination-code)}.excerpt-content>:first-child{margin-top:0}.excerpt-content>:last-child{margin-bottom:0}@media(max-width:38rem){body{padding:.75rem}}
+  </style>
+</head>
+<body>
+  <main class="excerpt">
+    <header class="card"><h1>Excerpt – Umgebung</h1><p>Manuell ausgewählte Auszüge aus Chat-Originaldateien.</p></header>
+<nav class="card" aria-label="Auszugsinhaltsverzeichnis"><h2>Auszugsinhaltsverzeichnis</h2><ol><li><a href="#excerpt-1">Architektur + Rolle der Organization Base und projektspezifische Umgebungsdefinitionen</a></li><li><a href="#excerpt-2">Umgebungskonstanten + Erstfestlegung, JSON und Darstellungsgrenze</a></li><li><a href="#excerpt-3">Environment - Anwendungsfall + Lizenz, Zugriff und getrennte Speicherbereiche</a></li><li><a href="#excerpt-4">ExcerptClipboard(test) ist im neuen Process nicht definiert und wurde daher nicht ausgeführt.</a></li><li><a href="#excerpt-5">Testt2</a></li><li><a href="#excerpt-6">test3</a></li><li><a href="#excerpt-7">Schoenere Process Definition</a></li></ol></nav>
+    <article class="card excerpt-entry" id="excerpt-1">
+      <h2>Architektur</h2>
+      <p>Inhaltliche Kurzbeschreibung: Rolle der Organization Base und projektspezifische Umgebungsdefinitionen.</p>
+      <p class="excerpt-source">Quelle: <a href="../Chat/Original.html#message-120">Chat/Original.html, Beitrag 120</a></p>
+      <div class="excerpt-content"><h3>Architekturrolle der Organization Base</h3><p>Die Organization Base hat zwei Rollen, die klar voneinander getrennt bleiben müssen:</p><ol><li>Sie ist ein konkreter eigener Arbeitsraum.</li><li>Sie dient anderen Projekten als lesbare Referenz für deren Aufbau.</li></ol><p>Als eigener Arbeitsraum besitzt sie reale, eigene Umgebungsdefinitionen: ihren Projektnamen, Arbeitsraum, Sicherungsraum, ihre lokale Dokumentation sowie ihre eigenen Entwicklungsentscheidungen. Diese Angaben gelten konkret für <code>E:\Programmierung\Organisation</code>.</p><p>Als Referenz liefert sie anderen Projekten dagegen keine direkt zu übernehmende Umgebung. Sie beschreibt, welche Kategorien ein Projekt definieren muss und welche Regeln oder Processes dafür gelten können.</p><h3>Referenzieren und Redefinieren</h3><p>Ein konkretes Projekt — etwa OAHSI — referenziert die Organization Base nur lesend. Das bedeutet:</p><ul><li>Die Base wird nicht in das Projekt kopiert.</li><li>Dateien der Base werden nicht automatisch Bestandteil des Projekts.</li><li>Werte der Base werden nicht geerbt.</li><li>Das Projekt kann passende Regeln und Vorlagen lesen und verwenden.</li></ul><p>Das konkrete Projekt definiert seine Umgebung anschließend selbst neu: Projektname und Kennungen, Arbeitsraum, Sicherungsraum, Lokalisierung sowie weitere projekt- oder rechnerabhängige Angaben. Diese Definitionen sind neue, projektspezifische Definitionen derselben Kategorien.</p><h3>Der Architekturbruch bei Chat-Dateien</h3><p>Die Regeln zum Umgang mit Chats passen als Konstruktionsvorschrift in die Organization Base. Die daraus entstandenen Dateien unter <code>Documentation/Chat/&lt;Chatname&gt;/</code> — <code>Original.html</code>, <code>Extraction.html</code> und <code>Excerpt.html</code> — dokumentieren dagegen die Entwicklung der Organization Base selbst. Sie sind Entwicklungsartefakte eines konkreten Projekts, nicht Teil einer allgemeinen Konstruktionsvorschrift.</p><h3>Übergang und Zielbild</h3><p>Der jetzige Bestand kann vorerst in der Organization Base verbleiben und bei der Einrichtung anderer Projekte ignoriert werden. Das Zielbild trennt Organization Base mit Regeln, Vorlagen, Design und Processdefinitionen von einem Entwicklungsbereich der Organization Base mit ihren Chatverläufen, Entscheidungen, Extractions und Excerpts. Jedes konkrete Projekt führt eigene Umgebungsdefinitionen und eigene Chatdokumentation.</p></div>
+    </article>
+    <article class="card excerpt-entry" id="excerpt-2"><h2>Umgebungskonstanten</h2><p>Grund: Umgebungskonstanten.</p><p>Inhaltliche Kurzbeschreibung: TableEnvironment als Oberfläche, bewusste Erstfestlegung der Wurzel und JSON als technische Wahrheitsquelle.</p><p class="excerpt-source">Quelle: <a href="Original.html#message-14">Original.html, Beitrag 14</a></p><div class="excerpt-content"><p><code>TableEnvironment</code> eignet sich als Darstellung und Bearbeitungsoberfläche – aber nicht als Ursprung der Konstanten. Die aktuelle Komponente verändert nur die sichtbare Browser-Tabelle; sie speichert keine verlässliche Konfiguration.</p><pre><code>Erstfestlegung durch Eigentümer / Installation&#10;        ↓&#10;Environment/Configuration.json       ← technische Wahrheitsquelle&#10;        ↓&#10;Environment/Definition.html          ← lesbare Erklärung und Tabelle&#10;        ↓&#10;Tools und Processes                   ← lesen JSON, nicht die HTML-Tabelle</code></pre><p>Die unvermeidbare erste Konstante ist die Wurzel selbst: <code>OrganizationRoot = E:\Programmierung\Organisation</code>.</p><p>Sie kommt nicht aus der JSON-Datei. Sie wird beim Einrichten bewusst festgelegt, etwa durch Installation, Startparameter oder einen konfigurierten Starter. Erst danach kann <code>Environment/Configuration.json</code> angelegt werden.</p><pre><code class="language-json">{&#10;  "version": 1,&#10;  "owner": "Organization Base",&#10;  "roots": {&#10;    "workspace": { "value": "E:\\Programmierung\\Organisation", "origin": "initial-installation", "constant": true },&#10;    "backup": { "value": "E:\\Programmierung\\Sicherung\\Organisation", "origin": "initial-installation", "constant": true }&#10;  }&#10;}</code></pre><p><code>Definition.html</code> soll die JSON-Werte darstellen und erklären, nicht ein zweites, unabhängig pflegbares Wahrheitsregister bilden.</p></div></article>
+    <article class="card excerpt-entry" id="excerpt-3"><h2>Environment - Anwendungsfall</h2><p>Grund: Environment - Anwendungsfall.</p><p>Inhaltliche Kurzbeschreibung: Trennung von Lizenz, Programmberechtigung und Speicherbereichen für zwei Benutzer einer gemeinsamen Programminstanz.</p><p class="excerpt-source">Quelle: <a href="Original.html#message-15">Original.html, Beitrag 15</a></p><div class="excerpt-content"><p>Ein Benutzer X will Programm W nutzen und besitzt eine Lizenz. Administrator A installiert W an einem bestimmten Ort und gewährt X und dem ebenfalls lizenzierten Benutzer Y Zugriff auf W und die gemeinsame Umgebung <code>env-W</code>.</p><p>X besitzt außerdem <code>env-X</code>, Y besitzt <code>env-Y</code>. Beide bevorzugen ihren eigenen Bereich für W-bezogenes Material. <code>env-W</code> kann gemeinsam benutzt werden und schafft dadurch ein Risiko für beide. X kann Y gezielt Zugriff auf <code>env-X</code> gewähren; Y kann X gezielt Zugriff auf <code>env-Y</code> gewähren.</p><pre><code>A installiert W
+      │
+      ├── gewährt X Zugriff auf W
+      └── gewährt Y Zugriff auf W
+
+X ── eigener Bereich env-X
+Y ── eigener Bereich env-Y
+W ── gemeinsamer Programm-/Arbeitsbereich env-W</code></pre><p>Lizenz, Programmnutzung und Speicherzugriff sind getrennte Dinge. A verwaltet die Programminstanz und kann Zugriffe auf W beziehungsweise <code>env-W</code> vergeben, besitzt dadurch aber nicht automatisch <code>env-X</code> oder <code>env-Y</code>. X besitzt <code>env-X</code>, Y besitzt <code>env-Y</code>; die gemeinsame Umgebung <code>env-W</code> gehört der von A verwalteten Rechner- oder Programminstanz.</p></div></article>
+<article class="card excerpt-entry" id="excerpt-4"><h2>ExcerptClipboard(test) ist im neuen Process nicht definiert und wurde daher nicht ausgeführt.</h2><p class="excerpt-source">Quelle: <a href="Original.html#message-16">Original.html, Beitrag 16</a></p><div class="excerpt-content"><p><code>ExcerptClipboard(test)</code> ist im neuen Process nicht definiert und wurde daher nicht ausgeführt.</p><p>Kopiere zuerst den gewünschten Text mit <code>Strg+C</code> und rufe dann auf:</p><pre><code>ExcerptClipboard()</code></pre></div></article>
+<article class="card excerpt-entry" id="excerpt-5"><h2>Testt2</h2><p class="excerpt-source">Quelle: Zwischenablage, vom Nutzer kopiert</p><div class="excerpt-content"><pre>Der Zwischenablagetext wurde unverändert als neuer Auszug in [Excerpt.html](/E:/Programmierung/Organisation/Documentation/Chat/Umgebung/Excerpt.html) übernommen.
+Die Quellensuche ergab genau einen Treffer; der Auszug verweist auf [Original.html, Beitrag 16](/E:/Programmierung/Organisation/Documentation/Chat/Umgebung/Original.html). Es wurde keine Kurzbeschreibung, Zusammenfassung oder Umformulierung ergänzt.</pre></div></article>
+<article class="card excerpt-entry" id="excerpt-6"><h2>test3</h2><p class="excerpt-source">Quelle: Zwischenablage, vom Nutzer kopiert</p><div class="excerpt-content"><pre>film_20260730</pre></div></article>
+<article class="card excerpt-entry" id="excerpt-7"><h2>Schoenere Process Definition</h2><p class="excerpt-source">Quelle: <a href="Original.html#message-23">Original.html, Beitrag 23</a>; <a href="Original.html#message-22">Original.html, Beitrag 22</a></p><div class="excerpt-content"><pre>Ja. Vor einer Umstellung braucht es erst eine validierte Process-Definition; bisher wurde nichts geändert.
+
+Die Validierung müsste mindestens klären:
+
+- Ist ein Process nur eine lesbare Arbeitsanweisung oder auch eine formale, später ausführbare Spezifikation?
+- Welche festen Begriffe gelten überall: Aufruf, Parameter, Vorbedingung, Schritt, Abbruch, Ergebnis, Prüfung?
+- Wie werden Varianten eindeutig notiert, etwa `ExcerptClipboard()` gegenüber `ExcerptClipboard(&lt;Titel&gt;)`?
+- Wie wird festgelegt, welche Dateien gelesen, verändert oder garantiert nicht verändert werden?
+- Wie werden Fehlerfälle und der Zustand „ohne Änderung“ formal beschrieben?
+- Bleibt der Ablauf für Menschen lesbar, ohne dass Pseudocode eine tatsächliche Implementierung vortäuscht?
+
+Erst wenn diese Grundform definiert und an bestehenden Processes geprüft ist, sollte sie auf Dateien wie `Export.html` oder `ExcerptClipboard.html` angewendet werden.</pre><pre>Ja. Die jetzigen Processes sind Fließtext-Regeln; dadurch werden Reihenfolge, Abbruch und Varianten leicht übersehen.
+
+Besser wäre eine einheitliche, codeähnliche Form in HTML:
+
+```text
+Process ExcerptClipboard(Titel?)
+
+Eingaben:
+  Titel?              optional
+  Zwischenablage      erforderlich
+
+Vorbedingung:
+  Export(this) muss erfolgreich sein.
+
+Ablauf:
+  1. Export(this)
+  2. falls Titel fehlt: frage nach Titel
+  3. falls Titel leer: Abbruch ohne Änderung
+  4. lese Zwischenablage
+  5. falls leer: Abbruch ohne Änderung
+  6. suche exakten Text in Original.html
+  7. ergänze Excerpt.html
+  8. prüfe gespeicherten Text gegen Zwischenablage
+
+Ergebnis:
+  - ein neuer Auszug
+  - Titel nur aus Argument oder Nutzereingabe
+  - Inhalt exakt aus Zwischenablage
+
+Fehlerfälle:
+  - Export fehlgeschlagen → Abbruch
+  - kein Originaltreffer → Quelle „Zwischenablage, vom Nutzer kopiert“
+  - mehrere Treffer → letzter Treffer + Mehrdeutigkeitsvermerk
+```
+
+Sinnvoll wäre pro Process stets dieselbe Gliederung:
+
+1. Signatur / Aufrufvarianten  
+2. Eingaben und verwendete Dateien  
+3. Vorbedingungen  
+4. Ablaufnummern  
+5. Abbruch- und Fehlerfälle  
+6. Ergebnis / veränderte Dateien  
+7. Prüfungen  
+
+Das ist noch kein ausführbarer Code, aber eine präzise Spezifikation: Man kann jeden Schritt einzeln nachvollziehen und prüfen.</pre></div></article>
+</main>
+</body>
+</html>

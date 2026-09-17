@@ -1,0 +1,48 @@
++<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prozess – Auszüge</title>
+  <link rel="stylesheet" href="../../Design/Style/Active.css">
+</head>
+<body>
+  <main>
+    <h1>Prozess – Auszüge</h1>
+    <nav aria-label="Auszugsinhaltsverzeichnis">
+      <ol>
+        <li><a href="#excerpt-1">Test – Aktualisierung der Excerpt-Processes</a></li>
+        <li><a href="#excerpt-2">Test : Anmerkung – Einordnung der Process-Laufzeit</a></li>
+      </ol>
+    </nav>
+    <section id="excerpt-1">
+      <h2>Test</h2>
+      <p><strong>Kurzbeschreibung:</strong> Statusmeldung zur Aktualisierung der Excerpt-Processes.</p>
+      <p><strong>Quelle:</strong> <a href="Original.html#message-76">Markierte Antwort im Originalverlauf</a></p>
+      <pre>Aktualisiert und gespeichert:
+
+- Excerpt.html und ExcerptImport.html: Die Metadatenbezeichnung lautet nun durchgängig „Titel“, einschließlich der Aufrufsyntax und des Inhaltsverzeichnisses.
+- ExcerptDeleteLast.html: Die einzige Rückfrage lautet nun:
+  Soll der Auszug mit dem &lt;Titel&gt; gelöscht werden? (ja/nein)
+  Nur ja löst die Löschung aus.
+- ExcerptUndo.html: Übernimmt diese Ja/Nein-Rückfrage beim Aufruf von ExcerptDeleteLast().
+
+In den vier Excerpt-Process-Dateien gibt es keine verbliebene Verwendung von „Grund“.</pre>
+    </section>
+    <section id="excerpt-2">
+      <h2>Test : Anmerkung</h2>
+      <p><strong>Kurzbeschreibung:</strong> Einordnung der Laufzeit des vollständigen Chat-Exports und der vorherigen Verbindungsstörung.</p>
+      <p><strong>Quelle:</strong> <a href="Original.html#beitrag-200">Markierte Antwort im Originalverlauf</a></p>
+      <p>Das ist ein wichtiger Unterschied: Dann ist es wahrscheinlich kein grundsätzliches Codex- oder Instruktionsbasisproblem.</p>
+      <p>Hier im Task <strong>„Prozess“</strong> musste <code>Export(this)</code> 71 Turns mit 192 sichtbaren Beiträgen verarbeiten und daraus eine rund 175 KB große HTML-Datei erzeugen. Im Task <strong>„Dokumentationsdesign“</strong> war der sichtbare Verlauf vermutlich kleiner oder die Verbindung in diesem Moment stabiler.</p>
+      <p>Der frühere Abbruch mit „Verbindung wird wiederhergestellt“ war somit sehr wahrscheinlich eine Kombination aus:</p>
+      <ul>
+        <li>einem deutlich umfangreicheren Verlauf dieses Tasks,</li>
+        <li>dem aufwendigen vollständigen Export vor <code>ExcerptClipboard</code>,</li>
+        <li>einer zeitweiligen Verbindungsstörung.</li>
+      </ul>
+      <p>Der erfolgreiche Export zeigt jedenfalls: Die neue Instruktionsbasis ist nicht selbst die Ursache.</p>
+    </section>
+  </main>
+</body>
+</html>

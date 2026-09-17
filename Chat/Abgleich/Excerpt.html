@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abgleich – Excerpt</title>
+  <link rel="stylesheet" href="../../Design/Style/Active.css">
+</head>
+<body>
+  <main class="document">
+    <header class="card">
+      <h1>Abgleich – Auszüge</h1>
+    </header>
+    <section class="notice notice--info">
+      <h2>Auszugsinhaltsverzeichnis</h2>
+      <ol><li><a href="#c-plus-plus">C++</a></li></ol>
+    </section>
+    <section id="c-plus-plus" class="card">
+      <h2>C++</h2>
+      <p><strong>Kurzbeschreibung:</strong> C++-Repräsentation des dokumentierten Excerpt-Processes.</p>
+      <p><strong>Quelle:</strong> <a href="Original.html#message-70">Original.html, Beitrag 70</a></p>
+      <pre><code>#include &lt;expected&gt;
+#include &lt;optional&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+
+struct Annotation {
+    std::string id;
+};
+
+struct ExcerptRequest {
+    std::string titel;
+    std::optional&lt;std::string&gt; chatnameZiel;
+    std::vector&lt;Annotation&gt; anmerkungen;
+};
+
+enum class ExcerptError {
+    KeinTitel,
+    KeineAnmerkung,
+    AnmerkungNichtEindeutig,
+    ZielChatNichtEindeutig,
+    OriginalNichtAktualisierbar
+};
+
+class ExcerptProcess {
+public:
+    std::expected&lt;void, ExcerptError&gt; execute(ExcerptRequest request) {
+        if (request.titel.empty()) {
+            return std::unexpected(ExcerptError::KeinTitel);
+        }
+
+        if (request.anmerkungen.empty()) {
+            return std::unexpected(ExcerptError::KeineAnmerkung);
+        }
+
+        const auto zielChat = resolveTargetChat(request.chatnameZiel);
+        if (!zielChat) {
+            return std::unexpected(ExcerptError::ZielChatNichtEindeutig);
+        }
+
+        // Jede Anmerkung muss einen zusammenhängenden Bereich im aktuellen
+        // Chatverlauf eindeutig bezeichnen.
+        const auto bereiche = resolveAnnotations(request.anmerkungen);
+        if (!bereiche) {
+            return std::unexpected(ExcerptError::AnmerkungNichtEindeutig);
+        }
+
+        // Original.html wird ausschließlich zum Abgleich des sichtbaren
+        // aktuellen Chatverlaufs aktualisiert.
+        if (!updateOriginalHtml()) {
+            return std::unexpected(ExcerptError::OriginalNichtAktualisierbar);
+        }
+
+        const auto quellenanker = confirmSourceAnchors(*bereiche);
+
+        ExcerptSection auszug;
+        auszug.titel = request.titel;
+        auszug.kurzbeschreibung = describe(*bereiche);
+        auszug.inhalt = preserveOriginalMarkdown(*bereiche);
+        auszug.quellenLinks = createRelativeLinks(zielChat-&gt;excerptFile,
+                                                   quellenanker);
+
+        appendToExcerptFile(zielChat-&gt;excerptFile, auszug);
+        updateExcerptTableOfContents(zielChat-&gt;excerptFile);
+
+        return {};
+    }
+
+private:
+    struct ChatTarget {
+        std::string excerptFile;
+    };
+
+    struct ChatRange {};
+    struct SourceAnchor {};
+    struct ExcerptSection {
+        std::string titel;
+        std::string kurzbeschreibung;
+        std::string inhalt;
+        std::vector&lt;std::string&gt; quellenLinks;
+    };
+
+    std::optional&lt;ChatTarget&gt; resolveTargetChat(
+        const std::optional&lt;std::string&gt;&amp; chatnameZiel);
+
+    std::optional&lt;std::vector&lt;ChatRange&gt;&gt; resolveAnnotations(
+        const std::vector&lt;Annotation&gt;&amp; anmerkungen);
+
+    bool updateOriginalHtml();
+    std::vector&lt;SourceAnchor&gt; confirmSourceAnchors(
+        const std::vector&lt;ChatRange&gt;&amp; bereiche);
+
+    std::string preserveOriginalMarkdown(
+        const std::vector&lt;ChatRange&gt;&amp; bereiche);
+
+    std::string describe(const std::vector&lt;ChatRange&gt;&amp; bereiche);
+
+    std::vector&lt;std::string&gt; createRelativeLinks(
+        const std::string&amp; excerptFile,
+        const std::vector&lt;SourceAnchor&gt;&amp; quellenanker);
+
+    void appendToExcerptFile(const std::string&amp; excerptFile,
+                             const ExcerptSection&amp; auszug);
+
+    void updateExcerptTableOfContents(const std::string&amp; excerptFile);
+};</code></pre>
+    </section>
+  </main>
+</body>
+</html>
+

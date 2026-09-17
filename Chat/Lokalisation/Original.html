@@ -1,0 +1,486 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="codex-project-id" content="a58d908a-92c6-4bfc-b1ad-872cfca7a789"><meta name="codex-chat-id" content="019ff9ee-6854-7b60-a3f6-601b065a1280">
+  <title>Original – Lokalisation</title>
+  <link rel="stylesheet" href="../../Design/Style/Active.css">
+  <style>
+    body{padding:2rem;box-sizing:border-box}.original{width:min(100%,72rem);margin:0 auto}.metadata{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1rem;margin:0}.metadata dt{font-weight:700}.metadata dd{margin:0;overflow-wrap:anywhere}.chat-stream{display:flex;flex-direction:column;gap:1rem}.message{width:min(88%,56rem);box-sizing:border-box;padding:1rem 1.25rem;border-radius:var(--green-illumination-radius);box-shadow:var(--green-illumination-shadow)}.message.assistant{align-self:flex-start;background:linear-gradient(135deg,rgba(20,60,44,.95),rgba(10,34,25,.95));border:1px solid var(--green-illumination-border);border-left:.3rem solid var(--green-illumination-info)}.message.user{align-self:flex-end;background:linear-gradient(135deg,rgba(28,77,55,.95),rgba(12,47,34,.95));border:1px solid var(--green-illumination-border-light);border-right:.3rem solid var(--green-illumination-accent)}.message time{display:block;margin:0 0 .5rem;color:var(--green-illumination-text-muted);font-size:.8rem}.markdown>:first-child{margin-top:0}.markdown>:last-child{margin-bottom:0}.markdown p{margin:.75rem 0}.markdown ul,.markdown ol{padding-left:1.5rem}.markdown blockquote{margin:1rem 0;padding:.2rem 1rem;border-left:.3rem solid var(--green-illumination-info);color:var(--green-illumination-text-muted);background:rgba(7,21,17,.55)}.markdown hr{border:0;border-top:1px solid var(--green-illumination-border);margin:1rem 0}.markdown pre{white-space:pre-wrap;overflow-wrap:anywhere}.markdown pre code{padding:0;background:transparent;border:0}@media(max-width:38rem){body{padding:.75rem}.message{width:100%}}
+  </style>
+</head>
+<body data-codex-project-id="a58d908a-92c6-4bfc-b1ad-872cfca7a789" data-codex-chat-id="019ff9ee-6854-7b60-a3f6-601b065a1280">
+  <div class="original">
+    <header class="card"><h1>Original – Lokalisation</h1><p>Schreibgeschützter Export des sichtbaren Chatverlaufs.</p></header>
+    <section class="card" aria-label="Metadaten"><h2>Metadaten</h2><dl class="metadata"><dt>Codex-Projekt-ID</dt><dd>a58d908a-92c6-4bfc-b1ad-872cfca7a789</dd><dt>Codex-Projektname</dt><dd>Organization Base</dd><dt>Projekt-Arbeitsverzeichnis</dt><dd>E:\Programmierung\Organisation</dd><dt>Chat-ID</dt><dd>019ff9ee-6854-7b60-a3f6-601b065a1280</dd><dt>Chat-Titel</dt><dd>Lokalisation</dd><dt>Chat erstellt</dt><dd>2026-08-13T07:02:58.000Z</dd><dt>Exportzeitpunkt</dt><dd>2026-08-15T05:08:09.572Z</dd></dl></section>
+    <nav class="card" aria-label="Verlaufsinhaltsverzeichnis"><h2>Verlaufsinhaltsverzeichnis</h2><ol>
+<li><a href="#message-1">1. Lokalisation (tue nichts)</a></li>
+<li><a href="#message-2">2. Verstanden: „Lokalisation“. Ich nehme keine Änderungen vor.</a></li>
+<li><a href="#message-3">3. Bei der Erstellung eines neuen chats. Wer definiert den Namen des chats ? app oder du ?</a></li>
+<li><a href="#message-4">4. Den Namen definiert grundsätzlich die App bzw. der Nutzer: Beim Anlegen kann ein Titel vorgegeben werden, ande…</a></li>
+<li><a href="#message-5">5. ist es derzeit üblich in software entwicklung, irgendwelche (offizielle) datenbank als quelle zu nutzen</a></li>
+<li><a href="#message-6">6. Ich ordne „offizielle Datenbank“ als zentrale, verbindliche Datenquelle ein; üblich ist das je nach Anwendung …</a></li>
+<li><a href="#message-7">7. Ja, das ist üblich – aber nicht pauschal für jede Software. In der professionellen Entwicklung gibt es meist e…</a></li>
+<li><a href="#message-8">8. ah, interessant, wir sollten das auch tun ? ist das ein hoher aufwand? kosten ?</a></li>
+<li><a href="#message-9">9. Ich prüfe kurz den bisherigen Organisations-Kontext, damit ich nicht fälschlich von einer Anwendungsdatenbank …</a></li>
+<li><a href="#message-10">10. Für die Organisation Base würde ich derzeit keine Datenbank einführen. Der bisherige Stand ist eine schlanke, …</a></li>
+<li><a href="#message-11">11. ok. json finde ich nicht schlecht für so etwas (kompakt, schön lesbar)</a></li>
+<li><a href="#message-12">12. Ja, JSON passt dafür gut: kompakt, gut lesbar, ohne zusätzliche Infrastruktur und von praktisch jeder Programm…</a></li>
+<li><a href="#message-13">13. ich sortiere grade, was wir haben in oahsi nach organisation ...ich will auch ein bisschen was selbst machen ;…</a></li>
+<li><a href="#message-14">14. Das klingt gut. Du kannst die Inhalte zunächst einfach fachlich sortieren; ich halte mich dabei zurück. Wenn d…</a></li>
+<li><a href="#message-15">15. und dann wird aufgeräumt , löschen==optimierung macht spaß , dank der (OO)- Base</a></li>
+<li><a href="#message-16">16. Ja – wenn die Struktur klar ist, wird Löschen tatsächlich zur Optimierung: Redundanzen verschwinden, Zuständig…</a></li>
+<li><a href="#message-17">17. würdest du einen extra workflow festlegen wollen, der die lokalisationstabelle aktualisiert etwas wie : termin…</a></li>
+<li><a href="#message-18">18. Ja, ein schlanker, festgelegter Workflow wäre sinnvoll. Die Terminologie wäre dabei die fachliche Quelle; die …</a></li>
+<li><a href="#message-19">19. ok, inwiefern könnte die convention/Naming festlegung darin einwirken?</a></li>
+<li><a href="#message-20">20. Die Naming-Convention sollte der Terminologie vorgelagert sein: Sie legt fest, wie neue fachliche Begriffe geb…</a></li>
+<li><a href="#message-21">21. klingt gut</a></li>
+<li><a href="#message-22">22. Gut. Dann wäre die Reihenfolge klar: Naming-Convention → Terminologie → Lokalisation.</a></li>
+<li><a href="#message-23">23. vorab : Ich möchte alle html so gestalten, längere Auflistungen , z.b. in naming, terminoloy, lokalisiation u.…</a></li>
+<li><a href="#message-24">24. Ich setze das direkt um. Betroffen sind die HTML-Dateien unter Convention/Naming/ sowie neu Workflow/Localizat…</a></li>
+<li><a href="#message-25">25. Die bestehenden aktiven Dokumentseiten verwenden bereits das gemeinsame, druckbare Dokumentlayout. Ich behandl…</a></li>
+<li><a href="#message-26">26. Die beiden Seiten sind erstellt bzw. überarbeitet. Ich prüfe nun noch die HTML-Grundstruktur, die Tabellen und…</a></li>
+<li><a href="#message-27">27. Erledigt. Neu: Localization.html mit dem Workflow Naming-Convention → Terminologie → Überarbeitung → Lokalisat…</a></li>
+<li><a href="#message-28">28. der Dateinamen NamingConvetion stellt eine implizite Redundanz dar, die nicht erwünscht ist , wegen des Ordner…</a></li>
+<li><a href="#message-29">29. Du hast recht: Das Beispiel NamingConvention.html war fachlich falsch. Es wäre zugleich redundant zum Pfad Con…</a></li>
+<li><a href="#message-30">30. Die Redundanzregel ist ergänzt in Naming.html. Sie legt fest: Der Pfad liefert den Kontext; ein Kindname wiede…</a></li>
+<li><a href="#message-31">31. Response annotations: Each item contains text selected from an earlier Codex response and may include a user c…</a></li>
+<li><a href="#message-32">32. Ja. Das wäre ein expliziter Änderungs- und Strukturworkflow: Er legt fest, wann ich direkt arbeiten darf und w…</a></li>
+<li><a href="#message-33">33. den Ordner &quot;Language&quot; umbenennen in &quot;Localization&quot; (das &quot;z&quot; ist ok genauso wie das &quot;s&quot;?)</a></li>
+<li><a href="#message-34">34. Ich benenne Convention\Language nach Convention\Localization um und prüfe vorher die Verweise; alle Verweise a…</a></li>
+<li><a href="#message-35">35. Erledigt: Convention\Language wurde nach Convention\Localization umbenannt. Den einzigen gefundenen Verweis ha…</a></li>
+<li><a href="#message-36">36. die akutelle datei &#39;localization.html&quot; ist eine kopie von oahsi ... überarbeitung steht noch komplett aus. ich…</a></li>
+<li><a href="#message-37">37. Ja, klar. Die bestehende Datei ist dann eine OAHSI-Quelle bzw. ein übernommener Stand; die neue Datei wird die…</a></li>
+<li><a href="#message-38">38. (hehe, du scheinst wie eine KI zu denken ) ich meine eher sowas wie 1. rule,convention,... 2. definition</a></li>
+<li><a href="#message-39">39. Ah, verstanden: Du meinst die Art bzw. den Status der beiden Dokumente. Dann würde ich es so trennen: Localiza…</a></li>
+<li><a href="#message-40">40. ok, hätte ich auch genommen. und tabellen gestaltung für def. ist ok ?</a></li>
+<li><a href="#message-41">41. Ja, das ist passend. Eine Definition mit vielen wiederkehrenden Zuordnungen wird als Tabelle deutlich lesbarer…</a></li>
+<li><a href="#message-42">42. wie gesagt, def. tabelle soll editierbar sein. wenn bereit, Energie!</a></li>
+<li><a href="#message-43">43. Energie. Betroffen ist nur die neue Datei Definition.html. Ich erstelle dort eine eigenständige, im Browser di…</a></li>
+<li><a href="#message-44">44. Die editierbare Definitionstabelle ist angelegt und an TableEditable angebunden. Ich prüfe noch die relativen …</a></li>
+<li><a href="#message-45">45. Fertig: Definition.html enthält eine direkt im Browser editierbare TableEditable-Tabelle. Spalten: Nummerierun…</a></li>
+<li><a href="#message-46">46. Lokalisation erweitern für Spanisch (für etwa 1/5 der weltbevölkerung). In definition aufnehmen (nicht für all…</a></li>
+<li><a href="#message-47">47. Ich lade zunächst die jetzt verbindliche Instruktionsbasis in der vorgegebenen Reihenfolge. Anschließend ergän…</a></li>
+<li><a href="#message-48">48. Die Instruktionsbasis ist geladen. Ich ändere nur Definition.html: Ich ergänze die Spalte es-ES, vervollständi…</a></li>
+<li><a href="#message-49">49. Die 18 Begriffe und es-ES sind eingetragen. Ich prüfe jetzt noch Spalten- und Zeilenzahl sowie, dass die CodeB…</a></li>
+<li><a href="#message-50">50. Spanisch (es-ES) ist in Definition.html ergänzt. Die Tabelle enthält nun 19 Zeilen: den bestehenden Definition…</a></li>
+<li><a href="#message-51">51. die definition immer alphabetisch sortieren , anhand von US-englisch.</a></li>
+<li><a href="#message-52">52. Ich passe ausschließlich Definition.html an: Die Definitionszeilen werden nach en-US alphabetisch sortiert und…</a></li>
+<li><a href="#message-53">53. Die Datei wurde seit dem letzten Stand verändert; deshalb habe ich die Sortierung noch nicht angewendet. Ich l…</a></li>
+<li><a href="#message-54">54. Erledigt: Definition.html ist nun dauerhaft als nach en-US alphabetisch sortierte Tabelle festgelegt. Die 19 E…</a></li>
+<li><a href="#message-55">55. oh, das ist aber schön, in BlueDark. was wäre die nächst häufig verwendete Sprache ?</a></li>
+<li><a href="#message-56">56. Das hängt davon ab, ob wir Muttersprachler oder alle Sprecher zählen. Ich prüfe die aktuelle, belastbare Einor…</a></li>
+<li><a href="#message-57">57. Als nächste Sprache würde ich Mandarin-Chinesisch ergänzen, nicht Hindi: Englisch ist bereits vorhanden, Manda…</a></li>
+<li><a href="#message-58">58. alles utf-16-kompatibel?</a></li>
+<li><a href="#message-59">59. Ja. Alle bisherigen Einträge sind Unicode-Zeichen und damit problemlos UTF-16-kompatibel – auch spanische Akze…</a></li>
+<li><a href="#message-60">60. welche o.g. sprachen brauchen 16bit?</a></li>
+<li><a href="#message-61">61. Keine dieser Sprachen braucht zwingend UTF-16. UTF-8 kann alle darstellen. Bei UTF-16 gilt: Englisch, Deutsch,…</a></li>
+<li><a href="#message-62">62. als erschwerung der lokalisation kommt hinzu , daß die &quot;Bündigkeit&quot; und Richtung der schrift variiert. Das mac…</a></li>
+<li><a href="#message-63">63. Genau. Lokalisation betrifft nicht nur Wörter, sondern auch Layout und Schreibsystem. Neben unterschiedlichen …</a></li>
+<li><a href="#message-64">64. aufnahme : Guide (Leitfaden)</a></li>
+<li><a href="#message-65">65. Ich ergänze in Definition.html den Begriff Guide / „Leitfaden“ mit leerem CodeBezeichner. Entsprechend der fes…</a></li>
+<li><a href="#message-66">66. Die Sortierung und Nummerierung sind korrekt. Die kurze Inhaltsprüfung meldet beim spanischen Akzent einen Ver…</a></li>
+<li><a href="#message-67">67. Guide / „Leitfaden“ ist aufgenommen: en-US, en-GB: Guide de-DE: Leitfaden es-ES: Guía Die Tabelle umfasst nun …</a></li>
+<li><a href="#message-68">68. entferne die hinweis und aktion aus der tabelle. entferne Agentenanweisung aus definition.html, da sie nur pro…</a></li>
+<li><a href="#message-69">69. Ich ändere nur Definition.html: Die provisorische Agentenanweisung wird vollständig entfernt; die Spalten „Hin…</a></li>
+<li><a href="#message-70">70. Die beiden Spalten und die provisorische Anweisung sind entfernt. Ich prüfe jetzt, dass jede Datenzeile die ve…</a></li>
+<li><a href="#message-71">71. Erledigt in Definition.html: Die provisorische Agentenanweisung ist entfernt. Die Spalten „Hinweis“ und „Aktio…</a></li>
+<li><a href="#message-72">72. entferne eintrag 11 (localization.definition)</a></li>
+<li><a href="#message-73">73. Ich entferne aus Definition.html den Eintrag localization.definition und nummeriere die folgenden Einträge neu…</a></li>
+<li><a href="#message-74">74. Entfernt. Die Definition enthält jetzt 19 Einträge und ist wieder fortlaufend nummeriert.</a></li>
+    </ol></nav>
+    <main class="chat-stream">
+<article class="message user" id="message-1" data-turn-id="019ff9ef-5325-7a92-a020-3150349de210" aria-label="Nutzerbeitrag 1">
+  <time datetime="2026-08-13T07:03:59.000Z">2026-08-13T07:03:59.000Z</time>
+  <div class="markdown"><p>Lokalisation</p>
+<hr>
+<p>(tue nichts)</p></div>
+</article>
+<article class="message assistant" id="message-2" data-turn-id="019ff9ef-5325-7a92-a020-3150349de210" aria-label="Assistentenbeitrag 2">
+  <time datetime="2026-08-13T07:03:59.000Z">2026-08-13T07:03:59.000Z</time>
+  <div class="markdown"><p>Verstanden: „Lokalisation“. Ich nehme keine Änderungen vor.</p></div>
+</article>
+<article class="message user" id="message-3" data-turn-id="019ff9f7-6674-7a11-9a17-cc156c4d95a1" aria-label="Nutzerbeitrag 3">
+  <time datetime="2026-08-13T07:12:48.000Z">2026-08-13T07:12:48.000Z</time>
+  <div class="markdown"><p>Bei der Erstellung eines neuen chats. Wer definiert den Namen des chats ? app oder du ?</p></div>
+</article>
+<article class="message assistant" id="message-4" data-turn-id="019ff9f7-6674-7a11-9a17-cc156c4d95a1" aria-label="Assistentenbeitrag 4">
+  <time datetime="2026-08-13T07:12:48.000Z">2026-08-13T07:12:48.000Z</time>
+  <div class="markdown"><p>Den Namen definiert grundsätzlich die App bzw. der Nutzer: Beim Anlegen kann ein Titel vorgegeben werden, andernfalls erzeugt die App meist einen automatischen Titel aus dem Gesprächsinhalt.</p>
+<p>Ich kann einen Chat nur dann umbenennen, wenn du mich ausdrücklich darum bittest; ich entscheide den Namen nicht eigenständig.</p></div>
+</article>
+<article class="message user" id="message-5" data-turn-id="019ff9fd-5f50-7c73-b5d8-0cac716966ae" aria-label="Nutzerbeitrag 5">
+  <time datetime="2026-08-13T07:19:19.000Z">2026-08-13T07:19:19.000Z</time>
+  <div class="markdown"><p>ist es derzeit üblich in software entwicklung, irgendwelche (offizielle) datenbank als quelle zu nutzen</p></div>
+</article>
+<article class="message assistant" id="message-6" data-turn-id="019ff9fd-5f50-7c73-b5d8-0cac716966ae" aria-label="Assistentenbeitrag 6">
+  <time datetime="2026-08-13T07:19:19.000Z">2026-08-13T07:19:19.000Z</time>
+  <div class="markdown"><p>Ich ordne „offizielle Datenbank“ als zentrale, verbindliche Datenquelle ein; üblich ist das je nach Anwendung sehr unterschiedlich.</p></div>
+</article>
+<article class="message assistant" id="message-7" data-turn-id="019ff9fd-5f50-7c73-b5d8-0cac716966ae" aria-label="Assistentenbeitrag 7">
+  <time datetime="2026-08-13T07:19:19.000Z">2026-08-13T07:19:19.000Z</time>
+  <div class="markdown"><p>Ja, das ist üblich – aber nicht pauschal für jede Software.</p>
+<p>In der professionellen Entwicklung gibt es meist eine zentrale, verbindliche Quelle für Daten, etwa eine Datenbank, ein externes Fachsystem oder eine offizielle API. Beispiele sind Benutzerkonten, Bestellungen, Produktdaten oder gesetzliche Referenzdaten. Die Anwendung soll diese Daten nicht in mehreren unabhängigen Kopien führen.</p>
+<p>Wichtig ist die Unterscheidung:</p>
+<ul><li>Die Datenbank ist oft die technische Hauptquelle („Single Source of Truth“).</li><li>Bei externen offiziellen Daten, etwa Behörden-, Norm-, Wetter- oder Geodaten, ist die offizielle API bzw. Veröffentlichung die Quelle.</li><li>Für kleine lokale Programme oder Prototypen reichen manchmal Dateien wie JSON, CSV oder Konfigurationsdateien statt einer Datenbank.</li></ul>
+<p>„Offiziell“ bedeutet also meist: Es ist klar festgelegt, welche Stelle Daten pflegt und welche Datenkopie verbindlich ist.</p></div>
+</article>
+<article class="message user" id="message-8" data-turn-id="019ff9fe-fca0-7221-93a0-2ee652990d3c" aria-label="Nutzerbeitrag 8">
+  <time datetime="2026-08-13T07:21:05.000Z">2026-08-13T07:21:05.000Z</time>
+  <div class="markdown"><p>ah, interessant,  <br>wir sollten das auch tun ?<br>ist das ein hoher aufwand?<br>kosten ?</p></div>
+</article>
+<article class="message assistant" id="message-9" data-turn-id="019ff9fe-fca0-7221-93a0-2ee652990d3c" aria-label="Assistentenbeitrag 9">
+  <time datetime="2026-08-13T07:21:05.000Z">2026-08-13T07:21:05.000Z</time>
+  <div class="markdown"><p>Ich prüfe kurz den bisherigen Organisations-Kontext, damit ich nicht fälschlich von einer Anwendungsdatenbank statt von der Organisation Base ausgehe.</p></div>
+</article>
+<article class="message assistant" id="message-10" data-turn-id="019ff9fe-fca0-7221-93a0-2ee652990d3c" aria-label="Assistentenbeitrag 10">
+  <time datetime="2026-08-13T07:21:05.000Z">2026-08-13T07:21:05.000Z</time>
+  <div class="markdown"><p>Für die <strong>Organisation Base</strong> würde ich derzeit keine Datenbank einführen. Der bisherige Stand ist eine schlanke, dateibasierte Dokumentationsstruktur; dafür wäre eine Datenbank zusätzlicher Betriebsaufwand ohne klaren Nutzen.</p>
+<p>Sinnvoll würde sie erst, wenn wir regelmäßig strukturierte, miteinander verknüpfte und abfragbare Daten pflegen müssen, etwa Projekte, Regeln, Zuständigkeiten, Versionen oder Chat-Verwaltungsdaten – und diese nicht mehr zuverlässig als Dateien verwaltet werden können.</p>
+<p>Der Aufwand wäre dann nicht primär die Datenbank selbst, sondern:</p>
+<ul><li>Datenmodell festlegen und pflegen</li><li>Eingabemöglichkeiten und Abfragen bauen</li><li>Sicherung, Zugriffsrechte und Migrationen regeln</li><li>Verantwortlichkeit für Datenqualität klären</li></ul>
+<p>Kosten: Eine lokale, eingebettete Datenbank wie SQLite verursacht normalerweise keine Lizenzkosten. Bei einem Server oder Cloud-Angebot entstehen laufende Kosten und Verwaltungsaufwand. Für den jetzigen Dokumentationszweck wäre das wahrscheinlich unverhältnismäßig.</p>
+<p>Meine Empfehlung: dateibasiert bleiben und erst bei einem konkreten, wiederkehrenden Datenproblem eine kleine lokale Datenbank prüfen.</p></div>
+</article>
+<article class="message user" id="message-11" data-turn-id="019ffa00-ca08-7970-89fe-0f9de8aec452" aria-label="Nutzerbeitrag 11">
+  <time datetime="2026-08-13T07:23:03.000Z">2026-08-13T07:23:03.000Z</time>
+  <div class="markdown"><p>ok.<br>json finde ich nicht schlecht für so etwas (kompakt, schön lesbar)</p></div>
+</article>
+<article class="message assistant" id="message-12" data-turn-id="019ffa00-ca08-7970-89fe-0f9de8aec452" aria-label="Assistentenbeitrag 12">
+  <time datetime="2026-08-13T07:23:03.000Z">2026-08-13T07:23:03.000Z</time>
+  <div class="markdown"><p>Ja, JSON passt dafür gut: kompakt, gut lesbar, ohne zusätzliche Infrastruktur und von praktisch jeder Programmiersprache leicht verarbeitbar.</p>
+<p>Für kleine strukturierte Bestände wäre es ein sinnvoller Zwischenschritt zwischen reinem Fließtext und einer Datenbank. Wichtig wäre nur, pro Datenbereich eine eindeutige Datei und ein stabiles Schema festzulegen – damit nicht mehrere widersprüchliche Datenstände entstehen.</p></div>
+</article>
+<article class="message user" id="message-13" data-turn-id="019ffa02-aeef-7110-a587-4ff255eacdfe" aria-label="Nutzerbeitrag 13">
+  <time datetime="2026-08-13T07:25:07.000Z">2026-08-13T07:25:07.000Z</time>
+  <div class="markdown"><p>ich sortiere grade, was wir haben in oahsi nach organisation ...ich will auch ein bisschen was selbst machen ;)</p></div>
+</article>
+<article class="message assistant" id="message-14" data-turn-id="019ffa02-aeef-7110-a587-4ff255eacdfe" aria-label="Assistentenbeitrag 14">
+  <time datetime="2026-08-13T07:25:07.000Z">2026-08-13T07:25:07.000Z</time>
+  <div class="markdown"><p>Das klingt gut. Du kannst die Inhalte zunächst einfach fachlich sortieren; ich halte mich dabei zurück.</p>
+<p>Wenn du später Unterstützung möchtest, kann ich gezielt nur prüfen, ob etwas fehlt, doppelt ist oder besser als Dokument, JSON-Datei oder Datenbankbestand passt.</p></div>
+</article>
+<article class="message user" id="message-15" data-turn-id="019ffa04-9bac-7600-8081-a10ded38cfc9" aria-label="Nutzerbeitrag 15">
+  <time datetime="2026-08-13T07:27:13.000Z">2026-08-13T07:27:13.000Z</time>
+  <div class="markdown"><p>und dann  wird aufgeräumt , löschen==optimierung  macht spaß , dank der (OO)- Base</p></div>
+</article>
+<article class="message assistant" id="message-16" data-turn-id="019ffa04-9bac-7600-8081-a10ded38cfc9" aria-label="Assistentenbeitrag 16">
+  <time datetime="2026-08-13T07:27:13.000Z">2026-08-13T07:27:13.000Z</time>
+  <div class="markdown"><p>Ja – wenn die Struktur klar ist, wird Löschen tatsächlich zur Optimierung: Redundanzen verschwinden, Zuständigkeiten werden eindeutiger und die Base bleibt überschaubar.</p>
+<p>Wichtig ist nur, zwischen wirklich überflüssigen Dateien und noch benötigten Referenzen, Sicherungen oder historischen Ständen zu unterscheiden. Dann kann Aufräumen sehr befriedigend sein.</p></div>
+</article>
+<article class="message user" id="message-17" data-turn-id="019ffa46-03b8-7b30-93c9-b9e6c1c1aae9" aria-label="Nutzerbeitrag 17">
+  <time datetime="2026-08-13T08:38:40.000Z">2026-08-13T08:38:40.000Z</time>
+  <div class="markdown"><p>würdest du einen extra workflow festlegen wollen,<br>der  die lokalisationstabelle aktualisiert etwas wie :</p>
+<p>terminology ----[überarbeitung]]-----&gt; localization</p>
+<p>(wg. der ständigen ereiterung der der terminologie)</p></div>
+</article>
+<article class="message assistant" id="message-18" data-turn-id="019ffa46-03b8-7b30-93c9-b9e6c1c1aae9" aria-label="Assistentenbeitrag 18">
+  <time datetime="2026-08-13T08:38:40.000Z">2026-08-13T08:38:40.000Z</time>
+  <div class="markdown"><p>Ja, ein schlanker, festgelegter Workflow wäre sinnvoll. Die Terminologie wäre dabei die fachliche Quelle; die Lokalisation wird daraus abgeleitet und bleibt dadurch konsistent.</p>
+<pre><code class="language-text">Terminology
+    │
+    └── Überarbeitung / neue Begriffe
+            │
+            ▼
+     Localization-Tabelle aktualisieren
+            │
+            ├── neue Schlüssel und Übersetzungen ergänzen
+            ├── geänderte Benennungen prüfen
+            └── nicht mehr verwendete Einträge markieren oder entfernen</code></pre>
+<p>Ich würde ihn bewusst nicht automatisieren, solange die Terminologie noch häufig inhaltlich wächst. Besser: Nach jeder gebündelten Terminologie-Überarbeitung kurz die Lokalisation abgleichen. So werden keine unfertigen Begriffe vorschnell als feste UI-Texte übernommen.</p>
+<p>Als Regel könnte genügen: „Jede bestätigte Änderung der Terminologie wird vor der nächsten Veröffentlichung in der Lokalisation nachvollzogen.“</p></div>
+</article>
+<article class="message user" id="message-19" data-turn-id="019ffa49-6011-7020-a6ba-3115ab24a0d4" aria-label="Nutzerbeitrag 19">
+  <time datetime="2026-08-13T08:42:20.000Z">2026-08-13T08:42:20.000Z</time>
+  <div class="markdown"><p>ok, inwiefern könnte die convention/Naming festlegung darin einwirken?</p></div>
+</article>
+<article class="message assistant" id="message-20" data-turn-id="019ffa49-6011-7020-a6ba-3115ab24a0d4" aria-label="Assistentenbeitrag 20">
+  <time datetime="2026-08-13T08:42:20.000Z">2026-08-13T08:42:20.000Z</time>
+  <div class="markdown"><p>Die Naming-Convention sollte der Terminologie vorgelagert sein: Sie legt fest, wie neue fachliche Begriffe gebildet und geschrieben werden. Dadurch entstehen in der Lokalisation keine wechselnden Varianten desselben Begriffs.</p>
+<pre><code class="language-text">Naming-Convention
+        │
+        ▼
+Terminologie festlegen oder überarbeiten
+        │
+        ▼
+Lokalisation aktualisieren</code></pre>
+<p>Beispiel: Die Convention entscheidet, ob ein Bereich überall „Benutzerverwaltung“, „Nutzerverwaltung“ oder „Account-Verwaltung“ heißt. Die Terminologie hält die gewählte Bezeichnung mit Bedeutung fest. Die Lokalisation überträgt sie dann in die einzelnen Sprachen.</p>
+<p>Für technische Schlüssel sollte die Convention ebenfalls Regeln setzen, zum Beispiel:</p>
+<pre><code class="language-json">{
+  &quot;userManagement.title&quot;: &quot;Benutzerverwaltung&quot;
+}</code></pre>
+<p>Dann bliebe der Schlüssel stabil, auch wenn sich der sichtbare deutsche Text später leicht ändert.</p></div>
+</article>
+<article class="message user" id="message-21" data-turn-id="019ffa4a-ffc1-7451-8c43-c95275d94b1b" aria-label="Nutzerbeitrag 21">
+  <time datetime="2026-08-13T08:44:07.000Z">2026-08-13T08:44:07.000Z</time>
+  <div class="markdown"><p>klingt gut</p></div>
+</article>
+<article class="message assistant" id="message-22" data-turn-id="019ffa4a-ffc1-7451-8c43-c95275d94b1b" aria-label="Assistentenbeitrag 22">
+  <time datetime="2026-08-13T08:44:07.000Z">2026-08-13T08:44:07.000Z</time>
+  <div class="markdown"><p>Gut. Dann wäre die Reihenfolge klar: Naming-Convention → Terminologie → Lokalisation.</p></div>
+</article>
+<article class="message user" id="message-23" data-turn-id="019ffa65-385a-7990-92cc-04169db55a35" aria-label="Nutzerbeitrag 23">
+  <time datetime="2026-08-13T09:12:45.000Z">2026-08-13T09:12:45.000Z</time>
+  <div class="markdown"><p>vorab : Ich möchte alle html so gestalten, längere Auflistungen , z.b. in naming, terminoloy, lokalisiation u.ä., als tabelle dargestalt sind. das ist eher eine designs/structure - definition, oder?</p>
+<hr>
+<ul><li>Convention/Naming : ergänze Regel : &quot;Substantiv&quot;  bevorzugen, allerdings auch verb und adjektiv zulassen, wenn es eher angemessen erscheint bzw. es kein gut klingendes Substantiv gibt (z.b. &quot;Active)</li><li>Convention/Naming : ergänze Regel : Dateinamen, Verzeichnisnamen : Kleinschreibung, nur erster Buchstabe groß</li><li>Convention/Naming : ergänze Regel : Dateinamen, Verzeichnisnamen : keine Leerzeichen, Sonderzeichen, utf(8)</li><li>Convention/Naming : ergänze Regel : Dateinamen , Verzeichnisnamen: Abtrennung nur mit &quot;_&quot; statt &quot;-&quot;. Nach Abtrennung erst Buchstabe groß </li><li>Convention/Naming : sortiere alle Regeln, so dass sinngemäß aufeinander aufbauen</li></ul>
+<hr>
+<ul><li>alle doku-designs &quot;Active&quot; sind hiermit anzuwenden.</li></ul>
+<hr>
+<ul><li>erstelle unter workflow/localization/ : &quot;Localization.html&quot;</li><li>überarbeite convention/naming/*.html</li></ul></div>
+</article>
+<article class="message assistant" id="message-24" data-turn-id="019ffa65-385a-7990-92cc-04169db55a35" aria-label="Assistentenbeitrag 24">
+  <time datetime="2026-08-13T09:12:45.000Z">2026-08-13T09:12:45.000Z</time>
+  <div class="markdown"><p>Ich setze das direkt um. Betroffen sind die HTML-Dateien unter <code>Convention/Naming/</code> sowie neu <code>Workflow/Localization/Localization.html</code>; außerdem prüfe ich die vorhandenen aktiven Dokumentationsdesigns und wende deren Vorgaben an. Die längeren fachlichen Listen gestalte ich als Tabellen und ordne die Naming-Regeln in eine nachvollziehbare Reihenfolge.</p></div>
+</article>
+<article class="message assistant" id="message-25" data-turn-id="019ffa65-385a-7990-92cc-04169db55a35" aria-label="Assistentenbeitrag 25">
+  <time datetime="2026-08-13T09:12:45.000Z">2026-08-13T09:12:45.000Z</time>
+  <div class="markdown"><p>Die bestehenden aktiven Dokumentseiten verwenden bereits das gemeinsame, druckbare Dokumentlayout. Ich behandle die Tabellenforderung als verbindliche Strukturvorgabe für längere Listen; im aktuellen Auftrag ändere ich jedoch nur Naming und die neue Workflow-Seite, nicht Terminology oder die bestehende Sprachkonvention. Die neue Naming-Regel präzisiere ich als: pro durch <code>_</code> getrenntem Namensbestandteil ist nur der erste Buchstabe groß, die übrigen Buchstaben sind klein (<code>Naming_Convention.html</code>).</p></div>
+</article>
+<article class="message assistant" id="message-26" data-turn-id="019ffa65-385a-7990-92cc-04169db55a35" aria-label="Assistentenbeitrag 26">
+  <time datetime="2026-08-13T09:12:45.000Z">2026-08-13T09:12:45.000Z</time>
+  <div class="markdown"><p>Die beiden Seiten sind erstellt bzw. überarbeitet. Ich prüfe nun noch die HTML-Grundstruktur, die Tabellen und ob nur die beauftragten Inhalte geändert wurden.</p></div>
+</article>
+<article class="message assistant" id="message-27" data-turn-id="019ffa65-385a-7990-92cc-04169db55a35" aria-label="Assistentenbeitrag 27">
+  <time datetime="2026-08-13T09:12:45.000Z">2026-08-13T09:12:45.000Z</time>
+  <div class="markdown"><p>Erledigt.</p>
+<ul><li>Neu: <a href="/E:/Programmierung/Organisation/Workflow/Localization/Localization.html">Localization.html</a> mit dem Workflow <code>Naming-Convention → Terminologie → Überarbeitung → Lokalisation</code> und einer Ablauftabelle.</li><li>Überarbeitet: <a href="/E:/Programmierung/Organisation/Convention/Naming/Naming.html">Naming.html</a> mit einer sinngemäß sortierten Regelübersicht als Tabelle.</li><li>Ergänzt sind Wortart-Präferenz, ASCII-kompatible Namen ohne Leer- oder Sonderzeichen, <code>_</code> als alleinige Abtrennung und die Schreibweise <code>Naming_Convention.html</code>.</li></ul>
+<p>Die Groß-/Kleinschreibregel habe ich konkret als „je <code>_</code>-Bestandteil erster Buchstabe groß, übrige klein“ umgesetzt. Beide Dateien sind gültiges UTF-8-HTML ohne externe Abhängigkeiten.</p></div>
+</article>
+<article class="message user" id="message-28" data-turn-id="019ffa77-a3e5-7e30-8a86-b7ca7e604489" aria-label="Nutzerbeitrag 28">
+  <time datetime="2026-08-13T09:32:52.000Z">2026-08-13T09:32:52.000Z</time>
+  <div class="markdown"><ul><li>der Dateinamen Naming_Convetion stellt eine implizite Redundanz dar, die nicht erwünscht ist , wegen des Ordners &quot;Convention\Naming.html&quot;. Bitte die Regel ergänzen.</li><li>außerdem widerspricht er der Naming-Regel für Sortierungen : Abstraktion --&gt; Konkretisierung&quot;. </li></ul>
+<p>  Wir brauchen klarere Regeln  für solche Dinge. Ich bin unsicher, wie damit umzugehen ist. (z.b. wäre mir vor einer Änderung des Dateinames für Naming.html eine abfrage vorher lieber gewesen, andererseits sollst du ja  mitdenken und selbstständig arbeiten). Was schlägst du ergänzungsweise/anpassungsweise vor, um so etwas eindeutig festzulegen ?</p></div>
+</article>
+<article class="message assistant" id="message-29" data-turn-id="019ffa77-a3e5-7e30-8a86-b7ca7e604489" aria-label="Assistentenbeitrag 29">
+  <time datetime="2026-08-13T09:32:52.000Z">2026-08-13T09:32:52.000Z</time>
+  <div class="markdown"><p>Du hast recht: Das Beispiel <code>Naming_Convention.html</code> war fachlich falsch. Es wäre zugleich redundant zum Pfad <code>Convention/Naming/</code> und kehrt die Abstraktionsrichtung um. Ich ändere ausschließlich <a href="/E:/Programmierung/Organisation/Convention/Naming/Naming.html">Naming.html</a>: Das Beispiel wird entfernt und eine Regel zur Kontextvererbung aus dem Pfad ergänzt. Dateien oder Verzeichnisse benenne ich nicht um.</p></div>
+</article>
+<article class="message assistant" id="message-30" data-turn-id="019ffa77-a3e5-7e30-8a86-b7ca7e604489" aria-label="Assistentenbeitrag 30">
+  <time datetime="2026-08-13T09:32:52.000Z">2026-08-13T09:32:52.000Z</time>
+  <div class="markdown"><p>Die Redundanzregel ist ergänzt in <a href="/E:/Programmierung/Organisation/Convention/Naming/Naming.html">Naming.html</a>. Sie legt fest: Der Pfad liefert den Kontext; ein Kindname wiederholt ihn nicht ohne zusätzlichen Unterschied. Damit ist <code>Convention/Naming/Naming.html</code> korrekt, <code>Naming_Convention.html</code> dagegen nicht.</p>
+<p>Auch die Abstraktionsrichtung ist jetzt ausdrücklich: Pfad von allgemein zu konkret.</p>
+<p>Für die gewünschte Balance zwischen Mitdenken und Rückfrage schlage ich diese zusätzliche Arbeitsregel vor:</p>
+<ul><li>Inhaltliche Anpassungen an einer ausdrücklich genannten Datei darf ich direkt umsetzen.</li><li>Umbenennen, Verschieben und Löschen gelten immer als Strukturänderungen. Ich nenne vorher exakt Quelle, Ziel, betroffene Verweise und den Grund – und warte auf deine Freigabe.</li><li>Wenn ich eine Konsistenzverbesserung nur aus einer Regel ableite, aber du sie nicht ausdrücklich beauftragt hast, schlage ich sie vor, ändere aber nichts.</li></ul>
+<p>So kann ich Widersprüche erkennen und konkret vorbereiten, ohne selbstständig bestehende Pfade oder Strukturen umzubauen.</p></div>
+</article>
+<article class="message user" id="message-31" data-turn-id="019ffa7c-1e16-7b11-b601-a38315975eba" aria-label="Nutzerbeitrag 31">
+  <time datetime="2026-08-13T09:37:46.000Z">2026-08-13T09:37:46.000Z</time>
+  <div class="markdown"><h1>Response annotations:</h1>
+<p>Each item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive <code>:codex-annotation{index=&quot;N&quot;}</code>, where N is its one-based array position (for example, <code>:codex-annotation{index=&quot;1&quot;}</code>). Do not use unstructured annotation labels.<br>&lt;response-annotations&gt;<br>[{&quot;text&quot;:&quot;Für die gewünschte Balance zwischen Mitdenken und Rückfrage schlage ich diese zusätzliche Arbeitsregel vor:Inhaltliche Anpassungen an einer ausdrücklich genannten Datei darf ich direkt umsetzen.Umbenennen, Verschieben und Löschen gelten immer als Strukturänderungen. Ich nenne vorher exakt Quelle, Ziel, betroffene Verweise und den Grund – und warte auf deine Freigabe.Wenn ich eine Konsistenzverbesserung nur aus einer Regel ableite, aber du sie nicht ausdrücklich beauftragt hast, schlage ich sie vor, ändere aber nichts.&quot;,&quot;annotation&quot;:&quot;Das wäre ein (expliziter) workflow?&quot;}]<br>&lt;/response-annotations&gt;</p>
+<h2>My request:</h2></div>
+</article>
+<article class="message assistant" id="message-32" data-turn-id="019ffa7c-1e16-7b11-b601-a38315975eba" aria-label="Assistentenbeitrag 32">
+  <time datetime="2026-08-13T09:37:46.000Z">2026-08-13T09:37:46.000Z</time>
+  <div class="markdown"><p>Ja. Das wäre ein expliziter <strong>Änderungs- und Strukturworkflow</strong>: Er legt fest, wann ich direkt arbeiten darf und wann ich vorher eine Freigabe brauche. :codex-annotation{index=&quot;1&quot;}</p>
+<p>Er würde die Naming-Convention ergänzen, sie aber nicht ersetzen: Naming regelt <em>wie</em> etwas heißt; der Workflow regelt <em>wie Änderungen daran entschieden und ausgeführt werden</em>.</p></div>
+</article>
+<article class="message user" id="message-33" data-turn-id="019ffc55-bacb-7d10-9492-19ab38d10234" aria-label="Nutzerbeitrag 33">
+  <time datetime="2026-08-13T18:15:04.000Z">2026-08-13T18:15:04.000Z</time>
+  <div class="markdown"><p>den Ordner &quot;Language&quot; umbenennen in &quot;Localization&quot;  (das &quot;z&quot; ist ok genauso wie das &quot;s&quot;?) </p></div>
+</article>
+<article class="message assistant" id="message-34" data-turn-id="019ffc55-bacb-7d10-9492-19ab38d10234" aria-label="Assistentenbeitrag 34">
+  <time datetime="2026-08-13T18:15:04.000Z">2026-08-13T18:15:04.000Z</time>
+  <div class="markdown"><p>Ich benenne <code>Convention\Language</code> nach <code>Convention\Localization</code> um und prüfe vorher die Verweise; alle Verweise auf den alten Pfad passe ich anschließend mit an. „Localization“ mit <strong>z</strong> ist im amerikanischen Englisch, „Localisation“ mit <strong>s</strong> im britischen Englisch korrekt. Da die bestehende Konvention <code>en-US</code> als kanonische technische Sprache festlegt, ist <code>Localization</code> mit <strong>z</strong> hier konsistent.</p></div>
+</article>
+<article class="message assistant" id="message-35" data-turn-id="019ffc55-bacb-7d10-9492-19ab38d10234" aria-label="Assistentenbeitrag 35">
+  <time datetime="2026-08-13T18:15:04.000Z">2026-08-13T18:15:04.000Z</time>
+  <div class="markdown"><p>Erledigt: <code>Convention\Language</code> wurde nach <a href="/E:/Programmierung/Organisation/Convention/Localization">Convention\Localization</a> umbenannt. Den einzigen gefundenen Verweis habe ich in <a href="/E:/Programmierung/Organisation/Agent/Instruction/Draft/V2/ReferenceCatalog.html">ReferenceCatalog.html</a> angepasst. Der alte Pfad und alte Verweise bestehen nicht mehr.</p>
+<p><code>Localization</code> mit <strong>z</strong> ist passend, weil die technische Standardsprache als <code>en-US</code> festgelegt ist.</p></div>
+</article>
+<article class="message user" id="message-36" data-turn-id="019ffc5f-db2c-7dd2-a52f-ab96c540d0bd" aria-label="Nutzerbeitrag 36">
+  <time datetime="2026-08-13T18:26:08.000Z">2026-08-13T18:26:08.000Z</time>
+  <div class="markdown"><p>die akutelle datei &#39;localization.html&quot; ist eine kopie von oahsi ... überarbeitung steht noch komplett aus.<br>ich möchte hier noch eine weitere Datei anlegen, die eine Org.-Base-Definition sein soll. Sie soll in Tabellenform sein (design : TableEditable, 1.spalte = Nummerierung, 2.spalte =  CodeBezeichner für die Konstanten/variablen  , Chatbezeichner (für uns), dann weitere spalten in den jeweiligen sprachen Us,,En,De...  usw. )</p>
+<p>soweit klar ? oder vorschläge ?<br>Vorschlag für benennung beider deteien?</p></div>
+</article>
+<article class="message assistant" id="message-37" data-turn-id="019ffc5f-db2c-7dd2-a52f-ab96c540d0bd" aria-label="Assistentenbeitrag 37">
+  <time datetime="2026-08-13T18:26:08.000Z">2026-08-13T18:26:08.000Z</time>
+  <div class="markdown"><p>Ja, klar. Die bestehende Datei ist dann eine OAHSI-Quelle bzw. ein übernommener Stand; die neue Datei wird die eigenständige Organization-Base-Definition als pflegbare Lokalisationstabelle.</p>
+<p>Mein Benennungsvorschlag im Ordner <code>Convention/Localization/</code>:</p>
+<ul><li><code>Oahsi.html</code> – die derzeitige, aus OAHSI übernommene Datei.</li><li><code>Localization.html</code> – die neue, maßgebliche Organization-Base-Definition.</li></ul>
+<p>Das nutzt den Ordnerkontext ohne Redundanz: <code>Convention/Localization/Localization.html</code> ist die Definition der Lokalisation; <code>Oahsi.html</code> kennzeichnet klar die projektbezogene Quelle.</p>
+<p>Die Tabelle könnte so beginnen:</p>
+<p>| Nr. | CodeBezeichner | Chatbezeichner | en-US | de-DE | Bedeutung / Hinweis |<br>|---|---|---|---|---|---|</p>
+<p>Ich würde <code>en-US</code>, <code>en-GB</code> und <code>de-DE</code> statt nur <code>Us</code>, <code>En</code>, <code>De</code> verwenden: Das sind eindeutige, etablierte Sprachkennungen. Weitere Sprachen wären jeweils zusätzliche Spalten.</p>
+<p>Ein kleiner Vorschlag: <code>CodeBezeichner</code> und <code>Chatbezeichner</code> getrennt zu halten, wie du es vorsiehst. Der Codebezeichner bleibt stabil; der Chatbezeichner kann für unsere Zusammenarbeit lesbar und bei Bedarf anders formuliert sein.</p>
+<p>Noch keine Dateien geändert.</p></div>
+</article>
+<article class="message user" id="message-38" data-turn-id="019ffc62-0b4d-7572-bed8-7c72742d9c07" aria-label="Nutzerbeitrag 38">
+  <time datetime="2026-08-13T18:28:31.000Z">2026-08-13T18:28:31.000Z</time>
+  <div class="markdown"><p>(hehe, du scheinst wie eine KI zu denken )</p>
+<p>ich meine eher sowas wie </p>
+<ol><li>rule,convention,...</li><li>definition</li></ol></div>
+</article>
+<article class="message assistant" id="message-39" data-turn-id="019ffc62-0b4d-7572-bed8-7c72742d9c07" aria-label="Assistentenbeitrag 39">
+  <time datetime="2026-08-13T18:28:31.000Z">2026-08-13T18:28:31.000Z</time>
+  <div class="markdown"><p>Ah, verstanden: Du meinst die Art bzw. den Status der beiden Dokumente.</p>
+<p>Dann würde ich es so trennen:</p>
+<ul><li><code>Localization.html</code> – <strong>Rule / Convention</strong>: verbindliche Regeln zur Lokalisierung, etwa Kennungen, Sprachen, Rückfall, technische Stabilität.</li><li><code>Definition.html</code> – <strong>Definition</strong>: die konkrete, tabellarische Zuordnung der Begriffe und Bezeichner in den einzelnen Sprachen.</li></ul>
+<p>Der Pfad wäre dann:</p>
+<pre><code class="language-text">Convention/Localization/Localization.html
+Convention/Localization/Definition.html</code></pre>
+<p>Das ist klar: Die Convention beschreibt, wie Lokalisation funktioniert; die Definition enthält, was derzeit konkret lokalisiert ist.</p></div>
+</article>
+<article class="message user" id="message-40" data-turn-id="019ffc62-c17d-7512-b526-a3f3fb8eff74" aria-label="Nutzerbeitrag 40">
+  <time datetime="2026-08-13T18:29:18.000Z">2026-08-13T18:29:18.000Z</time>
+  <div class="markdown"><p>ok, hätte ich auch genommen.</p>
+<p>und tabellen gestaltung für def. ist ok ?</p></div>
+</article>
+<article class="message assistant" id="message-41" data-turn-id="019ffc62-c17d-7512-b526-a3f3fb8eff74" aria-label="Assistentenbeitrag 41">
+  <time datetime="2026-08-13T18:29:18.000Z">2026-08-13T18:29:18.000Z</time>
+  <div class="markdown"><p>Ja, das ist passend. Eine Definition mit vielen wiederkehrenden Zuordnungen wird als Tabelle deutlich lesbarer und leichter erweiterbar als Fließtext.</p>
+<p>Die Nummerierung hilft beim Besprechen einzelner Einträge; die stabilen Codebezeichner bleiben die technische Referenz. <code>Definition.html</code> passt dafür gut.</p></div>
+</article>
+<article class="message user" id="message-42" data-turn-id="019ffc63-dfe9-7b02-a40d-6d6c3004de79" aria-label="Nutzerbeitrag 42">
+  <time datetime="2026-08-13T18:30:31.000Z">2026-08-13T18:30:31.000Z</time>
+  <div class="markdown"><p>wie gesagt, def. tabelle soll editierbar sein.<br>wenn bereit, Energie!</p></div>
+</article>
+<article class="message assistant" id="message-43" data-turn-id="019ffc63-dfe9-7b02-a40d-6d6c3004de79" aria-label="Assistentenbeitrag 43">
+  <time datetime="2026-08-13T18:30:31.000Z">2026-08-13T18:30:31.000Z</time>
+  <div class="markdown"><p>Energie. Betroffen ist nur die neue Datei <a href="/E:/Programmierung/Organisation/Convention/Localization/Definition.html">Definition.html</a>. Ich erstelle dort eine eigenständige, im Browser direkt editierbare Tabelle; die vorhandene <code>Localization.html</code> bleibt unverändert, weil ihre OAHSI-Überarbeitung noch aussteht.</p></div>
+</article>
+<article class="message assistant" id="message-44" data-turn-id="019ffc63-dfe9-7b02-a40d-6d6c3004de79" aria-label="Assistentenbeitrag 44">
+  <time datetime="2026-08-13T18:30:31.000Z">2026-08-13T18:30:31.000Z</time>
+  <div class="markdown"><p>Die editierbare Definitionstabelle ist angelegt und an <code>TableEditable</code> angebunden. Ich prüfe noch die relativen Design- und Interaktionsverweise sowie die Tabellenstruktur.</p></div>
+</article>
+<article class="message assistant" id="message-45" data-turn-id="019ffc63-dfe9-7b02-a40d-6d6c3004de79" aria-label="Assistentenbeitrag 45">
+  <time datetime="2026-08-13T18:30:31.000Z">2026-08-13T18:30:31.000Z</time>
+  <div class="markdown"><p>Fertig: <a href="/E:/Programmierung/Organisation/Convention/Localization/Definition.html">Definition.html</a> enthält eine direkt im Browser editierbare <code>TableEditable</code>-Tabelle.</p>
+<p>Spalten: Nummerierung, CodeBezeichner, Chatbezeichner, <code>en-US</code>, <code>en-GB</code>, <code>de-DE</code>, Hinweis und Aktion. Zeilen können ergänzt, gelöscht und browserlokal gespeichert werden; die HTML-Quelldatei bleibt dabei unverändert.</p></div>
+</article>
+<article class="message user" id="message-46" data-turn-id="01a00243-c5d7-7ce0-9db4-f1f905ccf06d" aria-label="Nutzerbeitrag 46">
+  <time datetime="2026-08-14T21:53:11.000Z">2026-08-14T21:53:11.000Z</time>
+  <div class="markdown"><p>Lokalisation erweitern für Spanisch  (für etwa 1/5 der weltbevölkerung).<br>In definition aufnehmen (nicht für alles brauchen wir Codebezeichner):</p>
+<ul><li>Projekt</li><li>Thema</li><li>Ersteller</li><li>Besitzer</li><li>Sicherung</li><li>Zugriff</li><li>Sichtbarkeit</li><li>Beschreibung</li><li>Kurzbeschreibung</li><li>Titel</li><li>Umgebung</li><li>Richtlinie</li><li>Vereinbarung</li><li>Regel</li><li>Verknüpfung</li><li>Werkzeug</li><li>Schnittstelle</li><li>Bibliothek</li></ul></div>
+</article>
+<article class="message assistant" id="message-47" data-turn-id="01a00243-c5d7-7ce0-9db4-f1f905ccf06d" aria-label="Assistentenbeitrag 47">
+  <time datetime="2026-08-14T21:53:11.000Z">2026-08-14T21:53:11.000Z</time>
+  <div class="markdown"><p>Ich lade zunächst die jetzt verbindliche Instruktionsbasis in der vorgegebenen Reihenfolge. Anschließend ergänze ich ausschließlich die spanischen Einträge in <code>Convention/Localization/Definition.html</code>; für die genannten allgemeinsprachlichen Begriffe lasse ich den CodeBezeichner leer, sofern kein stabiler technischer Schlüssel nötig ist.</p></div>
+</article>
+<article class="message assistant" id="message-48" data-turn-id="01a00243-c5d7-7ce0-9db4-f1f905ccf06d" aria-label="Assistentenbeitrag 48">
+  <time datetime="2026-08-14T21:53:11.000Z">2026-08-14T21:53:11.000Z</time>
+  <div class="markdown"><p>Die Instruktionsbasis ist geladen. Ich ändere nur <a href="/E:/Programmierung/Organisation/Convention/Localization/Definition.html">Definition.html</a>: Ich ergänze die Spalte <code>es-ES</code>, vervollständige den vorhandenen Eintrag und füge die 15 gewünschten Begriffe als weitere Tabellenzeilen ein. Die CodeBezeichner bleiben bei diesen Begriffen bewusst leer.</p></div>
+</article>
+<article class="message assistant" id="message-49" data-turn-id="01a00243-c5d7-7ce0-9db4-f1f905ccf06d" aria-label="Assistentenbeitrag 49">
+  <time datetime="2026-08-14T21:53:11.000Z">2026-08-14T21:53:11.000Z</time>
+  <div class="markdown"><p>Die 18 Begriffe und <code>es-ES</code> sind eingetragen. Ich prüfe jetzt noch Spalten- und Zeilenzahl sowie, dass die CodeBezeichner dieser allgemeinsprachlichen Begriffe leer geblieben sind.</p></div>
+</article>
+<article class="message assistant" id="message-50" data-turn-id="01a00243-c5d7-7ce0-9db4-f1f905ccf06d" aria-label="Assistentenbeitrag 50">
+  <time datetime="2026-08-14T21:53:11.000Z">2026-08-14T21:53:11.000Z</time>
+  <div class="markdown"><p>Spanisch (<code>es-ES</code>) ist in <a href="/E:/Programmierung/Organisation/Convention/Localization/Definition.html">Definition.html</a> ergänzt.</p>
+<p>Die Tabelle enthält nun 19 Zeilen: den bestehenden Definitionseintrag sowie die 18 gewünschten Begriffe mit spanischen Übersetzungen. Ihre CodeBezeichner sind leer; nur der bestehende technische Definitionseintrag behält seinen Schlüssel. Spalten- und Zeilenzahlen sowie UTF-8 wurden geprüft.</p></div>
+</article>
+<article class="message user" id="message-51" data-turn-id="01a00245-4613-7831-ad59-59a9375eb810" aria-label="Nutzerbeitrag 51">
+  <time datetime="2026-08-14T21:54:49.000Z">2026-08-14T21:54:49.000Z</time>
+  <div class="markdown"><p>die definition immer alphabetisch sortieren , anhand von US-englisch. </p></div>
+</article>
+<article class="message assistant" id="message-52" data-turn-id="01a00245-4613-7831-ad59-59a9375eb810" aria-label="Assistentenbeitrag 52">
+  <time datetime="2026-08-14T21:54:49.000Z">2026-08-14T21:54:49.000Z</time>
+  <div class="markdown"><p>Ich passe ausschließlich <a href="/E:/Programmierung/Organisation/Convention/Localization/Definition.html">Definition.html</a> an: Die Definitionszeilen werden nach <code>en-US</code> alphabetisch sortiert und fortlaufend neu nummeriert. Zusätzlich vermerke ich diese dauerhafte Sortierregel direkt oberhalb der Tabelle.</p></div>
+</article>
+<article class="message assistant" id="message-53" data-turn-id="01a00245-4613-7831-ad59-59a9375eb810" aria-label="Assistentenbeitrag 53">
+  <time datetime="2026-08-14T21:54:49.000Z">2026-08-14T21:54:49.000Z</time>
+  <div class="markdown"><p>Die Datei wurde seit dem letzten Stand verändert; deshalb habe ich die Sortierung noch nicht angewendet. Ich lese den aktuellen Tabellenbereich erneut und sortiere diesen Stand, damit keine zwischenzeitlichen Änderungen verloren gehen.</p></div>
+</article>
+<article class="message assistant" id="message-54" data-turn-id="01a00245-4613-7831-ad59-59a9375eb810" aria-label="Assistentenbeitrag 54">
+  <time datetime="2026-08-14T21:54:49.000Z">2026-08-14T21:54:49.000Z</time>
+  <div class="markdown"><p>Erledigt: <a href="/E:/Programmierung/Organisation/Convention/Localization/Definition.html">Definition.html</a> ist nun dauerhaft als nach <code>en-US</code> alphabetisch sortierte Tabelle festgelegt.</p>
+<p>Die 19 Einträge sind korrekt sortiert und von <code>01</code> bis <code>19</code> neu nummeriert.</p></div>
+</article>
+<article class="message user" id="message-55" data-turn-id="01a0024b-9428-7c32-b3eb-a9bec2074130" aria-label="Nutzerbeitrag 55">
+  <time datetime="2026-08-14T22:01:42.000Z">2026-08-14T22:01:42.000Z</time>
+  <div class="markdown"><p>oh, das ist aber schön, in  BlueDark.<br>was wäre die nächst häufig verwendete Sprache ?</p></div>
+</article>
+<article class="message assistant" id="message-56" data-turn-id="01a0024b-9428-7c32-b3eb-a9bec2074130" aria-label="Assistentenbeitrag 56">
+  <time datetime="2026-08-14T22:01:42.000Z">2026-08-14T22:01:42.000Z</time>
+  <div class="markdown"><p>Das hängt davon ab, ob wir Muttersprachler oder alle Sprecher zählen. Ich prüfe die aktuelle, belastbare Einordnung, damit wir die nächste Lokalisierungssprache nicht auf einer unklaren Statistik aufbauen.</p></div>
+</article>
+<article class="message assistant" id="message-57" data-turn-id="01a0024b-9428-7c32-b3eb-a9bec2074130" aria-label="Assistentenbeitrag 57">
+  <time datetime="2026-08-14T22:01:42.000Z">2026-08-14T22:01:42.000Z</time>
+  <div class="markdown"><p>Als nächste Sprache würde ich <strong>Mandarin-Chinesisch</strong> ergänzen, nicht Hindi: Englisch ist bereits vorhanden, Mandarin ist nach Gesamtzahl der Sprecher die nächstgrößere fehlende Sprache. Für die Tabelle wäre <code>zh-Hans</code> sinnvoll – Chinesisch in vereinfachter Schrift; alternativ regional enger <code>zh-CN</code>. Ethnologue führt die Reihenfolge insgesamt als Englisch, Mandarin, Hindi, Spanisch. <a href="https://stg.ethnologue.com/faq/">Ethnologue, 2025</a></p>
+<p>Danach wäre <code>hi-IN</code> für Hindi eine gute nächste Erweiterung.</p></div>
+</article>
+<article class="message user" id="message-58" data-turn-id="01a0024e-a9a4-7ff3-9da0-a9ef049420c6" aria-label="Nutzerbeitrag 58">
+  <time datetime="2026-08-14T22:05:04.000Z">2026-08-14T22:05:04.000Z</time>
+  <div class="markdown"><p>alles utf-16-kompatibel?</p></div>
+</article>
+<article class="message assistant" id="message-59" data-turn-id="01a0024e-a9a4-7ff3-9da0-a9ef049420c6" aria-label="Assistentenbeitrag 59">
+  <time datetime="2026-08-14T22:05:04.000Z">2026-08-14T22:05:04.000Z</time>
+  <div class="markdown"><p>Ja. Alle bisherigen Einträge sind Unicode-Zeichen und damit problemlos UTF-16-kompatibel – auch spanische Akzente sowie später chinesische Schriftzeichen.</p>
+<p>Die HTML-Datei selbst bleibt korrekt in <strong>UTF-8</strong> gespeichert. UTF-16 wäre nur eine mögliche interne Zeichendarstellung, etwa in manchen Programmiersprachen; dafür sind keine Anpassungen nötig.</p></div>
+</article>
+<article class="message user" id="message-60" data-turn-id="01a00250-c5ac-7872-8688-008de0f000a0" aria-label="Nutzerbeitrag 60">
+  <time datetime="2026-08-14T22:07:23.000Z">2026-08-14T22:07:23.000Z</time>
+  <div class="markdown"><p>welche o.g. sprachen brauchen 16bit?</p></div>
+</article>
+<article class="message assistant" id="message-61" data-turn-id="01a00250-c5ac-7872-8688-008de0f000a0" aria-label="Assistentenbeitrag 61">
+  <time datetime="2026-08-14T22:07:23.000Z">2026-08-14T22:07:23.000Z</time>
+  <div class="markdown"><p>Keine dieser Sprachen braucht zwingend UTF-16. UTF-8 kann alle darstellen.</p>
+<p>Bei UTF-16 gilt:</p>
+<ul><li>Englisch, Deutsch, Spanisch: vollständig mit einzelnen 16-Bit-Codeeinheiten.</li><li>Hindi (<code>hi-IN</code>): Devanagari liegt ebenfalls im grundlegenden Unicode-Bereich und passt normalerweise in einzelne 16-Bit-Codeeinheiten.</li><li>Mandarin-Chinesisch (<code>zh-Hans</code>): die üblichen Schriftzeichen passen ebenfalls meist in 16 Bit. Seltene Zeichen aus erweiterten CJK-Bereichen benötigen in UTF-16 zwei Codeeinheiten („Surrogatpaar“).</li></ul>
+<p>Für die Lokalisation bleibt UTF-8 als Dateikodierung daher die einfachste und richtige Wahl.</p></div>
+</article>
+<article class="message user" id="message-62" data-turn-id="01a00253-62f2-7550-a84e-8cb059bacce3" aria-label="Nutzerbeitrag 62">
+  <time datetime="2026-08-14T22:10:14.000Z">2026-08-14T22:10:14.000Z</time>
+  <div class="markdown"><p>als erschwerung der lokalisation kommt hinzu , daß die &quot;Bündigkeit&quot; und Richtung der schrift variiert. Das macht es wirklich deutlich unbequemer.</p></div>
+</article>
+<article class="message assistant" id="message-63" data-turn-id="01a00253-62f2-7550-a84e-8cb059bacce3" aria-label="Assistentenbeitrag 63">
+  <time datetime="2026-08-14T22:10:14.000Z">2026-08-14T22:10:14.000Z</time>
+  <div class="markdown"><p>Genau. Lokalisation betrifft nicht nur Wörter, sondern auch Layout und Schreibsystem.</p>
+<p>Neben unterschiedlichen Textlängen kommen etwa hinzu:</p>
+<ul><li>Leserichtung: Arabisch und Hebräisch laufen rechts nach links; Layout, Navigation, Pfeile und Reihenfolgen müssen oft gespiegelt werden.</li><li>Schriftbild: Chinesisch, Japanisch, Devanagari oder Arabisch brauchen passende Schriftarten und teils andere Zeilenhöhen.</li><li>Zeilenumbrüche: Deutsch erzeugt lange zusammengesetzte Wörter, Chinesisch hat andere Umbruchregeln.</li><li>Ausrichtung: Tabellen, Eingabefelder und Zahlen können je nach Sprache anders ausgerichtet werden.</li><li>Datums-, Zahlen- und Maßeinheiten: Diese werden lokal formatiert, nicht fest in Texte eingebaut.</li></ul>
+<p>Darum sollte eine Oberfläche nie auf feste Textbreiten oder Zeichenlängen vertrauen. Für eure Definitionstabelle ist das zunächst unkritisch, weil sie horizontal scrollbar ist; bei einer späteren echten Benutzeroberfläche wird es ein eigener Layout-Prüfpunkt.</p></div>
+</article>
+<article class="message user" id="message-64" data-turn-id="01a0035b-5fad-7452-a333-263cd8556386" aria-label="Nutzerbeitrag 64">
+  <time datetime="2026-08-15T02:58:35.000Z">2026-08-15T02:58:35.000Z</time>
+  <div class="markdown"><p>aufnahme  :</p>
+<ul><li>Guide (Leitfaden)</li></ul></div>
+</article>
+<article class="message assistant" id="message-65" data-turn-id="01a0035b-5fad-7452-a333-263cd8556386" aria-label="Assistentenbeitrag 65">
+  <time datetime="2026-08-15T02:58:35.000Z">2026-08-15T02:58:35.000Z</time>
+  <div class="markdown"><p>Ich ergänze in <a href="/E:/Programmierung/Organisation/Convention/Localization/Definition.html">Definition.html</a> den Begriff <code>Guide</code> / „Leitfaden“ mit leerem CodeBezeichner. Entsprechend der festgelegten <code>en-US</code>-Sortierung kommt er zwischen <code>Environment</code> und <code>Interface</code>; die folgenden Nummern werden angepasst.</p></div>
+</article>
+<article class="message assistant" id="message-66" data-turn-id="01a0035b-5fad-7452-a333-263cd8556386" aria-label="Assistentenbeitrag 66">
+  <time datetime="2026-08-15T02:58:35.000Z">2026-08-15T02:58:35.000Z</time>
+  <div class="markdown"><p>Die Sortierung und Nummerierung sind korrekt. Die kurze Inhaltsprüfung meldet beim spanischen Akzent einen Vergleichsunterschied; ich lese diesen einzelnen Eintrag noch einmal mit UTF-8-Dekodierung aus, damit die tatsächliche Schreibweise geprüft ist.</p></div>
+</article>
+<article class="message assistant" id="message-67" data-turn-id="01a0035b-5fad-7452-a333-263cd8556386" aria-label="Assistentenbeitrag 67">
+  <time datetime="2026-08-15T02:58:35.000Z">2026-08-15T02:58:35.000Z</time>
+  <div class="markdown"><p><code>Guide</code> / „Leitfaden“ ist aufgenommen:</p>
+<ul><li><code>en-US</code>, <code>en-GB</code>: <code>Guide</code></li><li><code>de-DE</code>: <code>Leitfaden</code></li><li><code>es-ES</code>: <code>Guía</code></li></ul>
+<p>Die Tabelle umfasst nun 20 Einträge, bleibt alphabetisch nach <code>en-US</code> sortiert und ist neu nummeriert.</p></div>
+</article>
+<article class="message user" id="message-68" data-turn-id="01a0035e-c538-7080-a8d3-6afba9a58387" aria-label="Nutzerbeitrag 68">
+  <time datetime="2026-08-15T03:02:17.000Z">2026-08-15T03:02:17.000Z</time>
+  <div class="markdown"><p>entferne die hinweis und aktion aus der tabelle.<br>entferne Agentenanweisung aus definition.html, da  sie nur provisorisch war vor der klaren instruction base</p></div>
+</article>
+<article class="message assistant" id="message-69" data-turn-id="01a0035e-c538-7080-a8d3-6afba9a58387" aria-label="Assistentenbeitrag 69">
+  <time datetime="2026-08-15T03:02:17.000Z">2026-08-15T03:02:17.000Z</time>
+  <div class="markdown"><p>Ich ändere nur <a href="/E:/Programmierung/Organisation/Convention/Localization/Definition.html">Definition.html</a>: Die provisorische Agentenanweisung wird vollständig entfernt; die Spalten „Hinweis“ und „Aktion“ entfallen. Damit die Tabelle weiterhin editierbar bleibt, ersetze ich die bisherige Aktionsspalte durch direkte Bearbeitung aller Datenzellen sowie die vorhandenen Funktionen „Zeile hinzufügen“ und „lokal speichern“ ohne Aktionsspalte.</p></div>
+</article>
+<article class="message assistant" id="message-70" data-turn-id="01a0035e-c538-7080-a8d3-6afba9a58387" aria-label="Assistentenbeitrag 70">
+  <time datetime="2026-08-15T03:02:17.000Z">2026-08-15T03:02:17.000Z</time>
+  <div class="markdown"><p>Die beiden Spalten und die provisorische Anweisung sind entfernt. Ich prüfe jetzt, dass jede Datenzeile die verbleibenden sieben Spalten hat und die lokale Bearbeitung weiterhin zu dieser Struktur passt.</p></div>
+</article>
+<article class="message assistant" id="message-71" data-turn-id="01a0035e-c538-7080-a8d3-6afba9a58387" aria-label="Assistentenbeitrag 71">
+  <time datetime="2026-08-15T03:02:17.000Z">2026-08-15T03:02:17.000Z</time>
+  <div class="markdown"><p>Erledigt in <a href="/E:/Programmierung/Organisation/Convention/Localization/Definition.html">Definition.html</a>:</p>
+<ul><li>Die provisorische Agentenanweisung ist entfernt.</li><li>Die Spalten „Hinweis“ und „Aktion“ sind entfernt.</li><li>Die Tabelle hat nun sieben fachliche Spalten.</li><li>Direktes Bearbeiten, Zeilen hinzufügen und lokales Speichern bleiben funktionsfähig.</li></ul></div>
+</article>
+<article class="message user" id="message-72" data-turn-id="01a00366-26c3-7b20-8185-ead575441564" aria-label="Nutzerbeitrag 72">
+  <time datetime="2026-08-15T03:10:21.000Z">2026-08-15T03:10:21.000Z</time>
+  <div class="markdown"><p>entferne eintrag 11 (localization.definition)</p></div>
+</article>
+<article class="message assistant" id="message-73" data-turn-id="01a00366-26c3-7b20-8185-ead575441564" aria-label="Assistentenbeitrag 73">
+  <time datetime="2026-08-15T03:10:21.000Z">2026-08-15T03:10:21.000Z</time>
+  <div class="markdown"><p>Ich entferne aus <a href="/E:/Programmierung/Organisation/Convention/Localization/Definition.html">Definition.html</a> den Eintrag <code>localization.definition</code> und nummeriere die folgenden Einträge neu, damit die Tabelle fortlaufend bleibt.</p></div>
+</article>
+<article class="message assistant" id="message-74" data-turn-id="01a00366-26c3-7b20-8185-ead575441564" aria-label="Assistentenbeitrag 74">
+  <time datetime="2026-08-15T03:10:21.000Z">2026-08-15T03:10:21.000Z</time>
+  <div class="markdown"><p>Entfernt. Die Definition enthält jetzt 19 Einträge und ist wieder fortlaufend nummeriert.</p></div>
+</article>
+    </main>
+  </div>
+</body>
+</html>

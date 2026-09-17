@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Excerpt – Chat</title>
+  <link rel="stylesheet" href="../../Design/Style/Active.css">
+  <style>
+    body{padding:2rem;box-sizing:border-box}.excerpt{width:min(100%,72rem);margin:0 auto}.excerpt-entry{margin:1rem 0;padding:1rem 1.25rem}.excerpt-source{color:var(--green-illumination-text-muted)}.excerpt-content{padding:1rem;border:1px solid var(--green-illumination-border);border-radius:.3rem;background:var(--green-illumination-code)}.excerpt-content>:first-child{margin-top:0}.excerpt-content>:last-child{margin-bottom:0}@media(max-width:38rem){body{padding:.75rem}}
+  </style>
+</head>
+<body>
+  <main class="excerpt">
+    <header class="card"><h1>Excerpt – Chat</h1><p>Manuell ausgewählte Auszüge aus <a href="Original.html">Original.html</a>.</p></header>
+    <nav class="card" aria-label="Auszugsinhaltsverzeichnis"><h2>Auszugsinhaltsverzeichnis</h2><ol><li><a href="#excerpt-1">Liste der Exportordner + Namen der 14 vorhandenen Exportordner</a></li><li><a href="#excerpt-2">Dateien in Documentation/Chat + drei durch die Chat-Processes erzeugbare Dateien</a></li><li><a href="#excerpt-3">Prozesse, die Chats betreffen + vier Chat-Processes mit Kurzbeschreibungen</a></li><li><a href="#excerpt-4">Prozesse für Chat + Parametrisierungüberladungen</a></li></ol></nav>
+    <article class="card excerpt-entry" id="excerpt-1">
+      <h2>Liste der Exportordner</h2>
+      <p>Inhaltliche Kurzbeschreibung: Namen der 14 vorhandenen Exportordner.</p>
+      <p class="excerpt-source">Quelle: <a href="Original.html#message-113">Original.html, Beitrag 113</a></p>
+      <div class="excerpt-content"><p>Die 14 Exportordner unter <code>Documentation\Chat</code>:</p><ol><li>Agent</li><li>Prozess</li><li>Chat</li><li>Codebasis</li><li>Dokumentationsdesign</li><li>Leitfaden</li><li>Lokalisation</li><li>Naming</li><li>Sicherung</li><li>Terminologie</li><li>Uebersicht</li><li>Umgebung</li><li>Versionsverwaltung</li><li>Verzeichnisstruktur</li></ol></div>
+    </article>
+    <article class="card excerpt-entry" id="excerpt-2">
+      <h2>Dateien in Documentation/Chat</h2>
+      <p>Inhaltliche Kurzbeschreibung: drei durch die Chat-Processes erzeugbare Dateien.</p>
+      <p class="excerpt-source">Quelle: <a href="Original.html#message-114">Original.html, Beitrag 114</a></p>
+      <div class="excerpt-content"><p>Unter <code>Documentation/Chat/&lt;Chatname&gt;/</code> können nach den vier Processes diese drei Dateien entstehen:</p><table><thead><tr><th>Datei</th><th>Erzeugender Process</th><th>Zweck</th></tr></thead><tbody><tr><td><code>Original.html</code></td><td>Export</td><td>Schreibgeschützte Originaldarstellung des sichtbaren Chatverlaufs, mit Metadaten, Inhaltsverzeichnis und Quellenankern für einzelne Beiträge.</td></tr><tr><td><code>Extraction.html</code></td><td>Extraction</td><td>Automatische fachliche Zusammenfassung von <code>Original.html</code>: Themen-Inhaltsverzeichnis, bestätigte Entscheidungen, Begründungen, offene Punkte und betroffene Bereiche.</td></tr><tr><td><code>Excerpt.html</code></td><td>Excerpt</td><td>Manuell ausgewählte wichtige Auszüge: unveränderter Auszugstext, Auswahlgrund, Kurzbeschreibung, Inhaltsverzeichnis und Link auf den Quellenanker in <code>Original.html</code>.</td></tr></tbody></table><p><code>Import</code> erzeugt oder verändert keine Datei unter <code>Documentation/Chat</code>; er verwendet <code>Original.html</code> als Quelle, um einen Chat im Codex-Projekt neu anzulegen oder zu ergänzen.</p></div>
+    </article>
+    <article class="card excerpt-entry" id="excerpt-3">
+      <h2>Prozesse, die Chats betreffen</h2>
+      <p>Inhaltliche Kurzbeschreibung: vier Chat-Processes mit Kurzbeschreibungen.</p>
+      <p class="excerpt-source">Quelle: <a href="Original.html#message-115">Original.html, Beitrag 115</a></p>
+      <div class="excerpt-content"><table><thead><tr><th>Process</th><th>Kurzbeschreibung</th></tr></thead><tbody><tr><td><code>Export</code></td><td>Exportiert einen oder mehrere Codex-Chats nach <code>Documentation/Chat/&lt;Chatname&gt;/Original.html</code>; ohne Parameter alle Chats.</td></tr><tr><td><code>Import</code></td><td>Verwendet <code>Original.html</code>, um einen neuen oder ausdrücklich bestimmten Codex-Chat mit diesem Verlauf zu ergänzen.</td></tr><tr><td><code>Extraction</code></td><td>Erstellt <code>Extraction.html</code>: kompakte, quellenverlinkte Zusammenfassung mit Priorität für bestätigte Entscheidungen und wichtigen Diskussionsabschnitten.</td></tr><tr><td><code>Excerpt</code></td><td>Übernimmt per Anmerkung ausgewählte wichtige Stellen in <code>Excerpt.html</code>, mit Grund, Kurzbeschreibung und Link zur Quelle in <code>Original.html</code>.</td></tr></tbody></table></div>
+    </article>
+    <article class="card excerpt-entry" id="excerpt-4">
+      <h2>Prozesse für Chat</h2>
+      <p>Inhaltliche Kurzbeschreibung: Parametrisierungüberladungen der vier Chat-Processes.</p>
+      <p class="excerpt-source">Quelle: <a href="Original.html#message-119">Original.html, Beitrag 119</a></p>
+      <div class="excerpt-content"><table><thead><tr><th>Process</th><th>Ohne Parameter</th><th>Aktueller Chat</th><th>Chatliste / Mehrfachauswahl</th></tr></thead><tbody><tr><td><code>Export</code></td><td><code>Export</code> exportiert alle Chats.</td><td><code>Export(this)</code> exportiert nur den aktuellen Chat.</td><td><code>Export(&lt;Chatname&gt;, …)</code> exportiert nur die genannten Chats.</td></tr><tr><td><code>Import</code></td><td><code>Import</code> importiert alle verfügbaren Chatquellen.</td><td><code>Import(this)</code> importiert nur die Quelle des aktuellen Chats.</td><td><code>Import(&lt;Chatname&gt;, …)</code> importiert nur die genannten Quellen; je Quelle entsteht ein eigener Chat.</td></tr><tr><td><code>Extraction</code></td><td><code>Extraction</code> erstellt Extraktionen für alle Chats.</td><td><code>Extraction(this)</code> erstellt nur für den aktuellen Chat eine Extraktion.</td><td><code>Extraction(&lt;Chatname&gt;, …)</code> erstellt nur für die genannten Chats Extraktionen.</td></tr><tr><td><code>Excerpt</code></td><td><code>Excerpt</code> verwendet die markierte Anmerkung und fragt nach dem Grund.</td><td>Nicht separat nötig: Die Anmerkung bestimmt bereits den aktuellen Quellbereich.</td><td><code>Excerpt(Grund; Anmerkung 1, Anmerkung 2, …)</code> erzeugt aus mehreren Anmerkungen eine gemeinsame Auszugssektion mit mehreren Quellenlinks.</td></tr></tbody></table><p>Bei <code>Export</code>, <code>Import</code> und <code>Extraction</code> ist <code>this</code> reserviert. Unbekannte oder mehrdeutige Chatnamen werden nicht verarbeitet und berichtet.</p></div>
+    </article>
+  </main>
+</body>
+</html>

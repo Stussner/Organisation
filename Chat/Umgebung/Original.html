@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="codex-project-id" content=""><meta name="codex-chat-id" content="01a00230-d431-7260-a6ff-9888e31b7c8a">
+  <title>Original – Umgebung</title>
+  <link rel="stylesheet" href="../../Design/Style/Active.css">
+  <style>
+    body{padding:2rem;box-sizing:border-box}.original{width:min(100%,72rem);margin:0 auto}.metadata{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1rem;margin:0}.metadata dt{font-weight:700}.metadata dd{margin:0;overflow-wrap:anywhere}.chat-stream{display:flex;flex-direction:column;gap:1rem}.message{width:min(88%,56rem);box-sizing:border-box;padding:1rem 1.25rem;border-radius:var(--green-illumination-radius);box-shadow:var(--green-illumination-shadow)}.message.assistant{align-self:flex-start;background:linear-gradient(135deg,rgba(20,60,44,.95),rgba(10,34,25,.95));border:1px solid var(--green-illumination-border);border-left:.3rem solid var(--green-illumination-info)}.message.user{align-self:flex-end;background:linear-gradient(135deg,rgba(28,77,55,.95),rgba(12,47,34,.95));border:1px solid var(--green-illumination-border-light);border-right:.3rem solid var(--green-illumination-accent)}.message time{display:block;margin:0 0 .5rem;color:var(--green-illumination-text-muted);font-size:.8rem}.markdown>:first-child{margin-top:0}.markdown>:last-child{margin-bottom:0}.markdown p{margin:.75rem 0}.markdown ul,.markdown ol{padding-left:1.5rem}.markdown blockquote{margin:1rem 0;padding:.2rem 1rem;border-left:.3rem solid var(--green-illumination-info);color:var(--green-illumination-text-muted);background:rgba(7,21,17,.55)}.markdown hr{border:0;border-top:1px solid var(--green-illumination-border);margin:1rem 0}.markdown pre{white-space:pre-wrap;overflow-wrap:anywhere}.markdown pre code{padding:0;background:transparent;border:0}@media(max-width:38rem){body{padding:.75rem}.message{width:100%}}
+  </style>
+</head>
+<body data-codex-project-id="" data-codex-chat-id="01a00230-d431-7260-a6ff-9888e31b7c8a">
+  <div class="original">
+    <header class="card"><h1>Original – Umgebung</h1><p>Schreibgeschützter Export des sichtbaren Chatverlaufs.</p></header>
+<section class="card" aria-label="Metadaten"><h2>Metadaten</h2><dl class="metadata"><dt>Codex-Projekt-ID</dt><dd>Nicht zugeordnet</dd><dt>Codex-Projektname</dt><dd>Lokaler Arbeitschat ohne Codex-Projekt-ID</dd><dt>Projekt-Arbeitsverzeichnis</dt><dd>E:\Programmierung\Organisation</dd><dt>Chat-ID</dt><dd>01a00230-d431-7260-a6ff-9888e31b7c8a</dd><dt>Chat-Titel</dt><dd>Umgebung</dd><dt>Chat erstellt</dt><dd>2026-08-14T21:32:29.000Z</dd><dt>Exportzeitpunkt</dt><dd>2026-08-15T16:39:30.000Z</dd></dl></section>
+    <nav class="card" aria-label="Verlaufsinhaltsverzeichnis"><h2>Verlaufsinhaltsverzeichnis</h2><ol>
+<li><a href="#message-1">1. Umgebung tue nichts. Umgebung meint die verallgemeinernde Deklaration und Definition eines Arbeitsraumes und d…</a></li>
+<li><a href="#message-2">2. Verstanden. „Umgebung“ bezeichnet hier den Arbeitsraum mit seinen grundlegenden Deklarationen: Geltungsbereich…</a></li>
+<li><a href="#message-3">3. kannst du von hier aus alle chats (auch oahsi und global) durchsuchen , um zu extrahieren bzw. zusammenzufasse…</a></li>
+<li><a href="#message-4">4. Ich prüfe zuerst die hier verfügbaren Chat-/Exportquellen und die Projektinstruktionen. Ich bleibe lesend; „al…</a></li>
+<li><a href="#message-5">5. Die App stellt mir eine globale Übersicht der zuletzt verfügbaren 50 Tasks/Chats bereit, einschließlich OAHSI …</a></li>
+<li><a href="#message-6">6. Die relevante Grundlage ist konsistent: Die frühere OAHSI-Arbeit definiert „Environment“ nicht als bloßen Ordn…</a></li>
+<li><a href="#message-7">7. Ja – im verfügbaren globalen Chatbestand konnte ich die einschlägigen OAHSI-Verläufe und die dazugehörige Zusa…</a></li>
+<li><a href="#message-8">8. ExcerptImport(1)</a></li>
+<li><a href="#message-9">9. Verstanden: ExcerptImport(1).</a></li>
+<li><a href="#message-10">10. warum erscheint der import nicht in der codex chat anzeige?</a></li>
+<li><a href="#message-11">11. Er erscheint nicht, weil hier kein nativer Codex-Chat importiert wurde.</a></li>
+<li><a href="#message-12">12. den workflow prozess ExcerptImport(1) ausführen</a></li>
+<li><a href="#message-13">13. Workflowprüfung und Import von Auszug 1</a></li>
+<li><a href="#message-14">14. TableEnvironment, Erstfestlegung und Configuration.json</a></li>
+<li><a href="#message-15">15. Environment-Anwendungsfall: Lizenz, Programmzugriff und getrennte Speicherbereiche</a></li>
+<li><a href="#message-16">16. ExcerptClipboard(test) ist im neuen Workflow nicht definiert</a></li><li><a href="#message-17">17. Der Screenshot bestätigt den Fehler: Der vollständige kopierte Satz</a></li><li><a href="#message-18">18. Der Workflow ist angepasst und geprüft: ExcerptClipboard() fragt nun zuerst</a></li><li><a href="#message-19">19. Titel des Auszugs?</a></li><li><a href="#message-20">20. Auszug „Testt2“ wurde angelegt. Der Zwischenablageinhalt ist exakt übernommen</a></li><li><a href="#message-21">21. Workflow angepasst und geprüft.</a></li><li><a href="#message-22">22. Die jetzigen Workflows sind Fließtext-Regeln</a></li><li><a href="#message-23">23. Vor einer Umstellung braucht es erst eine validierte Workflow-Definition</a></li>
+    </ol></nav>
+    <main class="chat-stream">
+<article class="message user" id="message-1" data-turn-id="01a00230-d519-7961-83ca-8ea301ed63f0" aria-label="Nutzerbeitrag 1">
+  <time datetime="2026-08-14T21:32:29.000Z">2026-08-14T21:32:29.000Z</time>
+  <div class="markdown"><p>Umgebung</p>
+<hr>
+<p>tue nichts. Umgebung meint die verallgemeinernde Deklaration und Definition eines Arbeitsraumes und dessen Basisdefinitionen, Besitzer, Invarianz, Verkapselung,, Zugriffsgewährung etc.</p></div>
+</article>
+<article class="message assistant" id="message-2" data-turn-id="01a00230-d519-7961-83ca-8ea301ed63f0" aria-label="Assistentenbeitrag 2">
+  <time datetime="2026-08-14T21:32:29.000Z">2026-08-14T21:32:29.000Z</time>
+  <div class="markdown"><p>Verstanden. „Umgebung“ bezeichnet hier den Arbeitsraum mit seinen grundlegenden Deklarationen: Geltungsbereich, Basisdefinitionen, Besitz, Invarianz, Verkapselung sowie Zugriffs- und Änderungsrechte.</p>
+<p>Ich unternehme keine Aktion.</p></div>
+</article>
+<article class="message user" id="message-3" data-turn-id="01a00233-855e-7c03-bf25-6ea73de24967" aria-label="Nutzerbeitrag 3">
+  <time datetime="2026-08-14T21:35:26.000Z">2026-08-14T21:35:26.000Z</time>
+  <div class="markdown"><p>kannst du von hier aus alle chats (auch oahsi und global) durchsuchen , um zu extrahieren bzw. zusammenzufassen,  was wir über &quot;Environment&quot; bisher erarbeitet haben ?</p></div>
+</article>
+<article class="message assistant" id="message-4" data-turn-id="01a00233-855e-7c03-bf25-6ea73de24967" aria-label="Assistentenbeitrag 4">
+  <time datetime="2026-08-14T21:35:26.000Z">2026-08-14T21:35:26.000Z</time>
+  <div class="markdown"><p>Ich prüfe zuerst die hier verfügbaren Chat-/Exportquellen und die Projektinstruktionen. Ich bleibe lesend; „alle Chats“ kann ich nur auswerten, soweit sie in dieser Sitzung tatsächlich zugreifbar oder lokal gesichert sind.</p></div>
+</article>
+<article class="message assistant" id="message-5" data-turn-id="01a00233-855e-7c03-bf25-6ea73de24967" aria-label="Assistentenbeitrag 5">
+  <time datetime="2026-08-14T21:35:26.000Z">2026-08-14T21:35:26.000Z</time>
+  <div class="markdown"><p>Die App stellt mir eine globale Übersicht der zuletzt verfügbaren 50 Tasks/Chats bereit, einschließlich OAHSI und projektloser Chats. Daraus sind vier OAHSI-Verläufe unmittelbar einschlägig; ältere oder nicht gelistete Chats kann diese Schnittstelle nicht durchsuchen. Ich lese jetzt nur diese Treffer und gleiche sie mit der lokalen, bereits vorhandenen Wissensnotiz ab.</p></div>
+</article>
+<article class="message assistant" id="message-6" data-turn-id="01a00233-855e-7c03-bf25-6ea73de24967" aria-label="Assistentenbeitrag 6">
+  <time datetime="2026-08-14T21:35:26.000Z">2026-08-14T21:35:26.000Z</time>
+  <div class="markdown"><p>Die relevante Grundlage ist konsistent: Die frühere OAHSI-Arbeit definiert „Environment“ nicht als bloßen Ordner oder Prozesskontext, sondern als explizites Modell von Ablagen, Zuständigkeit und Zugriff. Die Begriffe „Invarianz“ und „Verkapselung“ waren darin allerdings noch nicht als eigene verbindliche Regeln ausgearbeitet.</p></div>
+</article>
+<article class="message assistant" id="message-7" data-turn-id="01a00233-855e-7c03-bf25-6ea73de24967" aria-label="Assistentenbeitrag 7">
+  <time datetime="2026-08-14T21:35:26.000Z">2026-08-14T21:35:26.000Z</time>
+  <div class="markdown"><p>Ja – im verfügbaren globalen Chatbestand konnte ich die einschlägigen OAHSI-Verläufe und die dazugehörige Zusammenfassung auswerten. Keine Dateien wurden geändert.</p>
+<p>Die bisher erarbeitete Bedeutung von „Environment/Umgebung“:</p>
+<ul><li>Eine Umgebung ist ein explizit deklarierter Arbeits- und Ablageraum, nicht bloß der aktuelle Ordner, Windows-Standardpfade oder Umgebungsvariablen.</li><li>OAHSI modelliert zwei gleichrangige Umgebungsinhaber: Benutzerinstanz und globale Rechnerinstanz.</li><li>Beide Seiten besitzen jeweils getrennt:</li></ul>
+<p>  <code>Definition</code> · <code>Umgebung</code> · <code>Zugriffskontrolle</code>.</p>
+<ul><li>Die Umgebung legt die konkreten Bereiche für Programmlaufzeit, Daten, Konfiguration, Temporäres, Protokolle und Sicherungen fest. Ein Bereich kann ausdrücklich intern, global oder extern liegen.</li><li>Implizite Rückfälle auf <code>AppData</code>, Dokumente, Desktop, Downloads, aktuelles Arbeitsverzeichnis oder andere Windows-Standardordner sind ausgeschlossen.</li><li>Definition beschreibt Identität und Zuordnung; sie verleiht keine Rechte.</li><li>Besitz ist anfänglich exklusiv: der Benutzer für lokale Bereiche, die Rechnerinstanz für globale Bereiche.</li><li>Zugriff über diese Grenze entsteht nur durch ausdrücklich erteilte, empfänger-, bereichs- und rechtebezogene Freigaben. Das gilt auch für Programme, DLLs, Erweiterungen, Werkzeuge und Modelle.</li><li><code>BenutzerVerwaltung.json</code> unter <code>&lt;Rechnerwurzel&gt;\Umgebung\</code> ist als maschinenlesbare Zuordnung vorgesehen: Kennung, Wurzel, Status und Verweise – keine Geheimnisse und keine Rechte.</li><li>Ein optionales gemeinsames OAHSI-Konto erhält dadurch keine automatischen Rechte auf lokale Benutzerbereiche.</li></ul>
+<p>Deine heutige Präzisierung ergänzt das sauber: Umgebung ist die verallgemeinernde Deklaration eines Arbeitsraums einschließlich Basisdefinitionen, Besitzer, Invarianz, Verkapselung und Zugriffsgewährung. In der bisherigen OAHSI-Arbeit sind Besitz und Zugriffsgewährung bereits konkret ausgearbeitet; Invarianz und Verkapselung waren bislang eher Folgerungen aus den expliziten Wurzeln und getrennten Kontrollen, nicht als eigene Regeln definiert.</p>
+<p>Grenze der Recherche: Die App lieferte die global verfügbaren letzten 50 Chats. Darin waren die relevanten OAHSI-Chats enthalten; darüber hinaus nicht gelistete, ältere Verläufe kann ich von hier nicht durchsuchen.</p></div>
+</article>
+<article class="message user" id="message-8" data-turn-id="01a00490-d5df-78b0-ace0-d7cb1515881c" aria-label="Nutzerbeitrag 8"><time datetime="2026-08-15T05:16:35.000Z">2026-08-15T05:16:35.000Z</time><div class="markdown"><p>ExcerptImport(1)</p></div></article>
+<article class="message assistant" id="message-9" data-turn-id="01a00490-d5df-78b0-ace0-d7cb1515881c" aria-label="Assistentenbeitrag 9"><time datetime="2026-08-15T05:16:35.000Z">2026-08-15T05:16:35.000Z</time><div class="markdown"><p>Verstanden: <code>ExcerptImport(1)</code>.</p></div></article>
+<article class="message user" id="message-10" data-turn-id="01a00497-72a9-7573-9810-eec0a251301a" aria-label="Nutzerbeitrag 10"><time datetime="2026-08-15T05:23:49.000Z">2026-08-15T05:23:49.000Z</time><div class="markdown"><p>warum erscheint der import nicht in der codex chat anzeige?</p></div></article>
+<article class="message assistant" id="message-11" data-turn-id="01a00497-72a9-7573-9810-eec0a251301a" aria-label="Assistentenbeitrag 11"><time datetime="2026-08-15T05:23:49.000Z">2026-08-15T05:23:49.000Z</time><div class="markdown"><p>Er erscheint nicht, weil hier kein nativer Codex-Chat importiert wurde. <code>ExcerptImport(1)</code> wurde in diesem bestehenden Task nur als normale Nachricht gesendet. Ein Textauszug kann Gesprächskontext liefern, erzeugt aber keine native Codex-Task mit eigener ID, Seitenleistenposition und Status.</p></div></article>
+<article class="message user" id="message-12" data-turn-id="01a00498-de83-7752-b9e1-dbbd9e06fc67" aria-label="Nutzerbeitrag 12"><time datetime="2026-08-15T05:25:22.000Z">2026-08-15T05:25:22.000Z</time><div class="markdown"><p>den workflow prozess ExcerptImport(1) ausführen</p></div></article>
+<article class="message assistant" id="message-13" data-turn-id="01a00498-de83-7752-b9e1-dbbd9e06fc67" aria-label="Assistentenbeitrag 13"><time datetime="2026-08-15T05:30:00.000Z">2026-08-15T05:30:00.000Z</time><div class="markdown"><h2>ExcerptImport(1) – Architektur</h2><p><strong>Kurzbeschreibung:</strong> Rolle der Organization Base und projektspezifische Umgebungsdefinitionen.</p><p><strong>Quelle:</strong> <a href="Excerpt.html#excerpt-1">Excerpt.html, Auszug 1</a>; ursprünglicher Beleg: <a href="../Chat/Original.html#message-120">Chat/Original.html, Beitrag 120</a>.</p><h3>Architekturrolle der Organization Base</h3><p>Die Organization Base hat zwei getrennte Rollen: Sie ist ein konkreter eigener Arbeitsraum und dient anderen Projekten als lesbare Referenz für deren Aufbau.</p><p>Als eigener Arbeitsraum besitzt sie reale, eigene Umgebungsdefinitionen für <code>E:\Programmierung\Organisation</code>. Als Referenz liefert sie anderen Projekten keine direkt zu übernehmende Umgebung, sondern Kategorien, Regeln und Vorlagen.</p><h3>Referenzieren und Redefinieren</h3><p>Ein konkretes Projekt – etwa OAHSI – referenziert die Organization Base nur lesend. Die Base wird nicht kopiert, ihre Dateien werden nicht automatisch Bestandteil des Projekts und ihre Werte werden nicht geerbt. Das Projekt definiert seine Umgebung selbst neu: Projektname und Kennungen, Arbeitsraum, Sicherungsraum, Lokalisierung sowie weitere projekt- oder rechnerabhängige Angaben.</p><h3>Chat-Dateien und Zielbild</h3><p>Die Chat-Workflows gehören als Konstruktionsvorschrift in die Organization Base. Dateien unter <code>Documentation/Chat/&lt;Chatname&gt;/</code> dokumentieren hingegen deren eigene Entwicklung und sind keine allgemeine Konstruktionsvorschrift. Das Zielbild trennt Base-Regeln, Vorlagen, Design und Workflows von der projektspezifischen Chatdokumentation.</p><p>Der verpflichtende Aufruf <code>Export(this)</code> wurde ausgeführt: Diese Originaldatei enthält den Importverlauf.</p></div></article>
+<article class="message assistant" id="message-14" data-turn-id="01a00572-ce91-77c2-96b6-7c87d12edd68" aria-label="Assistentenbeitrag 14"><time datetime="2026-08-15T09:37:29.000Z">2026-08-15T09:37:29.000Z</time><div class="markdown"><p><code>TableEnvironment</code> eignet sich als Darstellung und Bearbeitungsoberfläche – aber nicht als Ursprung der Konstanten. Die aktuelle Komponente verändert nur die sichtbare Browser-Tabelle; sie speichert keine verlässliche Konfiguration.</p><pre><code>Erstfestlegung durch Eigentümer / Installation&#10;        ↓&#10;Environment/Configuration.json       ← technische Wahrheitsquelle&#10;        ↓&#10;Environment/Definition.html          ← lesbare Erklärung und Tabelle&#10;        ↓&#10;Tools und Workflows                   ← lesen JSON, nicht die HTML-Tabelle</code></pre><p>Die unvermeidbare erste Konstante ist die Wurzel selbst: <code>OrganizationRoot = E:\Programmierung\Organisation</code>.</p><p>Sie kommt nicht aus der JSON-Datei, denn diese liegt erst relativ zu dieser Wurzel. Sie wird beim Einrichten bewusst festgelegt, etwa durch den Installationsdialog, einen expliziten Startparameter oder einen eindeutig konfigurierten Starter. Dieser legt anschließend <code>Environment/Configuration.json</code> an.</p><pre><code class="language-json">{&#10;  "version": 1,&#10;  "owner": "Organization Base",&#10;  "roots": {&#10;    "workspace": { "value": "E:\\Programmierung\\Organisation", "origin": "initial-installation", "constant": true },&#10;    "backup": { "value": "E:\\Programmierung\\Sicherung\\Organisation", "origin": "initial-installation", "constant": true }&#10;  }&#10;}</code></pre><p>Die HTML-Datei sollte diese JSON-Werte dann darstellen und erklären, nicht ein zweites, unabhängig pflegbares Wahrheitsregister bilden. Das ist bei der gerade angelegten <code>Definition.html</code> noch nicht sauber getrennt: Sie enthält derzeit die Werte direkt.</p></div></article>
+<article class="message assistant" id="message-15" data-turn-id="01a0059f-9c9e-7b4c-95f2-e85271a85cf7" aria-label="Assistentenbeitrag 15"><time datetime="2026-08-15T10:00:00.000Z">2026-08-15T10:00:00.000Z</time><div class="markdown"><blockquote><ul><li>User X will ein Programm W nutzen und besitzt dafür eine Lizenz.</li><li>Administrator A installiert W an einem bestimmten Ort und gewährt X sowie Y den Zugriff auf W und <code>env-W</code>.</li><li>X besitzt zusätzlich <code>env-X</code>, Y zusätzlich <code>env-Y</code>.</li><li>X und Y bevorzugen ihre jeweiligen eigenen Bereiche zum Speichern ihres W-bezogenen Materials.</li><li><code>env-W</code> kann von X und Y gemeinsam benutzt werden; X kann Y Zugriff auf <code>env-X</code> gewähren, Y kann X Zugriff auf <code>env-Y</code> gewähren.</li></ul></blockquote><p>Das Modell ist stimmig: Lizenz, Programmnutzung und Speicherzugriff sind drei getrennte Dinge.</p><pre><code>A installiert W
+      │
+      ├── gewährt X Zugriff auf W
+      └── gewährt Y Zugriff auf W
+
+X ── eigener Bereich env-X
+Y ── eigener Bereich env-Y
+W ── gemeinsamer Programm-/Arbeitsbereich env-W</code></pre><ul><li><code>env-W</code> gehört zur gemeinsamen Programmumgebung. Gemeinsame Änderungen oder Daten dort können X und Y betreffen.</li><li><code>env-X</code> gehört X und ist standardmäßig nur für X zugänglich. X kann Y gezielt Rechte geben.</li><li><code>env-Y</code> gehört Y und ist standardmäßig nur für Y zugänglich. Y kann X gezielt Rechte geben.</li><li>A ist Administrator der Programminstallation und kann Zugriffe auf W beziehungsweise <code>env-W</code> vergeben. A wird dadurch nicht automatisch Besitzer von <code>env-X</code> oder <code>env-Y</code>.</li><li>Eine Lizenz berechtigt X oder Y zur Nutzung von W, ersetzt aber keine technische Zugriffsfreigabe.</li></ul><p>Damit ist die Besitzerzuordnung klar: X besitzt <code>env-X</code>, Y besitzt <code>env-Y</code>; die gemeinsame Umgebung <code>env-W</code> gehört der von A verwalteten Rechner- oder Programminstanz.</p></div></article>
+<article class="message assistant" id="message-16" data-turn-id="01a006d6-06c0-7f81-a34c-b8dd0a58da4b" aria-label="Assistentenbeitrag 16"><time datetime="2026-08-15T16:31:33.000Z">2026-08-15T16:31:33.000Z</time><div class="markdown"><p><code>ExcerptClipboard(test)</code> ist im neuen Workflow nicht definiert und wurde daher nicht ausgeführt.</p><p>Kopiere zuerst den gewünschten Text mit <code>Strg+C</code> und rufe dann auf:</p><pre><code>ExcerptClipboard()</code></pre></div></article>
+<article class="message assistant" id="message-17" data-turn-id="01a006de-0082-7181-8164-c840253b5bc7" aria-label="Assistentenbeitrag 17"><time datetime="2026-08-15T16:32:59.000Z">2026-08-15T16:32:59.000Z</time><div class="markdown"><pre>Der Screenshot bestätigt den Fehler: Der vollständige kopierte Satz wurde automatisch zum Auszugstitel gemacht.
+
+Das ist ungeeignet. `ExcerptClipboard()` muss vor dem Anlegen nach einem kurzen, von dir eingegebenen Titel fragen. Der kopierte Inhalt selbst bleibt danach exakt unverändert.</pre></div></article>
+<article class="message assistant" id="message-18" data-turn-id="01a006de-85d7-7633-888c-7aff2b0d1710" aria-label="Assistentenbeitrag 18"><time datetime="2026-08-15T16:35:48.000Z">2026-08-15T16:35:48.000Z</time><div class="markdown"><pre>Der Workflow ist angepasst und geprüft: `ExcerptClipboard()` fragt nun zuerst nach dem Titel. Mit `ExcerptClipboard(&lt;Titel&gt;)` wird der übergebene Titel verwendet. Der kopierte Text bleibt unverändert; Überschrift und Inhaltsverzeichnis nutzen nur den Nutzertitel.
+
+[ExcerptClipboard.html](E:\Programmierung\Organisation\Workflow\Chat\ExcerptClipboard.html)</pre></div></article>
+<article class="message assistant" id="message-19" data-turn-id="01a006e0-fd4a-72f3-9d9f-82ed2cfe4b2c" aria-label="Assistentenbeitrag 19"><time datetime="2026-08-15T16:36:46.000Z">2026-08-15T16:36:46.000Z</time><div class="markdown"><pre>Titel des Auszugs?</pre></div></article>
+<article class="message assistant" id="message-20" data-turn-id="01a006e1-31f8-7332-bcdc-23a396f26b79" aria-label="Assistentenbeitrag 20"><time datetime="2026-08-15T16:37:39.000Z">2026-08-15T16:37:39.000Z</time><div class="markdown"><pre>Auszug „Testt2“ wurde angelegt. Der Zwischenablageinhalt ist exakt übernommen; kein Treffer in `Original.html`, daher ohne erfundenen Link als „Zwischenablage, vom Nutzer kopiert“ dokumentiert.
+
+[Excerpt.html](E:\Programmierung\Organisation\Documentation\Chat\Umgebung\Excerpt.html)</pre></div></article>
+<article class="message assistant" id="message-21" data-turn-id="01a006e6-978a-79b3-8ee3-83273a0c5303" aria-label="Assistentenbeitrag 21"><time datetime="2026-08-15T16:38:38.000Z">2026-08-15T16:38:38.000Z</time><div class="markdown"><pre>Workflow angepasst und geprüft.
+
+- `Export(this)` läuft verbindlich zuerst; bei Fehlschlag keine Änderung an `Excerpt.html`.
+- `ExcerptClipboard(&lt;Titel&gt;)` verwendet den Titel direkt ohne Rückfrage.
+- `ExcerptClipboard()` fragt nach erfolgreichem Export weiter nach dem Titel.
+
+[ExcerptClipboard.html](E:\Programmierung\Organisation\Workflow\Chat\ExcerptClipboard.html)</pre></div></article>
+<article class="message assistant" id="message-22" data-turn-id="01a006f0-6d0a-70e1-a531-d8324f05c559" aria-label="Assistentenbeitrag 22"><time datetime="2026-08-15T19:40:15.000Z">2026-08-15T19:40:15.000Z</time><div class="markdown"><pre>Ja. Die jetzigen Workflows sind Fließtext-Regeln; dadurch werden Reihenfolge, Abbruch und Varianten leicht übersehen.
+
+Besser wäre eine einheitliche, codeähnliche Form in HTML:
+
+```text
+Workflow ExcerptClipboard(Titel?)
+
+Eingaben:
+  Titel?              optional
+  Zwischenablage      erforderlich
+
+Vorbedingung:
+  Export(this) muss erfolgreich sein.
+
+Ablauf:
+  1. Export(this)
+  2. falls Titel fehlt: frage nach Titel
+  3. falls Titel leer: Abbruch ohne Änderung
+  4. lese Zwischenablage
+  5. falls leer: Abbruch ohne Änderung
+  6. suche exakten Text in Original.html
+  7. ergänze Excerpt.html
+  8. prüfe gespeicherten Text gegen Zwischenablage
+
+Ergebnis:
+  - ein neuer Auszug
+  - Titel nur aus Argument oder Nutzereingabe
+  - Inhalt exakt aus Zwischenablage
+
+Fehlerfälle:
+  - Export fehlgeschlagen → Abbruch
+  - kein Originaltreffer → Quelle „Zwischenablage, vom Nutzer kopiert“
+  - mehrere Treffer → letzter Treffer + Mehrdeutigkeitsvermerk
+```
+
+Sinnvoll wäre pro Workflow stets dieselbe Gliederung:
+
+1. Signatur / Aufrufvarianten  
+2. Eingaben und verwendete Dateien  
+3. Vorbedingungen  
+4. Ablaufnummern  
+5. Abbruch- und Fehlerfälle  
+6. Ergebnis / veränderte Dateien  
+7. Prüfungen  
+
+Das ist noch kein ausführbarer Code, aber eine präzise Spezifikation: Man kann jeden Schritt einzeln nachvollziehen und prüfen.</pre></div></article>
+<article class="message assistant" id="message-23" data-turn-id="01a006f2-5ea6-7bd0-9f30-1e690faa51b1" aria-label="Assistentenbeitrag 23"><time datetime="2026-08-15T19:42:22.000Z">2026-08-15T19:42:22.000Z</time><div class="markdown"><pre>Ja. Vor einer Umstellung braucht es erst eine validierte Workflow-Definition; bisher wurde nichts geändert.
+
+Die Validierung müsste mindestens klären:
+
+- Ist ein Workflow nur eine lesbare Arbeitsanweisung oder auch eine formale, später ausführbare Spezifikation?
+- Welche festen Begriffe gelten überall: Aufruf, Parameter, Vorbedingung, Schritt, Abbruch, Ergebnis, Prüfung?
+- Wie werden Varianten eindeutig notiert, etwa `ExcerptClipboard()` gegenüber `ExcerptClipboard(&lt;Titel&gt;)`?
+- Wie wird festgelegt, welche Dateien gelesen, verändert oder garantiert nicht verändert werden?
+- Wie werden Fehlerfälle und der Zustand „ohne Änderung“ formal beschrieben?
+- Bleibt der Ablauf für Menschen lesbar, ohne dass Pseudocode eine tatsächliche Implementierung vortäuscht?
+
+Erst wenn diese Grundform definiert und an bestehenden Workflows geprüft ist, sollte sie auf Dateien wie `Export.html` oder `ExcerptClipboard.html` angewendet werden.</pre></div></article>
+</main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Extraction – Chat</title>
+  <link rel="stylesheet" href="../../Design/Style/Active.css">
+  <style>
+    body{padding:2rem;box-sizing:border-box}.extraction{width:min(100%,72rem);margin:0 auto}.extraction section{margin:1rem 0}.source{color:var(--green-illumination-text-muted)}.decision{border-left:.3rem solid var(--green-illumination-accent)}.status{font-weight:700}@media(max-width:38rem){body{padding:.75rem}}
+  </style>
+</head>
+<body>
+  <main class="extraction">
+    <header class="card">
+      <h1>Extraction – Chat</h1>
+      <p>Kompakte, quellenverlinkte Zusammenfassung des Gesprächsverlaufs. <a href="Original.html">Original.html</a> bleibt die verbindliche Quelle.</p>
+    </header>
+
+    <section class="card" aria-label="Metadaten">
+      <h2>Metadaten</h2>
+      <dl>
+        <dt>Fassung</dt><dd>2 – inhaltlich korrigiert</dd>
+        <dt>Erstellt</dt><dd><time datetime="2026-08-15T08:10:00.000Z">2026-08-15T08:10:00.000Z</time></dd>
+        <dt>Quellstand</dt><dd><a href="Original.html#message-118">Original.html bis Beitrag 118</a></dd>
+        <dt>Änderungsabgleich</dt><dd>Die Erstfassung behandelte überwiegend Processdateien. Diese Fassung fasst ausschließlich den Chatinhalt zusammen.</dd>
+      </dl>
+    </section>
+
+    <nav class="card" aria-label="Inhaltsverzeichnis">
+      <h2>Inhaltsverzeichnis</h2>
+      <table>
+        <thead><tr><th>Thema</th><th>Zusammenfassung</th><th>Originalquellen</th></tr></thead>
+        <tbody>
+          <tr><td>Ausgangslage und Ziel</td><td><a href="#ausgangslage">Ausgangslage und Ziel</a></td><td><a href="Original.html#message-3">Chatbestand</a>, <a href="Original.html#message-13">Einordnung</a></td></tr>
+          <tr><td>Bestätigte Strukturentscheidungen</td><td><a href="#struktur">Bestätigte Strukturentscheidungen</a></td><td><a href="Original.html#message-20">Anlage</a>, <a href="Original.html#message-91">Naming</a></td></tr>
+          <tr><td>Speicher- und Wiederherstellungsmodell</td><td><a href="#speicherung">Speicher- und Wiederherstellungsmodell</a></td><td><a href="Original.html#message-23">HTML</a>, <a href="Original.html#message-28">Importgrenze</a>, <a href="Original.html#message-114">Dateien</a></td></tr>
+          <tr><td>Lesbarkeit und Nachweis</td><td><a href="#darstellung">Lesbarkeit und Nachweis</a></td><td><a href="Original.html#message-107">Darstellung</a>, <a href="Original.html#message-111">Markdown</a></td></tr>
+          <tr><td>Manuelle und automatische Verdichtung</td><td><a href="#verdichtung">Manuelle und automatische Verdichtung</a></td><td><a href="Original.html#message-114">Dateien</a>, <a href="Original.html#message-116">Korrektur</a>, <a href="Original.html#message-117">Abgrenzung</a></td></tr>
+          <tr><td>Offene Punkte und Grenzen</td><td><a href="#offene-punkte">Offene Punkte und Grenzen</a></td><td><a href="Original.html#message-28">Importgrenze</a>, <a href="Original.html#message-118">Folgeauftrag</a></td></tr>
+        </tbody>
+      </table>
+    </nav>
+
+    <section class="card decision" id="ausgangslage">
+      <h2>Ausgangslage und Ziel</h2>
+      <p>Ausgangspunkt waren 14 sichtbare, nicht archivierte Organisation-Chats. Für diese Chats sollte eine dauerhafte, projektseitige Dokumentation entstehen, die vom Codex-Projekt unabhängig lesbar bleibt und die spätere Arbeit im Projekt unterstützt.</p>
+      <p>Chats wurden dabei als Entwicklungsdiskussionen verstanden, aber nicht mit der gesamten Entwicklungsdokumentation gleichgesetzt: <code>Documentation/Development</code> kann weitere Artefakte aufnehmen, während der Gesprächsverlauf einen eigenen Bereich erhält.</p>
+      <p class="source">Quellen: <a href="Original.html#message-5">Beitrag 5</a>, <a href="Original.html#message-13">Beitrag 13</a>.</p>
+    </section>
+
+    <section class="card decision" id="struktur">
+      <h2>Bestätigte Strukturentscheidungen</h2>
+      <ul>
+        <li>Jeder relevante Chat wird als eigener Unterordner unter <code>Documentation/Chat</code> repräsentiert.</li>
+        <li>Die Ordnernamen enthalten keine Chat-ID-Präfixe; die ID bleibt als Metadatum in der Originaldatei erhalten.</li>
+        <li>Die Naming-Regel führte zur Umbenennung von <code>Übersicht</code> in <code>Uebersicht</code>. Der Codex-Chatname wurde entsprechend angepasst.</li>
+      </ul>
+      <p>Die Ordnerstruktur umfasst gegenwärtig 14 Chatordner, darunter <code>Agent</code>, <code>Chat</code>, <code>Uebersicht</code> und <code>Verzeichnisstruktur</code>.</p>
+      <p class="source">Quellen: <a href="Original.html#message-20">Beitrag 20</a>, <a href="Original.html#message-91">Beitrag 91</a>, <a href="Original.html#message-98">Beitrag 98</a>, <a href="Original.html#message-113">Beitrag 113</a>.</p>
+    </section>
+
+    <section class="card decision" id="speicherung">
+      <h2>Speicher- und Wiederherstellungsmodell</h2>
+      <p>HTML wurde als Format für die Chatdokumentation gewählt. Ausschlaggebend sind die Einbettung des aktiven Designs, Inhaltsverzeichnisse, Tabellen, Browserlesbarkeit und stabile Verweise innerhalb und zwischen Dateien.</p>
+      <p>Ein Chatordner kann drei Dateien enthalten: <code>Original.html</code> als schreibgeschützte Darstellung des sichtbaren Verlaufs, <code>Extraction.html</code> als Zusammenfassung und <code>Excerpt.html</code> für bewusst ausgewählte Auszüge.</p>
+      <p>Der projektseitige Import nutzt die gespeicherte Originaldatei als Arbeitsquelle. Eine native Wiederherstellung der ursprünglichen Codex-Instanz mit ID, Branches, Modell- oder Sitzungszustand ist daraus nicht ableitbar.</p>
+      <p class="source">Quellen: <a href="Original.html#message-23">Beitrag 23</a>, <a href="Original.html#message-28">Beitrag 28</a>, <a href="Original.html#message-114">Beitrag 114</a>.</p>
+    </section>
+
+    <section class="card" id="darstellung">
+      <h2>Lesbarkeit und Nachweis</h2>
+      <p>Die Originaldarstellung verwendet das aktive Design. Rollenüberschriften werden nicht angezeigt; Assistentenbeiträge stehen links, Nutzerbeiträge rechts. Beiträge bleiben über Zeitstempel und stabile Nachrichtenanker nachvollziehbar.</p>
+      <p>Sichtbarer Markdown wird semantisch zu HTML dargestellt. Überschriften, Absätze, Listen, Zitate, Links, Hervorhebungen und Codeblöcke bleiben dadurch lesbar, ohne Wortlaut oder Reihenfolge zu verändern.</p>
+      <p class="source">Quellen: <a href="Original.html#message-107">Beitrag 107</a>, <a href="Original.html#message-111">Beitrag 111</a>.</p>
+    </section>
+
+    <section class="card" id="verdichtung">
+      <h2>Manuelle und automatische Verdichtung</h2>
+      <p>Wichtige Einzelstellen können als manuelle Auszüge festgehalten werden. Der Auszug bewahrt den gewählten Text, seinen Auswahlgrund, eine Kurzbeschreibung und den Verweis auf seine Stelle im Original. Im vorliegenden Chat wurden die Exportordner, die möglichen Dateien eines Chatordners und die Übersicht der Chat-Prozesse beispielhaft als Auszüge festgehalten.</p>
+      <p>Die automatische Extraktion soll dagegen den Chatverlauf insgesamt kompakt zusammenfassen. Entscheidungen haben Priorität; wichtige Diskussionsteile werden aufgenommen, wenn sie Entscheidungen, Alternativen, Risiken oder offene Punkte verständlich machen.</p>
+      <p>Eine ausdrückliche Korrektur stellt klar: Die Extraktion darf nicht den Inhalt der Processdateien zusammenfassen. Ihr Gegenstand ist ausschließlich der Inhalt von <code>Original.html</code>; Prozesse erscheinen nur, sofern sie im Chat selbst besprochen wurden.</p>
+      <p class="source">Quellen: <a href="Original.html#message-114">Beitrag 114</a>, <a href="Original.html#message-116">Beitrag 116</a>, <a href="Original.html#message-117">Beitrag 117</a>.</p>
+    </section>
+
+    <section class="card" id="offene-punkte">
+      <h2>Offene Punkte und Grenzen</h2>
+      <ul>
+        <li><span class="status">Grenze:</span> Ein gespeicherter Verlauf ersetzt keine native Codex-Wiederherstellung.</li>
+        <li><span class="status">Offen:</span> Ein echter Import in ein neu aufgebautes Codex-Projekt ist noch nicht praktisch getestet.</li>
+        <li><span class="status">Offen:</span> Die nächste Ausführung von Extraction muss den vorgesehenen Änderungsabgleich mit dieser zweiten Fassung erproben.</li>
+      </ul>
+      <p class="source">Quellen: <a href="Original.html#message-28">Beitrag 28</a>, <a href="Original.html#message-118">Beitrag 118</a>.</p>
+    </section>
+  </main>
+</body>
+</html>
